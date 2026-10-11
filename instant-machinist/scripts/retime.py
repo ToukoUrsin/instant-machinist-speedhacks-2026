@@ -1,7 +1,8 @@
 """Re-time posted programs under both cycle models: constant feed (used for the published runs) and
 trapezoidal acceleration (current simulator default).
 
-    .venv/bin/python scripts/retime.py out/run3/fusion/*/1001.nc
+    gunzip -k docs/results/ftc-10/best-1001.nc.gz
+    .venv/bin/python scripts/retime.py docs/results/ftc-10/best-1001.nc   # or out/<run>/fusion/*/1001.nc
 """
 import sys
 
