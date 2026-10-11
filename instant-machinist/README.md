@@ -43,7 +43,7 @@ top side**, end to end in the cloud. All numbers are from run `out/run3` and are
 | **Cycle time, best** | **26:42** (adaptive, 3 mm load, 24 mm steps, 0.6 mm finish stepover) |
 | Cycle time, typical cautious manual program *(our estimate)* | 1:49:46 |
 | **Machine time saved** | **76 %**: 83 min per part |
-| Verifier, best program | 0 gouges, 0 rapids into stock, 0 fixture hits, flute length OK. 3 short flat-end plunges (≤ 0.6 mm) flagged for review. The stock left over is the later setups' work. The raw report prints FAIL because it applies the whole-part rule (no leftover, no plunges); the OP1 rule in `pipeline.py` accepts leftover that later setups remove and flags plunges for the programmer |
+| Verifier, best program | 0 gouges, 0 rapids into stock, 0 fixture hits, flute length OK. 3 short flat-end plunges (≤ 0.6 mm) flagged for review. Stock left: 469 mm² in 61 regions (up to 15.6 mm), reported for the later setups. The raw report prints FAIL because it applies the whole-part rule (no leftover, no plunges); the OP1 rule in `pipeline.py` accepts leftover that later setups remove and flags plunges for the programmer |
 | Verifier, manual-style baseline | **Failed**: 6 rapid moves into stock (up to 2.7 mm deep) |
 
 **What Claude caught on the drawing**, among its 8 questions for the customer:

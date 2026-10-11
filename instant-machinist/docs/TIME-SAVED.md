@@ -25,7 +25,7 @@ assumption. Two demo parts:
 | Human review of the program, simulation video and Claude's questions for the customer | included above | **10 min** | **10 min** | Assumption |
 | Corrections after review | included above | **10 min** allowance | **10 min** allowance | Assumption |
 | **Total** | **60–240 min** | **≈ 27 min** | **≈ 23 min** (Fusion path) | |
-| **Saved per new part** | | **33–213 min (55–89 %)** | **37–217 min (62–91 %)** | |
+| **Saved per new part** | | **33–213 min (55–89 %)** | **37–217 min (62–90 %)** | |
 
 The automated step is not the bottleneck; the human review is. The review budget is deliberately
 generous: the reviewer starts from a program that has already passed gouge, leftover, rapid,
