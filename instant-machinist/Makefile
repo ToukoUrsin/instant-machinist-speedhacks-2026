@@ -59,6 +59,7 @@ video-native: demo-native
 		--out $(OUT)/demo-native/simulation.mp4 --badge "Verified: 0 gouges"
 
 part:
+	$(PY) -m pip install -q "cadquery>=2.4" 2>/dev/null || uv pip install --python $(PY) "cadquery>=2.4"
 	$(PY) -m instant_machinist.parts.build_part $(PART)
 
 clean:

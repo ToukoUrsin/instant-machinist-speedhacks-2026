@@ -1,6 +1,6 @@
 # Demo
 
-**Videos:** [problem (60 s)](../../media/problem-60s.mp4) · [product demo](../../media/product-demo.mp4) · [verified FTC-10 simulation](results/ftc-10/run3/simulation.mp4) · [shop-floor integrations](../../media/integrations-minute.mp4)
+**Videos:** [full demo (3 min)](../../media/demo.mp4) · [problem (60 s)](../../media/problem-60s.mp4) · [product demo](../../media/product-demo.mp4) · [verified FTC-10 simulation](results/ftc-10/run3/simulation.mp4) · [shop-floor integrations](../../media/integrations-minute.mp4)
 
 ## Headline: NIST FTC-10 housing (canonical run `out/run3`)
 
@@ -14,7 +14,7 @@
 4. Five OP1 strategies (face, 3D adaptive clearing, wall finish, ball-end finish of the fins) are
    programmed in Fusion, posted to Haas G-code and verified by our simulator.
 5. The manual-style baseline fails the verifier: 6 rapid moves into stock. All 4 adaptive programs pass
-   every safety check.
+   the gouge, rapid, fixture and flute-length checks; 3 short plunges are flagged for review.
 6. Best program: **26:42 cycle vs 1:49:46** for a typical cautious manual program, **76 % less machine
    time**.
 7. The editable Fusion file is saved to Fusion Team. Total programming time: **7:08**.

@@ -1,6 +1,7 @@
 # Simulation report: NIST FTC-10
 
-**Result: FAIL**  
+**Result: FAIL** under the whole-part rule, because the stock for later setups remains.  
+**OP1 rule (`pipeline.py` `SAFETY`): PASS**: 0 gouges, 0 rapids into stock, 0 fixture hits, flute length OK; 3 plunges ≤ 0.6 mm flagged for review.  
 Programs: out/run3/fusion/adaptive-L3.0-D24-F0.6/1001.nc
 
 ## Cycle time

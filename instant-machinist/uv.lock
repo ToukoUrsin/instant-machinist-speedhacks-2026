@@ -788,7 +788,6 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "anthropic" },
-    { name = "cadquery" },
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "pydantic" },
@@ -802,11 +801,14 @@ dependencies = [
 dev = [
     { name = "pytest" },
 ]
+parts = [
+    { name = "cadquery" },
+]
 
 [package.metadata]
 requires-dist = [
     { name = "anthropic", specifier = ">=1.13" },
-    { name = "cadquery", specifier = ">=2.4" },
+    { name = "cadquery", marker = "extra == 'parts'", specifier = ">=2.4" },
     { name = "matplotlib", specifier = ">=3.8" },
     { name = "numpy", specifier = ">=1.26" },
     { name = "pydantic", specifier = ">=2.7" },
@@ -816,7 +818,7 @@ requires-dist = [
     { name = "shapely", specifier = ">=2.0" },
     { name = "trimesh", specifier = ">=4.0" },
 ]
-provides-extras = ["dev"]
+provides-extras = ["dev", "parts"]
 
 [[package]]
 name = "jiter"
