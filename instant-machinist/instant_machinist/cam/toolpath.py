@@ -18,9 +18,11 @@ class Toolpath:
 
     # -- primitives -------------------------------------------------------
     def comment(self, text: str):
+        """Add an NC comment."""
         self.moves.append({"t": "comment", "text": text})
 
     def rapid(self, x=None, y=None, z=None):
+        """Rapid (G0) to the given axes; omitted axes keep the current position."""
         p = [self.pos[0] if x is None else x, self.pos[1] if y is None else y, self.pos[2] if z is None else z]
         if math.dist(p, self.pos) < 1e-9:
             return
@@ -28,6 +30,7 @@ class Toolpath:
         self.pos = p
 
     def feed(self, x=None, y=None, z=None, f=1000.0):
+        """Linear feed (G1) at ``f`` mm/min; omitted axes keep the current position."""
         p = [self.pos[0] if x is None else x, self.pos[1] if y is None else y, self.pos[2] if z is None else z]
         if math.dist(p, self.pos) < 1e-9:
             return
@@ -35,6 +38,7 @@ class Toolpath:
         self.pos = p
 
     def arc(self, x, y, cx, cy, cw, f, z=None):
+        """Arc to ``(x, y)`` about centre ``(cx, cy)`` at ``f`` mm/min; ``cw`` selects G2, optional helical ``z``."""
         z = self.pos[2] if z is None else z
         self.moves.append({"t": "arc", "x": x, "y": y, "z": z, "cx": cx, "cy": cy, "cw": cw, "f": f,
                            "x0": self.pos[0], "y0": self.pos[1], "z0": self.pos[2]})
@@ -42,6 +46,7 @@ class Toolpath:
 
     def cycle(self, g: int, pts, z: float, r: float, f: float, q: float | None = None,
               p: float | None = None, ret: int = 98):
+        """Canned drilling cycle ``g`` (e.g. 81, 83) at ``pts`` to depth ``z`` from R plane ``r``; ``ret`` is 98 or 99."""
         init_z = self.pos[2]
         self.moves.append({"t": "cycle", "g": g, "pts": [list(map(float, pt)) for pt in pts], "z": z, "r": r,
                            "f": f, "q": q, "p": p, "ret": ret, "init_z": init_z})
@@ -50,6 +55,7 @@ class Toolpath:
 
     # -- composite --------------------------------------------------------
     def follow(self, segs, f: float, z: float | None = None):
+        """Feed along a segment loop at ``f`` mm/min, optionally at height ``z``."""
         for s in segs:
             if s[0] == "L":
                 self.feed(s[2][0], s[2][1], z, f)
@@ -81,6 +87,7 @@ class Toolpath:
 
 # -- estimation -------------------------------------------------------------
 def move_time(m: dict, prev: list, machine=MACHINE) -> float:
+    """Estimated time in seconds for one move from ``prev`` (rapid, feed, arc or canned cycle)."""
     rapid = machine["rapid_mm_min"] / 60.0
     if m["t"] == "rapid":
         return max(abs(m["x"] - prev[0]), abs(m["y"] - prev[1]), abs(m["z"] - prev[2])) / rapid

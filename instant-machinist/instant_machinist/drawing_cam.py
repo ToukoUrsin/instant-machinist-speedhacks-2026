@@ -81,6 +81,7 @@ def build_from_spec(spec: dict, out: Path, tools: Path) -> dict:
 
 
 def run(drawing: Path | None, out: Path, tools: Path, spec_path: Path | None = None) -> dict:
+    """Read a drawing (or load a reviewed spec JSON) and build native CAM + simulation from it."""
     from .drawing import read_drawing
 
     if spec_path:
@@ -93,6 +94,7 @@ def run(drawing: Path | None, out: Path, tools: Path, spec_path: Path | None = N
 
 
 def main(argv=None) -> None:
+    """CLI entry point: drawing or ``--spec`` in, prints the build result JSON."""
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("drawing", nargs="?", type=Path, help="PDF, PNG, JPEG, or WEBP customer drawing")
     ap.add_argument("--spec", type=Path, help="reviewed drawing spec JSON (offline input)")

@@ -13,6 +13,7 @@ TOOL_DESC = {"face_mill": "face mill", "flat": "flat end mill", "spot_drill": "s
 
 
 def ops_doc(job: str, res: dict, tools_doc: dict, kind: str) -> dict:
+    """Build the ops.json document for a CAM result (operations, params, cycle time, sim checks)."""
     ops = []
     for op in res["ops"]:
         t = tools_doc["tools"][str(op["tool"])]
@@ -25,6 +26,7 @@ def ops_doc(job: str, res: dict, tools_doc: dict, kind: str) -> dict:
 
 
 def write(out: Path, job: str, res: dict, tools_doc: dict, kind: str):
+    """Write ``1001.nc`` and ``ops.json`` to ``out``, self-checking the NC with the strict parser."""
     out.mkdir(parents=True, exist_ok=True)
     (out / "1001.nc").write_text(res["nc"])
     parse(res["nc"])  # self-check: must parse with the strict mini parser
@@ -32,6 +34,7 @@ def write(out: Path, job: str, res: dict, tools_doc: dict, kind: str):
 
 
 def main(argv=None):
+    """CLI entry point: optimise native CAM for a part and write the best and baseline programs."""
     ap = argparse.ArgumentParser(description="Instant Machinist native 2.5D CAM")
     ap.add_argument("--part", required=True)
     ap.add_argument("--out", required=True)

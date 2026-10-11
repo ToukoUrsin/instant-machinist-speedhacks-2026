@@ -8,11 +8,13 @@ from .mcp_client import FusionError, FusionMCP
 
 
 class FusionSession:
+    """One cloud Fusion engine session on top of FusionMCP."""
     def __init__(self, session_id: str = "im-1", mcp: FusionMCP | None = None) -> None:
         self.mcp = mcp or FusionMCP()
         self.sid = session_id
 
     def start(self) -> str:
+        """Start the Fusion engine and wait (up to ~5 min) until it is active."""
         out = self.mcp.call("start_fusion", {"engine_session_id": self.sid})
         for _ in range(60):
             st = self.mcp.call("fusion_status", {"engine_session_id": self.sid})
@@ -22,9 +24,11 @@ class FusionSession:
         return out
 
     def stop(self) -> str:
+        """Stop the Fusion engine session."""
         return self.mcp.call("stop_fusion", {"engine_session_id": self.sid})
 
     def invoke(self, tool: str, arguments: dict, timeout: float = 600) -> str:
+        """Invoke Fusion tool ``tool`` with ``arguments`` in this session; return the raw text result."""
         return self.mcp.call("invoke_fusion", {"engine_session_id": self.sid, "tool": tool, "arguments": arguments}, timeout)
 
     def ts(self, code: str, timeout: float = 600, retries: int = 3) -> dict:

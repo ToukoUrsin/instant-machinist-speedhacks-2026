@@ -21,9 +21,14 @@ help:
 	@echo "make video-native   render the simulation video of the native engine's best program"
 	@echo "make part           regenerate parts/sm-101 STEP/STL/drawing from features.json (cadquery)"
 
-install:
-	test -x $(PY) || uv venv .venv --python 3.12
-	uv pip install --python $(PY) -e ".[dev]"
+install:  # uses uv when available, plain venv + pip otherwise
+	@if command -v uv >/dev/null 2>&1; then \
+		test -x $(PY) || uv venv .venv --python 3.12; \
+		uv pip install --python $(PY) -e ".[dev]"; \
+	else \
+		test -x $(PY) || python3 -m venv .venv; \
+		$(PY) -m pip install -q --upgrade pip && $(PY) -m pip install -q -e ".[dev]"; \
+	fi
 
 test:
 	$(PY) -m pytest -q tests

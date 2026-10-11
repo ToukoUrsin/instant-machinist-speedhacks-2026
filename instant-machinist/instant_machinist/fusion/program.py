@@ -12,6 +12,7 @@ DEFAULT_FOLDER = "urn:adsk.wipprod:fs.folder:co._VAyIB-zTLCsUy0QDFnBTA"  # Fusio
 
 
 def sim_tools(table: dict) -> dict:
+    """Convert a Fusion tool table into the simulator's tools.json format (mm)."""
     kind = {"face mill": "face_mill", "flat end mill": "flat", "ball end mill": "ball", "bull nose end mill": "flat",
             "spot drill": "spot_drill", "drill": "drill"}
     return {"units": "mm", "tools": {k: {"type": kind.get(t["fusion_type"], "flat"), "diameter": round(t["diameter"], 3),
@@ -21,6 +22,7 @@ def sim_tools(table: dict) -> dict:
 
 
 class FusionProgrammer:
+    """Drives a cloud Fusion session: model the part, generate toolpaths, post NC and save."""
     def __init__(self, spec: dict, out: Path, ev: Events, session_id: str | None = None) -> None:
         import time
         session_id = session_id or f"im-{int(time.time())}"
@@ -29,6 +31,7 @@ class FusionProgrammer:
         self.out.mkdir(parents=True, exist_ok=True)
 
     def model(self) -> dict:
+        """Start Fusion and build the 3D model from the spec; return model stats (faces, volume)."""
         self.ev.emit("fusion", "Starting Autodesk Fusion in the cloud")
         self.fs.start()
         self.fs.ts(script("model", call=f"newDoc({json.dumps(self.spec['part_number'])})"))
@@ -54,6 +57,10 @@ class FusionProgrammer:
         return r
 
     def program3d(self, strategy: dict, poll_s: float = 240) -> Path:
+        """Generate 3D strategy toolpaths op by op (polling up to ``poll_s`` s), post NC and tool table.
+
+        Returns the strategy output dir.
+        """
         import time
         d = self.out / strategy["name"]
         d.mkdir(parents=True, exist_ok=True)
@@ -77,12 +84,14 @@ class FusionProgrammer:
         return d
 
     def screenshot(self, path: Path) -> None:
+        """Save an isometric screenshot of the current document to ``path``."""
         import requests
         r = json.loads(self.fs.invoke("MCP.IO", {"mode": "screenshot", "delivery": "signedUrl",
                                                  "directions": ["isoTopRight"], "width": 1600, "height": 1000}))
         path.write_bytes(requests.get(r["artifact"]["url"], timeout=60).content)
 
     def program(self, strategy: dict) -> Path:
+        """Generate toolpaths for ``strategy``, post ``1001.nc`` and write tools.json/ops.json; return the output dir."""
         d = self.out / strategy["name"]
         d.mkdir(parents=True, exist_ok=True)
         r = self.fs.ts(script("cam", call="program(FEATURES, STRATEGY)", FEATURES=self.spec, STRATEGY=strategy))
@@ -99,6 +108,7 @@ class FusionProgrammer:
         return d
 
     def save(self, name: str, folder_urn: str = DEFAULT_FOLDER) -> str:
+        """Save the document to Fusion Team as ``name`` in ``folder_urn``."""
         r = self.fs.invoke("MCP.Documents", {"mode": "saveAs", "name": name, "targetFolderUrn": folder_urn,
                                              "description": "Programmed by Instant Machinist"})
         self.ev.emit("fusion", f"Saved editable Fusion file '{name}' to Fusion Team")

@@ -35,6 +35,7 @@ OP_NAMES = {"flat": "Milling", "face_mill": "Facing", "spot_drill": "Spot drilli
 
 
 def load_npz(path, keys):
+    """Load ``keys`` from an .npz file; exit if any are missing."""
     d = np.load(path, allow_pickle=False)
     missing = [k for k in keys if k not in d.files]
     if missing:
@@ -43,10 +44,12 @@ def load_npz(path, keys):
 
 
 def fmt_d(d):
+    """Format a diameter with at most one decimal."""
     return f"{d:.1f}".rstrip("0").rstrip(".")
 
 
 def resolve_tools(fr, tp, tools_path, frames_path):
+    """Per-tool display info (type, diameter) from the tool crib, inferring type when missing."""
     crib = {}
     if tools_path is None:
         job = Path(frames_path).resolve().parent.parent.name
@@ -98,6 +101,7 @@ def resample_grid(fr, max_cells):
 
 
 def seg_dist(p, a, b):
+    """Distance from points ``p`` to segments ``a``-``b`` (row-wise)."""
     ab = b - a
     t = np.clip(np.einsum("ij,ij->i", p - a, ab) / np.maximum(np.einsum("ij,ij->i", ab, ab), 1e-12), 0, 1)
     return np.linalg.norm(a + ab * t[:, None] - p, axis=1)
@@ -129,6 +133,7 @@ def map_frames_to_moves(fr, tp, window=5000):
 
 
 def build_data(a, workdir):
+    """Write the renderer's meta.json (grid, tools, ops, per-frame data) to ``workdir``; return the frame count."""
     fr = load_npz(a.frames, FRAME_KEYS)
     tp = load_npz(a.toolpath, TP_KEYS)
     tp["rapid"] = tp["rapid"].astype(bool)
@@ -234,10 +239,12 @@ def build_data(a, workdir):
 
 
 def node_bin():
+    """Path to the ``node`` binary; exit if not found."""
     return shutil.which("node") or sys.exit("node not found")
 
 
 def run(cmd, **kw):
+    """Echo and run a subprocess command, raising on failure."""
     print("+", " ".join(map(str, cmd)), file=sys.stderr)
     subprocess.run(cmd, check=True, **kw)
 
@@ -278,6 +285,7 @@ def render_drun(work, data, a, n_frames, out, chunks):
 
 
 def main(argv=None):
+    """CLI entry point: render sim frames + toolpath to an MP4 or still PNG."""
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--frames", required=True)
     ap.add_argument("--toolpath", required=True)

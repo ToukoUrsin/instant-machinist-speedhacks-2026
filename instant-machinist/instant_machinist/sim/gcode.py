@@ -51,9 +51,11 @@ class Toolpath:
 
     @property
     def rapid(self) -> np.ndarray:
+        """Boolean mask of rapid (G0) segments."""
         return self.kind == RAPID
 
     def source(self, program: int, nc_line: int) -> str:
+        """Source text of 1-based ``nc_line`` in program ``program``, or '' if out of range."""
         try:
             return self.lines[program][nc_line - 1].strip()
         except IndexError:
@@ -61,6 +63,7 @@ class Toolpath:
 
 
 class GCodeError(ValueError):
+    """Raised for G-code the interpreter cannot execute."""
     pass
 
 
@@ -84,6 +87,7 @@ class _Interp:
         self.reset_modal()
 
     def reset_modal(self):
+        """Reset modal state to defaults (G21, G90, G17, G0, G98, no offsets or canned cycle)."""
         self.scale = 1.0          # G21
         # Fanuc/Haas G52 local work-coordinate shift, in machine mm.  The
         # simulator reports positions in the underlying G54 work system, so
@@ -102,16 +106,19 @@ class _Interp:
 
     # ---------------------------------------------------------------- utils
     def warn(self, key: str, msg: str):
+        """Append a warning once per ``key``."""
         if key not in self._warned:
             self._warned.add(key)
             self.warnings.append(msg)
 
     def emit(self, p1, kind, line, feed=0.0, dwell=0.0):
+        """Append a segment from the current position to ``p1`` and advance the position."""
         p1 = np.asarray(p1, float)
         self.out.append((self.pos.copy(), p1.copy(), kind, self.tool, feed, dwell, line))
         self.pos = p1.copy()
 
     def move(self, p1, rapid: bool, line: int):
+        """Emit a rapid or feed move to ``p1``; zero-length moves are dropped and F=0 feeds default to 100 mm/min."""
         p1 = np.asarray(p1, float)
         if np.allclose(p1, self.pos, atol=1e-9):
             return
@@ -496,6 +503,10 @@ def parse_programs(paths_or_texts, home_z: float = 50.0, home_xy=None,
     call_count = 0
 
     def execute(pi: int, start: int, end: int, stack: tuple[tuple[int, int], ...], *, is_sub: bool = False) -> bool:
+        """Interpret lines ``start..end`` of program ``pi``, following subprogram calls.
+
+        Returns False if execution was aborted, True when the range or program ended normally.
+        """
         nonlocal call_count
         lines, ranges, _ = sources[pi]
         i = start

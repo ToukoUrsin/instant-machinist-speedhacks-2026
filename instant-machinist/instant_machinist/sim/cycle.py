@@ -43,6 +43,10 @@ def segment_times(
     feed_accel_mm_s2: float = FEED_ACCEL_MM_S2,
     rapid_accel_mm_s2: float = RAPID_ACCEL_MM_S2,
 ) -> np.ndarray:
+    """Per-segment machine time in seconds for a toolpath.
+
+    Feeds and rapids use trapezoidal accel profiles (mm/min, mm/s²); tool changes add ``tool_change_s``.
+    """
     d = tp.p1 - tp.p0
     t = np.zeros(len(tp))
     feed = tp.kind == FEED
@@ -67,6 +71,7 @@ def segment_times(
 
 
 def cycle_report(tp: Toolpath, times: np.ndarray) -> dict:
+    """Summarise per-segment ``times`` (s) into totals and per-tool cutting/rapid/dwell/tool-change times."""
     k = tp.kind
     def s(mask):
         return round(float(times[mask].sum()), 2)

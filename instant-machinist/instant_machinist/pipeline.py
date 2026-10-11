@@ -15,11 +15,13 @@ from .events import Events
 
 
 def simulate(part: Path, nc: Path, tools: Path, out: Path, frames: int = 0) -> dict:
+    """Simulate one NC program against the part and write results to ``out``; return the sim report."""
     from .sim.run import simulate as sim
     return sim(str(part), [str(nc)], out=str(out), tools=str(tools), frames=frames, target_mode="auto")
 
 
 def cycle_s(rep: dict) -> float:
+    """Total cycle time in seconds from a sim report."""
     return float(rep["cycle_time"]["total_s"])
 
 
@@ -29,12 +31,14 @@ SAFETY = ("gouge", "rapid_into_stock", "below_fixture", "flute_length")
 
 
 def passed(rep: dict, whole_job: bool = True) -> bool:
+    """True if the report passes: every check when ``whole_job``, else only the SAFETY checks."""
     if whole_job:
         return bool(rep["ok"])
     return all(rep["checks"].get(k, {}).get("ok", True) for k in SAFETY)
 
 
 def notes(rep: dict) -> str:
+    """One-line human summary of gouges, rapid crashes, short plunges and leftover area (cm²)."""
     c = rep["checks"]
     out = [f"{c['gouge'].get('count', 0)} gouges", f"{c['rapid_into_stock'].get('count', 0)} rapid crashes"]
     if c.get("flat_plunge", {}).get("count"):
@@ -45,10 +49,16 @@ def notes(rep: dict) -> str:
 
 
 def mmss(s: float) -> str:
+    """Format seconds as ``M:SS``."""
     return f"{int(s // 60)}:{int(s % 60):02d}"
 
 
 def run(part: Path, out: Path, engine: str, read: bool, video: bool) -> dict:
+    """Run the full job for a part dir: optional drawing read, CAM (``fusion`` or ``native``),
+    simulation of each variant and optional video; events go to ``out/events.jsonl``.
+
+    Returns the run summary dict.
+    """
     out.mkdir(parents=True, exist_ok=True)
     (out / "events.jsonl").unlink(missing_ok=True)
     ev = Events(out)
@@ -134,6 +144,7 @@ def run(part: Path, out: Path, engine: str, read: bool, video: bool) -> dict:
 
 
 def main() -> None:
+    """CLI entry point: parse args, run the pipeline and print the summary JSON."""
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--part", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)

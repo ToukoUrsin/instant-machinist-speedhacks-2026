@@ -65,6 +65,7 @@ def rounded_rect_loop(cx: float, cy: float, W: float, H: float, r: float, ccw: b
 
 
 def reverse_loop(segs):
+    """Reverse a loop of ``('L', p0, p1)`` / ``('A', p0, p1, c, cw)`` segments, flipping arc direction."""
     out = []
     for s in reversed(segs):
         if s[0] == "L":
@@ -92,6 +93,7 @@ def offset_rect_loop(rect: dict, d: float, ccw: bool, min_corner: float = 0.0):
 
 
 def seg_length(s) -> float:
+    """Length of a line or arc segment in mm."""
     if s[0] == "L":
         return math.dist(s[1], s[2])
     sweep = arc_sweep(s)
@@ -121,6 +123,7 @@ def arc_sweep(s) -> float:
 
 
 def sample_arc(p0, p1, c, cw, step: float = 0.5):
+    """Points along the arc ``p0`` -> ``p1`` about ``c`` at roughly ``step`` mm spacing (endpoints included)."""
     s = ("A", p0, p1, c, cw)
     sweep = arc_sweep(s)
     rad = math.dist(p0, c)
@@ -130,6 +133,7 @@ def sample_arc(p0, p1, c, cw, step: float = 0.5):
 
 
 def loop_points(segs, step: float = 0.5):
+    """Polyline points of a segment loop, arcs sampled at ``step`` mm."""
     pts = [segs[0][1]]
     for s in segs:
         if s[0] == "L":

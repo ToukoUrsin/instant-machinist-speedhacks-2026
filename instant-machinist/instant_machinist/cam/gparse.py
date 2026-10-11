@@ -10,6 +10,7 @@ HOME_Z = 200.0
 
 
 class ParseError(ValueError):
+    """Raised when NC text fails the strict mini parser."""
     pass
 
 

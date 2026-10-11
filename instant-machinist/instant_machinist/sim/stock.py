@@ -13,6 +13,7 @@ SLOPE_PIECE_DZ = 0.01  # mm: max Z change per piece when sweeping non-flat tools
 
 @dataclass
 class Tool:
+    """Cutting tool geometry in mm (type, diameter, tip/taper angles, corner radius, flute and envelope)."""
     number: int
     type: str              # flat | face_mill | ball | bull | spot_drill | drill | chamfer
     diameter: float
@@ -34,10 +35,12 @@ class Tool:
 
     @property
     def radius(self) -> float:
+        """Tool radius in mm."""
         return self.diameter / 2.0
 
     @property
     def is_flat(self) -> bool:
+        """True for flat-bottom cutters (flat end mill, face mill, sharp-corner bull)."""
         return self.type in ("flat", "face_mill", "endmill", "end_mill") or (
             self.type == "bull" and self.corner_radius <= 0)
 
@@ -88,10 +91,12 @@ def load_tools_diagnostics(path) -> tuple[dict[int, Tool], list[dict]]:
     units = str(data.get("units", "mm")).strip().lower() if isinstance(data, dict) else "mm"
 
     def scale_for(raw):
+        """Unit scale to mm: 25.4 for inch, else 1.0."""
         u = str(raw or units).strip().lower()
         return 25.4 if u in ("in", "inch", "inches") else 1.0
 
     def canonical_type(raw):
+        """Normalise a tool type alias (e.g. 'end_mill', 'spot') to its canonical name."""
         key = str(raw or "flat").strip().lower().replace("-", "_").replace(" ", "_")
         return {
             "endmill": "flat", "end_mill": "flat", "flat_endmill": "flat",
@@ -106,6 +111,7 @@ def load_tools_diagnostics(path) -> tuple[dict[int, Tool], list[dict]]:
         }.get(key, key)
 
     def number(value, name, n):
+        """Parse a finite float for field ``name`` of tool ``n``; record an error event and return None if invalid."""
         try:
             x = float(value)
         except (TypeError, ValueError):
@@ -219,6 +225,7 @@ class Grid:
 
     @classmethod
     def for_box(cls, xr, yr, cell: float) -> "Grid":
+        """Grid of ``cell`` mm cells centred on the XY box ``xr`` x ``yr``."""
         nx = max(1, int(math.ceil((xr[1] - xr[0]) / cell - 1e-9)))
         ny = max(1, int(math.ceil((yr[1] - yr[0]) / cell - 1e-9)))
         # centre the grid on the box
@@ -227,18 +234,22 @@ class Grid:
         return cls(x0, y0, cell, nx, ny)
 
     def mesh(self):
+        """``(X, Y)`` meshgrid of cell centres."""
         return np.meshgrid(self.xs, self.ys)
 
     def index_range(self, lo: float, hi: float, axis: str):
+        """Cell index range ``[i0, i1)`` whose centres lie in ``[lo, hi]`` along ``axis`` ('x' or 'y')."""
         o, n = (self.x0, self.nx) if axis == "x" else (self.y0, self.ny)
         i0 = max(0, int(math.ceil((lo - o) / self.cell - 1e-9)))
         i1 = min(n, int(math.floor((hi - o) / self.cell + 1e-9)) + 1)
         return i0, i1
 
     def ij(self, x: float, y: float):
+        """Nearest cell ``(row, col)`` for point ``(x, y)``."""
         return (int(round((y - self.y0) / self.cell)), int(round((x - self.x0) / self.cell)))
 
     def downsample(self, k: int) -> "Grid":
+        """Coarser grid with cells ``k`` times larger covering the same area."""
         nx, ny = -(-self.nx // k), -(-self.ny // k)
         return Grid(self.x0 + (k - 1) * self.cell / 2, self.y0 + (k - 1) * self.cell / 2, self.cell * k, nx, ny)
 
@@ -256,15 +267,18 @@ class Stock:
 
     @classmethod
     def from_features(cls, feats: dict, cell: float = 0.25) -> "Stock":
+        """Stock block from ``features.json`` stock box at ``cell`` mm resolution."""
         s = feats["stock"]
         return cls(Grid.for_box(s["x"], s["y"], cell), s["z"][1], s["z"][0])
 
     def heights_nan(self) -> np.ndarray:
+        """Heights as float32 with cut-through cells (at stock bottom) set to NaN."""
         out = self.h.astype(np.float32)
         out[self.h <= self.z_bottom + 1e-6] = np.nan
         return out
 
     def zmax(self) -> float:
+        """Cached highest stock Z, refreshed every 256 calls."""
         self._ops += 1
         if self._ops % 256 == 0:
             self._zmax = float(self.h.max())

@@ -83,6 +83,7 @@ def simulate(part, nc, out=None, tools=None, frames: int = 360, cell: float = 0.
     fi = 0
 
     def snap(pos, seg_i):
+        """Store a downsampled heightmap frame with tool position, tool and NC line for segment ``seg_i``."""
         nonlocal fi
         hn = stock.heights_nan()
         fh[fi] = _block_reduce(hn, k, "mean")
@@ -222,6 +223,7 @@ def _fmt_s(s: float) -> str:
 
 
 def report_md(r: dict) -> str:
+    """Render a simulation report dict as Markdown (cycle time table and checks)."""
     c, ct = r["checks"], r["cycle_time"]
     L = [f"# Simulation report: {r['part']}", "",
          f"**Result: {'PASS' if r['ok'] else 'FAIL'}**  ", f"Programs: {', '.join(r['programs'])}", "",
@@ -268,6 +270,7 @@ def report_md(r: dict) -> str:
 
 
 def main(argv=None):
+    """CLI entry point: simulate NC program(s) against a part and write the report, frames and toolpath."""
     ap = argparse.ArgumentParser(description="Instant Machinist 3-axis G-code simulator / verifier")
     ap.add_argument("--part", required=True, help="part dir with features.json (+ tools.json)")
     ap.add_argument("--nc", nargs="+", required=True, help="NC program(s), run in order")

@@ -37,7 +37,7 @@ im-cam = "instant_machinist.cam.run:main"
 im-drawing-cam = "instant_machinist.drawing_cam:main"
 
 [project.urls]
-Repository = "https://github.com/ToukoUrsin/instant-machinist-speedhacks"
+Repository = "https://github.com/ToukoUrsin/instant-machinist-speedhacks-2026"
 
 [tool.setuptools.packages.find]
 include = ["instant_machinist*"]

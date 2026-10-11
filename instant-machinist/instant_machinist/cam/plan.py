@@ -33,6 +33,7 @@ def _tools_of(tools: dict, kind: str):
 
 
 def pick_pocket_tool(tools, feat, leave):
+    """First flat end mill that fits the pocket corner radius with ``leave`` and reaches its depth."""
     rect = feat["rect"]
     depth = feat["z_top"] - feat["z_bottom"]
     lim = min(rect.get("r", 0.0), rect["w"] / 2, rect["h"] / 2)
@@ -44,6 +45,7 @@ def pick_pocket_tool(tools, feat, leave):
 
 
 def pick_profile_tool(tools, feat):
+    """First flat end mill whose flute length covers the profile depth."""
     depth = feat["z_top"] - feat["z_bottom"]
     for tn, t in _tools_of(tools, "flat"):
         if t["flute_length"] >= depth:
@@ -52,6 +54,7 @@ def pick_profile_tool(tools, feat):
 
 
 def pick_drill(tools, d):
+    """Drill matching hole diameter ``d`` (mm) within 0.01 mm."""
     for tn, t in _tools_of(tools, "drill"):
         if abs(t["diameter"] - d) < 0.01:
             return tn
@@ -101,6 +104,7 @@ def _op(opid, name, tool, strategy, features, sp, tp, **extra):
 # --------------------------------------------------------------------------------------
 # operations
 def op_face(part, feat, tn, tool, P):
+    """Zigzag face-mill operation across the stock to the face feature Z."""
     st = part["stock"]
     D = tool["diameter"]
     R = D / 2
@@ -144,6 +148,7 @@ def _pocket_rings(rect, d0, step, R, stop_r, ccw):
 
 
 def op_rough_pocket(feat, tn, tool, P):
+    """Rough a pocket with helical entry and offset rings, leaving ``P['leave']`` mm on walls and floor."""
     rect = feat["rect"]
     D = tool["diameter"]
     R = D / 2
@@ -195,6 +200,7 @@ def op_rough_pocket(feat, tn, tool, P):
 
 
 def op_rough_profile(part, feat, tn, tool, P):
+    """Rough the outside profile in offset rings from stock to profile plus ``P['leave']``."""
     rect = feat["rect"]
     D = tool["diameter"]
     R = D / 2
@@ -249,6 +255,7 @@ def _profile_pass(tp, segs, stock, R, rl, z, f, plunge):
 
 
 def op_finish_pocket(feat, tn, tool, P):
+    """Finish a pocket floor with inward rings, then the walls in a final pass."""
     rect = feat["rect"]
     D = tool["diameter"]
     R = D / 2
@@ -291,6 +298,7 @@ def op_finish_pocket(feat, tn, tool, P):
 
 
 def op_finish_profile(part, feat, tn, tool, P):
+    """Single climb-milling finish pass on the outside profile at full depth."""
     rect = feat["rect"]
     D = tool["diameter"]
     R = D / 2
@@ -310,6 +318,7 @@ def _hole_r(feat):
 
 
 def op_spot(holes, tn, tool, P):
+    """Spot-drill (G81) all hole positions to a chamfer slightly larger than each hole."""
     sp = speeds(tool, scale=P["feed_scale"])
     tp = Toolpath((0, 0, CLEARANCE_Z))
     half = math.radians(tool.get("tip_angle", 90) / 2)
@@ -330,6 +339,7 @@ def op_spot(holes, tn, tool, P):
 
 
 def op_drill(feat, tn, tool, P):
+    """Peck-drill (G83) one hole feature; through holes go past the bottom by the tip length + 1 mm."""
     sp = speeds(tool, scale=P["feed_scale"])
     tip = (tool["diameter"] / 2) / math.tan(math.radians(tool.get("tip_angle", 118) / 2))
     zz = feat["z_bottom"] - (tip + 1.0 if feat.get("through") else 0.0)
@@ -348,6 +358,10 @@ def op_drill(feat, tn, tool, P):
 
 # --------------------------------------------------------------------------------------
 def plan_setup(part: dict, tools_doc: dict, params: dict | None = None) -> list[dict]:
+    """Plan the top setup: pick tools and build face, rough, finish, spot and drill ops grouped by tool.
+
+    Returns the ordered operation list; ``params`` override DEFAULT_PARAMS.
+    """
     P = dict(DEFAULT_PARAMS, **(params or {}))
     tools = tools_doc["tools"]
     feats = part["features"]
@@ -355,6 +369,7 @@ def plan_setup(part: dict, tools_doc: dict, params: dict | None = None) -> list[
     order: list[int] = []
 
     def add(tn, op):
+        """Append an op to its tool's group, recording first-use tool order."""
         if tn not in ops_by_tool:
             ops_by_tool[tn] = []
             order.append(tn)

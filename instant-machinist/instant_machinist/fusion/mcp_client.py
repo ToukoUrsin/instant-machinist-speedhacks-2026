@@ -15,6 +15,7 @@ TOKEN_PATH = Path(os.environ.get("IM_FUSION_TOKEN", Path.home() / ".adsk" / "tok
 
 
 class FusionError(RuntimeError):
+    """Raised when a Fusion MCP call fails or returns an error."""
     pass
 
 
@@ -32,6 +33,7 @@ def _load_token() -> dict:
 
 
 class FusionMCP:
+    """JSON-RPC client for the Autodesk Fusion Compute MCP endpoint."""
     def __init__(self) -> None:
         self.session_id: str | None = None
         self._id = 0
@@ -67,9 +69,11 @@ class FusionMCP:
         return d["result"]
 
     def tools(self) -> list[dict]:
+        """List the MCP server's tools."""
         return self._rpc("tools/list", {})["tools"]
 
     def call(self, name: str, args: dict | None = None, timeout: float = 600) -> str:
+        """Call MCP tool ``name`` and return its text content; raise FusionError on error."""
         res = self._rpc("tools/call", {"name": name, "arguments": args or {}}, timeout)
         text = "\n".join(c.get("text", "") for c in res.get("content", []) if c.get("type") == "text")
         if res.get("isError"):

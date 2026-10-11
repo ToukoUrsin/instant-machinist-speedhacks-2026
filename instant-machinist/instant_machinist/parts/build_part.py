@@ -39,6 +39,7 @@ def _rounded_rect_solid(cx, cy, w, h, r, z_bottom, z_top, extra_top=0.0):
 
 
 def build_model(feat: dict) -> cq.Workplane:
+    """CadQuery solid of the part: profile block minus pockets and holes."""
     prof = next(f for f in feat["features"] if f["type"] == "profile")
     rc = prof["rect"]
     body = _rounded_rect_solid(rc["cx"], rc["cy"], rc["w"], rc["h"], rc["r"], prof["z_bottom"], prof["z_top"])
@@ -148,6 +149,7 @@ def render_iso(mesh: trimesh.Trimesh, width_px: int, height_px: int, ss: int = 2
 
 
 def save_preview(mesh, path: Path, size=1600):
+    """Render an isometric preview PNG of the mesh."""
     w, h = size, int(size * 0.75)
     rgba, segs = render_iso(mesh, w, h, ss=2)
     fig = plt.figure(figsize=(w / 100, h / 100), dpi=100)
@@ -167,16 +169,20 @@ K = "black"
 
 
 class Sheet:
+    """Drawing-sheet helper for lines, text, arrows and shapes on a matplotlib axis (mm)."""
     def __init__(self, ax):
         self.ax = ax
 
     def line(self, x0, y0, x1, y1, lw=THIN, ls="-", color=K, z=3):
+        """Draw a line."""
         self.ax.plot([x0, x1], [y0, y1], color=color, lw=lw, ls=ls, solid_capstyle="butt", zorder=z)
 
     def chain(self, x0, y0, x1, y1):
+        """Draw a chain (centre) line."""
         self.ax.plot([x0, x1], [y0, y1], color=K, lw=THIN * 0.9, dashes=(9, 2.5, 2, 2.5), zorder=2)
 
     def text(self, x, y, s, size=FS, ha="center", va="center", rot=0, weight="normal", bg=False, **kw):
+        """Draw text, optionally on a white background."""
         t = self.ax.text(x, y, s, fontsize=size, ha=ha, va=va, rotation=rot, weight=weight,
                          family="DejaVu Sans", zorder=6, **kw)
         if bg:
@@ -184,6 +190,7 @@ class Sheet:
         return t
 
     def arrow(self, tip, direction, length=3.2, width=1.05):
+        """Draw a filled dimension arrowhead at ``tip`` pointing along ``direction``."""
         d = np.asarray(direction, float); d /= np.linalg.norm(d)
         nrm = np.array([-d[1], d[0]])
         tip = np.asarray(tip, float)
@@ -227,6 +234,7 @@ class Sheet:
                   linespacing=1.35)
 
     def rrect(self, cx, cy, w, h, r, lw=THICK):
+        """Draw a rounded rectangle outline."""
         x0, x1, y0, y1 = cx - w / 2, cx + w / 2, cy - h / 2, cy + h / 2
         if r > 0:
             self.line(x0 + r, y0, x1 - r, y0, lw); self.line(x0 + r, y1, x1 - r, y1, lw)
@@ -237,12 +245,14 @@ class Sheet:
             self.ax.add_patch(Polygon([(x0, y0), (x1, y0), (x1, y1), (x0, y1)], fill=False, lw=lw, ec=K, zorder=3))
 
     def circle(self, x, y, r, lw=THICK, cm=True):
+        """Draw a circle, with centre marks when ``cm``."""
         self.ax.add_patch(Circle((x, y), r, fill=False, ec=K, lw=lw, zorder=3))
         if cm:
             e = r + 2.5
             self.chain(x - e, y, x + e, y); self.chain(x, y - e, x, y + e)
 
     def hatch_rect(self, x0, y0, x1, y1, pitch=2.2):
+        """Fill a rectangle with 45° section hatching."""
         segs = []
         for c in np.arange(x0 - (y1 - y0), x1 + pitch, pitch):  # lines y - y0 = x - c
             xa, xb = max(c, x0), min(c + (y1 - y0), x1)
@@ -256,6 +266,7 @@ class Sheet:
 
 
 def make_drawing(feat: dict, mesh: trimesh.Trimesh, out_png: Path, out_pdf: Path, volume_mm3: float):
+    """Draw the ANSI B customer drawing (views, dimensions, title block) to PNG and PDF."""
     SW, SH = 431.8, 279.4  # ANSI B landscape, mm
     fig = plt.figure(figsize=(SW / 25.4, SH / 25.4))
     ax = fig.add_axes([0, 0, 1, 1])
@@ -436,8 +447,10 @@ def make_drawing(feat: dict, mesh: trimesh.Trimesh, out_png: Path, out_pdf: Path
     # ------------------------------------------------------------------ title block (bottom-right)
     x0, x1, y0, y1 = 252.0, SW - m, m, 60.0
     def box(a, b, c, d, lw=0.8):
+        """Draw a title-block box."""
         S.ax.add_patch(Polygon([(a, b), (c, b), (c, d), (a, d)], fill=False, lw=lw, ec=K, zorder=4))
     def cell(a, b, c, d, label, value, vsize=8.5, vweight="normal"):
+        """Draw a title-block cell with label and value."""
         box(a, b, c, d)
         S.text(a + 1.2, d - 1.2, label, size=5.2, ha="left", va="top", color="#333")
         S.text((a + c) / 2 if vsize > 9 else a + 1.6, b + (d - b) * 0.38, value, size=vsize,
@@ -505,6 +518,7 @@ def make_drawing(feat: dict, mesh: trimesh.Trimesh, out_png: Path, out_pdf: Path
 
 
 def main(part_dir: str) -> None:
+    """Build part.step/stl, preview and drawing for a part dir; print a JSON summary."""
     d = Path(part_dir)
     feat = json.loads((d / "features.json").read_text())
     model = build_model(feat)

@@ -13,7 +13,6 @@ Demo suppliers are **fictional counters played by Dial inbound agents** on our o
 - `dial_api.py` minimal REST client (`/api/v1/numbers`, `/calls`, `/account`, `/billing`).
 - `personas.py` supplier inbound instructions (stock list, prices, cut charges, lead times, quote-number format).
 - `setup_lines.py` idempotent: names the shop line, buys/updates one number per supplier persona, writes `lines.json`.
-- `signup.py` REST signup used once (email OTP + phone OTP + coupon); pipes the API key into the environment.
 - `evidence/<slug>/` per run: `gap.json`, `outbound_instruction.txt`, `<line>.call.json` (metadata, numbers masked),
   `<line>.transcript.json` (timed turns), `<line>.quote.json`, `summary.json`.
   plus `<line>.recording.mp3` (Dial call recording via `GET /api/v1/calls/{id}/recording`).

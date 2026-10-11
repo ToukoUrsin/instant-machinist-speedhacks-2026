@@ -22,6 +22,10 @@ from .stock import Grid
 
 @dataclass
 class Target:
+    """Finished-part height maps on the stock grid.
+
+    ``top`` is the max allowed height (leftover check), ``floor`` the min (gouge check, -inf where open).
+    """
     top: np.ndarray
     floor: np.ndarray
     source: str
@@ -29,12 +33,14 @@ class Target:
     feature_ids: list | None = None
 
     def feature_at(self, iy: int, ix: int):
+        """Feature id defining ``top`` at cell ``(iy, ix)``, or None without labels."""
         if self.label is None or self.feature_ids is None:
             return None
         return self.feature_ids[int(self.label[iy, ix])]
 
 
 def rounded_rect_mask(X, Y, cx, cy, w, h, r=0.0):
+    """Boolean mask of points inside a rounded rectangle (centre, width, height, corner radius r)."""
     r = max(0.0, min(r, w / 2, h / 2))
     ax, ay = np.abs(X - cx), np.abs(Y - cy)
     ex, ey = ax - (w / 2 - r), ay - (h / 2 - r)
@@ -44,6 +50,7 @@ def rounded_rect_mask(X, Y, cx, cy, w, h, r=0.0):
 
 
 def shape_mask(X, Y, f: dict) -> np.ndarray:
+    """Boolean mask of a feature's rect, circle or polygon outline over grid ``X, Y``."""
     if "rect" in f:
         q = f["rect"]
         return rounded_rect_mask(X, Y, q.get("cx", 0.0), q.get("cy", 0.0), q["w"], q["h"], q.get("r", 0.0))
@@ -59,6 +66,7 @@ def shape_mask(X, Y, f: dict) -> np.ndarray:
 
 
 def from_features(feats: dict, grid: Grid) -> Target:
+    """Build the Target from ``features.json`` (face, profile, pockets, holes) on ``grid``."""
     X, Y = grid.mesh()
     stock_top = feats["stock"]["z"][1]
     zmin = feats.get("part_bbox", {}).get("z", [feats["stock"]["z"][0], 0])[0]
@@ -72,6 +80,7 @@ def from_features(feats: dict, grid: Grid) -> Target:
         top[:] = min(f["z"] for f in face)
 
     def through(f):
+        """True if feature ``f`` cuts through the part bottom."""
         return bool(f.get("through")) or f.get("z_bottom", 0) <= zmin + 1e-6
 
     for f in feats["features"]:
@@ -135,6 +144,7 @@ def from_stl(stl_path, feats: dict, grid: Grid) -> Target:
 
 
 def load_target(part_dir, grid: Grid, mode: str = "features") -> Target:
+    """Load the Target for a part dir from features.json, or from part.stl in 'stl'/'auto' mode."""
     part_dir = Path(part_dir)
     feats = json.loads((part_dir / "features.json").read_text())
     stl = part_dir / "part.stl"

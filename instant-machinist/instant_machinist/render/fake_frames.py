@@ -40,12 +40,15 @@ def build_program():
     cur = None
 
     def change(tid):
+        """Add a tool change."""
         moves.append((tid, "change", None, 0.0))
 
     def rapid(tid, x, y, z):
+        """Add a rapid move."""
         moves.append((tid, "rapid", (x, y, z), RAPID_MM_MIN))
 
     def feed(tid, x, y, z, f):
+        """Add a feed move at ``f`` mm/min."""
         moves.append((tid, "feed", (x, y, z), f))
 
     # T1 face mill: zig-zag along X, 3 passes
@@ -123,6 +126,7 @@ def _kernel(tool_id, cell):
 
 
 def main(argv=None):
+    """CLI entry point: write synthetic sim frames for renderer development."""
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--out", default="out/fake/sim")
     ap.add_argument("--frames", type=int, default=360)

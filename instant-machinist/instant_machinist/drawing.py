@@ -13,6 +13,7 @@ MODEL = "claude-opus-5-5"
 
 
 class Rect(BaseModel):
+    """Rounded rectangle: centre, width, height and corner radius, in drawing units."""
     cx: float
     cy: float
     w: float
@@ -21,6 +22,7 @@ class Rect(BaseModel):
 
 
 class Feature(BaseModel):
+    """One machinable feature read from the drawing (face, profile, pocket or hole)."""
     id: str
     type: Literal["face", "profile", "pocket", "hole"]
     z: Optional[float] = None
@@ -34,6 +36,7 @@ class Feature(BaseModel):
 
 
 class Spec(BaseModel):
+    """Structured spec extracted from a customer drawing."""
     part_number: str
     name: str
     material: str
@@ -56,6 +59,7 @@ Put anything a machinist must know (tolerances, finish, edge breaks) in notes, a
 
 
 def read_drawing(path: Path) -> Spec:
+    """Read a PDF/PNG/JPEG/WEBP drawing with Claude and return the structured ``Spec``."""
     path = Path(path)
     data = base64.standard_b64encode(path.read_bytes()).decode()
     suffix = path.suffix.lower()
@@ -160,6 +164,7 @@ def spec_to_features(spec: Spec | dict, stock_margin_mm: float = 2.0,
     profile = next(f for f in fs if f["type"] == "profile")
 
     def rect_mm(r: dict) -> dict:
+        """Rect fields converted to mm."""
         return {k: float(r[k]) * scale for k in ("cx", "cy", "w", "h", "r")}
 
     converted = []
@@ -223,6 +228,7 @@ def write_feature_model(spec: Spec | dict, path: Path, **kwargs) -> dict:
 def compare(spec: Spec, truth: dict) -> list[str]:
     """Differences between the extracted spec and a reference features.json (used in tests and the demo log)."""
     def key(t, rect, d, zb, pos):
+        """Rounded comparison key for a feature (type, rect, diameter, bottom Z, positions)."""
         r = tuple(round(float(rect[k]), 2) for k in ("cx", "cy", "w", "h", "r")) if rect else None
         p = tuple(sorted((round(float(x), 2), round(float(y), 2)) for x, y in pos)) if pos else None
         return (t, r, round(float(d), 2) if d else None, round(float(zb), 2) if zb is not None else None, p)

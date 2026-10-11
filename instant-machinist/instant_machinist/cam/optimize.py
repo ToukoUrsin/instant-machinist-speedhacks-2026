@@ -24,6 +24,7 @@ BASELINE_PARAMS = {
 
 
 def variants() -> list[dict]:
+    """Roughing parameter variants to try: adaptive stepover/depth sweeps plus two conventional baselines."""
     out = []
     for so in (0.25, 0.35, 0.45):
         for ap in (2.0, 1.0):
@@ -68,6 +69,7 @@ def score(nc: str, ops: list[dict], tools_doc: dict, part: dict, part_dir: Path 
 
 
 def build(part: dict, tools_doc: dict, params: dict) -> tuple[list[dict], str]:
+    """Plan operations with ``params`` and post them; return ``(ops, nc_text)``."""
     ops = plan_setup(part, tools_doc, params)
     nc = post(ops, tools_doc, part)
     return ops, nc

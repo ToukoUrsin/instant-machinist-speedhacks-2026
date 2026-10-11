@@ -6,6 +6,7 @@ TOOL_NAMES = {"face_mill": "FACE MILL", "flat": "FLAT END MILL", "ball": "BALL E
 
 
 def num(v: float) -> str:
+    """Format a coordinate for Haas NC (3 decimals, trailing zeros stripped)."""
     s = f"{v:.3f}".rstrip("0")
     return "0." if s in ("-0.", "0.", ".") else s
 
@@ -16,6 +17,7 @@ def _clean(text: str) -> str:
 
 def post(ops: list[dict], tools_doc: dict, part: dict, program: int = 1001, setup_name: str = "SETUP 1 TOP",
          clearance_z: float = 25.0) -> str:
+    """Post operations to a Haas VF-2 NC program (G54 top centre, Z0 finished top); return the NC text."""
     tools = tools_doc["tools"]
     L: list[str] = ["%", f"O{program:05d} ({_clean(part.get('part_number', 'PART'))} {setup_name})"]
     L.append(f"({_clean(part.get('name', ''))} - {_clean(part.get('material', ''))})")
@@ -40,6 +42,7 @@ def post(ops: list[dict], tools_doc: dict, part: dict, program: int = 1001, setu
     pos = [None, None, None]
 
     def motion(g: int, x=None, y=None, z=None, f=None):
+        """Write a modal G0/G1 line with only changed axes and feed."""
         coords = []
         for i, (k, v) in enumerate((("X", x), ("Y", y), ("Z", z))):
             if v is not None and (pos[i] is None or abs(v - pos[i]) > 5e-4):

@@ -8,6 +8,7 @@ TS = Path(__file__).parent / "ts"
 
 
 def script(*modules: str, call: str, **consts) -> str:
+    """Assemble a Fusion TypeScript script from common.ts, ``consts`` and modules, returning ``call``'s result as JSON."""
     parts = [(TS / "common.ts").read_text()]
     for name, val in consts.items():
         parts.append(f"const {name}: any = {json.dumps(val)};")

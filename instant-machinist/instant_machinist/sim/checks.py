@@ -25,6 +25,11 @@ MAX_EVENTS = 50
 
 
 class Checker:
+    """Collects verification findings while the toolpath is swept through the stock.
+
+    Tracks fixture/vise crashes, envelope collisions, rapids into stock, flat plunges,
+    flute length, gouges and leftover against the target. Lengths are in mm.
+    """
     def __init__(self, feats: dict, stock: Stock, target: Target, tools: dict[int, Tool], tp: Toolpath,
                  gouge_tol: float = 0.02, leftover_tol: float | None = None, plunge_depth: float = 0.5,
                  vise_grip: float = 6.0, jaw_axis: str = "y", fixture_mode: str = "jaws",
@@ -150,6 +155,9 @@ class Checker:
                       envelope_low_z=round(low, 3), material_top=float(h[iy, ix]))
 
     def pre_segment(self, i: int, p0, p1, kind: int, tool: Tool | None):
+        """Check segment ``i`` (p0 -> p1) before it cuts: tool envelope, fixture/vise and
+        other geometric checks. Tool changes, dwells and moves without a tool are skipped.
+        """
         if kind in (TOOLCHANGE, DWELL) or tool is None:
             return
         self._envelope_collision(i, p0, p1, tool)
@@ -192,6 +200,10 @@ class Checker:
                                   depth_into_material=depth)
 
     def on_cut(self, i: int, kind: int, tool: Tool, p0, p1, res):
+        """Record cut results for segment ``i``: first gouge segment per cell and rapids that remove stock.
+
+        ``res`` is the stock sweep result ``(iy0, iy1, ix0, ix1, old, new)``.
+        """
         iy0, iy1, ix0, ix1, old, new = res
         removed = old - new
         rmax = float(removed.max())
@@ -216,6 +228,10 @@ class Checker:
 
     # ----------------------------------------------------------- final
     def finalize(self) -> tuple[dict, np.ndarray, np.ndarray]:
+        """Build the final checks dict after all segments.
+
+        Returns ``(checks, gouge_mask, leftover_mask)``; masks are boolean grids over the stock.
+        """
         h, g = self.stock.h, self.stock.grid
         b = int(math.ceil(self.xy_tol / g.cell - 1e-9))
         size = 2 * b + 1
