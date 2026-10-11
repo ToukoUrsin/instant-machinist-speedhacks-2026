@@ -4,7 +4,7 @@
 We used it to run many agents at once in one workspace: the CAM build thread, a Codex simulator swarm, the demo threads and five parallel sponsor agents.
 
 ## Setup (done 2026-10-11)
-- Account: shop@example.com. Credentials come from environment variables.
+- Account: the team's Alike workspace. Credentials come from environment variables.
 - Machine `the build server` paired at 13:34 PDT with `npx @alikeai/setup --doctor`, which resumed pairing and approved it in a headless browser. The Claude Code and Codex hooks were already wired; nothing was rewired.
 - Codex MCP OAuth: `codex mcp login alike`, approved headlessly. `codex mcp list` shows `alike … OAuth`.
 - Capture scope: `~/.alike/ignore` lists `path:` rules that keep other `~/work` projects local. The `credentials.json` history floor is `2026-10-11T15:00Z`, so only today's hackathon sessions go to Alike.

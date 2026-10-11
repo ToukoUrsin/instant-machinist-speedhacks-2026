@@ -6,13 +6,10 @@ Everything is read-only. The script never calls quote, order, checkout or contac
 
 ## Run (from `integrations/`)
 ```bash
-export XDG_RUNTIME_DIR=/run/user/1000
 # primary demo part (NIST FTC-10, 1 blank short)
-\
-  python3 darwin/find_sources.py ../instant-machinist/parts/ftc-10/features.json --slug ftc-10 --part-mass-kg 0.51
+python3 darwin/find_sources.py ../instant-machinist/parts/ftc-10/features.json --slug ftc-10 --part-mass-kg 0.51
 # second run (SM-101, 25 blanks short, tool list read from the posted program)
-\
-  python3 darwin/find_sources.py ../instant-machinist/out/demo-native/spec.json --slug sm-101
+python3 darwin/find_sources.py ../instant-machinist/out/demo-native/spec.json --slug sm-101
 python3 darwin/segment_data.py ftc-10        # compact data
 python3 darwin/explore.py   # broad machine-shop coverage scan
 ```

@@ -31,6 +31,6 @@ rm -rf build && mkdir build
 cp seg/ui.mp4 seg/end.mp4 build/; cp "$REPO/$SIM" build/sim.mp4; cp vo/solution.mp3 vo/result.mp3 music/bed.mp3 build/
 cp "$REPO/demo/assemble.sh" build/
 cd build
-drun -- env X1=$X1 VO2=$VO2 CUT=$CUT SIMD=$SIMD bash assemble.sh
+env X1=$X1 VO2=$VO2 CUT=$CUT SIMD=$SIMD bash assemble.sh
 cp product-segment.mp4 product-segment-novo.mp4 ..; cp ui-export.mp4 ../ui.mp4
 for f in ../product-segment.mp4 ../product-segment-novo.mp4 ../ui.mp4; do echo "$f $(ffprobe -v error -show_entries format=duration -of csv=p=0 $f)"; done

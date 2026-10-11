@@ -18,7 +18,7 @@ The handoff is deterministic after drawing extraction:
 5. Native CAM consumes the same model and emits `1001.nc`; the simulator verifies
    that program with the existing report contract.
 
-The lead-owned `pipeline.py` remains unchanged. Its integration seam is to call
+The bridge ships as its own command (`im-drawing-cam`) and is not yet called by `pipeline.py`. The integration seam is to call
 `spec_to_features` after `read_drawing`, write `features.json` into a job-local
 part directory, invoke the existing CAD builder, and then run native or Fusion
 CAM. A model with unresolved questions should stay in review until the caller
@@ -27,4 +27,4 @@ resolves them; the converter never guesses a solid from incomplete geometry.
 The current schema covers the supported 2.5D primitives: outside profile,
 rounded-rectangle pocket, and drilled holes. Expanding to slots, counterbores,
 threads, GD&T, and 3D surfaces follows the same typed-feature contract and is
-tracked in `SIMULATOR-CRITERIA-FROM-CAD-CAM.md`.
+

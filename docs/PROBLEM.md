@@ -10,7 +10,7 @@ people who also quote and run the machines.
 | Fact | Number | Source |
 |---|---|---|
 | US machine shops (NAICS 332710) | **16,876**; 83 % have fewer than 20 people, 95 % fewer than 50 | 2022 Economic Census, cited in a16z, [*The Case for the American Manufacturing Asset Class*](https://a16z.com/the-case-for-the-american-manufacturing-asset-class/) (Oct 2026); cross-checked against [Census table ECNSIZE2022](https://data.census.gov/table/ECNSIZE2022.EC2200SIZEEMPFIRM) |
-| Programming one new part by hand | **4–8 hours** in a reported shop example; about 1–2 h for simple 3-axis parts; **weeks** for complex parts | [Modern Machine Shop, 2024](https://www.mmsonline.com/articles/automating-part-programming-cuts-the-time-to-engaging-work); [MMS / MSP Manufacturing, 2025](https://www.mmsonline.com/articles/video-transcript-programming-faster-and-winning-jobs-with-ai-cam-software) |
+| Programming one new part by hand | typically **1–4 hours**: about 1 h for a simple 3-axis part, 1–2 h in another shop, 4–8 h for a complex one; **weeks** for the most complex |  [CloudNC, 2023](https://www.cloudnc.com/blog/cam-assist-beta-feedback); [Modern Machine Shop, 2024](https://www.mmsonline.com/articles/automating-part-programming-cuts-the-time-to-engaging-work); [MMS / MSP Manufacturing, 2025](https://www.mmsonline.com/articles/video-transcript-programming-faster-and-winning-jobs-with-ai-cam-software) |
 | Machinists aged 55 or older | **31 %** (97k of 309k) | [BLS CPS Table 11b, 2025](https://www.bls.gov/cps/cpsaat11b.htm) |
 | Machinist and tool-and-die openings per year | **30,400**, almost all replacing retirees | [BLS Occupational Outlook Handbook](https://www.bls.gov/ooh/production/machinists-and-tool-and-die-makers.htm) |
 | Manufacturing jobs that could go unfilled by 2033 | **1.9 million** of 3.8 million needed | [Deloitte & The Manufacturing Institute, 2024](https://themanufacturinginstitute.org/manufacturers-need-as-many-as-3-8-million-new-employees-by-2033/) |
@@ -39,10 +39,10 @@ people who also quote and run the machines.
 
 | Per new part | Today | Instant Machinist (measured on NIST FTC-10 OP1) |
 |---|---|---|
-| Drawing review and questions for the customer | part of the 1–8 h | 28.5 s, 8 questions |
-| Programming, posting and verification | 1–8 h | **7 min 08 s** for 5 strategies, all simulated |
+| Drawing review and questions for the customer | part of the 1–4 h | 28.5 s, 8 questions |
+| Programming, posting and verification | 1–4 h per new part (≈1 h simple, 4–8 h complex) | **7 min 08 s** for OP1 (top side): 5 strategies, all simulated |
 | Machine time per part | cautious program: 1:49:46 | **26:42** (−76 %) |
-| Human time | the whole job | ≈ 20 min review and corrections |
+| Human time | the whole job | ≈ 20 min review and corrections *(assumption: 10 + 10 min)* |
 
 Method and every assumption: [instant-machinist/docs/TIME-SAVED.md](../instant-machinist/docs/TIME-SAVED.md).
 Problem slides: [problem-deck.pdf](problem-deck.pdf).

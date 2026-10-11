@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import base64
 import json
+import os
 import time
 import urllib.parse
 import urllib.request
@@ -11,7 +12,7 @@ from email.message import EmailMessage
 from pathlib import Path
 
 ADDRESS = "rfq@example.com"
-CREDS = Path.home() / ".config/workspace-mcp/credentials/shop-owner@example.com.json"
+CREDS = Path(os.environ.get("IM_GMAIL_CREDENTIALS", str(Path.home() / ".config/gmail/credentials.json")))  # OAuth token for the RFQ inbox
 API = "https://gmail.googleapis.com/gmail/v1/users/me"
 _tok = {"v": None, "exp": 0.0}
 

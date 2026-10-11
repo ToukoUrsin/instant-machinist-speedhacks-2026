@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Customer drawing in, verified CNC program out: Claude Opus 5.5 programs 2.5D parts in Autodesk Fusion (cloud) or in its own CAM engine, then proves every program in its own simulator."
 readme = "README.md"
 requires-python = ">=3.12"
-authors = [{ name = "the team Ursin", email = "shop@example.com" }]
+authors = [{ name = "Touko Ursin" }, { name = "Joel Jussila" }]
 keywords = ["cnc", "cam", "g-code", "machining", "simulation", "autodesk-fusion", "mcp", "claude"]
 classifiers = [
     "Programming Language :: Python :: 3.12",

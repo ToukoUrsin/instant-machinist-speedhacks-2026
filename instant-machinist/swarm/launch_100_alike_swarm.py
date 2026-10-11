@@ -204,8 +204,8 @@ If you make a decision, record it through Alike with the shared task anchor. The
         "decision_type": "one_time",
         "anchors": [
             {"kind": "entity", "label": "work_item", "ref": TASK_URN},
-            {"kind": "path", "label": "governs", "path": "instant_machinist/sim/", "repository": "ToukoUrsin/instant-machinist-speedhacks"},
-            {"kind": "path", "label": "run_record", "path": f"swarm/runs/{aid}/", "repository": "ToukoUrsin/instant-machinist-speedhacks"},
+            {"kind": "path", "label": "governs", "path": "instant_machinist/sim/", "repository": "ToukoUrsin/instant-machinist-speedhacks-2026"},
+            {"kind": "path", "label": "run_record", "path": f"swarm/runs/{aid}/", "repository": "ToukoUrsin/instant-machinist-speedhacks-2026"},
         ],
     })
     alike_post = run_cmd([ALİKE, "call", "record_decision", "--json", post_payload])
