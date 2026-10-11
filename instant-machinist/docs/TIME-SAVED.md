@@ -132,7 +132,15 @@ For one new SM-101-type job of 25 parts, Fusion path, at the 4 h end of the manu
 - Review (10 min) and corrections (10 min) are assumptions, budgeted the same for both parts.
 - Baselines are our estimate of a typical cautious manual program, built with the same CAM system so
   the comparison isolates strategy and feeds.
-- The published run numbers (run2, run3, native) were computed with the constant-feed cycle model those runs used: programmed feeds and per-axis rapids without acceleration. The simulator has since gained trapezoidal acceleration; under it every program takes longer (FTC-10 best program: 30:35 instead of 26:42), so the run tables are kept as recorded and the comparison between programs uses one model throughout.
+- The published run numbers (run2, run3, native) were computed with the constant-feed cycle model those runs used. The simulator now also models trapezoidal acceleration. Re-timing the five posted FTC-10 programs with [`scripts/retime.py`](../scripts/retime.py) reproduces the published times exactly under the constant-feed model, and under acceleration every program gets slower while the ranking and the saving hold:
+
+  | FTC-10 OP1 program | Constant feed (published) | With acceleration |
+  |---|---|---|
+  | Cautious manual-style baseline | 1:49:46 | 1:51:50 |
+  | Adaptive 1.5 mm load, 12 mm steps | 38:14 | 44:13 |
+  | Adaptive 2.5 mm, 12 mm | 34:30 | 39:37 |
+  | Adaptive 2.5 mm, 24 mm | 30:00 | 34:30 |
+  | **Adaptive 3.0 mm, 24 mm (chosen)** | **26:42 (−75.7 %)** | **30:35 (−72.7 %)** |
 - Machine setup (fixturing, tool touch-off, first-article inspection) is the same for both and not
   counted.
 - Feeds and speeds: the Fusion strategies use the feeds in `fusion/strategies.py`; the native engine

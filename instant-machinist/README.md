@@ -78,7 +78,7 @@ complete in one setup. Run outputs: [`docs/results/sm-101-fusion/`](docs/results
 Here the drawing read matched the reference spec exactly, and Fusion built the model from it. SM-101 is our own test part: its drawing is generated from `parts/sm-101/features.json`, which is also the reference the drawing read is checked against. FTC-10 is the third-party test: NIST's drawing and STEP, unchanged.
 
 Cycle times come from our simulator's model (programmed feeds, 25 m/min rapids, 4 s tool changes),
-applied to every program the same way. Each engine is compared with its own baseline. Details:
+applied to every program the same way. Each engine is compared with its own baseline. With the newer acceleration model the FTC-10 saving is 72.7 % (30:35 vs 1:51:50), same ranking. Details:
 [docs/TIME-SAVED.md](docs/TIME-SAVED.md).
 
 ## Time saved

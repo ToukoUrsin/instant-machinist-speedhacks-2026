@@ -34,7 +34,7 @@
   - Tool geometry slice: analytic bull/chamfer profiles with explicit metadata (made, recorded)
   - FTC-10 leftover check must ignore no-material STL cells (implemented, recorded)
   - Use the historical roadmap and machinist review checklist as the simulator quality bar (made, recorded)
-  - alike-100: audit highest-impact simulator improvement for reviewers (made, recorded)
+  - alike-100: audit highest-impact simulator improvement (made, recorded)
   - alike-099: audit test isolation and fixture hygiene (made, recorded)
   - alike-097: audit performance on sm-101 real input (made, recorded)
   - alike-096: audit simulator cancellation and timeout behavior (made, recorded)
