@@ -1,9 +1,0 @@
-{
-  "agent_id": "audit-08",
-  "item": "parser modal state",
-  "exit_code": 0,
-  "started_epoch": 1791750102.8750226,
-  "ended_epoch": 1791750215.4966502,
-  "wall_s": 112.62,
-  "transcript": "transcript.jsonl"
-}

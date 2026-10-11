@@ -1,9 +1,0 @@
-{
-  "agent_id": "audit-07",
-  "item": "parser comments checksums",
-  "exit_code": 0,
-  "started_epoch": 1791750068.6524098,
-  "ended_epoch": 1791750142.8620112,
-  "wall_s": 74.21,
-  "transcript": "transcript.jsonl"
-}

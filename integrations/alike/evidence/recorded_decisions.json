@@ -1,6 +1,6 @@
 [
   {
-    "title": "Sponsor code stays isolated in sponsors/; core instant-machinist/ is read-only for sponsor agents",
+    "title": "Sponsor code stays isolated in integrations/; core instant-machinist/ is read-only for sponsor agents",
     "urn": "urn:alike:decision:d2ccd37be9b4160247fa9695f8590378a7383fa125b3c91087b4dde102110ab2",
     "ok": true
   },

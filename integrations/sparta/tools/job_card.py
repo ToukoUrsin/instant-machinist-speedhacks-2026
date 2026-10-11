@@ -16,7 +16,7 @@ import re
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))  # sponsors/
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))  # integrations/
 from shop.material_gap import gap, INV  # noqa: E402
 
 

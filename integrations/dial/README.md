@@ -30,7 +30,7 @@ Demo suppliers are **fictional counters played by Dial inbound agents** on our o
 ## Run
 ```bash
 export XDG_RUNTIME_DIR=/run/user/1000
-cd sponsors
+cd integrations
 python3 dial/setup_lines.py            # once (already done)
 python3 dial/source_call.py ../instant-machinist/parts/ftc-10/features.json --dry-run   # show the agent prompt
 \

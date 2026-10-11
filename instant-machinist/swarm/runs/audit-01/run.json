@@ -1,9 +1,0 @@
-{
-  "agent_id": "audit-01",
-  "item": "parser G41/G42 cutter compensation semantics",
-  "exit_code": 0,
-  "started_epoch": 1791750012.1809592,
-  "ended_epoch": 1791750062.2743926,
-  "wall_s": 50.09,
-  "transcript": "transcript.jsonl"
-}

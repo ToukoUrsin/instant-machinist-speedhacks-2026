@@ -1,9 +1,0 @@
-{
-  "agent_id": "audit-03",
-  "item": "parser G68 rotation",
-  "exit_code": 0,
-  "started_epoch": 1791750012.1810243,
-  "ended_epoch": 1791750102.8746536,
-  "wall_s": 90.69,
-  "transcript": "transcript.jsonl"
-}

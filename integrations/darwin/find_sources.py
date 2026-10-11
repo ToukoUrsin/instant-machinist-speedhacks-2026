@@ -4,7 +4,7 @@ CAM job spec -> what the shop is missing (stock, tools, finishing, overflow capa
 -> Darwin Search finds agents for each need -> resolve each agent's MCP endpoint -> read-only live probe
 -> Claude Opus ranks the options for this job -> sourcing plan JSON + typed events.
 
-Usage (from sponsors/):
+Usage (from integrations/):
   python3 -m darwin.find_sources ../instant-machinist/parts/ftc-10/features.json
   options: --slug ftc-10  --nc path/to/program.nc  --no-probe  --no-llm
 Optional DARWIN_API_KEY (Search key); without it Darwin Search runs at the anonymous limit.

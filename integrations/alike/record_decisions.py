@@ -1,4 +1,4 @@
-"""Record the team's real 2026-10-11 decisions (from ../../DECISIONS.md and sponsors/README.md) in Alike.
+"""Record the team's real 2026-10-11 decisions (from ../../DECISIONS.md and integrations/README.md) in Alike.
 Run once; writes evidence/recorded_decisions.json (titles + URNs only)."""
 import json
 from pathlib import Path
@@ -15,11 +15,11 @@ def mp(path):
 WI = {"kind": "entity", "label": "work_item", "ref": WORK_ITEM}
 
 DECISIONS = [
-    dict(title="Sponsor code stays isolated in sponsors/; core instant-machinist/ is read-only for sponsor agents",
-         outcome="Each sponsor agent writes only sponsors/<sponsor>/ (own README, SEGMENT.md, evidence/); sponsor code only reads core outputs (out/<run>/spec.json, events.jsonl, summary.json). shared sponsors/shop/ is changed only by the orchestrator. Credentials come from environment variables.",
+    dict(title="Sponsor code stays isolated in integrations/; core instant-machinist/ is read-only for sponsor agents",
+         outcome="Each sponsor agent writes only integrations/<sponsor>/ (own README, SEGMENT.md, evidence/); sponsor code only reads core outputs (out/<run>/spec.json, events.jsonl, summary.json). shared integrations/shop/ is changed only by the orchestrator. Credentials come from environment variables.",
          rationale="the team: 'go all in on all, using sub agents make sure they don't bloat the actual project.' Five sponsor agents run in parallel with the core CAM build thread; this keeps them from colliding with core code or each other.",
          decision_type="standing",
-         anchors=[WI, mp("sponsors/"), mp("instant-machinist/")]),
+         anchors=[WI, mp("integrations/"), mp("instant-machinist/")]),
     dict(title="CAM runs through Autodesk Fusion Compute MCP (cloud, headless)",
          outcome="Fusion Compute MCP generates setups, toolpaths and posted NC; own 2.5D CAM + simulator is the second path.",
          rationale="the team: 'I think with Fusion the videos are going to look better.'",
@@ -31,7 +31,7 @@ DECISIONS = [
     dict(title="Video sponsor minute = Darwin + Keewano; Dial is repo/backup",
          outcome="Last minute of the 3-min video shows Darwin and Keewano. Extra-award own work: Darwin Search in the material step and the Sparta-tested deposit-invoice agent. Dial drops to repo/backup.",
          rationale="the team picked the two most competitive sponsor segments after all five were checked; Dial was the earlier front-runner.",
-         anchors=[WI, mp("sponsors/"), mp("demo/")]),
+         anchors=[WI, mp("integrations/"), mp("demo/")]),
     dict(title="Demo video structure: 3 min = problem deck, product, sponsors",
          outcome="~1 min problem as a slide deck spoken by the team or Joel (a16z article stats), product segment 1:00-2:00 (drawing in, programming sped up, G-code, simulation video; two time saves: programming ~4 h to minutes and shorter machining time), last minute two sponsors. Don't explain tool choices.",
          rationale="the team: 'I think that's going to look better than a film' (deck), 'the last minute should be dedicated fully to the two sponsors', 'use a16z article as a source in the a16z hackathon'.",

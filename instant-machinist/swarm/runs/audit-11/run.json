@@ -1,9 +1,0 @@
-{
-  "agent_id": "audit-11",
-  "item": "stock finer cell accuracy",
-  "exit_code": 0,
-  "started_epoch": 1791750215.4968934,
-  "ended_epoch": 1791750350.257394,
-  "wall_s": 134.76,
-  "transcript": "transcript.jsonl"
-}

@@ -1,6 +1,0 @@
-render: Daytona, exit 0, 2026-10-11 16:06 PDT
-segment-20s.mp4: 20.000 s, H.264, 1920x1080, sha256 68570a397e18ac8aa9c1388d6f681c3b1cf0e51c8c4a713f57fb074efdcac66f
-overlay-10s-alpha.webm: 10.000 s, VP9 alpha, 1920x1080, sha256 281d156d9ef31c36ec740660aa549bb22c903c1c2eae7a571af7fedcdc6c879e
-overlay-10s.mp4: 10.000 s, H.264, 1920x1080, sha256 111675f9e149a3084f70c83c3f53c5e072d5a4399c2b07cb681a3a7e2f933bb0
-stats refresh: Alike MCP and local injection tee succeeded; 30 decisions, 127 pointer blocks, 41 peak active window
-visual check: frames at 14 timestamps, including all scene transitions and closing card

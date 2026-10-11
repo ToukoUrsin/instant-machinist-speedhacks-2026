@@ -1,9 +1,0 @@
-{
-  "agent_id": "audit-21",
-  "item": "checks rapid into stock",
-  "exit_code": 0,
-  "started_epoch": 1791750420.5060244,
-  "ended_epoch": 1791750528.649579,
-  "wall_s": 108.14,
-  "transcript": "transcript.jsonl"
-}

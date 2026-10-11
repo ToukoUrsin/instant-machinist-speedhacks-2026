@@ -1,6 +1,7 @@
 """Program a part in cloud Fusion: model from the spec, try strategy variants, post Haas NC for each."""
 from __future__ import annotations
 
+import os
 import json
 from pathlib import Path
 
@@ -8,7 +9,7 @@ from ..events import Events
 from .build import script
 from .session import FusionSession
 
-DEFAULT_FOLDER = "urn:adsk.wipprod:fs.folder:co._VAyIB-zTLCsUy0QDFnBTA"  # Fusion Team: helios / Default Project
+DEFAULT_FOLDER = os.environ.get("IM_FUSION_FOLDER", "")  # Fusion Team folder URN for saved documents
 
 
 def sim_tools(table: dict) -> dict:
@@ -108,7 +109,10 @@ class FusionProgrammer:
         return d
 
     def save(self, name: str, folder_urn: str = DEFAULT_FOLDER) -> str:
-        """Save the document to Fusion Team as ``name`` in ``folder_urn``."""
+        """Save the document to Fusion Team as ``name`` in ``folder_urn`` (set ``IM_FUSION_FOLDER``)."""
+        if not folder_urn:
+            self.ev.emit("fusion", "IM_FUSION_FOLDER not set: Fusion document kept in the session, not saved to Fusion Team")
+            return {}
         r = self.fs.invoke("MCP.Documents", {"mode": "saveAs", "name": name, "targetFolderUrn": folder_urn,
                                              "description": "Programmed by Instant Machinist"})
         self.ev.emit("fusion", f"Saved editable Fusion file '{name}' to Fusion Team")

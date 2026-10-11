@@ -1,9 +1,0 @@
-{
-  "agent_id": "audit-06",
-  "item": "parser R arc edge cases",
-  "exit_code": 124,
-  "started_epoch": 1791750067.3629982,
-  "ended_epoch": 1791750217.3855832,
-  "wall_s": 150.02,
-  "transcript": "transcript.jsonl"
-}

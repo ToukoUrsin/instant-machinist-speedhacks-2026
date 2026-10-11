@@ -9,15 +9,15 @@ own simulator, and keeps the fastest program that passes every safety check.
 
 | NIST FTC-10 housing, OP1 (214 faces, 5-page GD&T drawing) | |
 |---|---|
-| Drawing + STEP → verified Haas G-code + editable Fusion file | **7 min 08 s** (vs 1–4 h by hand) |
+| Drawing + STEP → OP1 (top side) programmed, verified, posted to Haas G-code, saved as an editable Fusion file | **7 min 08 s** (a new part takes 1–4 h by hand; [sources](docs/PROBLEM.md)) |
 | Best cycle time vs a cautious manual-style program | **26:42 vs 1:49:46 (−76 %)** |
-| Safety checks on the winning program | 0 gouges · 0 rapids into stock · 0 fixture hits |
-| Manual-style baseline | **caught**: 6 rapid moves into stock |
+| Safety checks on the winning program | 0 gouges · 0 rapids into stock · 0 fixture hits · 3 short plunges flagged for review |
+| Cautious manual-style program (same operations, book feeds) | rejected by the verifier: 6 rapid moves into stock |
 | Drawing problems flagged for the customer | 8 questions, e.g. missing material, `M3x0.5-6g` external thread class on holes |
 
 ![Verified FTC-10 simulation](instant-machinist/docs/img/ftc-10-sim-final.jpg)
 
-**Videos:** [problem (60 s)](media/problem-60s.mp4) · [product demo](media/product-demo.mp4) · [simulation of the verified program](instant-machinist/docs/results/ftc-10/run3/simulation.mp4) · [shop-floor integrations](media/integrations-minute.mp4)
+**[▶ Demo video (3 min)](media/demo.mp4)** · Parts: [problem (60 s)](media/problem-60s.mp4) · [product demo](media/product-demo.mp4) · [simulation of the verified program](instant-machinist/docs/results/ftc-10/run3/simulation.mp4) · [shop-floor integrations](media/integrations-minute.mp4)
 
 ## What's in this repository
 

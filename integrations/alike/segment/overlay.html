@@ -42,7 +42,7 @@ $('spark').innerHTML = S.map(s => { const h = Math.max(2, s.n / yMax * (H - 26))
   `<text x="0" y="${H - 2}" font-size="15" fill="#6b7280" font-family="Inter,Arial">${S[0].t}</text><text x="${W}" y="${H - 2}" text-anchor="end" font-size="15" fill="#6b7280" font-family="Inter,Arial">${S[S.length - 1].t} PDT</text>`;
 $('p1s').innerHTML = `<b>${D.peak.by.codex || 0} Codex · ${D.peak.by.claude || 0} Claude Code</b> · seen by Alike at ${D.peak.at} PDT`;
 $('p2a').textContent = `${D.m1.at} PDT · ${D.m1.tool} ${D.m1.path}`;
-$('p2b').innerHTML = `Alike told the Sparta agent: <mark>“Keep sponsor-specific code under sponsors/”</mark>`;
+$('p2b').innerHTML = `Alike told the Sparta agent: <mark>“Keep sponsor-specific code under integrations/”</mark>`;
 $('p2c').textContent = 'Five sponsor agents built in parallel, each in its own folder.';
 $('p3a').innerHTML = `<span class="n">${D.sessions_today}</span> agent sessions today`;
 $('p3b').innerHTML = `<b>${D.decisions} decisions shared</b> · ${D.agent_hours} agent-hours · Alike analytics`;

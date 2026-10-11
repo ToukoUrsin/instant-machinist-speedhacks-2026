@@ -1,7 +1,7 @@
 """Summarize Sparta evidence into a results table and typed sponsor events.
 
     python3 sparta/tools/summarize.py            # prints the markdown table
-    python3 sparta/tools/summarize.py --events   # also writes sponsors/out/<slug>/sparta.events.jsonl
+    python3 sparta/tools/summarize.py --events   # also writes integrations/out/<slug>/sparta.events.jsonl
 
 Reads only sanitized evidence (evidence/*.json) and agent traces (evidence/traces/*.jsonl).
 """

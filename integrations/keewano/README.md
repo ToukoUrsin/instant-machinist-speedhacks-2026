@@ -1,9 +1,9 @@
 # Keewano: the shop's memory, and the agent that plans from it
 
-**Keewano project: `Instant Machinist Shop Floor`** (id `3c71f27a-eb5c-4a7d-ac74-6cab42e77661`, org Helios One, signed up
+**Keewano project: `Instant Machinist Shop Floor`** (id `3c71f27a-eb5c-4a7d-ac74-6cab42e77661`, org , signed up
 as shop@example.com; `#SpeedHacks` unlock sent in the in-app chat on 2026-10-11).
 
-Every CAM job (drawing in, verified G-code out) and every sponsor agent step around the order (Darwin sourcing, Dial supplier
+Every CAM job (drawing in, verified G-code out) and every integration step around the order (Darwin sourcing, Dial supplier
 calls and quotes, Sparta deposit-invoice tests) becomes small typed Keewano events. **Shop Brain** (Claude Opus 5.5) has no
 memory of its own. It answers shop questions and plans the next job only from live Keewano SQL (through the Keewano MCP server),
 then writes its decision back to Keewano. Remove Keewano and Shop Brain cannot rank strategies, pick a supplier or name the

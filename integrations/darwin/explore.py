@@ -1,5 +1,5 @@
 """Broad Darwin coverage scan for machine-shop needs (read-only). Writes evidence/explore.json.
-Usage (from sponsors/): python3 darwin/explore.py"""
+Usage (from integrations/): python3 darwin/explore.py"""
 import json, os, sys, time, urllib.error
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))

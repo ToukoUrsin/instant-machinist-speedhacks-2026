@@ -5,7 +5,7 @@
  "baseline": {
   "strategy": "baseline",
   "label": "baseline",
-  "dir": "sponsors/keewano/runs/sm-107-agent-212030/native/baseline",
+  "dir": "integrations/keewano/runs/sm-107-agent-212030/native/baseline",
   "cycle_s": 1149.68,
   "pass": true,
   "baseline": true
@@ -13,7 +13,7 @@
  "best": {
   "strategy": "native",
   "label": "native",
-  "dir": "sponsors/keewano/runs/sm-107-agent-212030/native/native",
+  "dir": "integrations/keewano/runs/sm-107-agent-212030/native/native",
   "cycle_s": 167.99,
   "pass": true,
   "baseline": false
@@ -22,7 +22,7 @@
   {
    "strategy": "baseline",
    "label": "baseline",
-   "dir": "sponsors/keewano/runs/sm-107-agent-212030/native/baseline",
+   "dir": "integrations/keewano/runs/sm-107-agent-212030/native/baseline",
    "cycle_s": 1149.68,
    "pass": true,
    "baseline": true
@@ -30,7 +30,7 @@
   {
    "strategy": "native",
    "label": "native",
-   "dir": "sponsors/keewano/runs/sm-107-agent-212030/native/native",
+   "dir": "integrations/keewano/runs/sm-107-agent-212030/native/native",
    "cycle_s": 167.99,
    "pass": true,
    "baseline": false

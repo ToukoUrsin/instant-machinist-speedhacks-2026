@@ -1,5 +1,5 @@
 """Compact data file for the Darwin video segment (rendered headlessly from HTML + this JSON).
-Usage (from sponsors/): python3 darwin/segment_data.py ftc-10   -> darwin/evidence/ftc-10/segment.json"""
+Usage (from integrations/): python3 darwin/segment_data.py ftc-10   -> darwin/evidence/ftc-10/segment.json"""
 import json, sys
 from pathlib import Path
 

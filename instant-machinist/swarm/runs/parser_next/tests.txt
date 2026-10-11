@@ -1,2 +1,0 @@
-Focused: 18 passed
-Simulator: 29 passed, 1 skipped (optional Fusion SM-101 sample absent)

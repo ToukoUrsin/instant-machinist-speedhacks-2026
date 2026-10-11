@@ -14,8 +14,7 @@
 - Sessions ingested today: 19 {'codex': 16, 'claude': 3}; peak overlap among them 4 at 13:18
 - Analytics today: 167 live sessions, 13.78 agent-hours, 25 human interventions, context injected 84 / followed 44, agent-to-agent messages 0
 - Decisions shared: 30
-  - Video sponsor minute = Darwin + Keewano; Dial is repo/backup (made, recorded)
-  - Sponsor code stays isolated in sponsors/; core instant-machinist/ is read-only for sponsor agents (made, recorded)
+  - Integration code stays isolated in integrations/; core instant-machinist/ is read-only for integration agents (made, recorded)
   - Alike pairing verified; launch 100-agent GPT-6.1 Sol swarm now (made, recorded)
   - Expose reviewed drawing specs through a deterministic CAD/CAM bridge (made, recorded)
   - Demo part is the NIST FTC-10 housing, not SM-101 (made, recorded)
@@ -49,11 +48,11 @@
 - Load-bearing context (served, then acted on by an agent via Alike):
   - task: Work on ~/work/speedruninstanmachinist (served 166, followed 33)
   - task: Instant Machinist simulator excellence swarm: coordinate 100 GPT-6.1 Sol agents to improve parser, stock model (served 165, followed 238)
-  - task: Complete and verify all five sponsor integrations (served 165, followed 19)
+  - task: Complete and verify all five integrations (served 165, followed 19)
   - decision: Simulator acceptance bar: safety, fidelity, determinism, and evidence (served 164, followed 40)
   - task: Create Dial account and claim SpeedHacks credit (served 164, followed 11)
 
 ## What Alike put into agents' context (ALIKE hook output, local tee)
 - Pointer blocks served: 127 to 12 sessions, 87 distinct records
-- Sponsor-isolation rule served to an agent while it wrote in sponsors/: 1 times
-  - 13:41 claude:1899c895 Write sponsors/sparta/agent/quote-agent.mjs <- Complete and verify all five sponsor integrations; Run a 100-agent GPT-6.1 Sol simulator swarm through Alike; Create Dial account and claim SpeedHacks credit
+- Isolation rule served to an agent while it wrote in integrations/: 1 times
+  - 13:41 claude:1899c895 Write integrations/sparta/agent/quote-agent.mjs <- Complete and verify all five integrations; Run a 100-agent GPT-6.1 Sol simulator swarm through Alike; Create Dial account and claim SpeedHacks credit

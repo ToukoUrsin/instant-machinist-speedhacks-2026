@@ -1,1 +1,0 @@
-Implement a measurable cycle-time improvement from the historical CAD/CAM roadmap: add acceleration/deceleration timing to simulator cycle.py while preserving cycle_time.total_s and report keys. Add focused calibration tests, benchmark before/after, and run simulator plus all FTC-10 Fusion programs.

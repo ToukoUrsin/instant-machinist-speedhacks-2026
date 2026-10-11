@@ -1,3 +1,0 @@
-Simulator suite after rebase: 34 passed, 1 skipped (`pytest tests/sim -q`).
-CAM + renderer suites: 24 passed in 68.71s (`pytest tests/cam tests/render -q`).
-FTC-10 gate: all five `out/run3/fusion/*/1001.nc` programs completed without simulator crashes; see ftc10-gate.json for cycle times and check findings.

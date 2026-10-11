@@ -16,7 +16,7 @@ optimizer keeps the fastest one that passes.
   [*The Case for the American Manufacturing Asset Class*](https://a16z.com/the-case-for-the-american-manufacturing-asset-class/)).
   Shops this size rarely have a dedicated CAM programming team, so programming competes with
   quoting, setup and running machines.
-- **Every new part needs a CNC program: about 1–4 hours of skilled programmer time** (shop estimate)
+- **Every new part needs a CNC program: about 1–4 hours of skilled programmer time** ([CloudNC](https://www.cloudnc.com/blog/cam-assist-beta-feedback): ~1 h for a simple 3-axis part; [Modern Machine Shop](https://www.mmsonline.com/articles/automating-part-programming-cuts-the-time-to-engaging-work): 4–8 h for a complex one)
   before the spindle turns. In a high-mix job shop that happens for every new order.
 - Programs written under time pressure are cautious: light cuts and book feeds. The machine pays for
   that on every part of the order.
@@ -56,7 +56,7 @@ top side**, end to end in the cloud. All numbers are from run `out/run3` and are
 |---|---|
 | <img src="docs/img/ftc-10-fusion-model.png" width="400" alt="NIST FTC-10 housing imported into cloud Fusion"> | <img src="docs/img/ftc-10-verifier-best.png" width="560" alt="Verifier maps: no gouges; orange marks stock left for later setups"> |
 
-All 4 adaptive programs pass every safety check. Verifying each program takes 21–38 s across
+All 4 adaptive programs pass the gouge, rapid-into-stock, fixture and flute-length checks; short flat plunges are flagged for the programmer to review. Verifying each program takes 21–38 s across
 84k–126k toolpath segments.
 
 ## Second example: SM-101, a 2.5D part on both engines
@@ -75,7 +75,7 @@ complete in one setup. Run outputs: [`docs/results/sm-101-fusion/`](docs/results
 | Verifier | All 6 checks pass on every one of the 5 programs | All 6 checks pass (best and baseline) |
 | Deliverables | Haas G-code, **editable Fusion document** in Fusion Team, simulation video, report | Haas G-code, operation sheet, simulation video, report |
 
-Here the drawing read matched the reference spec exactly, and Fusion built the model from it.
+Here the drawing read matched the reference spec exactly, and Fusion built the model from it. SM-101 is our own test part: its drawing is generated from `parts/sm-101/features.json`, which is also the reference the drawing read is checked against. FTC-10 is the third-party test: NIST's drawing and STEP, unchanged.
 
 Cycle times come from our simulator's model (programmed feeds, 25 m/min rapids, 4 s tool changes),
 applied to every program the same way. Each engine is compared with its own baseline. Details:
@@ -85,7 +85,7 @@ applied to every program the same way. Each engine is compared with its own base
 
 | Per new part | Manual | Instant Machinist: FTC-10 OP1 | Instant Machinist: SM-101 |
 |---|---|---|---|
-| Programming (read drawing → post → simulate) | 1–4 h *(shop estimate)* | 7.1 min *(measured)* | 2.6 min *(measured)* |
+| Programming (read drawing → post → simulate) | 1–4 h *(published shop examples)* | 7.1 min *(measured)* | 2.6 min *(measured)* |
 | Human review of program, video and customer questions | included | 10 min *(assumption)* | 10 min *(assumption)* |
 | Corrections after review | included | 10 min *(assumption)* | 10 min *(assumption)* |
 | **Total programmer time** | **60–240 min** | **≈ 27 min** | **≈ 23 min** |
@@ -238,10 +238,10 @@ docs/              ARCHITECTURE · TIME-SAVED · VERIFIER · FUSION-COMPUTE · C
 - **Wedge:** new prismatic parts in job shops: plates, brackets, housings, fixtures. A STEP and drawing
   arrive, and a verified program, a cycle time and the right questions for the customer come back in
   minutes. Those are what a shop needs to quote the job and then cut it.
-- **Pricing:** per programmed part, so the price tracks the programmer hours saved and shops pay as
-  they win work.
 - **Two doors in:** shops on Fusion get an editable Fusion file their programmers trust. Shops
   without CAM seats get the complete program from our engine.
+- **Alternatives today:** programmers in Fusion, Mastercam or NX; Fusion's own templates and automation; CloudNC CAM Assist and other AI-CAM plug-ins that suggest toolpaths inside one CAM system. Instant Machinist starts one step earlier and ends one step later: it reads the customer's drawing and asks the questions, and it does not hand anything over until its own simulator has verified the program and timed it. Shops get the cycle time they need for the quote in the same minutes.
+- **Pricing:** per programmed part, so the price tracks what it replaces: 1–4 h of programmer time, $60–360 per new part at a fully loaded $60–90/h, before counting the machine time saved. Shops pay as they win work.
 - **Path:** one 3-axis setup per program today → chained multi-setup jobs → 3D surfacing → 5-axis →
   machine connectivity (send verified programs to the control, learn from real cycle times).
 

@@ -1,9 +1,0 @@
-{
-  "agent_id": "audit-04",
-  "item": "parser G52/G54.1 offsets",
-  "exit_code": 0,
-  "started_epoch": 1791750012.1824472,
-  "ended_epoch": 1791750068.6521804,
-  "wall_s": 56.47,
-  "transcript": "transcript.jsonl"
-}

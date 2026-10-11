@@ -164,7 +164,7 @@ $('m1dt').innerHTML = M1.rule.replace(/(Keep sponsor-specific code under sponsor
 $('m1more').innerHTML = M1.others.map(o => `<div class="more"><div class="kd">${o.kind}</div>${o.title}</div>`).join('');
 $('m1note').textContent = `Same pointer block, served on the ${M1.tool} call at ${M1.at} PDT (Alike hook output).`;
 const tree = ['alike', 'darwin', 'dial', 'keewano', 'sparta'];
-$('m1tree').innerHTML = 'sponsors/<br>' + tree.map((d, i) => `${i === tree.length - 1 ? '└─' : '├─'} <span class="${d === 'sparta' ? 'on' : ''}">${d}/</span>`).join('<br>');
+$('m1tree').innerHTML = 'integrations/<br>' + tree.map((d, i) => `${i === tree.length - 1 ? '└─' : '├─'} <span class="${d === 'sparta' ? 'on' : ''}">${d}/</span>`).join('<br>');
 
 // ---- scene 4: moment 2 ----
 const M2 = D.m2;

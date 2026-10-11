@@ -1,9 +1,0 @@
-{
-  "agent_id": "audit-16",
-  "item": "stock taper tool",
-  "exit_code": 0,
-  "started_epoch": 1791750327.032253,
-  "ended_epoch": 1791750378.5816798,
-  "wall_s": 51.55,
-  "transcript": "transcript.jsonl"
-}

@@ -23,13 +23,13 @@ for x in (EV / "alike_live_samples.jsonl").read_text().splitlines():
         series.append({"t": hhmm(s["at"]), "codex": h.get("codex", 0), "claude": h.get("claude", 0), "n": s["active_2m"]})
 
 # Moment 1: the sponsor-isolation rule served while an agent wrote sponsor code.
-m1 = next(m for m in moments if m.get("tool") == "Write" and (m.get("path") or "").startswith("sponsors/"))
+m1 = next(m for m in moments if m.get("tool") == "Write" and (m.get("path") or "").startswith("integrations/"))
 p1 = next(p for p in m1["pointers"] if "sponsor integrations" in p["title"])
 rule = None
 try:  # full sentence of the served (truncated) pointer, read live from the Alike task
     out = subprocess.run(["python3", str(AL / "alike_mcp.py"), "call", "search_entities",
                           json.dumps({"query": p1["title"]})], capture_output=True, text=True, timeout=60).stdout
-    hit = re.search(r"Keep sponsor-specific code under sponsors/[^\"\\]*", out)
+    hit = re.search(r"Keep sponsor-specific code under integrations/[^\"\\]*", out)
     rule = hit.group(0).strip() if hit else None
 except Exception:
     pass

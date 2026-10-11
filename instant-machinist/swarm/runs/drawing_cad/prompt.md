@@ -1,1 +1,0 @@
-Build a deterministic drawing Spec -> native features.json -> CAD/STEP handoff for the simulator/CAM path. Preserve the optional Claude drawing reader, reject ambiguous specs, support unit normalization, and do not edit lead-owned pipeline.py.

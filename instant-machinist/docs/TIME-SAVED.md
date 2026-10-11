@@ -31,7 +31,7 @@ The automated step is not the bottleneck; the human review is. The review budget
 generous: the reviewer starts from a program that has already passed gouge, leftover, rapid,
 plunge and fixture checks and comes with a simulation video, so review is reading, not reprogramming.
 
-The 1–4 h manual range is our shop estimate for a new part; we apply the same range to FTC-10's OP1. For comparison, published
+The 1–4 h manual range comes from published shop examples for a new part; we apply the same range to FTC-10's OP1. For comparison, published
 figures range from "an hour" for simple 3-axis parts (CloudNC beta feedback, 2023) to "four to eight
 hours" for a part programmed without macros (Modern Machine Shop, 2024).
 
@@ -128,12 +128,11 @@ For one new SM-101-type job of 25 parts, Fusion path, at the 4 h end of the manu
 
 ## Assumptions
 
-- Manual programming time of 1–4 h per new part is a shop estimate. It is not measured here.
+- Manual programming time of 1–4 h per new part comes from published shop examples ([CloudNC](https://www.cloudnc.com/blog/cam-assist-beta-feedback): ~1 h for a simple 3-axis part; [Modern Machine Shop](https://www.mmsonline.com/articles/automating-part-programming-cuts-the-time-to-engaging-work): 4–8 h for a complex one). It is not measured here.
 - Review (10 min) and corrections (10 min) are assumptions, budgeted the same for both parts.
 - Baselines are our estimate of a typical cautious manual program, built with the same CAM system so
   the comparison isolates strategy and feeds.
-- The cycle model uses programmed feeds and per-axis rapid rates without acceleration limits. Real
-  machine times will be somewhat longer for every program, most of all for dense adaptive toolpaths.
+- The published run numbers (run2, run3, native) were computed with the constant-feed cycle model those runs used: programmed feeds and per-axis rapids without acceleration. The simulator has since gained trapezoidal acceleration; under it every program takes longer (FTC-10 best program: 30:35 instead of 26:42), so the run tables are kept as recorded and the comparison between programs uses one model throughout.
 - Machine setup (fixturing, tool touch-off, first-article inspection) is the same for both and not
   counted.
 - Feeds and speeds: the Fusion strategies use the feeds in `fusion/strategies.py`; the native engine

@@ -1,4 +1,4 @@
-# Darwin sponsor track: sourcing agent
+# Darwin integration: sourcing agent
 
 When a CAM job finishes, Instant Machinist knows what the shop is missing: raw stock (from `shop.material_gap`), cutters (from the posted program's tool list), finishing, backup capacity, and freight. `find_sources.py` takes each need to **Darwin Search**, collects and dedupes the agents it returns, connects to each one live through a single generic MCP client and a single generic A2A client (read-only), and has **Claude Opus (`claude-opus-5-5`)** rank the options for this job. No integration is written for any one provider.
 

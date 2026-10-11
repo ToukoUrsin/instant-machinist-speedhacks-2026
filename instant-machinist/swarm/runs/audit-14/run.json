@@ -1,9 +1,0 @@
-{
-  "agent_id": "audit-14",
-  "item": "stock chamfer tool",
-  "exit_code": 0,
-  "started_epoch": 1791750270.7790227,
-  "ended_epoch": 1791750358.2363648,
-  "wall_s": 87.46,
-  "transcript": "transcript.jsonl"
-}

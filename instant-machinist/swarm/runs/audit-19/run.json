@@ -1,9 +1,0 @@
-{
-  "agent_id": "audit-19",
-  "item": "checks holder collision",
-  "exit_code": 0,
-  "started_epoch": 1791750378.5822666,
-  "ended_epoch": 1791750419.4956143,
-  "wall_s": 40.91,
-  "transcript": "transcript.jsonl"
-}

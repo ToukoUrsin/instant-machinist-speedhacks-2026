@@ -10,7 +10,7 @@ import urllib.request
 from email.message import EmailMessage
 from pathlib import Path
 
-ADDRESS = "touko.ursin+machinist@gmail.com"
+ADDRESS = "rfq@example.com"
 CREDS = Path.home() / ".config/workspace-mcp/credentials/shop-owner@example.com.json"
 API = "https://gmail.googleapis.com/gmail/v1/users/me"
 _tok = {"v": None, "exp": 0.0}

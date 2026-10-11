@@ -75,7 +75,7 @@
         "origin": "recorded"
       },
       {
-        "title": "Sponsor code stays isolated in sponsors/; core instant-machinist/ is read-only for sponsor agents",
+        "title": "Sponsor code stays isolated in integrations/; core instant-machinist/ is read-only for sponsor agents",
         "status": "made",
         "origin": "recorded"
       },

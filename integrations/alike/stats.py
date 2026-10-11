@@ -118,7 +118,7 @@ def local_codex_swarm():
 
 # ---------------------------------------------------------------- ALIKE (served context, local tee)
 TEE = Path.home() / ".alike/injections"
-ISOLATION = re.compile(r"sponsor-specific code|isolated in sponsors/|read-only for sponsor", re.I)
+ISOLATION = re.compile(r"sponsor-specific code|isolated in integrations/|read-only for sponsor", re.I)
 POINTER = re.compile(r"^- (\w+) · \[([^\]]+)\] (.+?)(?: — (.*))?$")
 
 
@@ -254,7 +254,7 @@ def main():
         out["alike"] = {"error": f"{type(e).__name__}: {e}"[:300]}
 
     moments = alike_served_moments()
-    iso = [m for m in moments if (m["path"] or "").startswith("sponsors/")
+    iso = [m for m in moments if (m["path"] or "").startswith("integrations/")
            and any(ISOLATION.search(p["title"] + " " + p["detail"]) for p in m["pointers"])]
     out["alike_served"] = {
         "source": "Alike hook output, recorded by Alike's local injection tee (~/.alike/injections) since 13:39 PDT",
@@ -315,7 +315,7 @@ def main():
     S = out["alike_served"]
     md += ["", "## What Alike put into agents' context (ALIKE hook output, local tee)",
            f"- Pointer blocks served: {S['pointer_blocks_served']} to {S['sessions_served']} sessions, {S['distinct_records_served']} distinct records",
-           f"- Sponsor-isolation rule served to an agent while it wrote in sponsors/: {S['isolation_rule_served_while_writing_in_sponsors']} times"]
+           f"- Sponsor-isolation rule served to an agent while it wrote in integrations/: {S['isolation_rule_served_while_writing_in_sponsors']} times"]
     for m in iso[:3]:
         md.append(f"  - {m['at_pdt']} {m['session']} {m['tool']} {m['path']} <- " + "; ".join(p["title"][:70] for p in m["pointers"][:3]))
     (ev / "stats.md").write_text("\n".join(md) + "\n")

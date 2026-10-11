@@ -770,10 +770,10 @@ window.DATA = {
   "at": "13:41",
   "harness": "Claude Code",
   "tool": "Write",
-  "path": "sponsors/sparta/agent/quote-agent.mjs",
+  "path": "integrations/sparta/agent/quote-agent.mjs",
   "kind": "task \u00b7 blocked",
   "title": "Complete and verify all five sponsor integrations",
-  "rule": "Keep sponsor-specific code under sponsors/ and avoid modifying core instant-machinist code.",
+  "rule": "Keep sponsor-specific code under integrations/ and avoid modifying core instant-machinist code.",
   "others": [
    {
     "kind": "decision \u00b7 made",

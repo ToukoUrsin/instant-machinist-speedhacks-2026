@@ -1,3 +1,0 @@
-Focused drawing bridge: 2 passed
-Full suite after merge: 87 passed, 1 skipped (optional Fusion sample absent)
-FTC-10 gate: 5 programs completed, 0 crashes; findings preserved in ftc10-gate.json
