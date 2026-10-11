@@ -1,0 +1,301 @@
+{
+ "name": "machine-shop-quotes",
+ "version": 1,
+ "epoch": 1791676800,
+ "clock_mode": "manual",
+ "auto_tick_seconds": 1,
+ "data": {
+  "customers": [
+   {
+    "id": "cus_kestrel",
+    "name": "Kestrel Dynamics, Inc.",
+    "email": "ap@kestreldynamics.example",
+    "description": null,
+    "phone": null,
+    "balance": 0,
+    "metadata": {
+     "segment": "aerospace",
+     "terms": "50% deposit, balance on delivery"
+    },
+    "created_offset": 7776000
+   },
+   {
+    "id": "cus_kestrel_sys",
+    "name": "Kestrel Dynamic Systems LLC",
+    "email": "billing@kestrel-dynamic.example",
+    "description": null,
+    "phone": null,
+    "balance": 0,
+    "metadata": {
+     "segment": "industrial"
+    },
+    "created_offset": 7776000
+   },
+   {
+    "id": "cus_orbital",
+    "name": "Orbital Fabrication Co.",
+    "email": "ap@orbitalfab.example",
+    "description": null,
+    "phone": null,
+    "balance": 0,
+    "metadata": {
+     "segment": "space"
+    },
+    "created_offset": 7776000
+   }
+  ],
+  "products": [
+   {
+    "id": "prod_vmc3",
+    "name": "3-axis VMC machining",
+    "description": "Spindle time on a 3-axis vertical machining center. Billed per minute.",
+    "active": true,
+    "metadata": {}
+   },
+   {
+    "id": "prod_5axis",
+    "name": "5-axis machining",
+    "description": "Spindle time on a 5-axis machining center. Billed per minute.",
+    "active": true,
+    "metadata": {}
+   },
+   {
+    "id": "prod_setup",
+    "name": "Setup & fixturing",
+    "description": "One machine setup (fixture, work offsets, first-article check). Billed per setup.",
+    "active": true,
+    "metadata": {}
+   },
+   {
+    "id": "prod_program_sim",
+    "name": "CNC programming & simulation",
+    "description": "CAM program, posted G-code and full toolpath simulation. Billed once per part number.",
+    "active": true,
+    "metadata": {}
+   },
+   {
+    "id": "prod_6061",
+    "name": "6061-T6 aluminum stock, cut to size",
+    "description": "Bar/plate stock cut to blank size. Billed per cubic inch of blank.",
+    "active": true,
+    "metadata": {}
+   },
+   {
+    "id": "prod_7075",
+    "name": "7075-T6 aluminum stock, cut to size",
+    "description": "Bar/plate stock cut to blank size. Billed per cubic inch of blank.",
+    "active": true,
+    "metadata": {}
+   },
+   {
+    "id": "prod_304",
+    "name": "304 stainless stock, cut to size",
+    "description": "Bar/plate stock cut to blank size. Billed per cubic inch of blank.",
+    "active": true,
+    "metadata": {}
+   },
+   {
+    "id": "prod_anodize",
+    "name": "Type II anodize (clear)",
+    "description": "Outsourced clear anodize. Billed per part.",
+    "active": true,
+    "metadata": {}
+   },
+   {
+    "id": "prod_reserve",
+    "name": "Reserved machine capacity",
+    "description": "Monthly reserved spindle hours for contract customers.",
+    "active": true,
+    "metadata": {}
+   }
+  ],
+  "prices": [
+   {
+    "id": "price_vmc3_min_2026",
+    "product": "prod_vmc3",
+    "unit_amount": 175,
+    "currency": "usd",
+    "nickname": "2026 rate card",
+    "recurring": null,
+    "active": true,
+    "metadata": {}
+   },
+   {
+    "id": "price_vmc3_min_2025",
+    "product": "prod_vmc3",
+    "unit_amount": 140,
+    "currency": "usd",
+    "nickname": "2025 rate card (retired)",
+    "recurring": null,
+    "active": false,
+    "metadata": {}
+   },
+   {
+    "id": "price_5axis_min",
+    "product": "prod_5axis",
+    "unit_amount": 290,
+    "currency": "usd",
+    "nickname": "2026 rate card",
+    "recurring": null,
+    "active": true,
+    "metadata": {}
+   },
+   {
+    "id": "price_setup",
+    "product": "prod_setup",
+    "unit_amount": 12000,
+    "currency": "usd",
+    "nickname": "2026 rate card",
+    "recurring": null,
+    "active": true,
+    "metadata": {}
+   },
+   {
+    "id": "price_program_sim",
+    "product": "prod_program_sim",
+    "unit_amount": 15000,
+    "currency": "usd",
+    "nickname": "2026 rate card",
+    "recurring": null,
+    "active": true,
+    "metadata": {}
+   },
+   {
+    "id": "price_6061_cuin",
+    "product": "prod_6061",
+    "unit_amount": 55,
+    "currency": "usd",
+    "nickname": "2026 rate card",
+    "recurring": null,
+    "active": true,
+    "metadata": {}
+   },
+   {
+    "id": "price_7075_cuin",
+    "product": "prod_7075",
+    "unit_amount": 95,
+    "currency": "usd",
+    "nickname": "2026 rate card",
+    "recurring": null,
+    "active": true,
+    "metadata": {}
+   },
+   {
+    "id": "price_304_cuin",
+    "product": "prod_304",
+    "unit_amount": 160,
+    "currency": "usd",
+    "nickname": "2026 rate card",
+    "recurring": null,
+    "active": true,
+    "metadata": {}
+   },
+   {
+    "id": "price_anodize",
+    "product": "prod_anodize",
+    "unit_amount": 450,
+    "currency": "usd",
+    "nickname": "2026 rate card",
+    "recurring": null,
+    "active": true,
+    "metadata": {}
+   },
+   {
+    "id": "price_reserve_monthly",
+    "product": "prod_reserve",
+    "unit_amount": 600000,
+    "currency": "usd",
+    "nickname": null,
+    "recurring": {
+     "interval": "month",
+     "interval_count": 1
+    },
+    "active": true,
+    "metadata": {}
+   }
+  ],
+  "invoices": [
+   {
+    "id": "in_kestrel_kd7",
+    "customer": "cus_kestrel",
+    "currency": "usd",
+    "status": "draft",
+    "lines": [
+     {
+      "description": "KD-7 bracket prototype (on hold)",
+      "amount": 64000,
+      "quantity": 1
+     }
+    ],
+    "charges": [],
+    "created_offset": 1728000,
+    "metadata": {
+     "quote": "Q-2026-0871"
+    }
+   },
+   {
+    "id": "in_orbital_po7781",
+    "customer": "cus_orbital",
+    "currency": "usd",
+    "status": "open",
+    "lines": [
+     {
+      "description": "PO 7781 bulkhead brackets, 40 pcs",
+      "amount": 412000,
+      "quantity": 1
+     }
+    ],
+    "charges": [],
+    "created_offset": 518400,
+    "metadata": {
+     "po": "7781"
+    }
+   }
+  ],
+  "subscriptions": [],
+  "tickets": [
+   {
+    "subject": "RFQ: FTC-10 housing, 10 pcs, 6061-T6",
+    "body": "Hi, please quote 10 pcs of the FTC-10 housing per the drawing and STEP we uploaded, 6061-T6, no finish (we anodize in house). Same terms as usual: we pay the 50% deposit to start. Thanks, Dana Okafor, Purchasing, Kestrel Dynamics",
+    "status": "open",
+    "priority": "normal",
+    "requester": {
+     "name": "Dana Okafor",
+     "email": "dana.okafor@kestreldynamics.example"
+    },
+    "tags": [
+     "rfq"
+    ],
+    "created_offset": 3600
+   },
+   {
+    "subject": "Quote + deposit invoice for FTC-10 housings",
+    "body": "Hello, can you quote 10 of the FTC-10 housing (6061-T6, no finish) and send the deposit invoice to Kestrel? We'd like to start this week. Sam Reyes",
+    "status": "open",
+    "priority": "normal",
+    "requester": {
+     "name": "Sam Reyes",
+     "email": "sam.reyes@protonmail.example"
+    },
+    "tags": [
+     "rfq"
+    ],
+    "created_offset": 1800
+   },
+   {
+    "subject": "Ship date for PO 7781?",
+    "body": "Can you confirm the ship date for PO 7781 (bulkhead brackets)? Thanks, Orbital Fabrication AP",
+    "status": "open",
+    "priority": "low",
+    "requester": {
+     "name": "Orbital AP",
+     "email": "ap@orbitalfab.example"
+    },
+    "tags": [
+     "shipping"
+    ],
+    "created_offset": 7200
+   }
+  ]
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "supplier": "Bay Alloy & Steel",
+ "item": "6061-T6 aluminum precision saw-cut blanks from plate, 1.125 x 3.125 x 5.000 in",
+ "qty": 25,
+ "unit_price": 10.67,
+ "cut_charge": 0,
+ "total": 266.75,
+ "lead_days": 2,
+ "delivery": "Free delivery to Oakland, CA (free in the Bay Area on orders over $250). Ready to ship 2 business days after release, then goes on the next truck run into Oakland. Mill cert included at no charge.",
+ "quote_ref": null,
+ "substitutions": [
+  "Buyer asked for at least 1.11 x 3.31 in (preferred 1-1/8 x 3-1/2). Supplier quoted plate blanks 1.125 x 3.125 in, which is 0.185 in under the 3.31 in minimum width. The buyer accepted this, apparently misreading the size.",
+  "Bar options the supplier offered that do meet the minimums: 6061-T6 flat bar 1-1/2 x 3-1/2 or 1-3/4 x 3-1/2, cut to 5 in. Neither was priced."
+ ],
+ "confidence": 0.7,
+ "covers_blank": false,
+ "delivery_charge": 0,
+ "landed_total": 266.75,
+ "piece_length_in": 5,
+ "pricing_basis": "Per lb: $6.20/lb at 0.098 lb/in\u00b3, about 1.72 lb per piece, 43.0 lb total. Stated as about $10.67 per piece.",
+ "thickness_in": 1.125,
+ "width_in": 3.125,
+ "open_questions": [
+  "Width 3.125 in is under the 3.31 in minimum, so this does not cover the blank. Ask for a re-quote at at least 3.31 in wide (for example 1.125 x 3.5 in plate blanks, or the 1-1/2 x 3-1/2 bar).",
+  "Arithmetic mismatch: 43.0 lb x $6.20 = $266.60, as the supplier said itself, but the stated quote total is $266.75 (rounded up from $10.67 x 25). The exact weight, 25 x 17.578 in\u00b3 x 0.098 = 43.07 lb, would give about $267.02. Kept the stated $266.75.",
+  "No quote number was given, and the transcript cuts off in the middle of the read-back.",
+  "Need a firm delivery date: 2 business days to cut, plus the next truck run into Oakland (date not stated).",
+  "Tolerance: supplier said +0.06/-0.00 on thickness and length, buyer said +/-1/16. Confirm whether that applies to width too."
+ ],
+ "supplier_as_said": "Bay Alloy & Steel (Marco)",
+ "call_id": "cmv4akidj008e0fqqsmt8pqhb"
+}

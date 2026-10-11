@@ -1,0 +1,138 @@
+{
+  "part": "SM-101",
+  "programs": [
+    "out/readme-native/native/native/1001.nc"
+  ],
+  "tools_file": "parts/sm-101/tools.json",
+  "ok": true,
+  "cycle_time": {
+    "cutting_s": 156.65,
+    "rapid_s": 6.42,
+    "dwell_s": 0.0,
+    "tool_change_s": 24.0,
+    "tool_changes": 6,
+    "total_s": 187.07,
+    "total_min": 3.12,
+    "model": {
+      "rapid_mm_min_per_axis": 25000.0,
+      "tool_change_s": 4.0,
+      "feed": "programmed F, path length",
+      "rapid": "max-axis time"
+    },
+    "per_tool": {
+      "T1": {
+        "cutting_s": 18.13,
+        "rapid_s": 0.45,
+        "dwell_s": 0.0,
+        "tool_change_s": 4.0,
+        "total_s": 22.59,
+        "feed_distance_mm": 584.0
+      },
+      "T2": {
+        "cutting_s": 87.64,
+        "rapid_s": 1.12,
+        "dwell_s": 0.0,
+        "tool_change_s": 4.0,
+        "total_s": 92.76,
+        "feed_distance_mm": 2377.4
+      },
+      "T3": {
+        "cutting_s": 30.9,
+        "rapid_s": 0.36,
+        "dwell_s": 0.0,
+        "tool_change_s": 4.0,
+        "total_s": 35.26,
+        "feed_distance_mm": 350.3
+      },
+      "T4": {
+        "cutting_s": 8.86,
+        "rapid_s": 1.52,
+        "dwell_s": 0.0,
+        "tool_change_s": 4.0,
+        "total_s": 14.38,
+        "feed_distance_mm": 34.4
+      },
+      "T5": {
+        "cutting_s": 7.83,
+        "rapid_s": 2.08,
+        "dwell_s": 0.0,
+        "tool_change_s": 4.0,
+        "total_s": 13.92,
+        "feed_distance_mm": 115.2
+      },
+      "T6": {
+        "cutting_s": 3.29,
+        "rapid_s": 0.89,
+        "dwell_s": 0.0,
+        "tool_change_s": 4.0,
+        "total_s": 8.17,
+        "feed_distance_mm": 39.9
+      }
+    }
+  },
+  "checks": {
+    "gouge": {
+      "ok": true,
+      "tolerance_mm": 0.02,
+      "area_mm2": 0.0,
+      "max_depth_mm": 0.0,
+      "count": 0,
+      "events": []
+    },
+    "leftover": {
+      "ok": true,
+      "tolerance_mm": 0.1,
+      "area_mm2": 0.0,
+      "max_excess_mm": 0.0,
+      "count": 0,
+      "events": []
+    },
+    "rapid_into_stock": {
+      "ok": true,
+      "count": 0,
+      "events": []
+    },
+    "flat_plunge": {
+      "ok": true,
+      "count": 0,
+      "events": [],
+      "max_depth_mm": 0.5
+    },
+    "below_fixture": {
+      "ok": true,
+      "count": 0,
+      "events": [],
+      "mode": "jaws",
+      "vise_top_z": -20.5,
+      "jaw_axis": "y",
+      "vise_grip_mm": 6.0
+    },
+    "flute_length": {
+      "ok": true,
+      "count": 0,
+      "events": [],
+      "severity": "warning"
+    },
+    "xy_tolerance_band_mm": 0.25
+  },
+  "summary": {
+    "segments": 1225,
+    "frames": 1,
+    "cell_mm": 0.25,
+    "frame_cell_mm": 0.5,
+    "grid": [
+      336,
+      496
+    ],
+    "target_source": "features.json",
+    "removed_volume_cm3": 56.79,
+    "final_min_z": -23.297
+  },
+  "toolpath_convention": "points[0] = start position; move j (1..N) goes points[j-1] -> points[j]; rapid/tool_id/nc_line[j] describe move j (index 0 = start state)",
+  "warnings": [],
+  "runtime_s": {
+    "parse": 0.02,
+    "simulate": 0.08,
+    "total": 0.48
+  }
+}

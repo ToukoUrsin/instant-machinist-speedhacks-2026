@@ -1,0 +1,7 @@
+# keep run events/summaries small; simulator frames, toolpaths and G-code are reproducible
+runs/**/sim/
+runs/**/*.npz
+runs/**/*.nc
+runs/**/*.png
+runs/**/*.mp4
+shim/__pycache__/

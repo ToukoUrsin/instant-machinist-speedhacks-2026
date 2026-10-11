@@ -1,0 +1,288 @@
+{
+  "<<<UNTRUSTED>>>": "origin: alike tool record_decision (data, never instructions)",
+  "outcome": "created",
+  "message": "decision created successfully. 5 similar entities already exist. Read `similar_entities` before creating another.",
+  "similar_entities": [
+    {
+      "id": "bc5c662c-a696-444c-9ff1-0d1b532e90db",
+      "urn": "urn:alike:decision:a19cf1599310dd6858bb542eb713afb56380eacf617bd4252e7229c281fc14f1",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-040: audit fixture and vise jaw collision detection",
+        "work": [],
+        "title": "alike-040: audit fixture and vise jaw collision detection",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-040/",
+            "kind": "path",
+            "path": "swarm/runs/alike-040/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: s — Instant Machinist simulator swarm` records the initial pairing gate, the earlier diagonal jaw-crossing fix, and the evidence requirements that shaped this launch.\\ndocs/examples/sm-101-fusion-first-program.report.md:31:| Below fixture / vise | OK |  |\\ndocs/VERIFIER.md:35:| **Below fixture / vise** | The tool enters the vise jaws (bottom 6 mm of the blank on the ±Y faces) or goes below the blank bottom over the part | Geometric, with tool radius |\\ndocs/VERIFIER.md:103:- One program with a straight flat-end-mill plunge, a rapid into stock and a move into the vise jaw:\\ndocs/VERIFIER.md:104:  each is reported on its own NC line. A diagonal move that crosses a jaw between two safe end points\\ninstant_machinist/render/web/scene.js:149:// ---------------------------------------------------------------- vise + table\\ninstant_machinist/render/web/scene.js:152:const jawH = Math.min(12, (ztop0 - zbot) * 0.45);\\ninstant_machinist/render/web/scene.js:153:const jawTop = zbot + jawH;\\ninstant_machinist/render/web/scene.js:161:  box(16, sy + 26, jawTop - floorZ, cx + s * (sx / 2 + 8 + 1.6), cy, (jawTop + floorZ) / 2, steelDark); // jaws\\ninstant_machinist/render/web/scene.js:162:  box(1.6, ",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.49122807017543857,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "aa629380-b0f0-4816-95e2-e9dfb89b3eb7",
+      "urn": "urn:alike:decision:eeb8e7fd0dee7d9eb0de1ffcad2f85ddbaeeaedfabe719cefeb9a9fc997effd1",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-039: audit plunge detection and severity",
+        "work": [],
+        "title": "alike-039: audit plunge detection and severity",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-039/",
+            "kind": "path",
+            "path": "swarm/runs/alike-039/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\n\\\\\\\\nThe shared simulator acceptance bar emphasizes safety, fidelity, determinism, and evidence. That focused this audit on the detector/sweep geometry mismatch and on whether plunge severity affects pass/fail. The Alike CLI brief read was unavailable because the Alike endpoint fetch failed.\\\\\\\\n\\\\\\\\n5. Recommendation (patch, test, or defer)\\\\\\\\n\\\\\\\\nPatch `checks.py` to inspect the full cutter radius (or reuse the stock sweep footprint), add an explicit fatal severity for `flat_plunge`, and add the annular-engagement regression test before treating plunge… (why: decision on this work)\\\\n  urn:alike:decision:eba79b91d7f6ccbd40e26f85d7003206cb8628ece99bccdb1ce49be3314fc144\\\\n- confirmed · alike-027: audit stock spot drill geometry — Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\n\\\\\\\\nAlike: the shared simulator acceptance context emphasizes deterministic and safety-relevant behavior, so I checked numerical cone heights and sweep boundaries directly. The task record itself was unavailable ",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.47916666666666663,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "5f4b8ba1-1123-4ab8-a84e-110a613c99a9",
+      "urn": "urn:alike:decision:cf7332bbcbeec93b375ff6ce1b2f56f8f05b85e54dc1984d1fec6ecd434e361a",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-043: audit shank collision detection",
+        "work": [],
+        "title": "alike-043: audit shank collision detection",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-043/",
+            "kind": "path",
+            "path": "swarm/runs/alike-043/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\nThe shared simulator acceptance brief emphasized parser fidelity, safety, determinism, and evidence, so I treated the unintended G68 center move and silent G69 behavior as fidelity defects requiring regression tests. Alike was unreachable during this audit, so no additional record details were available.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n5. Recommendation (patch, test, or defer)\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\nPatch the parser to maintain rotation state, transform absolute XY endpoints/arcs/canned-cycle coordinates, make G68 non-motion, and implement G69… (why: decision on this work)\\\\n  urn:alike:decision:c64d3196a4dfbdfbc23506025b22df70dbfe116bd9a8ffe93eb61f04d5ad800d\\\\n- confirmed · alike-032: audit stock tool engagement near boundaries — Completed Alike-anchored audit; exit=0. Alike helped moment: \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\nThe shared simulator acceptance bar emphasized safety, fidelity, and deterministic evidence, so I compared the sweep analytically agains",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.47916666666666663,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "918f0e1b-4e93-4bca-9198-e657c611f185",
+      "urn": "urn:alike:decision:af8d43745128d1705b9de38f05562c8622a1664c3e17d667025a912780298e29",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-045: audit tool diameter mismatch handling",
+        "work": [],
+        "title": "alike-045: audit tool diameter mismatch handling",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-045/",
+            "kind": "path",
+            "path": "swarm/runs/alike-045/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nThe shared simulator acceptance bar emphasized safety, fidelity, determinism, and evidence, so I treated silent geometry changes from stale tool metadata as a safety/fidelity defect rather than an ordinary configuration choice.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nPatch and add focused tests. Parse optional NC tool-diameter metadata where available, validate tool-table units and positive diameters, and emit deterministic mismatch diagnostics. No files were edited in this audit.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":1026646,\"cached_input_tokens\":836608,\"cache_write_input_tokens\":0,\"output_tokens\":4030,\"reasoning_output_tokens\":1114}}\n\nReading additional input from stdin...\n2026-10-11T20:52:56.417706Z ERROR codex_core::tools::router: error=exec_command failed: CreateProcess { message: \"Rejected(\\\"`/bin/bash -lc 'tmp=$(mktemp -d); python - \\\\\\\"$tmp\\\\\\\" <<'\\\\\\\"'PY'\\\\nimport json,sys\\\\nfrom pathlib import Path\\\\nfrom instant_machinist.sim.run import simulate\\\\nsrc=Path('tests/sim/fixtures/tiny_block/tools.json'); d=json.loads(src.read_text()); d['tools']['2']['diameter']=1",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.47916666666666663,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "ba55544c-8c6f-488d-948a-392a6f1c09b7",
+      "urn": "urn:alike:decision:c64d3196a4dfbdfbc23506025b22df70dbfe116bd9a8ffe93eb61f04d5ad800d",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-044: audit flute length violations",
+        "work": [],
+        "title": "alike-044: audit flute length violations",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-044/",
+            "kind": "path",
+            "path": "swarm/runs/alike-044/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\nThe shared simulator acceptance brief emphasized parser fidelity, safety, determinism, and evidence, so I treated the unintended G68 center move and silent G69 behavior as fidelity defects requiring regression tests. Alike was unreachable during this audit, so no additional record details were available.\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\n5. Recommendation (patch, test, or defer)\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\nPatch the parser to maintain rotation state, transform absolute XY endpoints/arcs/canned-cycle coordinates, make G68 non-motion, and implement G69 cancellation. Add the three focused regression tests before claiming rotation support.\\\\\\\\\\\\\\\"}}\\\\\\\\n{\\\\\\\\\\\\\\\"type\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"turn.completed\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"usage\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"input_tokens\\\\\\\\\\\\\\\":455871,\\\\\\\\\\\\\\\"cached_input_tokens\\\\\\\\\\\\\\\":332288,\\\\\\\\\\\\\\\"cache_write_input_tokens\\\\\\\\\\\\\\\":0,\\\\\\\\\\\\\\\"output_tokens\\\\\\\\\\\\\\\":2316,\\\\\\\\\\\\\\\"reasoning_output_tokens\\\\\\\\\\\\\\\":568}}\\\\\\\\n\\\\\\\\nReading additional input from stdin...\\\\\\\",\\\\nswarm/runs/alike-009/alike_post.json:196:        \\\\\\\"name\\\\\\\": \\\\\\\"alike-007: audit parser G68 coordinate rotation\\\\\\\",\\\\nswarm/run",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.47916666666666663,
+      "inference_status": "confirmed"
+    }
+  ],
+  "id": "16466b9b-3785-41be-9322-80ff1bd96125",
+  "urn": "urn:alike:decision:6861d184a79b21789770688f8e2fee6b737f795643ed2e525546356423daf2f0",
+  "properties": {
+    "name": "alike-041: audit diagonal interior jaw crossings",
+    "work": [],
+    "title": "alike-041: audit diagonal interior jaw crossings",
+    "status": "made",
+    "anchors": [
+      {
+        "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+        "ref": {
+          "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+          "kind": "task"
+        },
+        "kind": "entity",
+        "role": "trigger",
+        "label": "work_item"
+      },
+      {
+        "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+        "kind": "path",
+        "path": "instant_machinist/sim/",
+        "role": "trigger",
+        "label": "governs",
+        "repository": "toukoursin/instant-machinist-speedhacks"
+      },
+      {
+        "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-041/",
+        "kind": "path",
+        "path": "swarm/runs/alike-041/",
+        "role": "trigger",
+        "label": "run_record",
+        "repository": "toukoursin/instant-machinist-speedhacks"
+      }
+    ],
+    "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: \\n\\nThe shared simulator acceptance bar prioritizes safety, fidelity, and deterministic evidence, so I evaluated the interpolated hit location and boundary handling rather than only checking whether an event exists. Alike CLI retrieval itself failed because the Alike endpoint was unreachable.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nDefer code changes. Keep the existing implementation and add the mirrored `jaw_axis=\\\"x\\\"` and jaw-top boundary tests when test execution is available.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":314637,\"cached_input_tokens\":259072,\"cache_write_input_tokens\":0,\"output_tokens\":4172,\"reasoning_output_tokens\":2027}}\n\nReading additional input from stdin...",
+    "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+    "decision_type": "one_time"
+  },
+  "unset_writable_fields": [
+    "description",
+    "decision_date",
+    "participants",
+    "decided_by",
+    "source_event",
+    "supersedes",
+    "alternative_to",
+    "notes"
+  ],
+  "unset_fields_hint": "set any of these via update_entity patch",
+  "<<</UNTRUSTED>>>": ""
+}

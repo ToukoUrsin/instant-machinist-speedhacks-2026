@@ -1,0 +1,4 @@
+{"units": "mm", "tools": {
+  "1": {"type": "face_mill", "diameter": 50.0, "flutes": 5, "flute_length": 6},
+  "2": {"type": "flat", "diameter": 6.0, "flutes": 3, "flute_length": 16}
+}}

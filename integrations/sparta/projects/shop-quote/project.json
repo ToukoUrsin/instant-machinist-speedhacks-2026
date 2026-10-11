@@ -1,0 +1,15 @@
+{
+ "version": 1,
+ "name": "Machine shop: RFQ to deposit invoice",
+ "templateId": "digital-shop",
+ "seed": "seed.json",
+ "missions": "missions.json",
+ "checks": "checks.json",
+ "agent": {
+  "command": [
+   "node",
+   "../../agent/quote-agent.mjs"
+  ],
+  "timeoutSec": 240
+ }
+}

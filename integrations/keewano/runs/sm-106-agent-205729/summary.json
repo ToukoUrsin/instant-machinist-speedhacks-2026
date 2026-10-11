@@ -1,0 +1,40 @@
+{
+ "part": "SM-106",
+ "engine": "native",
+ "programming_s": 2.7,
+ "baseline": {
+  "strategy": "baseline",
+  "label": "baseline",
+  "dir": "sponsors/keewano/runs/sm-106-agent-205729/native/baseline",
+  "cycle_s": 1854.82,
+  "pass": true,
+  "baseline": true
+ },
+ "best": {
+  "strategy": "native",
+  "label": "native",
+  "dir": "sponsors/keewano/runs/sm-106-agent-205729/native/native",
+  "cycle_s": 218.13,
+  "pass": true,
+  "baseline": false
+ },
+ "variants": [
+  {
+   "strategy": "baseline",
+   "label": "baseline",
+   "dir": "sponsors/keewano/runs/sm-106-agent-205729/native/baseline",
+   "cycle_s": 1854.82,
+   "pass": true,
+   "baseline": true
+  },
+  {
+   "strategy": "native",
+   "label": "native",
+   "dir": "sponsors/keewano/runs/sm-106-agent-205729/native/native",
+   "cycle_s": 218.13,
+   "pass": true,
+   "baseline": false
+  }
+ ],
+ "machining_saved_pct": 88.2
+}

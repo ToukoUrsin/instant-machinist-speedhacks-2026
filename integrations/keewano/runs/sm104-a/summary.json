@@ -1,0 +1,40 @@
+{
+ "part": "SM-104",
+ "engine": "native",
+ "programming_s": 2.5,
+ "baseline": {
+  "strategy": "baseline",
+  "label": "baseline",
+  "dir": "../integrations/keewano/runs/sm104-a/native/baseline",
+  "cycle_s": 987.83,
+  "pass": true,
+  "baseline": true
+ },
+ "best": {
+  "strategy": "native",
+  "label": "native",
+  "dir": "../integrations/keewano/runs/sm104-a/native/native",
+  "cycle_s": 172.53,
+  "pass": true,
+  "baseline": false
+ },
+ "variants": [
+  {
+   "strategy": "baseline",
+   "label": "baseline",
+   "dir": "../integrations/keewano/runs/sm104-a/native/baseline",
+   "cycle_s": 987.83,
+   "pass": true,
+   "baseline": true
+  },
+  {
+   "strategy": "native",
+   "label": "native",
+   "dir": "../integrations/keewano/runs/sm104-a/native/native",
+   "cycle_s": 172.53,
+   "pass": true,
+   "baseline": false
+  }
+ ],
+ "machining_saved_pct": 82.5
+}

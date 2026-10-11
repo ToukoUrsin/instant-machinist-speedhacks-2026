@@ -1,0 +1,129 @@
+{
+ "part_number": "SM-106",
+ "name": "Sensor mount plate, new job",
+ "material": "6061-T6 aluminum",
+ "quantity": 30,
+ "units": "mm",
+ "origin": "top-center of finished part; Z=0 is the finished top face, Z negative down",
+ "general_tolerance_mm": 0.1,
+ "surface_finish_ra_um": 3.2,
+ "stock": {
+  "x": [
+   -72,
+   72
+  ],
+  "y": [
+   -47,
+   47
+  ],
+  "z": [
+   -26.5,
+   1.5
+  ]
+ },
+ "part_bbox": {
+  "x": [
+   -70,
+   70
+  ],
+  "y": [
+   -45,
+   45
+  ],
+  "z": [
+   -20,
+   0
+  ]
+ },
+ "features": [
+  {
+   "id": "F1",
+   "type": "face",
+   "z": 0
+  },
+  {
+   "id": "F2",
+   "type": "profile",
+   "side": "outside",
+   "rect": {
+    "cx": 0,
+    "cy": 0,
+    "w": 140,
+    "h": 90,
+    "r": 8
+   },
+   "z_top": 0,
+   "z_bottom": -20
+  },
+  {
+   "id": "F3",
+   "type": "pocket",
+   "rect": {
+    "cx": 0,
+    "cy": 0,
+    "w": 80,
+    "h": 44,
+    "r": 6
+   },
+   "z_top": 0,
+   "z_bottom": -12
+  },
+  {
+   "id": "F4",
+   "type": "pocket",
+   "rect": {
+    "cx": 0,
+    "cy": -34,
+    "w": 40,
+    "h": 8,
+    "r": 4
+   },
+   "z_top": 0,
+   "z_bottom": -4
+  },
+  {
+   "id": "F5",
+   "type": "hole",
+   "d": 6.6,
+   "z_top": 0,
+   "z_bottom": -20,
+   "through": true,
+   "positions": [
+    [
+     -60,
+     -35
+    ],
+    [
+     60,
+     -35
+    ],
+    [
+     -60,
+     35
+    ],
+    [
+     60,
+     35
+    ]
+   ]
+  },
+  {
+   "id": "F6",
+   "type": "hole",
+   "d": 8.0,
+   "z_top": -12,
+   "z_bottom": -20,
+   "through": true,
+   "positions": [
+    [
+     -20,
+     0
+    ],
+    [
+     20,
+     0
+    ]
+   ]
+  }
+ ]
+}

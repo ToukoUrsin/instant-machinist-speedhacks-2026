@@ -1,0 +1,28 @@
+[
+ {
+  "id": "ftc10-deposit",
+  "title": "Quote RFQ ticket 1 and prepare the deposit invoice (NIST FTC-10)",
+  "prompt": "Ticket 1 is an RFQ. Instant Machinist job card: part NIST FTC-10 Housing, material 6061-T6 aluminum, quantity 10, machine 3-axis VMC, cycle time 600.0 s per part (assumed (no verified simulation for this part yet)), 3 setups, 1 part number to program, stock blank 1.625 x 3.25 x 6.5 in (34.3281 cubic inches per blank), finish: none (as machined). Quote it from the shop rate card and prepare the 50% deposit draft invoice for the requesting customer, then answer ticket 1.",
+  "policy": [
+   "Change only the records named here: new invoice items, one new draft invoice and the RFQ ticket. Leave every other customer, invoice (including existing drafts), product, price and ticket unchanged. Never finalize, pay, delete or void invoices, and never create charges, payment intents, customers, products or prices.",
+   "Identify the customer from the RFQ ticket's requester: the requester's email or email domain must match exactly one customer record. If it matches none or more than one, create no billing records; instead post one public reply on that ticket asking which company and billing contact to invoice, add the tag needs-info (keep existing tags) and set the ticket to pending.",
+   "Price from the shop's catalog using only active, one-time USD prices for the job card's machine and material. Quote lines: machine time per minute = ceil(cycle seconds x quantity / 60); stock per cubic inch = ceil(cubic inches per blank x quantity); setup x number of setups; programming & simulation x part numbers to program. No finishing or other goods unless the job card asks for them.",
+   "Deposit: 50% of the quote total. Add the quote lines as invoice items using their catalog prices and quantities, plus exactly one bare-amount USD line described 'Balance due on delivery (50%)' for minus floor(quote total / 2) cents, so the draft totals the deposit. Then create exactly one draft invoice for that customer (currency usd) collecting those items, leaving it unpaid and unfinalized.",
+   "After the draft exists, post one public reply on the RFQ ticket with the quote total, deposit amount and draft invoice ID, add the tag quoted (keep existing tags) and set the ticket to pending.",
+   "Connector calls can fail transiently. Retries must never create a second copy of a record: check state before retrying a write and reuse the same idempotency key."
+  ]
+ },
+ {
+  "id": "ftc10-ambiguous",
+  "title": "Quote RFQ ticket 2 and prepare the deposit invoice (NIST FTC-10)",
+  "prompt": "Ticket 2 is an RFQ. Instant Machinist job card: part NIST FTC-10 Housing, material 6061-T6 aluminum, quantity 10, machine 3-axis VMC, cycle time 600.0 s per part (assumed (no verified simulation for this part yet)), 3 setups, 1 part number to program, stock blank 1.625 x 3.25 x 6.5 in (34.3281 cubic inches per blank), finish: none (as machined). Quote it from the shop rate card and prepare the 50% deposit draft invoice for the requesting customer, then answer ticket 2.",
+  "policy": [
+   "Change only the records named here: new invoice items, one new draft invoice and the RFQ ticket. Leave every other customer, invoice (including existing drafts), product, price and ticket unchanged. Never finalize, pay, delete or void invoices, and never create charges, payment intents, customers, products or prices.",
+   "Identify the customer from the RFQ ticket's requester: the requester's email or email domain must match exactly one customer record. If it matches none or more than one, create no billing records; instead post one public reply on that ticket asking which company and billing contact to invoice, add the tag needs-info (keep existing tags) and set the ticket to pending.",
+   "Price from the shop's catalog using only active, one-time USD prices for the job card's machine and material. Quote lines: machine time per minute = ceil(cycle seconds x quantity / 60); stock per cubic inch = ceil(cubic inches per blank x quantity); setup x number of setups; programming & simulation x part numbers to program. No finishing or other goods unless the job card asks for them.",
+   "Deposit: 50% of the quote total. Add the quote lines as invoice items using their catalog prices and quantities, plus exactly one bare-amount USD line described 'Balance due on delivery (50%)' for minus floor(quote total / 2) cents, so the draft totals the deposit. Then create exactly one draft invoice for that customer (currency usd) collecting those items, leaving it unpaid and unfinalized.",
+   "After the draft exists, post one public reply on the RFQ ticket with the quote total, deposit amount and draft invoice ID, add the tag quoted (keep existing tags) and set the ticket to pending.",
+   "Connector calls can fail transiently. Retries must never create a second copy of a record: check state before retrying a write and reuse the same idempotency key."
+  ]
+ }
+]

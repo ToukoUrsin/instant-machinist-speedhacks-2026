@@ -1,0 +1,32 @@
+{
+ "supplier": "Pacific Metals Supply",
+ "item": "6061-T6 aluminum flat bar 2 x 4 in, saw-cut to 6-1/2 in",
+ "qty": 1,
+ "thickness_in": 2,
+ "width_in": 4,
+ "piece_length_in": 6.5,
+ "covers_blank": true,
+ "pricing_basis": "per foot: $48.70/ft. 1.0 ft charged because the 6.5 in piece (~0.54 ft) is rounded up to the next half foot, so $48.70 per piece",
+ "unit_price": 48.7,
+ "cut_charge": 3,
+ "delivery_charge": 35,
+ "total": 86.7,
+ "landed_total": 86.7,
+ "delivery": "Delivery on the supplier's truck to the Oakland shop for $35 (the option noted on the quote). Ships next business day and arrives the business day after that, depending on routing. Free same-day will-call pickup in San Leandro is also available if ordered before 2 PM ($51.70 + tax).",
+ "lead_days": 2,
+ "quote_ref": "PMS-4279",
+ "substitutions": [
+  "2 in thick x 4 in wide offered instead of the requested 1-5/8 x 3-1/4 in. The supplier doesn't stock the requested size or anything that narrow at that thickness."
+ ],
+ "open_questions": [
+  "Arithmetic checks out: $48.70 material + $3 cut = $51.70 before delivery; + $35 delivery = $86.70. No mismatch.",
+  "Delivery timing is unclear: 'ships next business day, you'd see it the following business day depending on routing'. Recorded as about 2 business days. Confirm the actual delivery date.",
+  "Mill cert availability was not addressed.",
+  "Payment terms were garbled ('cut' \u2014 probably COD/card) or net 30 with an account. Confirm.",
+  "Quote is held for 7 days. The $40 minimum order is met.",
+  "The 1/8 in saw kerf is included in the charged length."
+ ],
+ "confidence": 0.9,
+ "supplier_as_said": "Pacific Metals Supply (Dana)",
+ "call_id": "cmv4ab0mo006r0fqq5vj0kg1n"
+}

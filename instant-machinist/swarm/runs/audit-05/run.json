@@ -1,0 +1,9 @@
+{
+  "agent_id": "audit-05",
+  "item": "parser inch metric switching",
+  "exit_code": 0,
+  "started_epoch": 1791750062.2747684,
+  "ended_epoch": 1791750193.6775331,
+  "wall_s": 131.4,
+  "transcript": "transcript.jsonl"
+}

@@ -1,0 +1,62 @@
+{
+ "call_id": "cmv4akgyk008c0fqq42xna0yk",
+ "supplier": "Pacific Metals Supply",
+ "note": "Both sides are Dial AI agents; supplier is a demo persona.",
+ "turns": [
+  {
+   "speaker": "supplier",
+   "text": "Pacific Metals,",
+   "startMs": 581,
+   "endMs": 1621
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Hi,",
+   "startMs": 938,
+   "endMs": 1324
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Hi there, this is the purchasing desk for a CNC machine shop in Oakland. I\u2019m calling to get a quote on some 6061\u2011T6 aluminum flat bar.  \n\nOur preferred size is 1\u20111/8 inch thick by 3\u20111/2 inch wide, saw\u2011cut to 5 inch lengths, quantity 25 pieces.  \nSaw\u2011cut tolerance of plus or minus 1/16 is fine.  \n\nCould you let me know pricing (per foot or per piece), any saw\u2011cut charges, total for the order, lead time, and delivery cost and date to Oakland? If delivery is pricey, we can also do will\u2011call pickup.",
+   "startMs": 4531,
+   "endMs": 35563
+  },
+  {
+   "speaker": "supplier",
+   "text": "Pacific Metals. This is Dana. We don't stock one one eight thick in that width. Closest we have in six thousand and sixty one t six flat bar is one one four thick x three one two wide twelve feet bars at twenty dollars eighty cents per foot. Let me run it with that size. You need twenty five PCS at five inches long equal sign one hundred and twenty five inches total equal sign, ten point four two feet of bar. Saw kerf. We lose one eight inches per cut, I have to figure bar usage off the full bar and cuts. To get twenty five pieces, number of cuts, twenty four, Kerf loss, twenty four one eight inches, equal sign, three. Total bar consumed, twenty five five inches, plus three inches, equal sign, one hundred and twenty eight inches equal sign, ten point six seven feet. We round up to the next half foot, so we charge you for eleven point zero feet. Material, eleven point zero feet, twenty six dollars. Eighty per foot equal sign, two hundred and ninety four dollars eighty cents. Saw cutting, twenty four cuts, three dollars equal sign, seventy two dollars. Subtotal, two hundred and ninety four dollars eighty cents, plus seventy two dollars equal sign, three hundred and sixty six dollars eighty cents. That's above our forty dollars minimum, so you're fine. Pricing. Per piece, twenty five p c s, three hundred and sixty six dollars, eighty cents twenty five, fourteen dollars sixty seven cents each. No extra charges besides material and cut charges. Delivery to Oakland. Truck delivery in the East Bay is thirty five dollars. In stock, six thousand and sixty one t six. So this would ship next business day. To Oakland, you'd see it next business day on our truck. If you place the order before two PM, will call pickup is same day here in San Leandro. No delivery charge. Totals, material plus cuts, three hundred and sixty six dollars eighty cents. With delivery, three hundred and sixty six dollars eighty cents plus thirty five dollars equal sign four hundred and one dollars eighty cents.",
+   "startMs": 36761,
+   "endMs": 157051
+  },
+  {
+   "speaker": "supplier",
+   "text": "With will call, three hundred and sixty six dollars eighty cents even. Quote number, PMS four thousand one hundred and seventy two. That's PMS four one seven two. I can hold that for seven days. Do you want me to note as delivery to Oakland or as a will call pickup?",
+   "startMs": 157531,
+   "endMs": 175221
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Thanks, Dana, that all sounds good.\n\nJust to confirm, I\u2019ve got:\n- Size: 1\u20111/4\" x 3\u20111/2\" 6061\u2011T6 flat bar, saw\u2011cut to 5\" lengths  \n- Quantity: 25 pieces  \n- Total material + cuts for will\u2011call: $366.80 even  \n- Lead time: in stock, available same\u2011day will\u2011call in San Leandro  \n- Quote number: PMS 4172, valid for seven days\n\nOn our side we\u2019re fine with that 1\u20111/4\" x 3\u20111/2\" size; it still covers our minimum finished blank of 1.11\" x 3.31\" x 4.89\".\n\nPlease note it as will\u2011call pickup, and we\u2019ll confirm the actual order by email after we finish comparing quotes later today.\n\nThanks for the detailed breakdown, Dana, really appreciate it.",
+   "startMs": 176248,
+   "endMs": 226891
+  },
+  {
+   "speaker": "supplier",
+   "text": "You got it. I've got you down as will call pickup on that quote PMS four thousand one hundred and seventy two. Yep. Valid seven days. And we'll wait for your email to turn it into an order.",
+   "startMs": 228341,
+   "endMs": 238631
+  },
+  {
+   "speaker": "supplier",
+   "text": "Thanks for calling Pacific Metals.",
+   "startMs": 239191,
+   "endMs": 240391
+  },
+  {
+   "speaker": "supplier",
+   "text": "Have a good one.",
+   "startMs": 240731,
+   "endMs": 241451
+  }
+ ],
+ "transcript": null
+}

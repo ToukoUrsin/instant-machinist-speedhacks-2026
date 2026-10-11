@@ -1,0 +1,9 @@
+{
+  "agent_id": "audit-17",
+  "item": "stock boundary clipping",
+  "exit_code": 0,
+  "started_epoch": 1791750350.2576838,
+  "ended_epoch": 1791750486.8228195,
+  "wall_s": 136.57,
+  "transcript": "transcript.jsonl"
+}

@@ -1,0 +1,15 @@
+{
+  "agent_id": "alike-091",
+  "model": "gpt-6.1-sol",
+  "goal": "audit Fusion-posted program compatibility",
+  "task_urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+  "started_epoch": 1791752532.0811963,
+  "ended_epoch": 1791752589.8250322,
+  "wall_s": 57.74,
+  "exit_code": 0,
+  "alike_pre_exit": 0,
+  "alike_pre_mode": "resolve_work_item",
+  "alike_post_exit": 0,
+  "alike_helped_moment": "(what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nThe shared simulator acceptance context emphasizes fidelity and deterministic evidence, so I treated a successful parse as insufficient and inspected warnings from an actual Fusion-posted artifact.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nDefer production compatibility claims until `G41/G42` handling is implemented or explicitly blocked at ingestion. Add the acceptance tests above before claiming full Fusion-posted compatibility.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":350100,\"cached_input_tokens\":294656,\"cache_write_input_tokens\":0,\"output_tokens\":2743,\"reasoning_output_tokens\":448}}\n\nReading additional input from stdin...",
+  "transcript": "transcript.jsonl"
+}

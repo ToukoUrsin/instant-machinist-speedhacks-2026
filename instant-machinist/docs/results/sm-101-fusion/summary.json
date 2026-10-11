@@ -1,0 +1,64 @@
+{
+ "part": "SM-101",
+ "engine": "fusion",
+ "programming_s": 154.4,
+ "baseline": {
+  "strategy": "baseline-manual",
+  "label": "Typical manual program: 2D pocketing, 2 mm depth steps, book feeds",
+  "dir": "out/run2/fusion/baseline-manual",
+  "cycle_s": 1182.99,
+  "pass": true,
+  "baseline": true
+ },
+ "best": {
+  "strategy": "adaptive-L3.0-D20",
+  "label": "Adaptive clearing, 3.0 mm load, 20 mm steps",
+  "dir": "out/run2/fusion/adaptive-L3.0-D20",
+  "cycle_s": 388.46,
+  "pass": true,
+  "baseline": false
+ },
+ "variants": [
+  {
+   "strategy": "baseline-manual",
+   "label": "Typical manual program: 2D pocketing, 2 mm depth steps, book feeds",
+   "dir": "out/run2/fusion/baseline-manual",
+   "cycle_s": 1182.99,
+   "pass": true,
+   "baseline": true
+  },
+  {
+   "strategy": "adaptive-L1.5-D10",
+   "label": "Adaptive clearing, 1.5 mm load, 10 mm steps",
+   "dir": "out/run2/fusion/adaptive-L1.5-D10",
+   "cycle_s": 518.88,
+   "pass": true,
+   "baseline": false
+  },
+  {
+   "strategy": "adaptive-L2.5-D10",
+   "label": "Adaptive clearing, 2.5 mm load, 10 mm steps",
+   "dir": "out/run2/fusion/adaptive-L2.5-D10",
+   "cycle_s": 427.0,
+   "pass": true,
+   "baseline": false
+  },
+  {
+   "strategy": "adaptive-L2.0-D20",
+   "label": "Adaptive clearing, 2.0 mm load, 20 mm steps",
+   "dir": "out/run2/fusion/adaptive-L2.0-D20",
+   "cycle_s": 438.54,
+   "pass": true,
+   "baseline": false
+  },
+  {
+   "strategy": "adaptive-L3.0-D20",
+   "label": "Adaptive clearing, 3.0 mm load, 20 mm steps",
+   "dir": "out/run2/fusion/adaptive-L3.0-D20",
+   "cycle_s": 388.46,
+   "pass": true,
+   "baseline": false
+  }
+ ],
+ "machining_saved_pct": 67.2
+}

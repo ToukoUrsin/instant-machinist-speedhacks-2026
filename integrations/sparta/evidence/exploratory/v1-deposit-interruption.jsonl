@@ -1,0 +1,29 @@
+{"t":1791750947070,"agent":"v1","kind":"tool","tool":"get_ticket","input":{"ticket_id":"1"}}
+{"t":1791750947075,"agent":"v1","kind":"connector","tool":"get_ticket","method":"GET","path":"/api/v2/tickets/1.json","status":500}
+{"t":1791750947075,"agent":"v1","kind":"tool","tool":"list_records","input":{"resource":"customers"}}
+{"t":1791750947078,"agent":"v1","kind":"connector","tool":"list_records","method":"GET","path":"/v1/customers","status":200}
+{"t":1791750947078,"agent":"v1","kind":"tool","tool":"list_records","input":{"resource":"products"}}
+{"t":1791750947080,"agent":"v1","kind":"connector","tool":"list_records","method":"GET","path":"/v1/products","status":200}
+{"t":1791750947080,"agent":"v1","kind":"tool","tool":"list_records","input":{"resource":"prices"}}
+{"t":1791750947083,"agent":"v1","kind":"connector","tool":"list_records","method":"GET","path":"/v1/prices","status":200}
+{"t":1791750949437,"agent":"v1","kind":"tool","tool":"get_ticket","input":{"ticket_id":"1"}}
+{"t":1791750949440,"agent":"v1","kind":"connector","tool":"get_ticket","method":"GET","path":"/api/v2/tickets/1.json","status":200}
+{"t":1791750953539,"agent":"v1","kind":"tool","tool":"list_records","input":{"resource":"invoiceitems","customer":"cus_kestrel"}}
+{"t":1791750953542,"agent":"v1","kind":"connector","tool":"list_records","method":"GET","path":"/v1/invoiceitems","status":200}
+{"t":1791750953542,"agent":"v1","kind":"tool","tool":"list_records","input":{"resource":"invoices","customer":"cus_kestrel"}}
+{"t":1791750953544,"agent":"v1","kind":"connector","tool":"list_records","method":"GET","path":"/v1/invoices","status":200}
+{"t":1791750959417,"agent":"v1","kind":"tool","tool":"create_invoice_item","input":{"customer":"cus_kestrel","price":"price_vmc3_min_2026","quantity":100}}
+{"t":1791750959421,"agent":"v1","kind":"connector","tool":"create_invoice_item","method":"POST","path":"/v1/invoiceitems","status":200}
+{"t":1791750959421,"agent":"v1","kind":"tool","tool":"create_invoice_item","input":{"customer":"cus_kestrel","price":"price_6061_cuin","quantity":344}}
+{"t":1791750959423,"agent":"v1","kind":"connector","tool":"create_invoice_item","method":"POST","path":"/v1/invoiceitems","status":200}
+{"t":1791750959423,"agent":"v1","kind":"tool","tool":"create_invoice_item","input":{"customer":"cus_kestrel","price":"price_setup","quantity":3}}
+{"t":1791750959425,"agent":"v1","kind":"connector","tool":"create_invoice_item","method":"POST","path":"/v1/invoiceitems","status":200}
+{"t":1791750959425,"agent":"v1","kind":"tool","tool":"create_invoice_item","input":{"customer":"cus_kestrel","price":"price_program_sim","quantity":1}}
+{"t":1791750959427,"agent":"v1","kind":"connector","tool":"create_invoice_item","method":"POST","path":"/v1/invoiceitems","status":200}
+{"t":1791750959427,"agent":"v1","kind":"tool","tool":"create_invoice_item","input":{"customer":"cus_kestrel","amount":-43710,"description":"Balance due on delivery (50%)"}}
+{"t":1791750959429,"agent":"v1","kind":"connector","tool":"create_invoice_item","method":"POST","path":"/v1/invoiceitems","status":200}
+{"t":1791750961039,"agent":"v1","kind":"tool","tool":"create_draft_invoice","input":{"customer":"cus_kestrel"}}
+{"t":1791750961042,"agent":"v1","kind":"connector","tool":"create_draft_invoice","method":"POST","path":"/v1/invoices","status":200}
+{"t":1791750965797,"agent":"v1","kind":"tool","tool":"update_ticket","input":{"ticket_id":"1","status":"pending","tags":["rfq","quoted"],"comment":{"public":true,"body":"Hi Dana,\n\nThanks for the RFQ. Here is our quote for 10 pcs of the NIST FTC-10 Housing in 6061-T6 aluminum, as machined (no finish), on our 3-axis VMC:\n\n- 3-axis VMC machining: 100 min x $1.75 = $175.00\n- 6061-T6 stock, cut to size: 344 cu in x $0.55 = $189.20\n- Setup & fixturing: 3 x $120.00 = $360.00\n- CNC programming & simulation: 1 x $150.00 = $150.00\n\nQuote total: $874.20\nDeposit due to start (50%): $437.10\nBalance due on delivery: $437.10\n\nThe deposit invoice is prepared as draft invoice in_MslT6GOQaeLYFM7h.\n\nPlease note: the machining time uses an estimated cycle time of 600 s per part. We have not yet run a verified simulation for this part.\n\nBest regards"}}}
+{"t":1791750965800,"agent":"v1","kind":"connector","tool":"update_ticket","method":"PUT","path":"/api/v2/tickets/1.json","status":200}
+{"t":1791750972606,"agent":"v1","kind":"done","steps":7,"tool_calls":14,"input_tokens":61135,"output_tokens":2528,"ms":27974}

@@ -1,0 +1,207 @@
+{
+  "job": "native",
+  "engine": "instant-machinist-native",
+  "kind": "baseline",
+  "program": 1001,
+  "setup": "top",
+  "file": "1001.nc",
+  "variant": "manual-baseline",
+  "params": {
+    "name": "manual-baseline",
+    "rough_style": "conventional",
+    "stepover": 0.1,
+    "ap_max": 0.5,
+    "leave": 0.2,
+    "feed_scale": 0.6,
+    "thinning": false,
+    "ramp_angle": 2.0,
+    "helix_frac": 0.25,
+    "floor_stepover": 0.4,
+    "face_stepover": 0.5,
+    "peck_q_frac": 0.5
+  },
+  "cycle_time": {
+    "cutting_s": 1820.65,
+    "rapid_s": 10.17,
+    "dwell_s": 0.0,
+    "tool_change_s": 24.0,
+    "tool_changes": 6,
+    "total_s": 1854.82,
+    "total_min": 30.91,
+    "model": {
+      "rapid_mm_min_per_axis": 25000.0,
+      "tool_change_s": 4.0,
+      "feed": "programmed F, path length",
+      "rapid": "max-axis time"
+    },
+    "source": "sim.cycle",
+    "native_estimate_s": 1855.1
+  },
+  "sim_checks": {
+    "ok": true,
+    "checks": {
+      "gouge": true,
+      "leftover": true,
+      "rapid_into_stock": true,
+      "flat_plunge": true,
+      "below_fixture": true,
+      "flute_length": true
+    },
+    "total_s": 1854.82
+  },
+  "operations": [
+    {
+      "id": "face",
+      "name": "Face F1",
+      "tool": 1,
+      "strategy": "face-zigzag",
+      "features": [
+        "F1"
+      ],
+      "rpm": 2329,
+      "feed": 699,
+      "stepover_mm": 19.67,
+      "ap_mm": 1.5,
+      "est_time_s": 78.8,
+      "tool_desc": "T1 D50 face mill"
+    },
+    {
+      "id": "rough_F2",
+      "name": "Rough profile F2",
+      "tool": 2,
+      "strategy": "conventional-offset",
+      "features": [
+        "F2"
+      ],
+      "rpm": 5821,
+      "feed": 838,
+      "stepover_mm": 1.0,
+      "ap_mm": 5.0,
+      "rings": 6,
+      "est_time_s": 877.1,
+      "tool_desc": "T2 D10 flat end mill"
+    },
+    {
+      "id": "rough_F3",
+      "name": "Rough pocket F3",
+      "tool": 2,
+      "strategy": "conventional-offset",
+      "features": [
+        "F3"
+      ],
+      "rpm": 5821,
+      "feed": 838,
+      "stepover_mm": 1.0,
+      "ap_mm": 5.0,
+      "rings": 17,
+      "entry": "helix",
+      "est_time_s": 628.6,
+      "tool_desc": "T2 D10 flat end mill"
+    },
+    {
+      "id": "finish_F3",
+      "name": "Finish pocket F3 floor+walls",
+      "tool": 2,
+      "strategy": "contour-finish",
+      "features": [
+        "F3"
+      ],
+      "rpm": 5821,
+      "feed": 838,
+      "floor_rings": 5,
+      "lead_radius": 5.0,
+      "est_time_s": 77.5,
+      "tool_desc": "T2 D10 flat end mill"
+    },
+    {
+      "id": "finish_F2",
+      "name": "Finish profile F2",
+      "tool": 2,
+      "strategy": "contour-finish",
+      "features": [
+        "F2"
+      ],
+      "rpm": 5821,
+      "feed": 838,
+      "lead_radius": 5.0,
+      "est_time_s": 35.8,
+      "tool_desc": "T2 D10 flat end mill"
+    },
+    {
+      "id": "rough_F4",
+      "name": "Rough pocket F4",
+      "tool": 3,
+      "strategy": "conventional-offset",
+      "features": [
+        "F4"
+      ],
+      "rpm": 8100,
+      "feed": 729,
+      "stepover_mm": 0.6,
+      "ap_mm": 3.0,
+      "rings": 2,
+      "entry": "ramp",
+      "est_time_s": 64.8,
+      "tool_desc": "T3 D6 flat end mill"
+    },
+    {
+      "id": "finish_F4",
+      "name": "Finish pocket F4 floor+walls",
+      "tool": 3,
+      "strategy": "contour-finish",
+      "features": [
+        "F4"
+      ],
+      "rpm": 8100,
+      "feed": 729,
+      "floor_rings": 1,
+      "lead_radius": 0.9,
+      "est_time_s": 19.5,
+      "tool_desc": "T3 D6 flat end mill"
+    },
+    {
+      "id": "spot",
+      "name": "Spot drill F5+F6",
+      "tool": 4,
+      "strategy": "spot-G81",
+      "features": [
+        "F5",
+        "F6"
+      ],
+      "rpm": 2329,
+      "feed": 84,
+      "est_time_s": 31.3,
+      "tool_desc": "T4 D10 spot drill"
+    },
+    {
+      "id": "drill_F5",
+      "name": "Peck drill F5",
+      "tool": 5,
+      "strategy": "peck-G83",
+      "features": [
+        "F5"
+      ],
+      "rpm": 3528,
+      "feed": 318,
+      "peck_q": 3.3,
+      "z_drill": -22.983,
+      "est_time_s": 28.9,
+      "tool_desc": "T5 D6.6 drill"
+    },
+    {
+      "id": "drill_F6",
+      "name": "Peck drill F6",
+      "tool": 6,
+      "strategy": "peck-G83",
+      "features": [
+        "F6"
+      ],
+      "rpm": 2911,
+      "feed": 262,
+      "peck_q": 4.0,
+      "z_drill": -23.403,
+      "est_time_s": 12.7,
+      "tool_desc": "T6 D8 drill"
+    }
+  ]
+}

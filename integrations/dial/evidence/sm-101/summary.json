@@ -1,0 +1,81 @@
+{
+ "part": "SM-101",
+ "need": "25 blanks of 6061-T6 aluminum, at least 4.88 x 3.31 x 1.10 in (e.g. 1.125 in thick x 3.50 in wide flat bar, cut to 5.00 in lengths)",
+ "quotes": [
+  {
+   "supplier": "Pacific Metals Supply",
+   "item": "6061-T6 flat bar 1 x 3-1/2 in, saw-cut to 5 in",
+   "qty": 25,
+   "unit_price": 11.99,
+   "pricing_basis": "$21.40 per foot of bar (10.5 ft for 25 pcs incl. kerf/roundup) + $3.00 per cut; about $11.99/piece before tax and delivery",
+   "cut_charge": 75,
+   "delivery_charge": 35,
+   "total": 334.7,
+   "landed_total": 334.7,
+   "lead_days": 1,
+   "delivery": "Flat $35 on their truck to Oakland (East Bay), ships next business day; or same-day will-call pickup in San Leandro if ordered before 2 PM",
+   "quote_ref": "PMS-4273",
+   "thickness_in": 1,
+   "width_in": 3.5,
+   "piece_length_in": 5,
+   "covers_blank": false,
+   "substitutions": [
+    "Offered 1 in thick instead of the requested 1-1/8 in. This is under the 1.11 in minimum blank thickness, so it does not work for the part."
+   ],
+   "open_questions": [
+    "The quoted 1 x 3-1/2 bar is too thin (1.00 in vs the 1.11 in minimum). The buyer rejected it, so this quote can't be used as written.",
+    "The supplier contradicted itself. It first listed 1-1/4 x 3-1/2 at $26.80/ft, 1-1/4 x 4 at $30.50/ft and 1-1/2 x 3-1/2 at $32.xx/ft (cut off). Then it said it stocks nothing 1.11 in thick or thicker in this line. Need to confirm whether 1-1/4 or 1-1/2 thick 6061-T6 bar is actually available, and get a firm price.",
+    "The transcript ends mid-sentence before the supplier gives any alternative for the 1.11 x 3.31 x 4.89 blank.",
+    "Arithmetic checks out: 10.5 ft x $21.40 = $224.70; 25 cuts x $3 = $75; subtotal $299.70; plus $35 delivery = $334.70.",
+    "Quote held for 7 days. Mill cert availability was not confirmed."
+   ],
+   "confidence": 0.6,
+   "supplier_as_said": "Pacific Metals Supply (Dana)",
+   "call_id": "cmv4asln7009g0fqqwxvk91y0",
+   "compare_total": 334.7
+  },
+  {
+   "supplier": "Bay Alloy & Steel",
+   "item": "6061-T6 aluminum precision saw-cut blanks from plate, 1.125 x 3.50 x 5.00 in",
+   "qty": 25,
+   "unit_price": 11.98,
+   "cut_charge": 0,
+   "total": 299.4,
+   "lead_days": 2,
+   "delivery": "Free delivery to Oakland, CA (order over $250); ETA 2 business days from order release. Mill certs included at no charge.",
+   "delivery_charge": 0,
+   "landed_total": 299.4,
+   "quote_ref": "BAS-40312",
+   "substitutions": [
+    "Cut from 6061-T6 plate instead of flat bar. Bay Alloy doesn't stock 1-1/8 x 3-1/2 flat bar, and the size is still the 1.125 x 3.50 x 5.00 in that was requested"
+   ],
+   "confidence": 0.85,
+   "covers_blank": true,
+   "thickness_in": 1.125,
+   "width_in": 3.5,
+   "piece_length_in": 5,
+   "pricing_basis": "per lb: $6.20/lb, about 1.93 lb per piece (about $11.98/piece as stated)",
+   "open_questions": [
+    "Arithmetic mismatch: 25 x 1.93 lb = 48.25 lb, not the stated 48.35 lb. $6.20 x 1.93 = $11.97/pc, not $11.98. 25 x $11.98 = $299.50. 48.25 lb x $6.20 = $299.15. 48.35 lb x $6.20 = $299.77. None of these equal the stated total of $299.40, which we kept. All figures were given as 'about', so ask for a firm price on the emailed formal quote.",
+    "Quote number was first said as BAS40312, then repeated as 'BAS4031'. Buyer read back BAS40312 and the supplier confirmed it. Check this on the written quote.",
+    "Saw-cut tolerance was stated as 'plus zero, zero six', which is unclear. Confirm whether it is +/-0.06 in (about 1/16) or +0.06/-0.",
+    "Ask for the formal quote by email, including how long the quote is valid."
+   ],
+   "supplier_as_said": "Bay Alloy & Steel (Marco)",
+   "call_id": "cmv4asn2800880fox4toh0j7l",
+   "compare_total": 299.4
+  }
+ ],
+ "best": {
+  "supplier": "Bay Alloy & Steel",
+  "item": "6061-T6 aluminum precision saw-cut blanks from plate, 1.125 x 3.50 x 5.00 in",
+  "total": 299.4,
+  "landed_total": 299.4,
+  "lead_days": 2,
+  "quote_ref": "BAS-40312",
+  "delivery": "Free delivery to Oakland, CA (order over $250); ETA 2 business days from order release. Mill certs included at no charge."
+ },
+ "calls_wall_clock_s": 302.0,
+ "call_seconds_total": 580,
+ "elapsed_s": 302.0
+}

@@ -1,0 +1,26 @@
+{
+ "project": "Instant Machinist Shop Floor",
+ "project_id": "3c71f27a-eb5c-4a7d-ac74-6cab42e77661",
+ "at_utc": "2026-10-11T21:17:42Z",
+ "kind": "ask",
+ "question": "Which version of the deposit-invoice agent should we ship, v1 or v2?",
+ "answer": "I recommend shipping **v2**. It passed every test condition. v1 failed the \"double\" test by drafting a doubled deposit.\n\n| Condition | v1 | v2 |\n|---|---|---|\n| normal | pass (2/2) | pass (2/2) |\n| interruption | pass | pass |\n| crash | pass | pass |\n| crash-late | pass | pass |\n| **double** | **FAIL: drafted 87,420\u00a2 ($874.20)** | pass: drafted 43,710\u00a2 ($437.10) |\n\n- **v1's failure:** in the \"double\" test it drafted exactly twice the correct deposit. Every other test, for both versions, drafted 43,710\u00a2. If that happened on a real customer, they'd be invoiced twice.\n- **Speed:** v2 was also mostly faster per drafted invoice. Its \"double\" draft took 22 s against v1's 84 s, and its normal, crash and interruption drafts took 11 s against v1's 25\u201328 s. The one exception is crash-late, where v2 took 32 s and v1 took 20 s.\n\n**Caveats:**\n- These are Sparta tests in a simulated Stripe setup, not real invoices.\n- There is only one test record per version and condition, so this is a small sample.\n- One summary column (the sum of pass results) gave numbers that don't match the plain pass/fail counts. I relied on the plain counts in the table.\n\nI'd test v2 on a few real low-value deposits before relying on it fully.",
+ "keewano_calls": [
+  {
+   "tool": "sql",
+   "why": "Compare v1 vs v2 invoice agent reliability per test condition",
+   "query": "SELECT \"InvoiceAgentVersion\" AS v, \"InvoiceTestCondition\" AS cond, count(DISTINCT user_id) AS entities, sum(\"InvoiceTestRuns\") AS runs, count(\"InvoiceTestPassed\") AS pass_events, sum(\"InvoiceTestPassed\") AS passed, min(\"DraftDepositCents\") AS min_draft, max(\"DraftDepositCents\") AS max_draft, count(\"DraftDepositCents\") AS drafts FROM events WHERE \"Sponsor\" = 'sparta' AND \"InvoiceAgentVersion\" IS NOT NULL GROUP BY v, cond ORDER BY v, cond",
+   "error": false,
+   "result": "SQL result for project 3c71f27a-eb5c-4a7d-ac74-6cab42e77661: 11 row(s), 9 column(s).\nv,cond,entities,runs,pass_events,passed,min_draft,max_draft,drafts\nv1,,1,,0,,,,0\nv1,crash,1,3,1,2,43710,43710,1\nv1,crash-late,1,1,1,2,43710,43710,1\nv1,double,1,1,1,1,87420,87420,1\nv1,interruption,1,1,1,2,43710,43710,1\nv1,normal,1,2,2,4,43710,43710,1\nv2,crash,1,1,1,2,43710,43710,1\nv2,crash-late,1,1,1,2,43710,43710,1\nv2,double,1,3,1,2,43710,43710,1\nv2,interruption,1,3,1,2,43710,43710,1\nv2,normal,1,4,2,4,43710,43710,1",
+   "ms": 322
+  },
+  {
+   "tool": "sql",
+   "why": "Explicit pass/fail counts per version and condition",
+   "query": "SELECT \"InvoiceAgentVersion\" AS v, \"InvoiceTestCondition\" AS cond, count(*) FILTER (WHERE \"InvoiceTestPassed\" = true) AS pass_true, count(*) FILTER (WHERE \"InvoiceTestPassed\" = false) AS pass_false, count(\"DraftDepositCents\") AS drafts, max(\"StepSeconds\") AS max_step_s, count(\"StepSeconds\") AS steps FROM events WHERE \"Sponsor\" = 'sparta' AND \"InvoiceTestCondition\" IS NOT NULL GROUP BY v, cond ORDER BY v, cond",
+   "error": false,
+   "result": "SQL result for project 3c71f27a-eb5c-4a7d-ac74-6cab42e77661: 10 row(s), 7 column(s).\nv,cond,pass_true,pass_false,drafts,max_step_s,steps\nv1,crash,1,0,1,25,1\nv1,crash-late,1,0,1,20,1\nv1,double,0,1,1,84,1\nv1,interruption,1,0,1,28,1\nv1,normal,2,0,1,26,2\nv2,crash,1,0,1,11,1\nv2,crash-late,1,0,1,32,1\nv2,double,1,0,1,22,1\nv2,interruption,1,0,1,11,1\nv2,normal,2,0,1,11,2",
+   "ms": 308
+  }
+ ]
+}

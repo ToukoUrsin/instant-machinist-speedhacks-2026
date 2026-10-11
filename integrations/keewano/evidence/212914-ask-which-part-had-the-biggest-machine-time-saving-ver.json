@@ -1,0 +1,26 @@
+{
+ "project": "Instant Machinist Shop Floor",
+ "project_id": "3c71f27a-eb5c-4a7d-ac74-6cab42e77661",
+ "at_utc": "2026-10-11T21:29:14Z",
+ "kind": "ask",
+ "question": "Which part had the biggest machine-time saving versus the manual-style program, and by how many minutes?",
+ "answer": "**SM-103 had the biggest saving: 28:25 (about 28.4 minutes) less machine time per part.** The manual-style program ran 32:17 (1,937 s) and the best strategy ran 3:52 (232 s), which is 88% less.\n\nSM-103 isn't a real customer part, though. Its data source is `variant_part`, meaning a real CAM run on a part derived from SM-101 for the demo. Among real runs, SM-101 saved the most: 19:21 (1,161 s), going from 22:28 (1,348 s) to 3:07 (187 s), or 86% less. Two other real SM-101 runs saved less, 13:15 (795 s, from 1,183 s to 388 s).\n\nThe runner-up overall was SM-106, also a demo variant, which saved 27:17 (1,637 s), from 1,855 s to 218 s. NIST FTC-10 and SM-105 have no baseline or best cycle time recorded, so they aren't in this comparison.",
+ "keewano_calls": [
+  {
+   "tool": "sql",
+   "why": "Per CAM job baseline vs best cycle time to find biggest saving",
+   "query": "SELECT user_id, \"Part\" AS part, \"DataSource\" AS ds, max(\"BaselineCycleSeconds\") AS base, max(\"BestCycleSeconds\") AS best, max(\"MachiningSavedPct\") AS pct FROM events WHERE \"Part\" IS NOT NULL GROUP BY user_id, part, ds HAVING max(\"BaselineCycleSeconds\") IS NOT NULL ORDER BY part LIMIT 100",
+   "error": true,
+   "result": "Failed to execute SQL query: SQL error at 0:0: unsupported HAVING condition",
+   "ms": 309
+  },
+  {
+   "tool": "sql",
+   "why": "Per CAM job baseline vs best cycle time to find biggest saving",
+   "query": "SELECT user_id, \"Part\" AS part, \"DataSource\" AS ds, max(\"BaselineCycleSeconds\") AS base, max(\"BestCycleSeconds\") AS best, max(\"MachiningSavedPct\") AS pct, max(\"BaselineCycleSeconds\") - max(\"BestCycleSeconds\") AS saved FROM events WHERE \"Part\" IS NOT NULL AND \"Engine\" IS NOT NULL GROUP BY user_id, part, ds ORDER BY saved DESC LIMIT 100",
+   "error": false,
+   "result": "SQL result for project 3c71f27a-eb5c-4a7d-ac74-6cab42e77661: 15 row(s), 7 column(s).\nuser_id,part,ds,base,best,pct,saved\nae23c413-fc7d-57f4-aeb8-56c3ad85c2f1,SM-103,variant_part,1937,232,88,1705\n3b4125db-5ac9-5b86-86f2-2b7027d1b724,SM-106,variant_part,1855,218,88,1637\ndf9ba052-ff35-56cb-980d-25840c580ec4,SM-106,variant_part,1855,218,88,1637\n5876b138-f10b-5db0-a41a-b256b87fd061,SM-106,variant_part,1855,218,88,1637\nfe871ff1-1c58-52d1-9d27-2a8fff1887e6,SM-102,variant_part,1504,199,87,1305\na8994fd6-6e09-5d35-a8b7-257e691ee07f,SM-101,real_run,1348,187,86,1161\n2ef6438e-b7e0-528d-9e07-ea387b23b629,SM-101,real_run,1348,187,86,1161\n06475174-c7da-576b-a127-91d8632613f4,SM-101,real_run,1348,187,86,1161\nb655e53d-a258-53bf-b2f4-64d1eb1e2871,SM-107,variant_part,1150,168,85,982\nee975e17-a964-5326-9236-91ec06b6ce7d,SM-107,variant_part,1150,168,85,982\n907cca34-8bd4-5910-ab74-b180196f2400,SM-104,variant_part,988,173,82,815\n1458afce-b9c6-5ee1-a466-e9812652b983,SM-101,real_run,1183,388,67,795\nd627e6f3-1040-5cf6-aa01-fa99ad57a1c6,SM-101,real_run,1183,388,67,795\ncb9fefd3-e12c-5bd2-9532-88a687e79890,NIST FTC-10,real_run,,,,\n2214b721-e696-56a4-9005-f1f09698a39a,SM-105,variant_part,,,,",
+   "ms": 357
+  }
+ ]
+}

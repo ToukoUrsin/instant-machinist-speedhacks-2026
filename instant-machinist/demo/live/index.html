@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AGI Machinist</title>
+<style>
+@font-face { font-family: InterL; src: url(/fonts/Inter-Regular.otf); font-weight: 400; }
+@font-face { font-family: InterL; src: url(/fonts/Inter-Medium.otf); font-weight: 500; }
+@font-face { font-family: InterL; src: url(/fonts/Inter-SemiBold.otf); font-weight: 600; }
+@font-face { font-family: InterL; src: url(/fonts/Inter-Bold.otf); font-weight: 700; }
+:root { --bg:#08090B; --panel:#0F1115; --panel2:#14171C; --line:#1E222A; --line2:#2A2F38; --text:#E8EAED; --muted:#8A919C;
+  --dim:#5B626D; --accent:#8B7CFF; --teal:#2DD4BF; --green:#3DD68C; --amber:#F5B454; --red:#F26D6D; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; background: var(--bg); }
+body { font-family: InterL, system-ui, sans-serif; color: var(--text); font-size: 14px; -webkit-font-smoothing: antialiased;
+  background: radial-gradient(1400px 420px at 50% -160px, rgba(139,124,255,0.12), transparent 70%), var(--bg); overflow: hidden; }
+header { height: 58px; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: center; gap: 11px; } .brand .name { font-weight: 600; font-size: 18px; letter-spacing: -0.02em; }
+.crumb { color: var(--muted); } .crumb b { color: var(--text); font-weight: 500; }
+.right { display: flex; gap: 9px; align-items: center; }
+.pill { display: inline-flex; align-items: center; gap: 7px; height: 30px; padding: 0 12px; border: 1px solid var(--line2); border-radius: 15px; color: #C9CDD3; font-size: 12.5px; background: var(--panel); }
+.dot { width: 8px; height: 8px; border-radius: 4px; } .claude { background: #D97757; } .fusion { background: #F0A500; }
+.timer { display: inline-flex; align-items: center; gap: 9px; height: 34px; padding: 0 14px; border-radius: 9px; background: var(--panel2); border: 1px solid var(--line2); }
+.timer .tl { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+#timerv { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 18px; min-width: 44px; text-align: right; }
+.timer.done { border-color: rgba(61,214,140,.55); } .timer.done #timerv { color: var(--green); }
+main { position: absolute; top: 58px; left: 0; right: 0; bottom: 0; padding: 14px; display: grid; grid-template-columns: 1fr 1.25fr 1.1fr; gap: 14px; }
+.col { display: flex; flex-direction: column; gap: 14px; min-height: 0; }
+.card { background: linear-gradient(180deg, var(--panel2), var(--panel)); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; min-height: 0; }
+.head { height: 38px; flex: none; display: flex; align-items: center; justify-content: space-between; padding: 0 14px; font-weight: 500; font-size: 13px; color: #C9CDD3; border-bottom: 1px solid var(--line); }
+.head .m { color: var(--muted); font-weight: 400; font-size: 12px; } .head .m.on { color: var(--green); }
+.body { padding: 12px 14px; overflow: hidden; min-height: 0; flex: 1; }
+.empty { color: var(--dim); display: flex; align-items: center; justify-content: center; height: 100%; text-align: center; line-height: 1.6; }
+#mail .row { display: flex; gap: 8px; margin-bottom: 6px; } #mail .k { color: var(--muted); width: 58px; flex: none; }
+.att { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; margin: 6px 6px 0 0; border-radius: 7px; background: var(--panel2); border: 1px solid var(--line2); font-size: 12.5px; }
+#drawing { flex: 1.6; } #drawing iframe { width: 100%; height: 100%; border: 0; background: #fff; }
+#drop.over { outline: 2px dashed var(--accent); outline-offset: -8px; }
+#log { flex: 1.25; } #log .body { overflow-y: auto; }
+.ev { display: grid; grid-template-columns: 22px 1fr 54px; gap: 8px; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,.035); animation: in .35s ease; }
+@keyframes in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.ev .t { color: var(--dim); text-align: right; font-variant-numeric: tabular-nums; font-size: 12px; }
+.ev .msg { line-height: 1.4; } .ev .sub { color: var(--muted); font-size: 12px; margin-top: 3px; line-height: 1.45; }
+.ic { width: 18px; height: 18px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 11px; margin-top: 1px; }
+.ic.ok { background: rgba(61,214,140,.15); color: var(--green); } .ic.bad { background: rgba(242,109,109,.15); color: var(--red); }
+.ic.run { border: 2px solid var(--line2); border-top-color: var(--accent); animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.chip { display: inline-block; padding: 2px 8px; margin: 4px 4px 0 0; border-radius: 6px; background: rgba(139,124,255,.14); color: #C3BAFF; font-size: 11.5px; }
+.chip.q { background: rgba(245,180,84,.12); color: var(--amber); }
+#strat { flex: 1; } table { width: 100%; border-collapse: collapse; } td, th { padding: 7px 4px; text-align: left; font-size: 13px; }
+th { color: var(--muted); font-weight: 400; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; }
+tr.win td { color: var(--green); } td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.bar { height: 6px; border-radius: 3px; background: var(--line2); position: relative; min-width: 80px; }
+.bar i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--accent); }
+tr.base .bar i { background: var(--amber); } tr.win .bar i { background: var(--green); }
+#model { flex: 1; } #model img { width: 100%; height: 100%; object-fit: contain; background: #F4F5F7; }
+#gcode { flex: 0.9; } #gcode pre { font: 12px/1.55 ui-monospace, Menlo, monospace; color: #B9C0CA; }
+#gcode pre b { color: var(--dim); font-weight: 400; margin-right: 10px; }
+#sim { flex: 1.3; } #sim video { width: 100%; height: 100%; object-fit: cover; background: #000; }
+.result { display: flex; gap: 10px; padding: 10px 14px; border-top: 1px solid var(--line); }
+.stat { flex: 1; } .stat .v { font-size: 22px; font-weight: 600; } .stat .l { color: var(--muted); font-size: 11.5px; }
+.stat .v s { color: var(--dim); font-size: 14px; font-weight: 400; margin-left: 6px; }
+.hidden { display: none !important; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <svg viewBox="0 0 24 24" width="28" height="28"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8B7CFF"/><stop offset="1" stop-color="#2DD4BF"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#g)"/><path d="M6 16.5 L6 9 L9.5 12.5 L13 7.5 L13 16.5 M15.5 16.5 L18 16.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="name">AGI Machinist</span><span class="crumb">/ <b id="ptitle">waiting for an RFQ</b></span>
+  </div>
+  <div class="right">
+    <span class="pill"><i class="dot claude"></i>Claude Opus 5.5</span>
+    <span class="pill"><i class="dot fusion"></i>Autodesk Fusion · cloud</span>
+    <span class="timer" id="timer"><span class="tl">Programming</span><span id="timerv">0:00</span></span>
+  </div>
+</header>
+<main>
+  <section class="col">
+    <div class="card" id="drop" style="flex:.55">
+      <div class="head"><span>Incoming RFQ</span><span class="m" id="mailm">touko.ursin+machinist@gmail.com</span></div>
+      <div class="body" id="mail"><div class="empty">Forward a customer email with the drawing<br>and 3D model, or drop the files here.</div></div>
+    </div>
+    <div class="card" id="drawing"><div class="head"><span>Customer drawing</span><span class="m" id="dwgm"></span></div>
+      <div class="body" style="padding:0"><div class="empty" id="dwgempty">No drawing yet</div><img id="pdf" class="hidden" alt="" style="width:100%;height:100%;object-fit:contain;background:#fff"></div></div>
+  </section>
+  <section class="col">
+    <div class="card" id="log"><div class="head"><span>Agent run</span><span class="m" id="logm">idle</span></div><div class="body" id="events"></div></div>
+    <div class="card" id="strat"><div class="head"><span>Strategies · simulated &amp; timed</span><span class="m" id="stratm"></span></div>
+      <div class="body"><table><thead><tr><th>Program</th><th></th><th style="text-align:right">Cycle</th><th style="text-align:right">Sim</th></tr></thead><tbody id="rows"></tbody></table></div></div>
+  </section>
+  <section class="col">
+    <div class="card" id="model"><div class="head"><span>Fusion model</span><span class="m" id="modelm">waiting</span></div>
+      <div class="body" style="padding:0"><div class="empty" id="modelempty">Opens when Fusion imports the customer's 3D model</div><img id="modelimg" class="hidden" alt=""></div></div>
+    <div class="card" id="gcode"><div class="head"><span>1001.nc · Haas</span><span class="m" id="gcm">waiting</span></div><div class="body"><pre id="gc"></pre></div></div>
+    <div class="card" id="sim"><div class="head"><span>Simulation of the winning program</span><span class="m" id="simm">waiting</span></div>
+      <div class="body" style="padding:0"><div class="empty" id="simempty">Rendered after the program is verified</div><video id="vid" class="hidden" muted playsinline loop></video></div>
+      <div class="result hidden" id="result"></div></div>
+  </section>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+const mmss = (s) => { s = Math.max(0, Math.round(s)); const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = s % 60;
+  return h ? `${h}:${String(m).padStart(2, "0")}:${String(x).padStart(2, "0")}` : `${m}:${String(x).padStart(2, "0")}`; };
+let job = null, st = null, shownEvents = 0, modelShown = false, videoShown = false, pdfShown = false, offset = 0;
+
+async function poll() {
+  try {
+    if (!job) { const r = await (await fetch("/api/latest")).json(); if (r.id && r.id !== initialLatest) job = r.id; }
+    if (job) { st = await (await fetch(`/api/run/${job}`)).json(); offset = Date.now() / 1000 - st.now; render(); }
+  } catch (e) { console.warn(e); }
+  setTimeout(poll, 1200);
+}
+let initialLatest;
+const q = new URLSearchParams(location.search);
+(async () => { initialLatest = q.get("job") ? null : (await (await fetch("/api/latest")).json()).id; if (q.get("job")) job = q.get("job"); poll(); })();
+
+function label(e) {
+  if (e.step === "verify") return `${esc(e.label)}`;
+  return esc(e.msg);
+}
+function evRow(e, last, done) {
+  let ic = "ok", sub = "";
+  if (e.step === "verify") { ic = e.pass ? "ok" : "bad"; sub = `<div class="sub">cycle ${mmss(e.cycle_s)} · ${e.pass ? "verified" : "FAILED"} · ${esc(e.checks || "")}</div>`; }
+  if (e.notes) sub += `<div class="sub">${(e.notes || []).slice(2, 9).map((n) => `<span class="chip">${esc(n.split(":")[0].slice(0, 34))}</span>`).join("")}</div>`;
+  if (e.questions) sub += `<div class="sub">${e.questions.length} questions for the customer · <span class="chip q">${esc(String(e.material).slice(0, 40))}</span></div>`;
+  if (e.step === "post") ic = "ok";
+  const running = last && !done;
+  return `<div class="ev"><div class="ic ${running ? "run" : ic}">${running ? "" : ic === "ok" ? "✓" : "✕"}</div><div><div class="msg">${label(e)}</div>${sub}</div><div class="t">${mmss(e.t)}</div></div>`;
+}
+function render() {
+  const E = st.events, done = E.some((e) => e.step === "done"), now = Date.now() / 1000 - offset;
+  const el = done ? E.find((e) => e.step === "done").programming_s : now - st.started;
+  $("timerv").textContent = mmss(el); $("timer").classList.toggle("done", done);
+  $("ptitle").textContent = st.mail ? st.mail.subject : "Dropped files";
+  // email card
+  if (!$("mail").dataset.set) {
+    $("mail").dataset.set = 1;
+    const m = st.mail;
+    $("mail").innerHTML = m ? `<div class="row"><span class="k">From</span><span>${esc(m.from)}</span></div><div class="row"><span class="k">Subject</span><span>${esc(m.subject)}</span></div><div>${m.files.map((f) => `<span class="att">📎 ${esc(f)}</span>`).join("")}</div>`
+      : `<div class="row"><span class="k">Files</span><span>drawing PDF + STEP</span></div>`;
+    $("mailm").textContent = "received " + new Date(st.started * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  }
+  if (!pdfShown) { pdfShown = true; $("pdf").src = `/api/run/${job}/drawing.png`; $("pdf").classList.remove("hidden"); $("dwgempty").classList.add("hidden"); $("dwgm").textContent = "drawing.pdf"; }
+  // events
+  const visible = E.filter((e) => e.step !== "result" && !(e.step === "toolpaths" && false));
+  const evHtml = visible.map((e, i) => evRow(e, i === visible.length - 1 && !done, done)).join("")
+    + (st.video ? `<div class="ev"><div class="ic ok">✓</div><div><div class="msg">Simulation video rendered</div></div><div class="t"></div></div>` : "")
+    + (st.replied ? `<div class="ev"><div class="ic ok">✓</div><div><div class="msg">Replied to the customer email with G-code + simulation</div></div><div class="t"></div></div>` : "")
+    + (done && !st.replied && st.mail ? `<div class="ev"><div class="ic run"></div><div><div class="msg">Rendering simulation and replying to the email</div></div><div class="t"></div></div>` : "");
+  if (evHtml !== $("events").dataset.h) { $("events").innerHTML = evHtml; $("events").dataset.h = evHtml; $("events").scrollTop = 1e6; }
+  $("logm").textContent = done ? "done" : "running"; $("logm").classList.toggle("on", !done);
+  // strategies
+  const V = E.filter((e) => e.step === "verify"), maxc = Math.max(1, ...V.map((v) => v.cycle_s));
+  const okV = V.filter((v) => v.pass && !v.baseline), best = done && okV.length ? okV.reduce((a, b) => (a.cycle_s < b.cycle_s ? a : b)) : null;
+  $("rows").innerHTML = V.map((v) => `<tr class="${v.baseline ? "base" : ""} ${best && v.strategy === best.strategy ? "win" : ""}"><td>${v.baseline ? "Typical manual" : esc(v.label.split(",").slice(0, 2).join(","))}</td><td><div class="bar"><i style="width:${(100 * v.cycle_s / maxc).toFixed(1)}%"></i></div></td><td class="num">${mmss(v.cycle_s)}</td><td class="num">${v.pass ? "✓" : "✕"}</td></tr>`).join("");
+  $("stratm").textContent = V.length ? `${V.filter((v) => v.pass).length}/${V.length} passed` : "";
+  // model
+  if (st.model && !modelShown) { modelShown = true; $("modelimg").src = `/api/run/${job}/model.png?${Date.now()}`; $("modelimg").classList.remove("hidden"); $("modelempty").classList.add("hidden"); }
+  const mev = E.find((e) => e.step === "model"); if (mev) $("modelm").textContent = mev.msg.split(": ").pop();
+  // gcode
+  if (st.gcode && !$("gc").textContent) { $("gc").innerHTML = st.gcode.slice(0, 40).map((l, i) => `<b>${String(i + 1).padStart(3, " ")}</b>${esc(l)}`).join("\n"); $("gcm").textContent = `${st.gcode_total.toLocaleString()} lines · verified`; $("gcm").classList.add("on"); }
+  // sim + result
+  if (st.video && !videoShown) { videoShown = true; const v = $("vid"); v.src = `/api/run/${job}/simulation.mp4`; v.classList.remove("hidden"); $("simempty").classList.add("hidden"); v.play(); $("simm").textContent = "verified"; $("simm").classList.add("on"); }
+  else if (done && !st.video) $("simm").textContent = "rendering…";
+  if (st.summary && st.summary.best && $("result").classList.contains("hidden")) {
+    const s = st.summary; $("result").classList.remove("hidden");
+    $("result").innerHTML = `<div class="stat"><div class="v" style="color:var(--green)">${mmss(s.programming_s)}</div><div class="l">programmed</div></div><div class="stat"><div class="v">${mmss(s.best.cycle_s)}<s>${mmss(s.baseline.cycle_s)}</s></div><div class="l">machine time vs manual</div></div><div class="stat"><div class="v" style="color:var(--green)">−${Math.round(s.machining_saved_pct)}%</div><div class="l">machine time</div></div>`;
+  }
+}
+// drag & drop fallback
+const drop = document.body;
+drop.addEventListener("dragover", (e) => { e.preventDefault(); $("drop").classList.add("over"); });
+drop.addEventListener("dragleave", () => $("drop").classList.remove("over"));
+drop.addEventListener("drop", async (e) => {
+  e.preventDefault(); $("drop").classList.remove("over");
+  const b64 = (f) => new Promise((ok) => { const r = new FileReader(); r.onload = () => ok(r.result.split(",")[1]); r.readAsDataURL(f); });
+  const files = await Promise.all([...e.dataTransfer.files].map(async (f) => ({ name: f.name, b64: await b64(f) })));
+  const r = await (await fetch("/api/run", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ files }) })).json();
+  if (r.error) alert(r.error); else job = r.id;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+ "project": "Instant Machinist Shop Floor",
+ "project_id": "3c71f27a-eb5c-4a7d-ac74-6cab42e77661",
+ "at_utc": "2026-10-11T21:17:26Z",
+ "kind": "ask",
+ "question": "Did any CNC program fail the simulator checks, which check, and on which part?",
+ "answer": "Yes. Seven simulator check failures turned up, on two parts:\n\n| Part | Source | Strategy | Failed checks |\n|---|---|---|---|\n| NIST FTC-10 | real_run | baseline-manual | leftover, rapid_into_stock, flat_plunge |\n| SM-105 | variant_part | manual-baseline | gouge, rapid_into_stock |\n| SM-105 | variant_part | adaptive-so45-ap2D | gouge, rapid_into_stock |\n\nEach part comes from a single job, and each check failed once. Rapid_into_stock was the only check that failed on both parts. On FTC-10 only the conservative manual-style program failed. On SM-105, which is a demo part derived from SM-101, the adaptive candidate failed the same two checks as the manual-style one, gouge and rapid_into_stock.",
+ "keewano_calls": [
+  {
+   "tool": "sql",
+   "why": "Which simulator checks failed, on which part/strategy",
+   "query": "SELECT \"Part\" AS part, \"DataSource\" AS src, \"Strategy\" AS strategy, \"VerifyCheckFailed\" AS chk, count(\"VerifyCheckFailed\") AS fails, count(DISTINCT user_id) AS jobs FROM events WHERE \"VerifyCheckFailed\" IS NOT NULL GROUP BY part, src, strategy, chk HAVING count(\"VerifyCheckFailed\") > 0 ORDER BY fails DESC",
+   "error": false,
+   "result": "SQL result for project 3c71f27a-eb5c-4a7d-ac74-6cab42e77661: 7 row(s), 6 column(s).\npart,src,strategy,chk,fails,jobs\nNIST FTC-10,real_run,baseline-manual,leftover,1,1\nNIST FTC-10,real_run,baseline-manual,rapid_into_stock,1,1\nNIST FTC-10,real_run,baseline-manual,flat_plunge,1,1\nSM-105,variant_part,manual-baseline,gouge,1,1\nSM-105,variant_part,manual-baseline,rapid_into_stock,1,1\nSM-105,variant_part,adaptive-so45-ap2D,rapid_into_stock,1,1\nSM-105,variant_part,adaptive-so45-ap2D,gouge,1,1",
+   "ms": 312
+  }
+ ]
+}

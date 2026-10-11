@@ -1,0 +1,15 @@
+{
+  "agent_id": "alike-069",
+  "model": "gpt-6.1-sol",
+  "goal": "design generated 2.5D hole patterns",
+  "task_urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+  "started_epoch": 1791752323.4269083,
+  "ended_epoch": 1791752415.8331392,
+  "wall_s": 92.41,
+  "exit_code": 0,
+  "alike_pre_exit": 0,
+  "alike_pre_mode": "resolve_work_item",
+  "alike_post_exit": 0,
+  "alike_helped_moment": "s \u2014 Instant Machinist simulator swarm` records the initial pairing gate, the earlier diagonal jaw-crossing fix, and the evidence requirements that shaped this launch.\\\\\\\\ndocs/examples/sm-101-fusion-first-program.report.md:31:| Below fixture / vise | OK |  |\\\\\\\\ndocs/VERIFIER.md:35:| **Below fixture / vise** | The tool enters the vise jaws (bottom 6 mm of the blank on the \u00b1Y faces) or goes below the blank bottom over the part | Geometric, with tool radius |\\\\\\\\ndocs/VERIFIER.md:103:- One program with a straight flat-end-mill plunge, a rapid into stock and a move into the vise jaw:\\\\\\\\ndocs/VERIFIER.md:104:  each is reported on its own NC line. A diagonal move that crosses a jaw between two safe end points\\\\\\\\ninstant_machinist/render/web/scene.js:149:// ---------------------------------------------------------------- vise + table\\\\\\\\ninstant_machinist/render/web/scene.js:152:const jawH = Math.min(12, (ztop0 - zbot) * 0.45);\\\\\\\\ninstant_machinist/render/web/scene.js:153:const jawTop = zbot + jawH;\\\\\\\\ninstant_machinist/render/web/scene.js:161:  box(16, sy + 26, jawTop - floorZ, cx + s * (sx / 2 + 8 + 1.6), cy, (jawTop + floorZ) / 2, steelDark); // jaws\\\\\\\\ninstant_machinist/render/w",
+  "transcript": "transcript.jsonl"
+}

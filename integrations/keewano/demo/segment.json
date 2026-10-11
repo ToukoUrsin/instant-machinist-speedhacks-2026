@@ -1,0 +1,367 @@
+{
+ "project": "Instant Machinist Shop Floor",
+ "project_id": "3c71f27a-eb5c-4a7d-ac74-6cab42e77661",
+ "built_utc": "2026-10-11T21:30:18Z",
+ "queries": {
+  "totals": {
+   "sql": "SELECT count(*) AS events, count(DISTINCT user_id) AS entities FROM events",
+   "ms": 326,
+   "error": false,
+   "columns": [
+    "events",
+    "entities"
+   ],
+   "rows": [
+    [
+     "1733",
+     "23"
+    ]
+   ]
+  },
+  "event_types": {
+   "sql": "SELECT count(DISTINCT \"Part\") AS parts, count(\"JobStarted\") AS cam_jobs, count(\"SupplierQuotedCents\") AS quotes, count(\"StrategyVerified\") AS verifications FROM events",
+   "ms": 359,
+   "error": false,
+   "columns": [
+    "parts",
+    "cam_jobs",
+    "quotes",
+    "verifications"
+   ],
+   "rows": [
+    [
+     "8",
+     "15",
+     "6",
+     "38"
+    ]
+   ]
+  },
+  "before_after": {
+   "sql": "SELECT \"Part\" AS part, \"Engine\" AS engine, max(\"ManualProgrammingEstimateSeconds\") AS manual_programming_s, min(\"JobProgrammedSeconds\") AS agent_programming_s, max(\"BaselineCycleSeconds\") AS manual_cycle_s, min(\"BestCycleSeconds\") AS best_cycle_s FROM events WHERE \"Engine\" IS NOT NULL GROUP BY part, engine ORDER BY part",
+   "ms": 299,
+   "error": false,
+   "columns": [
+    "part",
+    "engine",
+    "manual_programming_s",
+    "agent_programming_s",
+    "manual_cycle_s",
+    "best_cycle_s"
+   ],
+   "rows": [
+    [
+     "NIST FTC-10",
+     "fusion",
+     "14400",
+     "",
+     "",
+     ""
+    ],
+    [
+     "SM-101",
+     "fusion",
+     "14400",
+     "154",
+     "1183",
+     "388"
+    ],
+    [
+     "SM-101",
+     "native",
+     "14400",
+     "3",
+     "1348",
+     "187"
+    ],
+    [
+     "SM-102",
+     "native",
+     "14400",
+     "3",
+     "1504",
+     "199"
+    ],
+    [
+     "SM-103",
+     "native",
+     "14400",
+     "3",
+     "1937",
+     "232"
+    ],
+    [
+     "SM-104",
+     "native",
+     "14400",
+     "2",
+     "988",
+     "173"
+    ],
+    [
+     "SM-105",
+     "native",
+     "14400",
+     "4",
+     "",
+     ""
+    ],
+    [
+     "SM-106",
+     "native",
+     "14400",
+     "3",
+     "1855",
+     "218"
+    ],
+    [
+     "SM-107",
+     "native",
+     "14400",
+     "3",
+     "1150",
+     "168"
+    ]
+   ]
+  },
+  "ftc10_quotes": {
+   "sql": "SELECT \"Supplier\" AS supplier, min(\"SupplierQuotedCents\") AS delivered_cents, min(\"SupplierLeadDays\") AS lead_days, max(\"SupplierCallSeconds\") AS call_s FROM events WHERE \"Part\" LIKE '%FTC-10%' AND \"Supplier\" IS NOT NULL GROUP BY supplier ORDER BY delivered_cents",
+   "ms": 279,
+   "error": false,
+   "columns": [
+    "supplier",
+    "delivered_cents",
+    "lead_days",
+    "call_s"
+   ],
+   "rows": [
+    [
+     "Bay Alloy & Steel",
+     "4760",
+     "2",
+     "289"
+    ],
+    [
+     "Pacific Metals Supply",
+     "8670",
+     "2",
+     "212"
+    ]
+   ]
+  },
+  "ftc10_steps": {
+   "sql": "SELECT \"StepName\" AS step, sum(\"StepSeconds\") AS seconds FROM events WHERE \"Part\" LIKE '%FTC-10%' AND \"StepName\" IS NOT NULL AND \"DataSource\" = 'real_run' GROUP BY step ORDER BY seconds DESC LIMIT 8",
+   "ms": 299,
+   "error": false,
+   "columns": [
+    "step",
+    "seconds"
+   ],
+   "rows": [
+    [
+     "dial.supplier_call",
+     "296"
+    ],
+    [
+     "dial.quote_extraction",
+     "138"
+    ],
+    [
+     "cam.verify",
+     "125"
+    ],
+    [
+     "cam.toolpaths",
+     "122"
+    ],
+    [
+     "darwin.agent_search",
+     "81"
+    ],
+    [
+     "cam.post",
+     "39"
+    ],
+    [
+     "darwin.rank_and_plan",
+     "26"
+    ],
+    [
+     "cam.drawing",
+     "26"
+    ]
+   ]
+  },
+  "ftc10_strategies": {
+   "sql": "SELECT \"Strategy\" AS strategy, min(\"CycleSeconds\") AS cycle_s, count(\"VerifyCheckFailed\") AS failed_checks FROM events WHERE \"Part\" LIKE '%FTC-10%' AND \"CycleSeconds\" IS NOT NULL GROUP BY strategy ORDER BY cycle_s",
+   "ms": 282,
+   "error": false,
+   "columns": [
+    "strategy",
+    "cycle_s",
+    "failed_checks"
+   ],
+   "rows": [
+    [
+     "adaptive-L2.5-D24-F0.5",
+     "1801",
+     "0"
+    ],
+    [
+     "adaptive-L2.5-D12-F0.4",
+     "2071",
+     "0"
+    ],
+    [
+     "adaptive-L1.5-D12-F0.4",
+     "2294",
+     "0"
+    ],
+    [
+     "baseline-manual",
+     "6586",
+     "3"
+    ]
+   ]
+  },
+  "agent_vs_full_search": {
+   "sql": "SELECT \"Part\" AS part, user_id, count(\"AgentDecision\") AS agent_decisions, count(\"CycleSeconds\") AS strategies_simulated, min(\"JobProgrammedSeconds\") AS programming_s, min(\"BestCycleSeconds\") AS best_cycle_s FROM events WHERE \"Part\" IN ('SM-106', 'SM-107') AND \"Engine\" IS NOT NULL GROUP BY part, user_id ORDER BY part, agent_decisions",
+   "ms": 290,
+   "error": false,
+   "columns": [
+    "part",
+    "user_id",
+    "agent_decisions",
+    "strategies_simulated",
+    "programming_s",
+    "best_cycle_s"
+   ],
+   "rows": [
+    [
+     "SM-106",
+     "df9ba052-ff35-56cb-980d-25840c580ec4",
+     "0",
+     "9",
+     "3",
+     "218"
+    ],
+    [
+     "SM-106",
+     "3b4125db-5ac9-5b86-86f2-2b7027d1b724",
+     "2",
+     "3",
+     "3",
+     "218"
+    ],
+    [
+     "SM-106",
+     "5876b138-f10b-5db0-a41a-b256b87fd061",
+     "2",
+     "4",
+     "3",
+     "218"
+    ],
+    [
+     "SM-107",
+     "b655e53d-a258-53bf-b2f4-64d1eb1e2871",
+     "0",
+     "9",
+     "3",
+     "168"
+    ],
+    [
+     "SM-107",
+     "ee975e17-a964-5326-9236-91ec06b6ce7d",
+     "2",
+     "3",
+     "3",
+     "168"
+    ]
+   ]
+  }
+ },
+ "evidence": [
+  "evidence/211716-ask-ftc-10-is-short-a-blank-which-supplier-should-we-b.json",
+  "evidence/211726-ask-did-any-cnc-program-fail-the-simulator-checks-whic.json",
+  "evidence/211742-ask-which-version-of-the-deposit-invoice-agent-should.json",
+  "evidence/211824-decide-new-job-part-nist-ftc-10-housing-nist-pmi-test-cas.json",
+  "evidence/211913-decide-new-job-part-sm-106-sensor-mount-plate-new-job-mat.json",
+  "evidence/212033-decide-new-job-part-sm-107-sensor-mount-plate-compact-mat.json",
+  "evidence/212348-ask-if-we-run-50-pieces-of-each-part-how-many-machine.json",
+  "evidence/212914-ask-which-part-had-the-biggest-machine-time-saving-ver.json"
+ ],
+ "latest_ask": {
+  "file": "evidence/212914-ask-which-part-had-the-biggest-machine-time-saving-ver.json",
+  "question": "Which part had the biggest machine-time saving versus the manual-style program, and by how many minutes?",
+  "answer": "**SM-103 had the biggest saving: 28:25 (about 28.4 minutes) less machine time per part.** The manual-style program ran 32:17 (1,937 s) and the best strategy ran 3:52 (232 s), which is 88% less.\n\nSM-103 isn't a real customer part, though. Its data source is `variant_part`, meaning a real CAM run on a part derived from SM-101 for the demo. Among real runs, SM-101 saved the most: 19:21 (1,161 s), going from 22:28 (1,348 s) to 3:07 (187 s), or 86% less. Two other real SM-101 runs saved less, 13:15 (795 s, from 1,183 s to 388 s).\n\nThe runner-up overall was SM-106, also a demo variant, which saved 27:17 (1,637 s), from 1,855 s to 218 s. NIST FTC-10 and SM-105 have no baseline or best cycle time recorded, so they aren't in this comparison.",
+  "sql": [
+   "SELECT user_id, \"Part\" AS part, \"DataSource\" AS ds, max(\"BaselineCycleSeconds\") AS base, max(\"BestCycleSeconds\") AS best, max(\"MachiningSavedPct\") AS pct FROM events WHERE \"Part\" IS NOT NULL GROUP BY user_id, part, ds HAVING max(\"BaselineCycleSeconds\") IS NOT NULL ORDER BY part LIMIT 100",
+   "SELECT user_id, \"Part\" AS part, \"DataSource\" AS ds, max(\"BaselineCycleSeconds\") AS base, max(\"BestCycleSeconds\") AS best, max(\"MachiningSavedPct\") AS pct, max(\"BaselineCycleSeconds\") - max(\"BestCycleSeconds\") AS saved FROM events WHERE \"Part\" IS NOT NULL AND \"Engine\" IS NOT NULL GROUP BY user_id, part, ds ORDER BY saved DESC LIMIT 100"
+  ]
+ },
+ "latest_decide": {
+  "file": "evidence/212033-decide-new-job-part-sm-107-sensor-mount-plate-compact-mat.json",
+  "question": "New job: part SM-107 (Sensor mount plate, compact), material 6061-T6 aluminum, qty 50, 6 features, deepest pocket 10 mm, 6 holes, plate 70 cm2. Using ONLY Keewano history: (1) which toolpath strategies should the CAM search try first for this part (rank by simulated cycle time on the most similar past parts, especially by pocket depth; drop strategies that failed verification or never win), (2) which supplier to buy a missing aluminum blank from (delivered price vs lead days from past quotes), (3) which step of the order is the bottleneck (StepSeconds), (4) before vs after: agent programming time vs the manual estimate, best vs manual-baseline machine time. Then call final_decision.",
+  "answer": {
+   "strategy_order": [
+    "adaptive-so45-ap2D",
+    "conventional-so60-ap1D",
+    "adaptive-L3.0-D20"
+   ],
+   "supplier": "Bay Alloy & Steel",
+   "supplier_reason": "Its delivered price was the lowest on both parts it quoted. SM-101: $266.75-$299.40 vs Pacific Metals Supply $334.70-$401.80. FTC-10: $47.60 vs $86.70. Bay's lead time was 2 days. Pacific delivered in 0-1 days on SM-101 but cost about 25% more. Pick Pacific only if the blank is needed within 2 days.",
+   "bottleneck_step": "dial.supplier_call",
+   "bottleneck_seconds": 885,
+   "expected_cycle_s": 200,
+   "skip_strategies": [
+    "adaptive-so25-ap1D",
+    "adaptive-so35-ap1D",
+    "adaptive-so45-ap1D",
+    "conventional-so50-ap0.5D",
+    "adaptive-so25-ap2D",
+    "adaptive-so35-ap2D",
+    "adaptive-L1.5-D10",
+    "adaptive-L2.0-D20",
+    "adaptive-L2.5-D10"
+   ],
+   "before_after": "Programming: the shop's manual estimate is 14400 s (4 h). The agent took 2-4 s on similar native SM-10x jobs, and SM-101 averaged 63.8 s across its 5 runs, which include Fusion. Machine time, manual baseline vs best: SM-101 at 8 mm averaged 1282 s (21:22) vs 267.4 s (4:27), 78.4% saved. SM-103 at 8 mm was 1937 vs 232 s, 88%. SM-106 at 12 mm was 1855 vs 218 s, 88%. SM-102 at 14 mm was 1504 vs 199 s, 87%.",
+   "summary": "For SM-107 (10 mm pocket), try adaptive-so45-ap2D first because it won at 12 and 14 mm. Next try conventional-so60-ap1D, which won at 5 and 8 mm, then adaptive-L3.0-D20 as the Fusion fallback. Expected cycle is about 3:20, against 20-32 min for a manual-style program. Buy the missing 6061-T6 blank from Bay Alloy & Steel, the cheapest delivered option at 2 days' lead. The slow step is the supplier phone calls (dial.supplier_call, 885 s in total, up to 279 s per call); CAM programming itself takes seconds.",
+   "part": {
+    "part": "SM-107",
+    "name": "Sensor mount plate, compact",
+    "FeatureCount": 6,
+    "PocketDepthMaxMm": 10,
+    "HoleCount": 6,
+    "PlateAreaCm2": 70.0,
+    "Material": "6061-T6 aluminum",
+    "PartQuantity": 50
+   },
+   "run": {
+    "best": "conventional-so60-ap1D",
+    "best_cycle_s": 167.99,
+    "baseline_cycle_s": 1149.68,
+    "variants_tried": 2,
+    "verified": true,
+    "programming_s": 2.6,
+    "wall_s": 2.8,
+    "out": "runs/sm-107-agent-212030",
+    "matches_first_choice": false
+   }
+  },
+  "sql": [
+   "SELECT \"Part\", \"Material\", \"PocketDepthMaxMm\", \"Strategy\", count(DISTINCT user_id) AS jobs, min(\"CycleSeconds\") AS best_cyc, avg(\"CycleSeconds\") AS avg_cyc, count(\"VerifyCheckFailed\") AS fails, count(*) FILTER (WHERE \"StrategyVerified\" = true) AS verified_ok, count(*) FILTER (WHERE \"StrategyVerified\" = false) AS verified_bad FROM events WHERE \"Engine\" IS NOT NULL AND \"Strategy\" IS NOT NULL GROUP BY 1,2,3,4 ORDER BY 3,1,6",
+   "SELECT \"Part\", \"PocketDepthMaxMm\", \"BestStrategy\", count(DISTINCT user_id) AS jobs FROM events WHERE \"Engine\" IS NOT NULL AND \"BestStrategy\" IS NOT NULL GROUP BY 1,2,3 ORDER BY 2,1",
+   "SELECT \"Part\", \"PocketDepthMaxMm\", \"FeatureCount\", \"HoleCount\", \"PlateAreaCm2\", \"Strategy\", \"VerifyCheckFailed\", count(*) AS n FROM events WHERE \"Engine\" IS NOT NULL AND \"VerifyCheckFailed\" IS NOT NULL GROUP BY 1,2,3,4,5,6,7",
+   "SELECT \"Part\", \"DataSource\", \"PocketDepthMaxMm\", \"FeatureCount\", \"HoleCount\", \"PlateAreaCm2\", count(DISTINCT user_id) AS jobs, avg(\"ManualProgrammingEstimateSeconds\") AS manual_est, avg(\"JobProgrammedSeconds\") AS prog_s, avg(\"BaselineCycleSeconds\") AS base_s, avg(\"BestCycleSeconds\") AS best_s, avg(\"MachiningSavedPct\") AS saved FROM events WHERE \"Engine\" IS NOT NULL GROUP BY 1,2,3,4,5,6 ORDER BY 3",
+   "SELECT \"Part\", \"AgentQuestionTopic\", \"AgentDecision\", count(DISTINCT user_id) AS n FROM events WHERE \"AgentDecision\" IS NOT NULL GROUP BY 1,2,3",
+   "SELECT \"Engine\", \"Strategy\", count(DISTINCT user_id) AS jobs, min(\"CycleSeconds\") AS c FROM events WHERE \"Part\" = 'SM-101' AND \"Strategy\" IS NOT NULL GROUP BY 1,2 ORDER BY 1,4",
+   "SELECT \"Part\", \"Supplier\", \"Material\", count(DISTINCT user_id) AS orders, avg(\"SupplierLeadDays\") AS lead_days, avg(\"SupplierQuotedCents\") AS cents, max(\"SupplierCallOutcome\") AS outcome_sample FROM events WHERE \"Sponsor\" = 'dial' AND \"Supplier\" IS NOT NULL GROUP BY 1,2,3 ORDER BY 1,6",
+   "SELECT \"StepName\", count(\"StepSeconds\") AS n, avg(\"StepSeconds\") AS avg_s, max(\"StepSeconds\") AS max_s, sum(\"StepSeconds\") AS total_s FROM events WHERE \"StepName\" IS NOT NULL GROUP BY 1 ORDER BY 3 DESC",
+   "SELECT \"Part\", \"Supplier\", \"SupplierCallOutcome\", count(DISTINCT user_id) AS orders, avg(\"SupplierLeadDays\") AS lead_days, avg(\"SupplierQuotedCents\") AS cents FROM events WHERE \"Sponsor\" = 'dial' AND \"Supplier\" IS NOT NULL GROUP BY 1,2,3 ORDER BY 1,6",
+   "SELECT \"Part\", \"Material\", \"BlanksShort\", count(DISTINCT user_id) AS n FROM events WHERE \"Sponsor\" IS NOT NULL GROUP BY 1,2,3",
+   "SELECT \"Part\", \"Supplier\", count(\"SupplierQuotedCents\") AS quotes, min(\"SupplierQuotedCents\") AS min_c, max(\"SupplierQuotedCents\") AS max_c, min(\"SupplierLeadDays\") AS min_d, max(\"SupplierLeadDays\") AS max_d, count(\"SupplierCallSeconds\") AS calls, sum(\"SupplierCallSeconds\") AS call_s FROM events WHERE \"Sponsor\" = 'dial' AND \"Supplier\" IS NOT NULL GROUP BY 1,2",
+   "SELECT \"Part\", count(DISTINCT user_id) AS jobs, avg(\"StepSeconds\") FILTER (WHERE \"StepName\" = 'cam.toolpaths') AS toolpaths, avg(\"StepSeconds\") FILTER (WHERE \"StepName\" = 'cam.verify') AS verify, avg(\"StepSeconds\") FILTER (WHERE \"StepName\" = 'cam.post') AS post, avg(\"StepSeconds\") FILTER (WHERE \"StepName\" = 'cam.drawing') AS drawing, avg(\"JobProgrammedSeconds\") AS prog FROM events WHERE \"Engine\" = 'native' GROUP BY 1",
+   "SELECT \"StepName\", count(\"StepSeconds\") AS n, avg(\"StepSeconds\") AS avg_s, max(\"StepSeconds\") AS max_s FROM events WHERE \"Engine\" = 'native' AND \"StepName\" IS NOT NULL GROUP BY 1 ORDER BY 3 DESC"
+  ]
+ }
+}

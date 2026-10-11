@@ -1,0 +1,29 @@
+{"t":1791751486686,"agent":"v1","kind":"tool","tool":"get_ticket","input":{"ticket_id":"1"}}
+{"t":1791751486690,"agent":"v1","kind":"connector","tool":"get_ticket","method":"GET","path":"/api/v2/tickets/1.json","status":500}
+{"t":1791751486690,"agent":"v1","kind":"tool","tool":"list_records","input":{"resource":"customers"}}
+{"t":1791751486694,"agent":"v1","kind":"connector","tool":"list_records","method":"GET","path":"/v1/customers","status":200}
+{"t":1791751486694,"agent":"v1","kind":"tool","tool":"list_records","input":{"resource":"products"}}
+{"t":1791751486696,"agent":"v1","kind":"connector","tool":"list_records","method":"GET","path":"/v1/products","status":200}
+{"t":1791751486696,"agent":"v1","kind":"tool","tool":"list_records","input":{"resource":"prices"}}
+{"t":1791751486699,"agent":"v1","kind":"connector","tool":"list_records","method":"GET","path":"/v1/prices","status":200}
+{"t":1791751488643,"agent":"v1","kind":"tool","tool":"get_ticket","input":{"ticket_id":"1"}}
+{"t":1791751488646,"agent":"v1","kind":"connector","tool":"get_ticket","method":"GET","path":"/api/v2/tickets/1.json","status":200}
+{"t":1791751492801,"agent":"v1","kind":"tool","tool":"list_records","input":{"resource":"invoiceitems","customer":"cus_kestrel"}}
+{"t":1791751492804,"agent":"v1","kind":"connector","tool":"list_records","method":"GET","path":"/v1/invoiceitems","status":200}
+{"t":1791751492804,"agent":"v1","kind":"tool","tool":"list_records","input":{"resource":"invoices","customer":"cus_kestrel"}}
+{"t":1791751492806,"agent":"v1","kind":"connector","tool":"list_records","method":"GET","path":"/v1/invoices","status":200}
+{"t":1791751498040,"agent":"v1","kind":"tool","tool":"create_invoice_item","input":{"customer":"cus_kestrel","price":"price_vmc3_min_2026","quantity":100}}
+{"t":1791751498044,"agent":"v1","kind":"connector","tool":"create_invoice_item","method":"POST","path":"/v1/invoiceitems","status":200}
+{"t":1791751498044,"agent":"v1","kind":"tool","tool":"create_invoice_item","input":{"customer":"cus_kestrel","price":"price_6061_cuin","quantity":344}}
+{"t":1791751498046,"agent":"v1","kind":"connector","tool":"create_invoice_item","method":"POST","path":"/v1/invoiceitems","status":200}
+{"t":1791751498046,"agent":"v1","kind":"tool","tool":"create_invoice_item","input":{"customer":"cus_kestrel","price":"price_setup","quantity":3}}
+{"t":1791751498049,"agent":"v1","kind":"connector","tool":"create_invoice_item","method":"POST","path":"/v1/invoiceitems","status":200}
+{"t":1791751498049,"agent":"v1","kind":"tool","tool":"create_invoice_item","input":{"customer":"cus_kestrel","price":"price_program_sim","quantity":1}}
+{"t":1791751498051,"agent":"v1","kind":"connector","tool":"create_invoice_item","method":"POST","path":"/v1/invoiceitems","status":200}
+{"t":1791751498051,"agent":"v1","kind":"tool","tool":"create_invoice_item","input":{"customer":"cus_kestrel","amount":-43710,"description":"Balance due on delivery (50%)"}}
+{"t":1791751498053,"agent":"v1","kind":"connector","tool":"create_invoice_item","method":"POST","path":"/v1/invoiceitems","status":200}
+{"t":1791751500034,"agent":"v1","kind":"tool","tool":"create_draft_invoice","input":{"customer":"cus_kestrel"}}
+{"t":1791751500037,"agent":"v1","kind":"connector","tool":"create_draft_invoice","method":"POST","path":"/v1/invoices","status":200}
+{"t":1791751504713,"agent":"v1","kind":"tool","tool":"update_ticket","input":{"ticket_id":"1","status":"pending","tags":["rfq","quoted"],"comment":{"body":"Hi Dana,\n\nThanks for the RFQ. Here's our quote for 10 pcs of the FTC-10 Housing in 6061-T6, no finish (as machined):\n\n- 3-axis VMC machining: 100 min x $1.75 = $175.00\n- 6061-T6 aluminum stock: 344 cu in x $0.55 = $189.20\n- Setup & fixturing: 3 x $120.00 = $360.00\n- CNC programming & simulation: 1 x $150.00 = $150.00\n\nQuote total: $874.20\nDeposit due to start (50%): $437.10\nBalance due on delivery: $437.10\n\nThe deposit draft invoice is in_MslT6GOQaeLYFM7h. Note: the cycle time we used (600 s per part) is an estimate. We haven't run a verified simulation for this part yet.\n\nBest regards","public":true}}}
+{"t":1791751504716,"agent":"v1","kind":"connector","tool":"update_ticket","method":"PUT","path":"/api/v2/tickets/1.json","status":200}
+{"t":1791751512439,"agent":"v1","kind":"done","steps":7,"tool_calls":14,"input_tokens":61065,"output_tokens":2538,"ms":28089}

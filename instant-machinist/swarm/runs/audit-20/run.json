@@ -1,0 +1,9 @@
+{
+  "agent_id": "audit-20",
+  "item": "checks shank collision",
+  "exit_code": 0,
+  "started_epoch": 1791750419.49584,
+  "ended_epoch": 1791750484.3158872,
+  "wall_s": 64.82,
+  "transcript": "transcript.jsonl"
+}

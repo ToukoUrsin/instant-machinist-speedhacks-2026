@@ -1,0 +1,81 @@
+{
+ "query": "surface treatment heat treatment supplier",
+ "context": [
+  "25 machined 6061-T6 aluminum parts, envelope [4.882, 3.307, 1.102] in."
+ ],
+ "result": {
+  "searchId": "srch_c75804bb-61a2-4dd8-be3f-d8fc045b16f7",
+  "responseId": "sresp_42b49c4d-54ff-4d4b-8b35-0eb649b6167e",
+  "previousResponseId": null,
+  "contractVersion": "search-v3.0",
+  "status": "completed",
+  "response": {
+   "agents": [
+    {
+     "agentId": "protocol-agent:440e506e265474f3a47e6d575e1b73925c61a50b",
+     "agentSlug": "protocol-agent:440e506e265474f3a47e6d575e1b73925c61a50b",
+     "capabilityId": "protocol-capability:311fc7021617d7b328dbdd1626fc139f55ee4795",
+     "capabilityRevision": 1791448320316,
+     "rank": 1,
+     "selected": false,
+     "name": "Supplier research and verification",
+     "description": "Research a named supplier or supplier category, verify public identity and official channels, and return evidence-backed supplier intelligence.",
+     "imageUrl": null,
+     "avatarUrl": null,
+     "requiredSetup": null,
+     "executionRequirements": null,
+     "executionGuidance": null,
+     "readiness": "unavailable",
+     "canStartThread": false,
+     "canAttemptThread": false,
+     "reasons": [
+      "This tool can research a supplier category, which could include surface treatment and heat treatment, to find potential suppliers."
+     ],
+     "uncertainties": [
+      "Execution requires a fresh readiness check."
+     ],
+     "providerCheck": "not_attempted",
+     "connectionMethods": []
+    },
+    {
+     "agentId": "cmudroat400iu0bgmxt57rper",
+     "agentSlug": "cmudroat400iu0bgmxt57rper",
+     "capabilityId": "cmudsb8fh00jz0bgmvkp93f2z",
+     "capabilityRevision": 1791586530639,
+     "rank": 2,
+     "selected": false,
+     "name": "MARS 0.005 USDC Procurement Evidence \u2014 Supplier Sourcing & Vendor Discovery",
+     "description": "One-call paid procurement evidence for supplier sourcing, vendor discovery, verified industrial suppliers and procurement counterparty research. No MARS account or subscription is required. First tools/call returns x402 v2 PaymentRequired for exactly 0.005 USDC on Base Mainnet; retry the SAME tools/call with _meta[\"x402/payment\"]. After verified settlement MARS returns 1+ verified official procurement counterparty with public evidence, a compact decision summary, and _meta[\"x402/payment-response\"].",
+     "imageUrl": null,
+     "avatarUrl": null,
+     "requiredSetup": null,
+     "executionRequirements": null,
+     "executionGuidance": null,
+     "readiness": "unavailable",
+     "canStartThread": false,
+     "canAttemptThread": false,
+     "reasons": [
+      "This tool provides paid procurement evidence for supplier sourcing and vendor discovery, which directly addresses the need to find a supplier for surface and heat treatment."
+     ],
+     "uncertainties": [
+      "Execution requires a fresh readiness check.",
+      "Provider description mentions per-call payment or x402; verify current terms before acting. No payment is authorized."
+     ],
+     "providerCheck": "not_attempted",
+     "connectionMethods": []
+    }
+   ],
+   "assessment": {
+    "outcome": "partial",
+    "explanation": "I found two tools that can help you find suppliers for surface treatment and heat treatment. The \"Supplier research and verification\" tool can research supplier categories to identify potential providers. Alternatively, the \"MARS 0.005 USDC Procurement Evidence \u2014 Supplier Sourcing & Vendor Discovery\" tool offers paid procurement evidence for vendor discovery."
+   },
+   "relatedSearches": [],
+   "plan": null,
+   "question": null,
+   "noMatchReason": null,
+   "overview": "I found two tools that can help you find suppliers for surface treatment and heat treatment. The \"Supplier research and verification\" tool can research supplier categories to identify potential providers. Alternatively, the \"MARS 0.005 USDC Procurement Evidence \u2014 Supplier Sourcing & Vendor Discovery\" tool offers paid procurement evidence for vendor discovery."
+  },
+  "_elapsed_s": 7.99
+ },
+ "refined": null
+}

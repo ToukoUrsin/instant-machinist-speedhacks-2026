@@ -1,0 +1,5 @@
+Focused simulator tests:
+.venv/bin/python -m pytest -q tests/sim
+29 passed, 1 skipped (Fusion SM-101 fixture absent in this worktree).
+
+The new tests cover shank/holder collision event reporting and inch scaling of envelope dimensions.

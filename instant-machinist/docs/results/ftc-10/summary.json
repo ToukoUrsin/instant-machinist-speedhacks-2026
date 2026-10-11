@@ -1,0 +1,71 @@
+{
+ "part": "NIST FTC-10",
+ "engine": "fusion",
+ "programming_s": 428.5,
+ "baseline": {
+  "strategy": "baseline-manual",
+  "label": "Typical manual program: 3D pocketing, 2 mm depth steps, book feeds",
+  "dir": "out/run3/fusion/baseline-manual",
+  "cycle_s": 6586.2,
+  "pass": false,
+  "baseline": true,
+  "checks": "0 gouges, 6 rapid crashes, 4 short plunges flagged, 4 cm\u00b2 left for next setups"
+ },
+ "best": {
+  "strategy": "adaptive-L3.0-D24-F0.6",
+  "label": "Adaptive 3.0 mm load, 24 mm steps, 0.6 mm finish stepover",
+  "dir": "out/run3/fusion/adaptive-L3.0-D24-F0.6",
+  "cycle_s": 1602.64,
+  "pass": true,
+  "baseline": false,
+  "checks": "0 gouges, 0 rapid crashes, 3 short plunges flagged, 5 cm\u00b2 left for next setups"
+ },
+ "variants": [
+  {
+   "strategy": "baseline-manual",
+   "label": "Typical manual program: 3D pocketing, 2 mm depth steps, book feeds",
+   "dir": "out/run3/fusion/baseline-manual",
+   "cycle_s": 6586.2,
+   "pass": false,
+   "baseline": true,
+   "checks": "0 gouges, 6 rapid crashes, 4 short plunges flagged, 4 cm\u00b2 left for next setups"
+  },
+  {
+   "strategy": "adaptive-L1.5-D12-F0.4",
+   "label": "Adaptive 1.5 mm load, 12 mm steps, 0.4 mm finish stepover",
+   "dir": "out/run3/fusion/adaptive-L1.5-D12-F0.4",
+   "cycle_s": 2294.2,
+   "pass": true,
+   "baseline": false,
+   "checks": "0 gouges, 0 rapid crashes, 3 short plunges flagged, 5 cm\u00b2 left for next setups"
+  },
+  {
+   "strategy": "adaptive-L2.5-D12-F0.4",
+   "label": "Adaptive 2.5 mm load, 12 mm steps, 0.4 mm finish stepover",
+   "dir": "out/run3/fusion/adaptive-L2.5-D12-F0.4",
+   "cycle_s": 2070.91,
+   "pass": true,
+   "baseline": false,
+   "checks": "0 gouges, 0 rapid crashes, 3 short plunges flagged, 5 cm\u00b2 left for next setups"
+  },
+  {
+   "strategy": "adaptive-L2.5-D24-F0.5",
+   "label": "Adaptive 2.5 mm load, 24 mm steps, 0.5 mm finish stepover",
+   "dir": "out/run3/fusion/adaptive-L2.5-D24-F0.5",
+   "cycle_s": 1800.81,
+   "pass": true,
+   "baseline": false,
+   "checks": "0 gouges, 0 rapid crashes, 3 short plunges flagged, 5 cm\u00b2 left for next setups"
+  },
+  {
+   "strategy": "adaptive-L3.0-D24-F0.6",
+   "label": "Adaptive 3.0 mm load, 24 mm steps, 0.6 mm finish stepover",
+   "dir": "out/run3/fusion/adaptive-L3.0-D24-F0.6",
+   "cycle_s": 1602.64,
+   "pass": true,
+   "baseline": false,
+   "checks": "0 gouges, 0 rapid crashes, 3 short plunges flagged, 5 cm\u00b2 left for next setups"
+  }
+ ],
+ "machining_saved_pct": 75.7
+}

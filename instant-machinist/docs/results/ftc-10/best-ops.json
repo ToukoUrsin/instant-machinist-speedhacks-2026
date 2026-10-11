@@ -1,0 +1,68 @@
+{
+ "strategy": {
+  "name": "adaptive-L3.0-D24-F0.6",
+  "label": "Adaptive 3.0 mm load, 24 mm steps, 0.6 mm finish stepover",
+  "rough": "adaptive",
+  "optimalLoad": 3.0,
+  "stepdown": 24,
+  "wallStepdown": 1.0,
+  "finishStepover": 0.6,
+  "tools": {
+   "1": {
+    "desc": "50mm Face Mill",
+    "rpm": 6000,
+    "feed": 3000
+   },
+   "2": {
+    "desc": "10mm Flat Endmill",
+    "rpm": 8000,
+    "feed": 2400
+   },
+   "3": {
+    "desc": "6mm Flat Endmill",
+    "rpm": 8000,
+    "feed": 1500
+   },
+   "4": {
+    "desc": "5mm Flat Endmill",
+    "rpm": 8000,
+    "feed": 1200
+   },
+   "5": {
+    "desc": "6mm Ball Endmill",
+    "rpm": 8000,
+    "feed": 2000
+   }
+  }
+ },
+ "ops": [
+  {
+   "name": "Face top",
+   "valid": true,
+   "warning": "",
+   "error": "In-process stock calculation is not available in Design Automation for Fusion\n",
+   "gen_ms": 538
+  },
+  {
+   "name": "Adaptive clearing",
+   "valid": true,
+   "warning": "Failed to generate rest material.\n",
+   "error": "",
+   "gen_ms": 10809
+  },
+  {
+   "name": "Finish walls",
+   "valid": true,
+   "warning": "",
+   "error": "",
+   "gen_ms": 1292
+  },
+  {
+   "name": "Finish fins (ball)",
+   "valid": true,
+   "warning": "",
+   "error": "",
+   "gen_ms": 787
+  }
+ ]
+}

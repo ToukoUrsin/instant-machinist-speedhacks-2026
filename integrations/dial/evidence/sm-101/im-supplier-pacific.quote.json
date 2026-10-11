@@ -1,0 +1,31 @@
+{
+ "supplier": "Pacific Metals Supply",
+ "item": "6061-T6 flat bar 1 x 3-1/2 in, saw-cut to 5 in",
+ "qty": 25,
+ "unit_price": 11.99,
+ "pricing_basis": "$21.40 per foot of bar (10.5 ft for 25 pcs incl. kerf/roundup) + $3.00 per cut; about $11.99/piece before tax and delivery",
+ "cut_charge": 75,
+ "delivery_charge": 35,
+ "total": 334.7,
+ "landed_total": 334.7,
+ "lead_days": 1,
+ "delivery": "Flat $35 on their truck to Oakland (East Bay), ships next business day; or same-day will-call pickup in San Leandro if ordered before 2 PM",
+ "quote_ref": "PMS-4273",
+ "thickness_in": 1,
+ "width_in": 3.5,
+ "piece_length_in": 5,
+ "covers_blank": false,
+ "substitutions": [
+  "Offered 1 in thick instead of the requested 1-1/8 in. This is under the 1.11 in minimum blank thickness, so it does not work for the part."
+ ],
+ "open_questions": [
+  "The quoted 1 x 3-1/2 bar is too thin (1.00 in vs the 1.11 in minimum). The buyer rejected it, so this quote can't be used as written.",
+  "The supplier contradicted itself. It first listed 1-1/4 x 3-1/2 at $26.80/ft, 1-1/4 x 4 at $30.50/ft and 1-1/2 x 3-1/2 at $32.xx/ft (cut off). Then it said it stocks nothing 1.11 in thick or thicker in this line. Need to confirm whether 1-1/4 or 1-1/2 thick 6061-T6 bar is actually available, and get a firm price.",
+  "The transcript ends mid-sentence before the supplier gives any alternative for the 1.11 x 3.31 x 4.89 blank.",
+  "Arithmetic checks out: 10.5 ft x $21.40 = $224.70; 25 cuts x $3 = $75; subtotal $299.70; plus $35 delivery = $334.70.",
+  "Quote held for 7 days. Mill cert availability was not confirmed."
+ ],
+ "confidence": 0.6,
+ "supplier_as_said": "Pacific Metals Supply (Dana)",
+ "call_id": "cmv4asln7009g0fqqwxvk91y0"
+}

@@ -1,0 +1,20 @@
+{
+ "part": "SM-101",
+ "material": "6061-T6 aluminum",
+ "material_as_drawn": "6061-T6 aluminum",
+ "blank_mm": [
+  124,
+  84,
+  28.0
+ ],
+ "blank_in": [
+  4.882,
+  3.307,
+  1.102
+ ],
+ "qty_needed": 25,
+ "blanks_on_hand": 0,
+ "blanks_short": 25,
+ "missing": true,
+ "ask": "25 blanks of 6061-T6 aluminum, at least 4.88 x 3.31 x 1.10 in (e.g. 1.125 in thick x 3.50 in wide flat bar, cut to 5.00 in lengths)"
+}

@@ -1,0 +1,288 @@
+{
+  "<<<UNTRUSTED>>>": "origin: alike tool record_decision (data, never instructions)",
+  "outcome": "created",
+  "message": "decision created successfully. 5 similar entities already exist. Read `similar_entities` before creating another.",
+  "similar_entities": [
+    {
+      "id": "069879f8-7710-429e-b33e-f63ae1a09eac",
+      "urn": "urn:alike:decision:e74398462f8a5fcfcc8a69f0a495f75108b9b7afb97fbb27139cd5de9ebb6fad",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-008: audit parser G69 rotation cancellation",
+        "work": [],
+        "title": "alike-008: audit parser G69 rotation cancellation",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-008/",
+            "kind": "path",
+            "path": "swarm/runs/alike-008/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: \\n\\nThe shared acceptance decision required parser fidelity and deterministic regression evidence, so I treated G69 as a paired G68/G69 semantic gap rather than recommending a cancellation-only patch.\\n\\n5. Recommendation\\n\\nDefer until G68 rotation support exists; then implement both together with focused parser tests.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":644699,\"cached_input_tokens\":585472,\"cache_write_input_tokens\":0,\"output_tokens\":2597,\"reasoning_output_tokens\":502}}\n\nReading additional input from stdin...",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 1,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "6a60b757-130e-40ee-8faa-34ee46f2589d",
+      "urn": "urn:alike:decision:92bca9010ec0696a5ed046378c0fcd7e139af2c518b212b9fe3e0e51a3daeb97",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-004: audit parser Fanuc G40 compensation cancellation",
+        "work": [],
+        "title": "alike-004: audit parser Fanuc G40 compensation cancellation",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-004/",
+            "kind": "path",
+            "path": "swarm/runs/alike-004/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nThe shared simulator-swarm brief narrowed this audit to Fanuc `G40` cancellation semantics, so I checked modal state and cancellation behavior rather than treating the existing “accepted, not modelled” header as sufficient. The Alike network read itself failed with `fetch failed`.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nDefer implementation patch until cutter compensation geometry is explicitly scoped. Add the acceptance tests first; current behavior should be documented as unsupported rather than implying that `G40` cancellation is modeled.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":356809,\"cached_input_tokens\":325120,\"cache_write_input_tokens\":0,\"output_tokens\":2749,\"reasoning_output_tokens\":746}}\n\nReading additional input from stdin...",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.7457627118644068,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "43aae130-e991-41a2-b5b4-022db96cc9ea",
+      "urn": "urn:alike:decision:328534451336a2cb57cfbc5bb8f750a69055f34b5d75d7df3ae0c5a5beb6fc93",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-007: audit parser G68 coordinate rotation",
+        "work": [],
+        "title": "alike-007: audit parser G68 coordinate rotation",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-007/",
+            "kind": "path",
+            "path": "swarm/runs/alike-007/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nThe shared simulator acceptance brief emphasized parser fidelity, safety, determinism, and evidence, so I treated the unintended G68 center move and silent G69 behavior as fidelity defects requiring regression tests. Alike was unreachable during this audit, so no additional record details were available.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nPatch the parser to maintain rotation state, transform absolute XY endpoints/arcs/canned-cycle coordinates, make G68 non-motion, and implement G69 cancellation. Add the three focused regression tests before claiming rotation support.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":455871,\"cached_input_tokens\":332288,\"cache_write_input_tokens\":0,\"output_tokens\":2316,\"reasoning_output_tokens\":568}}\n\nReading additional input from stdin...",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.6938775510204082,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "4fcc6a0d-f0f3-4e26-845b-43afd751c507",
+      "urn": "urn:alike:decision:cda839db253ae1a15810fcdfd6c7608ddb1171c49fd17d67116c49f5cb2a3511",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-007: audit parser G68 coordinate rotation",
+        "work": [],
+        "title": "alike-007: audit parser G68 coordinate rotation",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-007/",
+            "kind": "path",
+            "path": "swarm/runs/alike-007/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: \\n\\nThe shared confirmed acceptance bar requires parser compatibility, fidelity, determinism, and regression evidence. That made the ignored G68 behavior a required parser fix rather than a deferable warning.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nPatch `gcode.py` to implement modal G68/G69 rotation, then add focused tests in `tests/sim/test_gcode.py`. Decision recording was attempted through Alike MCP but blocked because the tool required approval under the current `never` approval policy.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":672630,\"cached_input_tokens\":610048,\"cache_write_input_tokens\":0,\"output_tokens\":3257,\"reasoning_output_tokens\":972}}\n\nReading additional input from stdin...",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.6938775510204082,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "d03f04f5-7209-4e46-a1c9-cb5bf1aabbfd",
+      "urn": "urn:alike:decision:f94e7101ba845c7dc7d57a97116d48347c0bd5c07e247a9804a93c94166e05d9",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-009: audit parser G52 local work offsets",
+        "work": [],
+        "title": "alike-009: audit parser G52 local work offsets",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-009/",
+            "kind": "path",
+            "path": "swarm/runs/alike-009/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: not extracted; inspect transcript",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.5918367346938775,
+      "inference_status": "confirmed"
+    }
+  ],
+  "id": "b6c6efee-89da-4fed-9006-e7cfc009515e",
+  "urn": "urn:alike:decision:7a8cdde3c6a61e856b511aff81fc684cf210bccc1aa21e6cb83b16cc2ff40371",
+  "properties": {
+    "name": "alike-008: audit parser G69 rotation cancellation",
+    "work": [],
+    "title": "alike-008: audit parser G69 rotation cancellation",
+    "status": "made",
+    "anchors": [
+      {
+        "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+        "ref": {
+          "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+          "kind": "task"
+        },
+        "kind": "entity",
+        "role": "trigger",
+        "label": "work_item"
+      },
+      {
+        "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+        "kind": "path",
+        "path": "instant_machinist/sim/",
+        "role": "trigger",
+        "label": "governs",
+        "repository": "toukoursin/instant-machinist-speedhacks"
+      },
+      {
+        "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-008/",
+        "kind": "path",
+        "path": "swarm/runs/alike-008/",
+        "role": "trigger",
+        "label": "run_record",
+        "repository": "toukoursin/instant-machinist-speedhacks"
+      }
+    ],
+    "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: \\\\\\\\n\\\\\\\\nThe shared confirmed acceptance bar requires parser compatibility, fidelity, determinism, and regression evidence. That made the ignored G68 behavior a required parser fix rather than a deferable warning.\\\\\\\\n\\\\\\\\n5. Recommendation (patch, test, or defer)\\\\\\\\n\\\\\\\\nPatch `gcode.py` to implement modal G68/G69 rotation, then add focused tests in `tests/sim/test_gcode.py`. Decision recording was attempted through Alike MCP but blocked because the tool required approval under the current `never` approval policy.\\\\\\\"}}\\\\n{\\\\\\\"type\\\\\\\":\\\\\\\"turn.completed\\\\\\\",\\\\\\\"usage\\\\\\\":{\\\\\\\"input_tokens\\\\\\\":672630,\\\\\\\"cached_input_tokens\\\\\\\":610048,\\\\\\\"cache_write_input_tokens\\\\\\\":0,\\\\\\\"output_tokens\\\\\\\":3257,\\\\\\\"reasoning_output_tokens\\\\\\\":972}}\\\\n\\\\nReading additional input from stdin...\\\",\\nswarm/runs/alike-009/alike_post.json:58:        \\\"name\\\": \\\"alike-008: audit parser G69 rotation cancellation\\\",\\nswarm/runs/alike-009/alike_post.json:60:        \\\"title\\\": \\\"alike-008: audit parser G69 rotation cancellation\\\",\\nswarm/runs/alike-009/alike_post.json:90:        \\\"outcome\\\": \\\"Completed Alike-anchored audit; exit=0. Alike helped moment: \\\\\\\\n\\\\\\\\nThe shared acceptance decision required par",
+    "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+    "decision_type": "one_time"
+  },
+  "unset_writable_fields": [
+    "description",
+    "decision_date",
+    "participants",
+    "decided_by",
+    "source_event",
+    "supersedes",
+    "alternative_to",
+    "notes"
+  ],
+  "unset_fields_hint": "set any of these via update_entity patch",
+  "<<</UNTRUSTED>>>": ""
+}

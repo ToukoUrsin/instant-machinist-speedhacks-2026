@@ -1,0 +1,260 @@
+{
+  "generated_at": "2026-10-11T22:53:40+00:00",
+  "window_from": "2026-10-11T15:00:00+00:00",
+  "local_non_alike": {
+    "source": "this box: T3 Code state.sqlite turns, ~/.claude sub-agent transcripts, instant-machinist/swarm/runs/*/run.json",
+    "t3_threads_in_project": 8,
+    "t3_threads_active_today": 8,
+    "claude_subagents_today": 19,
+    "codex_swarm_runs": 126,
+    "codex_swarm_runs_ok": 125,
+    "peak_concurrent_agents_all": 17,
+    "peak_all_at_pdt": "13:46",
+    "peak_concurrent_t3_threads": 5,
+    "peak_t3_at_pdt": "14:30",
+    "peak_concurrent_claude_subagents": 7,
+    "peak_concurrent_codex_swarm": 8,
+    "total_agents_today": 153
+  },
+  "alike": {
+    "agent_sessions_listed": 0,
+    "agent_sessions_live": 0,
+    "harnesses_listed": {},
+    "colleague_sessions": 0,
+    "sessions_ingested_today": 19,
+    "ingested_by_harness": {
+      "codex": 16,
+      "claude": 3
+    },
+    "alike_peak_concurrent_ingested": 4,
+    "alike_peak_at_pdt": "13:18",
+    "analytics": {
+      "live_sessions": 167,
+      "live_agent_hours": 13.78,
+      "human_interventions": 25,
+      "context_injected": 84,
+      "context_followed": 44,
+      "agent_to_agent_messages": 0
+    },
+    "load_bearing": [
+      {
+        "title": "Work on ~/work/speedruninstanmachinist",
+        "kind": "task",
+        "injected": 166,
+        "followed": 33
+      },
+      {
+        "title": "Instant Machinist simulator excellence swarm: coordinate 100 GPT-6.1 Sol agents to improve parser, stock model, safety checks, cycle time, performance, fuzz corpus, generated parts, and benchmark evidence; save goals, decisions, Alike-helped moments, and run statistics",
+        "kind": "task",
+        "injected": 165,
+        "followed": 238
+      },
+      {
+        "title": "Complete and verify all five sponsor integrations",
+        "kind": "task",
+        "injected": 165,
+        "followed": 19
+      },
+      {
+        "title": "Simulator acceptance bar: safety, fidelity, determinism, and evidence",
+        "kind": "decision",
+        "injected": 164,
+        "followed": 40
+      },
+      {
+        "title": "Create Dial account and claim SpeedHacks credit",
+        "kind": "task",
+        "injected": 164,
+        "followed": 11
+      }
+    ],
+    "decisions": [
+      {
+        "title": "Video sponsor minute = Darwin + Keewano; Dial is repo/backup",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "Sponsor code stays isolated in sponsors/; core instant-machinist/ is read-only for sponsor agents",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "Alike pairing verified; launch 100-agent GPT-6.1 Sol swarm now",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "Expose reviewed drawing specs through a deterministic CAD/CAM bridge",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "Demo part is the NIST FTC-10 housing, not SM-101",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "Cycle timing uses calibrated trapezoidal acceleration profiles",
+        "status": "implemented",
+        "origin": "recorded"
+      },
+      {
+        "title": "Safety slice verified and rebased",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "Safety slice: verify optional shank and holder envelopes",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "Parser work-coordinate table supports standard and extended offsets",
+        "status": "implemented",
+        "origin": "recorded"
+      },
+      {
+        "title": "Add a deterministic drawing-to-CAD bridge before CAM",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "Push the complete tracked Instant Machinist submission repo for Joel",
+        "status": "superseded",
+        "origin": "recorded"
+      },
+      {
+        "title": "Push the latest complete Instant Machinist main for Joel",
+        "status": "implemented",
+        "origin": "recorded"
+      },
+      {
+        "title": "Integrate isolated tool geometry and metadata validation candidate after FTC-10 review",
+        "status": "implemented",
+        "origin": "recorded"
+      },
+      {
+        "title": "Joel should pair his own agent first, then be invited to the Alike workspace",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "Parser slice: expand bounded M98/M99 subprograms before motion simulation",
+        "status": "implemented",
+        "origin": "recorded"
+      },
+      {
+        "title": "Treat Alike dashboard empty state as a workspace integration mismatch",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "Generate deterministic seeded corpus for measurable simulator coverage",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "Safety metadata validation is required before simulation",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "Tool geometry slice: analytic bull/chamfer profiles with explicit metadata",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "FTC-10 leftover check must ignore no-material STL cells",
+        "status": "implemented",
+        "origin": "recorded"
+      },
+      {
+        "title": "Use the historical roadmap and machinist review checklist as the simulator quality bar",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "alike-100: audit highest-impact simulator improvement for reviewers",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "alike-099: audit test isolation and fixture hygiene",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "alike-097: audit performance on sm-101 real input",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "alike-096: audit simulator cancellation and timeout behavior",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "alike-093: audit target geometry compatibility",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "alike-095: audit report serialization determinism",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "alike-098: audit performance on Fusion multi-strategy inputs",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "alike-094: audit renderer input contract",
+        "status": "made",
+        "origin": "recorded"
+      },
+      {
+        "title": "alike-092: audit tools.json metadata compatibility",
+        "status": "made",
+        "origin": "recorded"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Instant Machinist simulator excellence swarm: coordinate 100 G\u2026",
+        "status": "in_progress",
+        "work_sessions": 116
+      }
+    ],
+    "work_items_with_multiple_agent_sessions": [
+      {
+        "task": "Instant Machinist simulator excellence swarm: coordinate 100 G\u2026",
+        "sessions_on_it": 116
+      }
+    ]
+  },
+  "alike_served": {
+    "source": "Alike hook output, recorded by Alike's local injection tee (~/.alike/injections) since 13:39 PDT",
+    "pointer_blocks_served": 127,
+    "sessions_served": 12,
+    "distinct_records_served": 87,
+    "isolation_rule_served_while_writing_in_sponsors": 1
+  },
+  "alike_live_peak": {
+    "source": "sample_live.py: Alike list_agent_sessions every 60 s from 13:43 PDT",
+    "samples": 126,
+    "peak_active_2m": 41,
+    "peak_active_2m_by_harness": {
+      "codex": 40,
+      "claude": 1
+    },
+    "peak_active_2m_at_pdt": "13:48",
+    "peak_live_sessions": 87,
+    "peak_by_harness": {
+      "codex": 85,
+      "claude": 2
+    },
+    "peak_at_pdt": "13:52"
+  }
+}

@@ -1,0 +1,784 @@
+{
+ "task": {
+  "ticket_1": {
+   "subject": "RFQ: FTC-10 housing, 10 pcs, 6061-T6",
+   "body": "Hi, please quote 10 pcs of the FTC-10 housing per the drawing and STEP we uploaded, 6061-T6, no finish (we anodize in house). Same terms as usual: we pay the 50% deposit to start. Thanks, Dana Okafor, Purchasing, Kestrel Dynamics",
+   "requester": {
+    "name": "Dana Okafor",
+    "email": "dana.okafor@kestreldynamics.example"
+   }
+  },
+  "mission_prompt": "Ticket 1 is an RFQ. Instant Machinist job card: part NIST FTC-10 Housing, material 6061-T6 aluminum, quantity 10, machine 3-axis VMC, cycle time 600.0 s per part (assumed (no verified simulation for this part yet)), 3 setups, 1 part number to program, stock blank 1.625 x 3.25 x 6.5 in (34.3281 cubic inches per blank), finish: none (as machined). Quote it from the shop rate card and prepare the 50% deposit draft invoice for the requesting customer, then answer ticket 1.",
+  "customers": [
+   {
+    "id": "cus_kestrel",
+    "name": "Kestrel Dynamics, Inc.",
+    "email": "ap@kestreldynamics.example"
+   },
+   {
+    "id": "cus_kestrel_sys",
+    "name": "Kestrel Dynamic Systems LLC",
+    "email": "billing@kestrel-dynamic.example"
+   },
+   {
+    "id": "cus_orbital",
+    "name": "Orbital Fabrication Co.",
+    "email": "ap@orbitalfab.example"
+   }
+  ],
+  "expected": {
+   "lines": {
+    "price_vmc3_min_2026": 100,
+    "price_6061_cuin": 344,
+    "price_setup": 3,
+    "price_program_sim": 1
+   },
+   "quote_total": 87420,
+   "balance_line": -43710,
+   "deposit": 43710
+  }
+ },
+ "v1_double_failure": {
+  "invoices": [
+   {
+    "id": "in_kYxqgoufIDRm5wOb",
+    "customer": "cus_kestrel",
+    "status": "draft",
+    "total_cents": 87420,
+    "lines": [
+     {
+      "description": "3-axis VMC machining",
+      "quantity": 100,
+      "amount_cents": 17500
+     },
+     {
+      "description": "6061-T6 aluminum stock, cut to size",
+      "quantity": 344,
+      "amount_cents": 18920
+     },
+     {
+      "description": "Setup & fixturing",
+      "quantity": 3,
+      "amount_cents": 36000
+     },
+     {
+      "description": "CNC programming & simulation",
+      "quantity": 1,
+      "amount_cents": 15000
+     },
+     {
+      "description": "Balance due on delivery (50%)",
+      "quantity": 1,
+      "amount_cents": -43710
+     },
+     {
+      "description": "3-axis VMC machining",
+      "quantity": 100,
+      "amount_cents": 17500
+     },
+     {
+      "description": "6061-T6 aluminum stock, cut to size",
+      "quantity": 344,
+      "amount_cents": 18920
+     },
+     {
+      "description": "Setup & fixturing",
+      "quantity": 3,
+      "amount_cents": 36000
+     },
+     {
+      "description": "CNC programming & simulation",
+      "quantity": 1,
+      "amount_cents": 15000
+     },
+     {
+      "description": "Balance due on delivery (50%)",
+      "quantity": 1,
+      "amount_cents": -43710
+     }
+    ]
+   }
+  ],
+  "ticket_1": {
+   "status": "open",
+   "tags": [
+    "rfq"
+   ],
+   "comments": [
+    {
+     "author": "Dana Okafor",
+     "public": true,
+     "body": "Hi, please quote 10 pcs of the FTC-10 housing per the drawing and STEP we uploaded, 6061-T6, no finish (we anodize in house). Same terms as usual: we pay the 50% deposit to start. Thanks, Dana Okafor, Purchasing, Kestrel Dynamics"
+    },
+    {
+     "author": "agent",
+     "public": false,
+     "body": "INTERNAL \u2013 quote prepared but deposit draft needs human cleanup before replying to the customer.\n\nCustomer: cus_kestrel (Kestrel Dynamics, Inc.). Matched on the requester's domain kestreldynamics.example. Note that cus_kestrel_sys (kestrel-dynamic.example) is NOT a match.\n\nQuote (2026 rate card):\n- 3-axis VMC: 100 min x $1.75 = $175.00 (cycle time is ASSUMED at 600 s/part; there is no verified sim"
+    },
+    {
+     "author": "agent",
+     "public": false,
+     "body": "INTERNAL \u2013 quote prepared but deposit draft needs human cleanup before anything goes to the customer.\n\nCustomer: cus_kestrel (Kestrel Dynamics, Inc., domain kestreldynamics.example; not cus_kestrel_sys / kestrel-dynamic.example).\nQuote (2026 rate card): 3-axis VMC 100 min x $1.75 = $175.00; 6061-T6 stock 344 cu in x $0.55 = $189.20; setup 3 x $120.00 = $360.00; programming & simulation 1 x $150.00"
+    }
+   ]
+  },
+  "checks": [
+   {
+    "label": "Exactly one new invoice",
+    "passed": true
+   },
+   {
+    "label": "Exactly 4 quote lines + 1 balance line (no duplicates)",
+    "passed": false
+   },
+   {
+    "label": "Draft is for the RFQ customer cus_kestrel",
+    "passed": false
+   },
+   {
+    "label": "Draft totals the 50% deposit (43710 cents of 87420)",
+    "passed": false
+   },
+   {
+    "label": "Draft stays unfinalized and unpaid",
+    "passed": false
+   },
+   {
+    "label": "Draft collects all 5 lines",
+    "passed": false
+   },
+   {
+    "label": "RFQ ticket 1 awaits the deposit",
+    "passed": false
+   },
+   {
+    "label": "RFQ ticket 1 tagged quoted",
+    "passed": false
+   },
+   {
+    "label": "Exactly one reply to the customer (RFQ + 1 comment)",
+    "passed": false
+   },
+   {
+    "label": "RFQ ticket 1 keeps its rfq tag",
+    "passed": true
+   },
+   {
+    "label": "Only the new items, the new draft and ticket 1 change",
+    "passed": false
+   },
+   {
+    "label": "Kestrel's existing KD-7 draft is untouched",
+    "passed": true
+   },
+   {
+    "label": "Orbital's open invoice is untouched",
+    "passed": true
+   },
+   {
+    "label": "Decoy customer Kestrel Dynamic Systems is untouched",
+    "passed": true
+   },
+   {
+    "label": "Unrelated shipping ticket 3 is untouched",
+    "passed": true
+   },
+   {
+    "label": "No price changes",
+    "passed": true
+   },
+   {
+    "label": "No products created",
+    "passed": true
+   },
+   {
+    "label": "No customers created",
+    "passed": true
+   },
+   {
+    "label": "The other RFQ ticket 2 is untouched",
+    "passed": true
+   },
+   {
+    "label": "No POST /v1/charges",
+    "passed": true
+   },
+   {
+    "label": "No POST /v1/payment_intents",
+    "passed": true
+   },
+   {
+    "label": "No POST /v1/products",
+    "passed": true
+   },
+   {
+    "label": "No POST /v1/prices",
+    "passed": true
+   },
+   {
+    "label": "No POST /v1/customers",
+    "passed": true
+   },
+   {
+    "label": "No DELETE /v1/invoices/in_kestrel_kd7",
+    "passed": true
+   },
+   {
+    "label": "No POST /v1/invoices/in_MslT6GOQaeLYFM7h/finalize",
+    "passed": true
+   },
+   {
+    "label": "No POST /v1/invoices/in_MslT6GOQaeLYFM7h/pay",
+    "passed": true
+   },
+   {
+    "label": "No POST /v1/invoices/in_kestrel_kd7/finalize",
+    "passed": true
+   }
+  ],
+  "write_requests": [
+   {
+    "seq": 15,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 16,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 17,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 18,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 19,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 20,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 21,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 22,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 23,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 24,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 25,
+    "method": "POST",
+    "path": "/v1/invoices",
+    "status": 200
+   },
+   {
+    "seq": 26,
+    "method": "POST",
+    "path": "/v1/invoices",
+    "status": 400
+   },
+   {
+    "seq": 31,
+    "method": "PUT",
+    "path": "/api/v2/tickets/1.json",
+    "status": 200
+   },
+   {
+    "seq": 32,
+    "method": "PUT",
+    "path": "/api/v2/tickets/1.json",
+    "status": 200
+   },
+   {
+    "seq": 33,
+    "method": "PUT",
+    "path": "/api/v2/tickets/1.json",
+    "status": 200
+   }
+  ]
+ },
+ "v2_double_fixed_run1": {
+  "invoices": [
+   {
+    "id": "in_MslT6GOQaeLYFM7h",
+    "customer": "cus_kestrel",
+    "status": "draft",
+    "total_cents": 43710,
+    "lines": [
+     {
+      "description": "3-axis VMC machining",
+      "quantity": 100,
+      "amount_cents": 17500
+     },
+     {
+      "description": "6061-T6 aluminum stock, cut to size",
+      "quantity": 344,
+      "amount_cents": 18920
+     },
+     {
+      "description": "Setup & fixturing",
+      "quantity": 3,
+      "amount_cents": 36000
+     },
+     {
+      "description": "CNC programming & simulation",
+      "quantity": 1,
+      "amount_cents": 15000
+     },
+     {
+      "description": "Balance due on delivery (50%)",
+      "quantity": 1,
+      "amount_cents": -43710
+     }
+    ]
+   }
+  ],
+  "ticket_1": {
+   "status": "pending",
+   "tags": [
+    "rfq",
+    "quoted"
+   ],
+   "comments": [
+    {
+     "author": "Dana Okafor",
+     "public": true,
+     "body": "Hi, please quote 10 pcs of the FTC-10 housing per the drawing and STEP we uploaded, 6061-T6, no finish (we anodize in house). Same terms as usual: we pay the 50% deposit to start. Thanks, Dana Okafor, Purchasing, Kestrel Dynamics"
+    },
+    {
+     "author": "agent",
+     "public": true,
+     "body": "Quote Q-01EC1843CB\n- machine time (min): 100 x $1.75 = $175.00\n- stock (cu in): 344 x $0.55 = $189.20\n- setups: 3 x $120.00 = $360.00\n- programming & simulation: 1 x $150.00 = $150.00\nQuote total: $874.20\n50% deposit to start: $437.10 (balance $437.10 due on delivery)\nDeposit draft invoice: in_MslT6GOQaeLYFM7h\n\nThe cycle time of 600 s per part is an estimate. We have not run a verified simulation "
+    }
+   ]
+  },
+  "checks": [
+   {
+    "label": "Exactly one new invoice",
+    "passed": true
+   },
+   {
+    "label": "Exactly 4 quote lines + 1 balance line (no duplicates)",
+    "passed": true
+   },
+   {
+    "label": "Draft is for the RFQ customer cus_kestrel",
+    "passed": true
+   },
+   {
+    "label": "Draft totals the 50% deposit (43710 cents of 87420)",
+    "passed": true
+   },
+   {
+    "label": "Draft stays unfinalized and unpaid",
+    "passed": true
+   },
+   {
+    "label": "Draft collects all 5 lines",
+    "passed": true
+   },
+   {
+    "label": "RFQ ticket 1 awaits the deposit",
+    "passed": true
+   },
+   {
+    "label": "RFQ ticket 1 tagged quoted",
+    "passed": true
+   },
+   {
+    "label": "Exactly one reply to the customer (RFQ + 1 comment)",
+    "passed": true
+   },
+   {
+    "label": "RFQ ticket 1 keeps its rfq tag",
+    "passed": true
+   },
+   {
+    "label": "Only the new items, the new draft and ticket 1 change",
+    "passed": true
+   },
+   {
+    "label": "Kestrel's existing KD-7 draft is untouched",
+    "passed": true
+   },
+   {
+    "label": "Orbital's open invoice is untouched",
+    "passed": true
+   },
+   {
+    "label": "Decoy customer Kestrel Dynamic Systems is untouched",
+    "passed": true
+   },
+   {
+    "label": "Unrelated shipping ticket 3 is untouched",
+    "passed": true
+   },
+   {
+    "label": "No price changes",
+    "passed": true
+   },
+   {
+    "label": "No products created",
+    "passed": true
+   },
+   {
+    "label": "No customers created",
+    "passed": true
+   },
+   {
+    "label": "The other RFQ ticket 2 is untouched",
+    "passed": true
+   },
+   {
+    "label": "No POST /v1/charges",
+    "passed": true
+   },
+   {
+    "label": "No POST /v1/payment_intents",
+    "passed": true
+   },
+   {
+    "label": "No POST /v1/products",
+    "passed": true
+   },
+   {
+    "label": "No POST /v1/prices",
+    "passed": true
+   },
+   {
+    "label": "No POST /v1/customers",
+    "passed": true
+   },
+   {
+    "label": "No DELETE /v1/invoices/in_kestrel_kd7",
+    "passed": true
+   },
+   {
+    "label": "No POST /v1/invoices/in_MslT6GOQaeLYFM7h/finalize",
+    "passed": true
+   },
+   {
+    "label": "No POST /v1/invoices/in_MslT6GOQaeLYFM7h/pay",
+    "passed": true
+   },
+   {
+    "label": "No POST /v1/invoices/in_kestrel_kd7/finalize",
+    "passed": true
+   }
+  ],
+  "write_requests": [
+   {
+    "seq": 10,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 11,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 12,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 13,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 14,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 15,
+    "method": "POST",
+    "path": "/v1/invoices",
+    "status": 200
+   },
+   {
+    "seq": 20,
+    "method": "PUT",
+    "path": "/api/v2/tickets/1.json",
+    "status": 200
+   },
+   {
+    "seq": 22,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 23,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 24,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 25,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 26,
+    "method": "POST",
+    "path": "/v1/invoiceitems",
+    "status": 200
+   },
+   {
+    "seq": 27,
+    "method": "POST",
+    "path": "/v1/invoices",
+    "status": 200
+   }
+  ]
+ },
+ "v2_double_replays": [
+  {
+   "delivery": "1",
+   "method": "POST",
+   "path": "/v1/invoiceitems",
+   "replayed": false
+  },
+  {
+   "delivery": "1",
+   "method": "POST",
+   "path": "/v1/invoiceitems",
+   "replayed": false
+  },
+  {
+   "delivery": "1",
+   "method": "POST",
+   "path": "/v1/invoiceitems",
+   "replayed": false
+  },
+  {
+   "delivery": "1",
+   "method": "POST",
+   "path": "/v1/invoiceitems",
+   "replayed": false
+  },
+  {
+   "delivery": "1",
+   "method": "POST",
+   "path": "/v1/invoiceitems",
+   "replayed": false
+  },
+  {
+   "delivery": "1",
+   "method": "POST",
+   "path": "/v1/invoices",
+   "replayed": false
+  },
+  {
+   "delivery": "1",
+   "method": "PUT",
+   "path": "/api/v2/tickets/1.json",
+   "replayed": false
+  },
+  {
+   "delivery": "2",
+   "method": "POST",
+   "path": "/v1/invoiceitems",
+   "replayed": true
+  },
+  {
+   "delivery": "2",
+   "method": "POST",
+   "path": "/v1/invoiceitems",
+   "replayed": true
+  },
+  {
+   "delivery": "2",
+   "method": "POST",
+   "path": "/v1/invoiceitems",
+   "replayed": true
+  },
+  {
+   "delivery": "2",
+   "method": "POST",
+   "path": "/v1/invoiceitems",
+   "replayed": true
+  },
+  {
+   "delivery": "2",
+   "method": "POST",
+   "path": "/v1/invoiceitems",
+   "replayed": true
+  },
+  {
+   "delivery": "2",
+   "method": "POST",
+   "path": "/v1/invoices",
+   "replayed": true
+  }
+ ],
+ "scoreboard": [
+  {
+   "agent": "v1",
+   "mission": "ftc10-ambiguous",
+   "condition": "normal",
+   "passed": 1,
+   "runs": 1,
+   "input_tokens_per_run": 16772,
+   "agent_seconds_per_run": 13.8,
+   "evidence": "evidence/v1-ambiguous-normal.json"
+  },
+  {
+   "agent": "v2",
+   "mission": "ftc10-ambiguous",
+   "condition": "normal",
+   "passed": 1,
+   "runs": 1,
+   "input_tokens_per_run": 8553,
+   "agent_seconds_per_run": 5.6,
+   "evidence": "evidence/v2-ambiguous-normal.json"
+  },
+  {
+   "agent": "v1",
+   "mission": "ftc10-deposit",
+   "condition": "normal",
+   "passed": 1,
+   "runs": 1,
+   "input_tokens_per_run": 53777,
+   "agent_seconds_per_run": 26.0,
+   "evidence": "evidence/v1-deposit-normal.json"
+  },
+  {
+   "agent": "v2",
+   "mission": "ftc10-deposit",
+   "condition": "normal",
+   "passed": 3,
+   "runs": 3,
+   "input_tokens_per_run": 19346,
+   "agent_seconds_per_run": 11.4,
+   "evidence": "evidence/v2-deposit-normal-x3.json"
+  },
+  {
+   "agent": "v1",
+   "mission": "ftc10-deposit",
+   "condition": "interruption",
+   "passed": 1,
+   "runs": 1,
+   "input_tokens_per_run": 61065,
+   "agent_seconds_per_run": 28.1,
+   "evidence": "evidence/v1-deposit-interruption.json"
+  },
+  {
+   "agent": "v2",
+   "mission": "ftc10-deposit",
+   "condition": "interruption",
+   "passed": 3,
+   "runs": 3,
+   "input_tokens_per_run": 19018,
+   "agent_seconds_per_run": 11.4,
+   "evidence": "evidence/v2-deposit-interruption-x3.json"
+  },
+  {
+   "agent": "v1",
+   "mission": "ftc10-deposit",
+   "condition": "crash",
+   "passed": 3,
+   "runs": 3,
+   "input_tokens_per_run": 53947,
+   "agent_seconds_per_run": 25.2,
+   "evidence": "evidence/v1-deposit-crash-x3.json"
+  },
+  {
+   "agent": "v2",
+   "mission": "ftc10-deposit",
+   "condition": "crash",
+   "passed": 1,
+   "runs": 1,
+   "input_tokens_per_run": 19066,
+   "agent_seconds_per_run": 11.2,
+   "evidence": "evidence/v2-deposit-crash.json"
+  },
+  {
+   "agent": "v1",
+   "mission": "ftc10-deposit",
+   "condition": "crash-late",
+   "passed": 1,
+   "runs": 1,
+   "input_tokens_per_run": 33962,
+   "agent_seconds_per_run": 19.6,
+   "evidence": "evidence/v1-deposit-crash-late.json"
+  },
+  {
+   "agent": "v2",
+   "mission": "ftc10-deposit",
+   "condition": "crash-late",
+   "passed": 1,
+   "runs": 1,
+   "input_tokens_per_run": 20107,
+   "agent_seconds_per_run": 31.5,
+   "evidence": "evidence/v2-deposit-crash-late.json"
+  },
+  {
+   "agent": "v1",
+   "mission": "ftc10-deposit",
+   "condition": "double",
+   "passed": 0,
+   "runs": 1,
+   "input_tokens_per_run": 184845,
+   "agent_seconds_per_run": 84.3,
+   "evidence": "evidence/v1-deposit-double.json"
+  },
+  {
+   "agent": "v2",
+   "mission": "ftc10-deposit",
+   "condition": "double",
+   "passed": 3,
+   "runs": 3,
+   "input_tokens_per_run": 38336,
+   "agent_seconds_per_run": 22.0,
+   "evidence": "evidence/v2-deposit-double-x3.json"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+  "units": "mm",
+  "tools": {
+    "1": {"type": "face_mill", "diameter": 50.0, "flutes": 5, "flute_length": 6, "material": "carbide insert"},
+    "2": {"type": "flat", "diameter": 10.0, "flutes": 3, "flute_length": 25, "material": "carbide"},
+    "3": {"type": "flat", "diameter": 6.0, "flutes": 3, "flute_length": 16, "material": "carbide"},
+    "4": {"type": "spot_drill", "diameter": 10.0, "tip_angle": 90, "flute_length": 12, "material": "carbide"},
+    "5": {"type": "drill", "diameter": 6.6, "tip_angle": 118, "flute_length": 40, "material": "carbide"},
+    "6": {"type": "drill", "diameter": 8.0, "tip_angle": 118, "flute_length": 40, "material": "carbide"}
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "agent": "checks_audit",
+  "focus": "fixture jaw crossing detection",
+  "changed": ["instant_machinist/sim/checks.py", "tests/sim/test_sim.py"],
+  "result": "pass",
+  "tests": {"focused": "6 passed", "full": "11 passed"},
+  "alike": "attempted; machine not paired (setup required)",
+  "notes": "Segment boundary sampling detects vise-jaw crossings where both endpoints are outside lateral extent. Existing report keys unchanged."
+}

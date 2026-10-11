@@ -1,0 +1,248 @@
+[
+ {
+  "endpoint": "https://whobuildsit.com/mcp",
+  "need": "stock",
+  "ok": true,
+  "server": "whobuildsit",
+  "tools": 7,
+  "read_only_tools": 6,
+  "write_tools": [
+   "request_quote"
+  ],
+  "calls": [
+   {
+    "tool": "search_suppliers",
+    "args": {
+     "query": "6061 aluminum bar",
+     "limit": 3
+    },
+    "total": 0,
+    "top": []
+   },
+   {
+    "tool": "search_suppliers",
+    "args": {
+     "query": "aluminium",
+     "limit": 3
+    },
+    "total": 29,
+    "top": [
+     "HIACC Engineering & Services Pvt. Ltd",
+     "VAT Group",
+     "Kohesi Bond"
+    ]
+   },
+   {
+    "tool": "search_parts",
+    "args": {
+     "query": "6061 aluminum bar",
+     "limit": 3
+    },
+    "total": 0,
+    "top": []
+   },
+   {
+    "tool": "search_parts",
+    "args": {
+     "query": "aluminium",
+     "limit": 3
+    },
+    "total": 6,
+    "top": [
+     "Vibration Test Adapter (VTA)",
+     "EOS Aluminium Al2139 AM",
+     "EOS Aluminium Al5X1"
+    ]
+   }
+  ]
+ },
+ {
+  "endpoint": "https://gemalli.com/api/mcp",
+  "need": "stock",
+  "ok": true,
+  "server": "gemalli-mcp",
+  "tools": 21,
+  "read_only_tools": 16,
+  "write_tools": [
+   "add_feedback_message",
+   "close_feedback_ticket",
+   "create_feedback_ticket",
+   "request_quote",
+   "submit_join_request"
+  ],
+  "calls": [
+   {
+    "tool": "search_products",
+    "args": {
+     "q": "6061 aluminum bar",
+     "limit": 3
+    },
+    "total": 0,
+    "top": []
+   },
+   {
+    "tool": "search_products",
+    "args": {
+     "q": "aluminium",
+     "limit": 3
+    },
+    "total": 0,
+    "top": []
+   }
+  ]
+ },
+ {
+  "endpoint": "https://app.webotee.com/mcp",
+  "need": "tooling",
+  "ok": true,
+  "server": "Webotee AI Connect",
+  "tools": 83,
+  "read_only_tools": 74,
+  "write_tools": [
+   "authorized_seller_set",
+   "collect_asin_now",
+   "find_product_across_web",
+   "playbook_create",
+   "playbook_run_now",
+   "playbook_schedule",
+   "set_cost_floor",
+   "watchlist_add"
+  ],
+  "calls": [
+   {
+    "tool": "shopping_search",
+    "args": {
+     "query": "end mill"
+    },
+    "error": "HTTP Error 401: Unauthorized"
+   },
+   {
+    "tool": "search_products",
+    "args": {
+     "keywords": "end mill"
+    },
+    "error": "HTTP Error 401: Unauthorized"
+   }
+  ]
+ },
+ {
+  "endpoint": "https://mars-economic-agent-gateway.mars-economic.workers.dev/mcp",
+  "need": "finishing",
+  "ok": true,
+  "server": "mars-economic-intermediary",
+  "tools": 30,
+  "read_only_tools": 8,
+  "write_tools": [
+   "build_economic_opportunity_portfolio",
+   "build_portfolio_conversion_queue",
+   "discover_buyer_demand",
+   "discover_commercial_counterparties",
+   "find_counterparty",
+   "intake_formal_eligibility_response",
+   "intake_supplier_formal_eligibility",
+   "mars_purchase_feedback"
+  ],
+  "calls": []
+ },
+ {
+  "endpoint": "https://whobuildsit.com/mcp",
+  "need": "overflow",
+  "ok": true,
+  "server": "whobuildsit",
+  "tools": 7,
+  "read_only_tools": 6,
+  "write_tools": [
+   "request_quote"
+  ],
+  "calls": [
+   {
+    "tool": "search_suppliers",
+    "args": {
+     "query": "CNC milling",
+     "limit": 3
+    },
+    "total": 7,
+    "top": [
+     "frigate.ai",
+     "MTAR Technologies",
+     "Sansera Engineering"
+    ]
+   },
+   {
+    "tool": "search_parts",
+    "args": {
+     "query": "CNC milling",
+     "limit": 3
+    },
+    "total": 0,
+    "top": []
+   },
+   {
+    "tool": "search_parts",
+    "args": {
+     "query": "machining",
+     "limit": 3
+    },
+    "total": 0,
+    "top": []
+   }
+  ]
+ },
+ {
+  "endpoint": "https://costable.ai/api/mcp",
+  "need": "overflow",
+  "ok": true,
+  "server": "costable",
+  "tools": 10,
+  "read_only_tools": 0,
+  "write_tools": [
+   "add_material_to_model",
+   "add_process_to_model",
+   "calculate_cost_model",
+   "compare_manufacturing_countries",
+   "create_cost_model",
+   "estimate_part",
+   "get_labour_rates",
+   "review_supplier_quote"
+  ],
+  "calls": [
+   {
+    "tool": "estimate_part",
+    "args": {
+     "description": "CNC milled 6061-T6 aluminum sensor mount plate, 120 x 80 x 20 mm envelope, 0.21 kg finished, 3-axis milling, +/-0.1 mm",
+     "countryCode": "US",
+     "batchQty": 25
+    },
+    "result_text": "{\n  \"p50PerUnit\": 5.632794953469246,\n  \"p80PerUnit\": 6.302658354946818,\n  \"p90PerUnit\": 6.685375765072798,\n  \"breakdown\": {\n    \"materialCost\": 0.3804075577742931,\n    \"rawMaterialCost\": 0.3804075577742931,\n    \"purchasedPartsCost\": 0,\n    \"labourCost\": 1.3443150729721467,\n    \"machineCost\": 2.2065777712926646,\n    \"toolingCost\": 0,\n    \"overhead\": 0.9828251005097761,\n    \"margin\": 0.7371188253823321\n  },\n  \"assumptions\": {\n    \"material\": \"Aluminium 1100 \u2014 Sheet\",\n    \"materialPriceUsdKg\": 2.541,\n    \"process\": \"CNC 3-Axis Milling \u2014 Light (Al, plastics)\",\n    \"massKg\": 0.21,\n    \"cycleTimeMins\": 1,\n    \"country\": \"US\",\n    \"batchQty\": 25,\n    \"labourRateUsdHr\": 39.6,\n    \"machineRateUsdHr\": 65\n  },\n  \"confidence\": \"HIGH\"\n}",
+    "is_error": false,
+    "structured": null
+   }
+  ]
+ },
+ {
+  "endpoint": "https://onlineshippingcalculator.com/api/mcp",
+  "need": "freight",
+  "ok": true,
+  "server": "shipping-rates-calculator",
+  "tools": 2,
+  "read_only_tools": 2,
+  "write_tools": [],
+  "calls": [
+   {
+    "tool": "get_shipping_rates",
+    "args": {
+     "from_zip": "90058",
+     "to_zip": "94107",
+     "weight": 43.9,
+     "weight_unit": "lb",
+     "length_in": 7,
+     "width_in": 5,
+     "height_in": 3
+    },
+    "result_text": "Live package rates through this server are available to AI assistants only (Claude, ChatGPT, Copilot, Perplexity, Gemini). Postage prices still work for every client. Get rates at https://onlineshippingcalculator.com/?utm_source=mcp&utm_medium=ai-assistant&utm_campaign=client_fallback",
+    "is_error": true,
+    "structured": null
+   }
+  ]
+ }
+]

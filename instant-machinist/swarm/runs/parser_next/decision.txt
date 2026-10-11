@@ -1,0 +1,1 @@
+Historical checklist requires explicit work offsets. Implemented caller-supplied XYZ tables for G54-G59 and G54.1 Pn; missing non-default entries warn and remain zero for deterministic behavior. Added parser and simulate() plumbing and tests.

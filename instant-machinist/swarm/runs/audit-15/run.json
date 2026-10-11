@@ -1,0 +1,9 @@
+{
+  "agent_id": "audit-15",
+  "item": "stock spot drill",
+  "exit_code": 0,
+  "started_epoch": 1791750292.2885945,
+  "ended_epoch": 1791750420.505739,
+  "wall_s": 128.22,
+  "transcript": "transcript.jsonl"
+}

@@ -1,0 +1,62 @@
+{
+ "call_id": "cmv4asln7009g0fqqwxvk91y0",
+ "supplier": "Pacific Metals Supply",
+ "note": "Both sides are Dial AI agents; supplier is a demo persona.",
+ "turns": [
+  {
+   "speaker": "supplier",
+   "text": "Pacific Metals.",
+   "startMs": 598,
+   "endMs": 1638
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Hi,",
+   "startMs": 917,
+   "endMs": 1304
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Hi, this is the purchasing desk from a small CNC machine shop in Oakland. I\u2019m looking to get a quick quote on some 6061-T6 aluminum flat bar.  \n\nPreferred size is 1-1/8 inch thick by 3-1/2 inch wide, saw-cut to 5 inch lengths, quantity 25 pieces.  \nSaw cut tolerance of plus or minus 1/16 inch is fine, and a mill cert is nice but not required.  \n\nCould you let me know pricing (per foot or per piece), any saw-cut charges, lead time, and delivery cost to Oakland? If delivery is pricey, we can also do will-call pickup.",
+   "startMs": 4281,
+   "endMs": 36268
+  },
+  {
+   "speaker": "supplier",
+   "text": "Pacific Metals, This is Dana. Got it. Thanks for all the detail. Couple things first. We don't stock one one eighth thick in that width. Closest we have in six thousand and sixty one t six flat bar is one x three, one half in at twenty one dollars dot forty per foot. That'll cover your one one eighth x three, one half requirement on thickness slash width, just a bit thinner. If you truly need one one eighth thick, I'd have to say we don't have that size. Assuming one x three one half works for you, here's the math for twenty five PCS at five in. Each piece is five in equal sign, zero point four one seven feet. With saw, kerf, and rounding, we have to figure it by usable bar. For twenty five pieces, we'd use about ten point five feet of bar once you include kerf and roundup. Material, ten point five feet, twenty one dollars forty cents equal sign, two hundred and twenty four dollars seventy cents. Cuts, twenty five pieces equal sign, twenty five cuts, three dollars equal sign, seventy five dollars. Subtotal, two hundred and ninety nine dollars seventy cents. That clears our forty dollars minimum. Per piece rough breakdown. Material per piece. About eight dollars ninety nine cents. Cut per piece, three dollars. So about eleven dollars ninety nine cents per piece before tax and delivery. Saw cut charge, three dollars per cut. Which I included above. Your one sixteenth intolerance is fine. Lead time, in stock so we can ship next business day. We'll call pickup same day if you place it before two PM. Delivery to Oakland. Flat thirty five dollars on our truck within the East Bay. So with delivery, total about three hundred and thirty four dollars seventy cents plus tax. Quote number for this, PMS four thousand two hundred and seventy three. That's PMS four two seven three. I can hold that for seven days. Two things I need from you. One, can you confirm one x three, one half, and six thousand and sixty one?",
+   "startMs": 37448,
+   "endMs": 159578
+  },
+  {
+   "speaker": "supplier",
+   "text": "t six works instead of one one eighth?",
+   "startMs": 159898,
+   "endMs": 162538
+  },
+  {
+   "speaker": "supplier",
+   "text": "Two, do you want delivery to Oakland for the thirty five dollars?",
+   "startMs": 162868,
+   "endMs": 165988
+  },
+  {
+   "speaker": "supplier",
+   "text": "or will call pickup in San Leandro?",
+   "startMs": 166458,
+   "endMs": 168458
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Thanks, Dana, that was really clear.  \n\nOn the size: I actually do need at least 1.11 inches thick on the blank.  \nYour bar is 1.00 inch thick by 3.50 wide x 5.00 long, and my minimum finished blank is 1.11 thick x 3.31 wide x 4.89 long.  \nSo the 1-inch thickness is undersized for us, even though the width and length work.  \n\nDo you have the next standard size up that\u2019s at least:  \n- 1.11\" thick (so 1-1/8\" or thicker),  \n- 3.31\" wide (3-1/2\" or wider),  \n- and we can do 5\" long or longer for the cut?  \n\nI\u2019m fine with flat bar or cut-to-size blocks, as long as it meets or exceeds 1.11 x 3.31 x 4.89.  \n\nOn delivery vs will-call: once we see what the next size up costs, I\u2019ll probably go with the $35 delivery to Oakland, but if that bumps the price a lot I may switch to will-call in San Leandro.",
+   "startMs": 169510,
+   "endMs": 224554
+  },
+  {
+   "speaker": "supplier",
+   "text": "Gotcha. Thanks for clarifying the finished size. We don't stock one one eight in or anything thicker in that width range. In this product line, our first size is one point zero zero in thick, and then we jump up in width only. One x three, one half in six thousand and sixty one, t six at twenty one dollars dot forty per foot. One one quarter x three, one half in at twenty six dollars dot eighty per foot. One one quarter x x four n at thirty dollars dot fifty per foot, one one half x three, one half n at thirty two dollars dot You're right on the math, and that's the issue. I don't have anything one point one one in thick or heavier in this line. Our flat bar starts at one point zero zero in thick. And all the other sizes I quoted, one one quarter, one half, etcetera, are changes in thickness for a different series. Not in this three, one half, in and up, six thousand and sixty one t six flat bar. We do not stock one one eighth in one five eighths in, or any thicker bar that clean up to your one point one one in finished thickness. So for what you need, at least one point one one x three point three one x four point eight nine.",
+   "startMs": 225898,
+   "endMs": 299588
+  }
+ ],
+ "transcript": null
+}

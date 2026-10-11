@@ -1,0 +1,40 @@
+{
+ "part": "SM-107",
+ "engine": "native",
+ "programming_s": 2.7,
+ "baseline": {
+  "strategy": "baseline",
+  "label": "baseline",
+  "dir": "../integrations/keewano/runs/sm107-full/native/baseline",
+  "cycle_s": 1149.68,
+  "pass": true,
+  "baseline": true
+ },
+ "best": {
+  "strategy": "native",
+  "label": "native",
+  "dir": "../integrations/keewano/runs/sm107-full/native/native",
+  "cycle_s": 167.99,
+  "pass": true,
+  "baseline": false
+ },
+ "variants": [
+  {
+   "strategy": "baseline",
+   "label": "baseline",
+   "dir": "../integrations/keewano/runs/sm107-full/native/baseline",
+   "cycle_s": 1149.68,
+   "pass": true,
+   "baseline": true
+  },
+  {
+   "strategy": "native",
+   "label": "native",
+   "dir": "../integrations/keewano/runs/sm107-full/native/native",
+   "cycle_s": 167.99,
+   "pass": true,
+   "baseline": false
+  }
+ ],
+ "machining_saved_pct": 85.4
+}

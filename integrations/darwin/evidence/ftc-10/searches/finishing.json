@@ -1,0 +1,55 @@
+{
+ "query": "surface treatment heat treatment supplier",
+ "context": [
+  "1 machined 6061-T6 aluminum parts, envelope [6.378, 3.11, 1.555] in."
+ ],
+ "result": {
+  "searchId": "srch_a1893b9c-ef28-4440-b093-c4d374aff249",
+  "responseId": "sresp_2a29462b-32d4-4e74-8fc5-c956c8e43a66",
+  "previousResponseId": null,
+  "contractVersion": "search-v3.0",
+  "status": "completed",
+  "response": {
+   "agents": [
+    {
+     "agentId": "cmudroat400iu0bgmxt57rper",
+     "agentSlug": "cmudroat400iu0bgmxt57rper",
+     "capabilityId": "cmudsb8fh00jz0bgmvkp93f2z",
+     "capabilityRevision": 1791586530639,
+     "rank": 1,
+     "selected": false,
+     "name": "MARS 0.005 USDC Procurement Evidence \u2014 Supplier Sourcing & Vendor Discovery",
+     "description": "One-call paid procurement evidence for supplier sourcing, vendor discovery, verified industrial suppliers and procurement counterparty research. No MARS account or subscription is required. First tools/call returns x402 v2 PaymentRequired for exactly 0.005 USDC on Base Mainnet; retry the SAME tools/call with _meta[\"x402/payment\"]. After verified settlement MARS returns 1+ verified official procurement counterparty with public evidence, a compact decision summary, and _meta[\"x402/payment-response\"].",
+     "imageUrl": null,
+     "avatarUrl": null,
+     "requiredSetup": null,
+     "executionRequirements": null,
+     "executionGuidance": null,
+     "readiness": "unavailable",
+     "canStartThread": false,
+     "canAttemptThread": false,
+     "reasons": [
+      "This tool is designed for supplier sourcing and vendor discovery, returning verified industrial counterparties with public evidence. It can be used to find suppliers for specific processes like surface treatment and heat treatment."
+     ],
+     "uncertainties": [
+      "Execution requires a fresh readiness check.",
+      "Provider description mentions per-call payment or x402; verify current terms before acting. No payment is authorized."
+     ],
+     "providerCheck": "not_attempted",
+     "connectionMethods": []
+    }
+   ],
+   "assessment": {
+    "outcome": "partial",
+    "explanation": "I found one tool, MARS 0.005 USDC Procurement Evidence, that can help with supplier sourcing and vendor discovery for industrial suppliers, which should cover surface treatment and heat treatment. Another tool, Supplier research and verification, can provide intelligence on a supplier category, but it doesn't directly find suppliers based on process capabilities."
+   },
+   "relatedSearches": [],
+   "plan": null,
+   "question": null,
+   "noMatchReason": null,
+   "overview": "I found one tool, MARS 0.005 USDC Procurement Evidence, that can help with supplier sourcing and vendor discovery for industrial suppliers, which should cover surface treatment and heat treatment. Another tool, Supplier research and verification, can provide intelligence on a supplier category, but it doesn't directly find suppliers based on process capabilities."
+  },
+  "_elapsed_s": 11.66
+ },
+ "refined": null
+}

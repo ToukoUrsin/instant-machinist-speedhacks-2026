@@ -1,0 +1,28 @@
+{
+  "focused": ".venv/bin/python -m pytest -q tests/sim",
+  "result": "27 passed, 1 skipped",
+  "ftc10": {
+    "programs": 5,
+    "target": "auto",
+    "cell_mm": 0.5,
+    "frames": 8,
+    "all_completed": true,
+    "metadata_check_ok": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "overall_ok": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "note": "Existing leftover/fixture/plunge safety findings remain; no crash."
+  },
+  "commit": "6d55630",
+  "implementation_commit": "eaeea74"
+}

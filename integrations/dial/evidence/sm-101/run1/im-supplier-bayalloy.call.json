@@ -1,0 +1,34 @@
+{
+ "id": "cmv4akidj008e0fqqsmt8pqhb",
+ "direction": "outbound",
+ "status": {
+  "state": "Terminated",
+  "terminationType": "completed",
+  "cancelRequested": false,
+  "cancelPending": false,
+  "label": "Completed"
+ },
+ "duration": 300,
+ "createdAt": "2026-10-11T20:44:40.327Z",
+ "voiceRuntime": "managed",
+ "failureReason": null,
+ "transferTo": null,
+ "transferredAt": null,
+ "from_line": "im-shop-agent",
+ "from_number": "+1737345xxxx",
+ "to_line": "im-supplier-bayalloy",
+ "to_number": "+1510913xxxx",
+ "supplier": "Bay Alloy & Steel",
+ "played_by": "Dial inbound AI agent (demo persona)",
+ "extra_fields": [
+  "callStartedAt",
+  "cancelRequestedAt",
+  "contentRedactedAt",
+  "phoneNumberId",
+  "queuedAt",
+  "recordingAvailable",
+  "startedRingingAt",
+  "terminatedAt",
+  "terminationType"
+ ]
+}

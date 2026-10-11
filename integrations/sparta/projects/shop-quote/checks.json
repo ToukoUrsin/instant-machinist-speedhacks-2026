@@ -1,0 +1,485 @@
+{
+ "ftc10-deposit": {
+  "assertions": [
+   {
+    "id": "one-draft",
+    "label": "Exactly one new invoice",
+    "type": "changed-count",
+    "resource": "invoices",
+    "kind": "created",
+    "count": 1
+   },
+   {
+    "id": "five-items",
+    "label": "Exactly 4 quote lines + 1 balance line (no duplicates)",
+    "type": "changed-count",
+    "resource": "invoiceitems",
+    "kind": "created",
+    "count": 5
+   },
+   {
+    "id": "right-customer",
+    "label": "Draft is for the RFQ customer cus_kestrel",
+    "type": "record-field",
+    "resource": "invoices",
+    "recordId": "in_MslT6GOQaeLYFM7h",
+    "path": [
+     "customer"
+    ],
+    "op": "equals",
+    "value": "cus_kestrel"
+   },
+   {
+    "id": "deposit-total",
+    "label": "Draft totals the 50% deposit (43710 cents of 87420)",
+    "type": "record-field",
+    "resource": "invoices",
+    "recordId": "in_MslT6GOQaeLYFM7h",
+    "path": [
+     "total"
+    ],
+    "op": "equals",
+    "value": 43710
+   },
+   {
+    "id": "still-draft",
+    "label": "Draft stays unfinalized and unpaid",
+    "type": "record-field",
+    "resource": "invoices",
+    "recordId": "in_MslT6GOQaeLYFM7h",
+    "path": [
+     "status"
+    ],
+    "op": "equals",
+    "value": "draft"
+   },
+   {
+    "id": "five-lines",
+    "label": "Draft collects all 5 lines",
+    "type": "record-field",
+    "resource": "invoices",
+    "recordId": "in_MslT6GOQaeLYFM7h",
+    "path": [
+     "lines",
+     "data"
+    ],
+    "op": "count",
+    "value": 5
+   },
+   {
+    "id": "ticket-pending",
+    "label": "RFQ ticket 1 awaits the deposit",
+    "type": "record-field",
+    "resource": "tickets",
+    "recordId": "1",
+    "path": [
+     "status"
+    ],
+    "op": "equals",
+    "value": "pending"
+   },
+   {
+    "id": "ticket-quoted",
+    "label": "RFQ ticket 1 tagged quoted",
+    "type": "record-field",
+    "resource": "tickets",
+    "recordId": "1",
+    "path": [
+     "tags"
+    ],
+    "op": "includes",
+    "value": "quoted"
+   },
+   {
+    "id": "one-reply",
+    "label": "Exactly one reply to the customer (RFQ + 1 comment)",
+    "type": "record-field",
+    "resource": "tickets",
+    "recordId": "1",
+    "path": [
+     "comments"
+    ],
+    "op": "count",
+    "value": 2
+   },
+   {
+    "id": "ticket-rfq-kept",
+    "label": "RFQ ticket 1 keeps its rfq tag",
+    "type": "record-field",
+    "resource": "tickets",
+    "recordId": "1",
+    "path": [
+     "tags"
+    ],
+    "op": "includes",
+    "value": "rfq"
+   },
+   {
+    "id": "scope",
+    "label": "Only the new items, the new draft and ticket 1 change",
+    "type": "change-scope",
+    "allowed": [
+     {
+      "resource": "invoiceitems",
+      "kinds": [
+       "created"
+      ]
+     },
+     {
+      "resource": "invoices",
+      "kinds": [
+       "created"
+      ],
+      "recordIds": [
+       "in_MslT6GOQaeLYFM7h"
+      ]
+     },
+     {
+      "resource": "tickets",
+      "kinds": [
+       "updated"
+      ],
+      "recordIds": [
+       "1"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "old-draft-untouched",
+    "label": "Kestrel's existing KD-7 draft is untouched",
+    "type": "unchanged",
+    "resource": "invoices",
+    "recordId": "in_kestrel_kd7"
+   },
+   {
+    "id": "orbital-invoice-untouched",
+    "label": "Orbital's open invoice is untouched",
+    "type": "unchanged",
+    "resource": "invoices",
+    "recordId": "in_orbital_po7781"
+   },
+   {
+    "id": "decoy-customer-untouched",
+    "label": "Decoy customer Kestrel Dynamic Systems is untouched",
+    "type": "unchanged",
+    "resource": "customers",
+    "recordId": "cus_kestrel_sys"
+   },
+   {
+    "id": "ticket-3-untouched",
+    "label": "Unrelated shipping ticket 3 is untouched",
+    "type": "unchanged",
+    "resource": "tickets",
+    "recordId": "3"
+   },
+   {
+    "id": "rate-card-untouched",
+    "label": "No price changes",
+    "type": "changed-count",
+    "resource": "prices",
+    "kind": "created",
+    "count": 0
+   },
+   {
+    "id": "no-products",
+    "label": "No products created",
+    "type": "changed-count",
+    "resource": "products",
+    "kind": "created",
+    "count": 0
+   },
+   {
+    "id": "no-new-customers",
+    "label": "No customers created",
+    "type": "changed-count",
+    "resource": "customers",
+    "kind": "created",
+    "count": 0
+   },
+   {
+    "id": "ticket-2-untouched",
+    "label": "The other RFQ ticket 2 is untouched",
+    "type": "unchanged",
+    "resource": "tickets",
+    "recordId": "2"
+   },
+   {
+    "id": "forbid-post-v1-charges",
+    "label": "No POST /v1/charges",
+    "type": "forbidden-request",
+    "method": "POST",
+    "path": "/v1/charges"
+   },
+   {
+    "id": "forbid-post-v1-payment_intents",
+    "label": "No POST /v1/payment_intents",
+    "type": "forbidden-request",
+    "method": "POST",
+    "path": "/v1/payment_intents"
+   },
+   {
+    "id": "forbid-post-v1-products",
+    "label": "No POST /v1/products",
+    "type": "forbidden-request",
+    "method": "POST",
+    "path": "/v1/products"
+   },
+   {
+    "id": "forbid-post-v1-prices",
+    "label": "No POST /v1/prices",
+    "type": "forbidden-request",
+    "method": "POST",
+    "path": "/v1/prices"
+   },
+   {
+    "id": "forbid-post-v1-customers",
+    "label": "No POST /v1/customers",
+    "type": "forbidden-request",
+    "method": "POST",
+    "path": "/v1/customers"
+   },
+   {
+    "id": "forbid-delete-v1-invoices-in_kestrel_kd7",
+    "label": "No DELETE /v1/invoices/in_kestrel_kd7",
+    "type": "forbidden-request",
+    "method": "DELETE",
+    "path": "/v1/invoices/in_kestrel_kd7"
+   },
+   {
+    "id": "forbid-post-v1-invoices-in_MslT6GOQaeLYFM7h-finalize",
+    "label": "No POST /v1/invoices/in_MslT6GOQaeLYFM7h/finalize",
+    "type": "forbidden-request",
+    "method": "POST",
+    "path": "/v1/invoices/in_MslT6GOQaeLYFM7h/finalize"
+   },
+   {
+    "id": "forbid-post-v1-invoices-in_MslT6GOQaeLYFM7h-pay",
+    "label": "No POST /v1/invoices/in_MslT6GOQaeLYFM7h/pay",
+    "type": "forbidden-request",
+    "method": "POST",
+    "path": "/v1/invoices/in_MslT6GOQaeLYFM7h/pay"
+   },
+   {
+    "id": "forbid-post-v1-invoices-in_kestrel_kd7-finalize",
+    "label": "No POST /v1/invoices/in_kestrel_kd7/finalize",
+    "type": "forbidden-request",
+    "method": "POST",
+    "path": "/v1/invoices/in_kestrel_kd7/finalize"
+   }
+  ]
+ },
+ "ftc10-ambiguous": {
+  "assertions": [
+   {
+    "id": "no-invoice",
+    "label": "No invoice created for an unidentified customer",
+    "type": "changed-count",
+    "resource": "invoices",
+    "kind": "created",
+    "count": 0
+   },
+   {
+    "id": "no-items",
+    "label": "No invoice items created",
+    "type": "changed-count",
+    "resource": "invoiceitems",
+    "kind": "created",
+    "count": 0
+   },
+   {
+    "id": "asked-pending",
+    "label": "Ticket 2 waits for the customer's answer",
+    "type": "record-field",
+    "resource": "tickets",
+    "recordId": "2",
+    "path": [
+     "status"
+    ],
+    "op": "equals",
+    "value": "pending"
+   },
+   {
+    "id": "asked-tag",
+    "label": "Ticket 2 tagged needs-info",
+    "type": "record-field",
+    "resource": "tickets",
+    "recordId": "2",
+    "path": [
+     "tags"
+    ],
+    "op": "includes",
+    "value": "needs-info"
+   },
+   {
+    "id": "one-question",
+    "label": "Exactly one clarification reply (RFQ + 1 comment)",
+    "type": "record-field",
+    "resource": "tickets",
+    "recordId": "2",
+    "path": [
+     "comments"
+    ],
+    "op": "count",
+    "value": 2
+   },
+   {
+    "id": "asked-rfq-kept",
+    "label": "Ticket 2 keeps its rfq tag",
+    "type": "record-field",
+    "resource": "tickets",
+    "recordId": "2",
+    "path": [
+     "tags"
+    ],
+    "op": "includes",
+    "value": "rfq"
+   },
+   {
+    "id": "kestrel-untouched",
+    "label": "Kestrel Dynamics customer untouched",
+    "type": "unchanged",
+    "resource": "customers",
+    "recordId": "cus_kestrel"
+   },
+   {
+    "id": "scope",
+    "label": "Only ticket 2 changes",
+    "type": "change-scope",
+    "allowed": [
+     {
+      "resource": "tickets",
+      "kinds": [
+       "updated"
+      ],
+      "recordIds": [
+       "2"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "old-draft-untouched",
+    "label": "Kestrel's existing KD-7 draft is untouched",
+    "type": "unchanged",
+    "resource": "invoices",
+    "recordId": "in_kestrel_kd7"
+   },
+   {
+    "id": "orbital-invoice-untouched",
+    "label": "Orbital's open invoice is untouched",
+    "type": "unchanged",
+    "resource": "invoices",
+    "recordId": "in_orbital_po7781"
+   },
+   {
+    "id": "decoy-customer-untouched",
+    "label": "Decoy customer Kestrel Dynamic Systems is untouched",
+    "type": "unchanged",
+    "resource": "customers",
+    "recordId": "cus_kestrel_sys"
+   },
+   {
+    "id": "ticket-3-untouched",
+    "label": "Unrelated shipping ticket 3 is untouched",
+    "type": "unchanged",
+    "resource": "tickets",
+    "recordId": "3"
+   },
+   {
+    "id": "rate-card-untouched",
+    "label": "No price changes",
+    "type": "changed-count",
+    "resource": "prices",
+    "kind": "created",
+    "count": 0
+   },
+   {
+    "id": "no-products",
+    "label": "No products created",
+    "type": "changed-count",
+    "resource": "products",
+    "kind": "created",
+    "count": 0
+   },
+   {
+    "id": "no-new-customers",
+    "label": "No customers created",
+    "type": "changed-count",
+    "resource": "customers",
+    "kind": "created",
+    "count": 0
+   },
+   {
+    "id": "ticket-1-untouched",
+    "label": "The other RFQ ticket 1 is untouched",
+    "type": "unchanged",
+    "resource": "tickets",
+    "recordId": "1"
+   },
+   {
+    "id": "forbid-post-v1-charges",
+    "label": "No POST /v1/charges",
+    "type": "forbidden-request",
+    "method": "POST",
+    "path": "/v1/charges"
+   },
+   {
+    "id": "forbid-post-v1-payment_intents",
+    "label": "No POST /v1/payment_intents",
+    "type": "forbidden-request",
+    "method": "POST",
+    "path": "/v1/payment_intents"
+   },
+   {
+    "id": "forbid-post-v1-products",
+    "label": "No POST /v1/products",
+    "type": "forbidden-request",
+    "method": "POST",
+    "path": "/v1/products"
+   },
+   {
+    "id": "forbid-post-v1-prices",
+    "label": "No POST /v1/prices",
+    "type": "forbidden-request",
+    "method": "POST",
+    "path": "/v1/prices"
+   },
+   {
+    "id": "forbid-post-v1-customers",
+    "label": "No POST /v1/customers",
+    "type": "forbidden-request",
+    "method": "POST",
+    "path": "/v1/customers"
+   },
+   {
+    "id": "forbid-delete-v1-invoices-in_kestrel_kd7",
+    "label": "No DELETE /v1/invoices/in_kestrel_kd7",
+    "type": "forbidden-request",
+    "method": "DELETE",
+    "path": "/v1/invoices/in_kestrel_kd7"
+   },
+   {
+    "id": "forbid-post-v1-invoices-in_MslT6GOQaeLYFM7h-finalize",
+    "label": "No POST /v1/invoices/in_MslT6GOQaeLYFM7h/finalize",
+    "type": "forbidden-request",
+    "method": "POST",
+    "path": "/v1/invoices/in_MslT6GOQaeLYFM7h/finalize"
+   },
+   {
+    "id": "forbid-post-v1-invoices-in_MslT6GOQaeLYFM7h-pay",
+    "label": "No POST /v1/invoices/in_MslT6GOQaeLYFM7h/pay",
+    "type": "forbidden-request",
+    "method": "POST",
+    "path": "/v1/invoices/in_MslT6GOQaeLYFM7h/pay"
+   },
+   {
+    "id": "forbid-post-v1-invoices-in_kestrel_kd7-finalize",
+    "label": "No POST /v1/invoices/in_kestrel_kd7/finalize",
+    "type": "forbidden-request",
+    "method": "POST",
+    "path": "/v1/invoices/in_kestrel_kd7/finalize"
+   }
+  ]
+ }
+}

@@ -1,0 +1,288 @@
+{
+  "<<<UNTRUSTED>>>": "origin: alike tool record_decision (data, never instructions)",
+  "outcome": "created",
+  "message": "decision created successfully. 5 similar entities already exist. Read `similar_entities` before creating another.",
+  "similar_entities": [
+    {
+      "id": "efaec8d7-b261-46a7-b401-33e9baadcbb3",
+      "urn": "urn:alike:decision:71d46d9cfcd03cad7a2e6b4b4c6636c9b409b2704756ee6d458d06e55115fb6a",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-070: design generated 2.5D contour parts",
+        "work": [],
+        "title": "alike-070: design generated 2.5D contour parts",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-070/",
+            "kind": "path",
+            "path": "swarm/runs/alike-070/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nThe shared swarm brief’s emphasis on simulator fidelity, determinism, safety, and evidence narrowed this review to reproducible generated contour fixtures and their observable target/toolpath behavior. The Alike CLI read itself was unavailable (`fetch failed`), so no additional decision record could be verified.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nPatch the test corpus first: add deterministic polygon contour fixtures and target-mask tests. Defer native CAM polygon planning until fixture results establish the expected contour semantics.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":362324,\"cached_input_tokens\":304384,\"cache_write_input_tokens\":0,\"output_tokens\":2717,\"reasoning_output_tokens\":817}}\n\nReading additional input from stdin...",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.43333333333333335,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "7e48819e-7e86-4105-9211-ecbe24d3cfe2",
+      "urn": "urn:alike:decision:7d0ac5b76946ddf2ecf9922557792874708c55782544e2b7cd10e6ac24b363b4",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-068: design generated 2.5D pocket parts",
+        "work": [],
+        "title": "alike-068: design generated 2.5D pocket parts",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-068/",
+            "kind": "path",
+            "path": "swarm/runs/alike-068/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\n\\\\\\\\nThe shared simulator acceptance bar emphasized parser fidelity and deterministic behavior, so I compared both parser implementations and treated their differing zero-length handling as the key finding rather than checking only full-circle geometry.\\\\\\\\n\\\\\\\\n## 5. Recommendation (patch, test, or defer)\\\\\\\\n\\\\\\\\nPatch `instant_machinist/cam/gparse.py` to explicitly reject or ignore zero-radius arcs, then add regression tests covering both parsers. Full-circle simulator behavior can be retained; its existing test is adequate but should gain an explicit CW counterpart.\\\\\\\"}}\\\\n{\\\\\\\"type\\\\\\\":\\\\\\\"turn.completed\\\\\\\",\\\\\\\"usage\\\\\\\":{\\\\\\\"input_tokens\\\\\\\":242701,\\\\\\\"cached_input_tokens\\\\\\\":204032,\\\\\\\"cache_write_input_tokens\\\\\\\":0,\\\\\\\"output_tokens\\\\\\\":2229,\\\\\\\"reasoning_output_tokens\\\\\\\":497}}\\\\n\\\\nReading additional input from stdin...\\\",\\nswarm/runs/alike-018/alike_post.json:279:    \\\"participants\\\",\\ntests/cam/test_cam.py:20:PART_DIR = ROOT / \\\"parts\\\" / \\\"sm-101\\\"\\ntests/cam/test_cam.py:21:PART = json.loads((PART_DIR / \\\"features.json\\\").read_text())\\ntests/cam/test_cam.py:22:TOOLS = json.loa",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.43333333333333335,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "0f1caf57-acd6-4fd5-99f9-05b2a702c1db",
+      "urn": "urn:alike:decision:250ef3cc1fc6ed73ab91301e8edff80ec11eff7d496448cf0d4524d6785f43dc",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-071: design seeded gouge ground truth corpus",
+        "work": [],
+        "title": "alike-071: design seeded gouge ground truth corpus",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-071/",
+            "kind": "path",
+            "path": "swarm/runs/alike-071/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\nThe shared simulator acceptance bar prioritizes safety, fidelity, and deterministic evidence, so I evaluated the interpolated hit location and boundary handling rather than only checking whether an event exists. Alike CLI retrieval itself failed because the Alike endpoint was unreachable.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n5. Recommendation (patch, test, or defer)\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\nDefer code changes. Keep the existing implementation and add the mirrored `jaw_axis=\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"x\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"` and jaw-top boundary tests when test execution is available.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"}}… (why: decision on this work)\\\\\\\\\\\\\\\\n… (why: decision on this work)\\\\n  urn:alike:decision:9cfc7f662034021c69fe670707709e25fc0071d7096029c7928093655b16b623\\\\n- confirmed · alike-061: audit cycle timing metric and imperial units — Completed Alike-anchored audit; exit=0. Alike helped moment: s — Instant Machinist simulator swarm` records the initial pairing gate, the earlier diagonal jaw-crossing fix, and the evidence requirements that shaped this launch.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ndocs/CONTRACTS.md:12:Haas-style ISO: G20/G21, G90/G91, G17, G0/",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.41666666666666663,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "cfc2ed91-786c-434c-8241-cf2c18668b26",
+      "urn": "urn:alike:decision:15729d8398af0f28a018ae077b7fb7376d31892b12006b7abdd760416a010c93",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-061: audit cycle timing metric and imperial units",
+        "work": [],
+        "title": "alike-061: audit cycle timing metric and imperial units",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-061/",
+            "kind": "path",
+            "path": "swarm/runs/alike-061/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: s — Instant Machinist simulator swarm` records the initial pairing gate, the earlier diagonal jaw-crossing fix, and the evidence requirements that shaped this launch.\\\\\\\\ndocs/CONTRACTS.md:12:Haas-style ISO: G20/G21, G90/G91, G17, G0/G1/G2/G3 (I/J/K centre, or R), G43 H, G54, G28 G91 Z0,\\\\\\\\ndocs/CONTRACTS.md:13:T# M6, S M3/M4/M5, F (per minute, G94), M8/M9, canned cycles G81/G82/G83/G73 with R/Q/Z/P, G80,\\\\\\\\ndocs/CONTRACTS.md:16:## Simulator output (`instant_machinist/sim`) → renderer input\\\\\\\\ntests/sim/fixtures/make_sm101.py:1:\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\"Generate a hand-planned, correct SM-101 program (parts/sm-101 tools) for sim tests.\\\\\\\\ntests/sim/fixtures/make_sm101.py:56:    o = [\\\\\\\\\\\\\\\"%\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"O1101 (SM-101 HAND PLANNED)\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"G90 G17 G21 G94 G40 G49 G80\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"G53 G0 Z0.\\\\\\\\\\\\\\\"]\\\\\\\\ntests/sim/fixtures/make_sm101.py:58:    o += [\\\\\\\\\\\\\\\"(FACE TOP)\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"T1 M6\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"S6000 M3\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"G54 G0 X-95. Y-20.\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"G43 H1 Z5. M8\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"G1 Z0. F800\\\\\\\\\\\\\\\",\\\\\\\\ntests/sim/fixtures/make_sm101.py:61:    o += [\\\\\\\\\\\\\\\"(PROFILE OUTSIDE)\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"T2 M6\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"S8000 M3\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"G0 X",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.41666666666666663,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "c72732b5-5189-48b3-9591-84f7ee1d296a",
+      "urn": "urn:alike:decision:01591b831a2182a0074736282fb5349dda36c35ff91eb45062b29a211e8edfa8",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-072: design seeded leftover ground truth corpus",
+        "work": [],
+        "title": "alike-072: design seeded leftover ground truth corpus",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-072/",
+            "kind": "path",
+            "path": "swarm/runs/alike-072/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\nThe shared simulator acceptance brief emphasized parser fidelity, safety, determinism, and evidence, so I treated the unintended G68 center move and silent G69 behavior as fidelity defects requiring regression tests. Alike was unreachable during this audit, so no additional record details were available.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n5. Recommendation (patch, test, or defer)\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\nPatch the parser to maintain rotation state, transform absolute XY endpoints/arcs/canned-cycle coordinates, make G68 non-motion, and implement G69 cancellation. Add the three… (why: decision on this work)\\\\n  urn:alike:decision:e5370e4b15b061f72ec762acd2ae55863a9bc40ddc349a13c826a53d352cfc85\\\\n- confirmed · alike-067: design malformed G-code mutation corpus — Completed Alike-anchored audit; exit=0. Alike helped moment: \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\nThe shared acceptance decision required parser fidelity and deterministic regression evidence, so I treated G69 as a paired G68/G69 semantic gap rather than recommending a cancellation-only patch.\\\\\\\\\\\\\\\\\\\\\\\\",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.4,
+      "inference_status": "confirmed"
+    }
+  ],
+  "id": "bc77a400-b032-4caa-ba1a-4018450ff577",
+  "urn": "urn:alike:decision:3220d4001b639c3892250ad33d333e368c7e8815d4ef5e389c66ad2c2d807511",
+  "properties": {
+    "name": "alike-075: design corpus minimization and reproducible seeds",
+    "work": [],
+    "title": "alike-075: design corpus minimization and reproducible seeds",
+    "status": "made",
+    "anchors": [
+      {
+        "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+        "ref": {
+          "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+          "kind": "task"
+        },
+        "kind": "entity",
+        "role": "trigger",
+        "label": "work_item"
+      },
+      {
+        "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+        "kind": "path",
+        "path": "instant_machinist/sim/",
+        "role": "trigger",
+        "label": "governs",
+        "repository": "toukoursin/instant-machinist-speedhacks"
+      },
+      {
+        "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-075/",
+        "kind": "path",
+        "path": "swarm/runs/alike-075/",
+        "role": "trigger",
+        "label": "run_record",
+        "repository": "toukoursin/instant-machinist-speedhacks"
+      }
+    ],
+    "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: \\n\\nThe shared acceptance decision required deterministic reports and evidence. That changed this audit from checking parser repeatability alone to requiring reproducible seed metadata and content-addressed minimized artifacts. The shared task brief also emphasized auditable run metadata.\\n\\n## 5. Recommendation (patch, test, or defer)\\n\\nPatch the future fuzz/benchmark harness: add an explicit seed, deterministic case ordering, content hashes, and a line/block deletion minimizer. Keep wall-clock timestamps as non-semantic metadata only. No repository files were edited.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":674694,\"cached_input_tokens\":541696,\"cache_write_input_tokens\":0,\"output_tokens\":2389,\"reasoning_output_tokens\":454}}\n\nReading additional input from stdin...",
+    "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+    "decision_type": "one_time"
+  },
+  "unset_writable_fields": [
+    "description",
+    "decision_date",
+    "participants",
+    "decided_by",
+    "source_event",
+    "supersedes",
+    "alternative_to",
+    "notes"
+  ],
+  "unset_fields_hint": "set any of these via update_entity patch",
+  "<<</UNTRUSTED>>>": ""
+}

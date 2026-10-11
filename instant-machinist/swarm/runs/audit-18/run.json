@@ -1,0 +1,9 @@
+{
+  "agent_id": "audit-18",
+  "item": "stock performance",
+  "exit_code": 0,
+  "started_epoch": 1791750358.2367067,
+  "ended_epoch": 1791750461.694241,
+  "wall_s": 103.46,
+  "transcript": "transcript.jsonl"
+}

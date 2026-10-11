@@ -1,0 +1,95 @@
+{
+ "query": "shipping rates",
+ "context": [
+  "About 43.4 lb of aluminum bar in one box, ground shipping within the US, ZIP 90058 to 94107."
+ ],
+ "result": {
+  "searchId": "srch_92063d66-9512-40cd-a802-645aa8bd2b77",
+  "responseId": "sresp_d49bdb9c-2538-450b-8ac8-661b20591a35",
+  "previousResponseId": null,
+  "contractVersion": "search-v3.0",
+  "status": "needs_input",
+  "response": {
+   "agents": [
+    {
+     "agentId": "protocol-agent:70615a8e6555cf1726a9d4d137de1f9be44f0721",
+     "agentSlug": "protocol-agent:70615a8e6555cf1726a9d4d137de1f9be44f0721",
+     "capabilityId": "protocol-capability:0a4d6d688efff6df989654d39806a6bda84fd6bd",
+     "capabilityRevision": 1791448324207,
+     "rank": 1,
+     "selected": false,
+     "name": "Get live parcel shipping rates from a US origin",
+     "description": "Send a DataPart {\"product\",\"from_zip\",\"to_zip\", optional \"to_country\",\"quantity\",\"weight_lb\",\"length_in\",\"width_in\",\"height_in\"}. Omit to_country for a domestic parcel; CA, GB, DE and AU are the international lanes sold online. Returns up to five purchasable services, each as one checkout total with the SMKlog fee inside it (the fee is itemized only on the checkout receipt) and, where the carrier publishes one, its own counter price for the same parcel beside it.",
+     "imageUrl": null,
+     "avatarUrl": null,
+     "requiredSetup": null,
+     "executionRequirements": null,
+     "executionGuidance": null,
+     "readiness": "unavailable",
+     "canStartThread": false,
+     "canAttemptThread": false,
+     "reasons": [
+      "This tool can get live parcel shipping rates from a US origin to a US destination, accepting weight and ZIP codes as input."
+     ],
+     "uncertainties": [
+      "Execution requires a fresh readiness check."
+     ],
+     "providerCheck": "not_attempted",
+     "connectionMethods": []
+    },
+    {
+     "agentId": "cmudquzd5006j0agms4z5tvlh",
+     "agentSlug": "cmudquzd5006j0agms4z5tvlh",
+     "capabilityId": "cmudqv7ku00mq0agm0c323t6s",
+     "capabilityRevision": 1791583768467,
+     "rank": 2,
+     "selected": false,
+     "name": "Get package shipping rates",
+     "description": "Get live USPS, UPS, and FedEx shipping rates for a package from a US ZIP code to a US or international destination. Returns carrier, service, price in USD, and estimated transit days, sorted cheapest first. IMPORTANT: these are discounted rates for postage purchased online through shipping software \u2014 always remind the user that buying at a USPS, UPS, or FedEx store counter costs more, and that they get these prices by buying a label online (the compare_and_buy_url in the result does this). Weight is required \u2014 if the user has not given one, ask them rather than guessing. Dimensions are optional: omitted dimensions assume a small 10x8x6 inch box, so for items heavier than about 5 lb or anything bigger than a shoebox, ask the user for length, width, and height first \u2014 size strongly affects the price. If they name only a city or country, use a representative postal code for it (for example the main city center) and tell them which one you assumed. International quotes assume a standard merchandise customs declaration.",
+     "imageUrl": null,
+     "avatarUrl": null,
+     "requiredSetup": null,
+     "executionRequirements": null,
+     "executionGuidance": null,
+     "readiness": "unavailable",
+     "canStartThread": false,
+     "canAttemptThread": false,
+     "reasons": [
+      "This tool provides live USPS, UPS, and FedEx shipping rates for packages within the US, requiring weight and ZIP codes."
+     ],
+     "uncertainties": [
+      "Execution requires a fresh readiness check."
+     ],
+     "providerCheck": "not_attempted",
+     "connectionMethods": []
+    }
+   ],
+   "assessment": {
+    "outcome": "clarify",
+    "explanation": "I found two tools that can provide live shipping rates for your 43.4 lb aluminum bar from ZIP 90058 to 94107. Both can get rates for domestic US parcel shipments."
+   },
+   "relatedSearches": [],
+   "plan": null,
+   "question": "To get the most accurate shipping rates, would you like to provide the length, width, and height of the box?",
+   "noMatchReason": null,
+   "overview": "I found two tools that can provide live shipping rates for your 43.4 lb aluminum bar from ZIP 90058 to 94107. Both can get rates for domestic US parcel shipments."
+  },
+  "_elapsed_s": 5.52
+ },
+ "refined": {
+  "searchId": "srch_92063d66-9512-40cd-a802-645aa8bd2b77",
+  "responseId": "sresp_07e56900-5324-4ab4-95a8-c9aa45b2b347",
+  "previousResponseId": "sresp_d49bdb9c-2538-450b-8ac8-661b20591a35",
+  "contractVersion": "search-v3.0",
+  "status": "completed",
+  "response": {
+   "agents": [],
+   "relatedSearches": [],
+   "plan": null,
+   "question": null,
+   "noMatchReason": null,
+   "overview": "I found two tools that can provide live shipping rates for your 43.4 lb aluminum bar from ZIP 90058 to 94107. Both can get rates for domestic US parcel shipments.\n\nHere are the matching agents and their tools:\n\n*   **Agent:** protocol-agent:70615a8e6555cf1726a9d4d137de1f9be44f0721\n    *   **Tool:** Get live parcel shipping rates from a US origin\n        *   **Description:** Send a DataPart {\"product\",\"from_zip\",\"to_zip\", optional \"to_country\",\"quantity\",\"weight_lb\",\"length_in\",\"width_in\",\"height_in\"}. Omit to_country for a domestic parcel; CA, GB, DE and AU are the international lanes sold online. Returns up to five purchasable services, each as one checkout total with the SMKlog fee inside it (the fee is itemized only on the checkout receipt) and, where the carrier publishes one, its own counter price for the same parcel beside it.\n\n*   **Agent:** cmudquzd5006j0agms4z5tvlh\n    *   **Tool:** Get package shipping rates\n        *   **Description:** Get live USPS, UPS, and FedEx shipping rates for a package from a US ZIP code to a US or international destination. Returns carrier, service, price in USD, and estimated transit days, sorted cheapest first. IMPORTANT: these are discounted rates for postage purchased online through shipping software \u2014 always remind the user that buying at a USPS, UPS, or FedEx store counter costs more, and that they get these prices by buying a label online (the compare_and_buy_url in the result does this). Weight is required \u2014 if the user has not given one, ask them rather than guessing. Dimensions are optional: omitted dimensions assume a small 10x8x6 inch box, so for items heavier than about 5 lb or anything bigger than a shoebox, ask the user for length, width, and height first \u2014 size strongly affects the price. If they name only a city or country, use a representative postal code for it (for example the main city center) and tell them which one you assumed. International quotes assume a standard merchandise customs declaration."
+  },
+  "_elapsed_s": 6.13
+ }
+}

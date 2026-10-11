@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "instant-machinist"
+version = "0.1.0"
+description = "Customer drawing in, verified CNC program out: Claude Opus 5.5 programs 2.5D parts in Autodesk Fusion (cloud) or in its own CAM engine, then proves every program in its own simulator."
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{ name = "the team Ursin", email = "shop@example.com" }]
+keywords = ["cnc", "cam", "g-code", "machining", "simulation", "autodesk-fusion", "mcp", "claude"]
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Intended Audience :: Manufacturing",
+]
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "shapely>=2.0",
+    "trimesh>=4.0",
+    "cadquery>=2.4",        # parts/ generator only (STEP, STL, drawing); not needed by the CAM, sim or tests
+    "matplotlib>=3.8",
+    "anthropic>=1.13",      # Claude Opus 5.5 drawing reader (messages.parse + structured output)
+    "pydantic>=2.7",
+    "requests>=2.31",       # Fusion Compute MCP client (Streamable HTTP)
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+instant-machinist = "instant_machinist.pipeline:main"
+im-sim = "instant_machinist.sim.run:main"
+im-cam = "instant_machinist.cam.run:main"
+im-drawing-cam = "instant_machinist.drawing_cam:main"
+
+[project.urls]
+Repository = "https://github.com/ToukoUrsin/instant-machinist-speedhacks"
+
+[tool.setuptools.packages.find]
+include = ["instant_machinist*"]
+namespaces = true
+
+[tool.setuptools.package-data]
+"instant_machinist.fusion" = ["ts/*.ts"]
+"instant_machinist.render" = ["web/*", "vendor/*", "vendor/addons/*", "vendor/fonts/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"
+markers = [
+    "fusion: needs a live Autodesk Fusion Compute MCP session (token at ~/.adsk/token.json)",
+    "network: calls an external API (Anthropic, Autodesk)",
+]

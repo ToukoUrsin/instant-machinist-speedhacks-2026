@@ -1,0 +1,9 @@
+{
+  "agent_id": "audit-12",
+  "item": "stock ball endmill",
+  "exit_code": 0,
+  "started_epoch": 1791750217.3860016,
+  "ended_epoch": 1791750292.2883282,
+  "wall_s": 74.9,
+  "transcript": "transcript.jsonl"
+}

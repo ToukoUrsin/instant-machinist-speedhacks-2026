@@ -1,0 +1,32 @@
+{
+ "part": "SM-105",
+ "engine": "native",
+ "programming_s": 3.7,
+ "baseline": {
+  "strategy": "baseline",
+  "label": "baseline",
+  "dir": "../integrations/keewano/runs/sm105-a/native/baseline",
+  "cycle_s": 1321.35,
+  "pass": false,
+  "baseline": true
+ },
+ "best": null,
+ "variants": [
+  {
+   "strategy": "baseline",
+   "label": "baseline",
+   "dir": "../integrations/keewano/runs/sm105-a/native/baseline",
+   "cycle_s": 1321.35,
+   "pass": false,
+   "baseline": true
+  },
+  {
+   "strategy": "native",
+   "label": "native",
+   "dir": "../integrations/keewano/runs/sm105-a/native/native",
+   "cycle_s": 170.25,
+   "pass": false,
+   "baseline": false
+  }
+ ]
+}

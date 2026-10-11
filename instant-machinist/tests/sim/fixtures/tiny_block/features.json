@@ -1,0 +1,11 @@
+{
+  "part_number": "TINY-1",
+  "units": "mm",
+  "general_tolerance_mm": 0.1,
+  "stock": {"x": [-20, 20], "y": [-15, 15], "z": [-10, 1]},
+  "part_bbox": {"x": [-20, 20], "y": [-15, 15], "z": [-4, 0]},
+  "features": [
+    {"id": "F1", "type": "face", "z": 0},
+    {"id": "F2", "type": "pocket", "rect": {"cx": 0, "cy": 0, "w": 20, "h": 10, "r": 3}, "z_top": 0, "z_bottom": -3}
+  ]
+}

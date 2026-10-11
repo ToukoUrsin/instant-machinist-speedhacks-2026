@@ -1,0 +1,71 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Instant Machinist — result</title>
+<link rel="stylesheet" href="../ui/style.css">
+<style>
+  #app { display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: radial-gradient(700px 360px at 50% 30%, rgba(61,214,140,0.08), transparent 70%), radial-gradient(900px 300px at 50% -120px, rgba(139,124,255,0.12), transparent 70%), var(--bg); }
+  .brandtop { position: absolute; top: 22px; left: 26px; display: flex; align-items: center; gap: 9px; }
+  .brandtop .name { font-weight: 600; font-size: 13px; letter-spacing: -0.02em; }
+  .kick { color: var(--muted); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
+  .head { font-size: 40px; font-weight: 700; letter-spacing: -0.035em; line-height: 1.08; text-align: center; }
+  .head .arrow { color: var(--dim); font-weight: 500; margin: 0 6px; }
+  .head .t { color: var(--green); font-variant-numeric: tabular-nums; }
+  .tiles { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 12px; margin-top: 34px; width: 760px; }
+  .tile { border: 1px solid var(--line2); border-radius: 12px; padding: 16px 18px; background: linear-gradient(180deg, var(--panel2), var(--panel)); }
+  .tile .k { color: var(--muted); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .tile .v { font-size: 26px; font-weight: 700; letter-spacing: -0.03em; margin-top: 6px; font-variant-numeric: tabular-nums; }
+  .tile .v s { color: var(--muted); font-weight: 500; text-decoration-color: rgba(242,109,109,0.85); font-size: 20px; }
+  .tile .v .vs { color: var(--dim); font-size: 13px; font-weight: 400; margin: 0 4px; }
+  .tile .n { color: var(--muted); font-size: 9px; margin-top: 5px; }
+  .tile.g { border-color: rgba(61,214,140,0.45); }
+  .tile.g .v { color: var(--green); }
+  .checks { display: flex; gap: 22px; margin-top: 22px; color: #D5D8DD; font-size: 12px; }
+  .checks i { font-style: normal; color: var(--green); font-weight: 700; margin-right: 7px; }
+  .foot { position: absolute; bottom: 20px; color: var(--dim); font-size: 9px; letter-spacing: 0.02em; }
+  .a { opacity: 0; }
+</style></head>
+<body><div id="app">
+  <div class="brandtop a" id="b0">
+    <svg class="mark" viewBox="0 0 24 24" width="22" height="22"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8B7CFF"/><stop offset="1" stop-color="#2DD4BF"/></linearGradient></defs><rect x="0" y="0" width="24" height="24" rx="6" fill="url(#g)"/><path d="M6 16.5 L6 9 L9.5 12.5 L13 7.5 L13 16.5 M15.5 16.5 L18 16.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="name">Instant Machinist</span>
+  </div>
+  <div class="kick a" id="b1">real run</div>
+  <div class="head a" id="b2">Drawing <span class="arrow">→</span> verified G-code in <span class="t" id="prog">2:34</span></div>
+  <div class="tiles">
+    <div class="tile a" id="b3"><div class="k">Cycle time</div><div class="v"><span id="best">6:28</span><span class="vs">vs</span><s id="base">19:42</s></div><div class="n" id="basenote">typical cautious manual program (our estimate)</div></div>
+    <div class="tile g a" id="b4"><div class="k">Machine time</div><div class="v" id="pct">−67%</div><div class="n">on every part you run</div></div>
+    <div class="tile a" id="b5"><div class="k">Simulator</div><div class="v" id="nver">5 / 5</div><div class="n" id="vnote">programs verified</div></div>
+  </div>
+  <div class="checks a" id="b6"><span><i>✓</i>Editable Fusion file saved</span><span><i>✓</i>Haas G-code ready</span><span><i>✓</i>Simulation video</span></div>
+  <div class="foot a" id="b7">Claude Opus 5.5 reads the drawing · Autodesk Fusion (cloud) generates the toolpaths · our simulator verifies and times every program</div>
+</div>
+<script src="../ui/data.js"></script>
+<script>
+  const S = RUN.summary, mmss = (s) => s >= 3600 ? `${Math.floor(s / 3600)}:${String(Math.floor(s % 3600 / 60)).padStart(2, "0")}:${String(Math.floor(s % 60)).padStart(2, "0")}` : `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+  const done = RUN.events.find((e) => e.step === "done");
+  document.getElementById("prog").textContent = mmss(done.programming_s ?? S.programming_s);
+  document.getElementById("best").textContent = mmss(S.best.cycle_s);
+  document.getElementById("base").textContent = mmss(S.baseline.cycle_s);
+  document.getElementById("basenote").textContent = `${mmss(S.baseline.cycle_s)} = typical cautious manual program (our estimate)`;
+  document.getElementById("pct").textContent = `−${Math.round(S.machining_saved_pct)}%`;
+  { const sp = (RUN.events.find((e) => e.spec) || {}).spec || {}; const sf = RUN.spec_file || {}; const setup = String(sp.setup || sf.setup || "").split(/[(,;]/)[0].trim();
+    document.getElementById("b1").textContent = [(RUN.part && RUN.part.title) || sp.part_number || sf.part_number, setup, "real run"].filter(Boolean).join(" · ");
+    const failed = S.variants.filter((v) => !v.pass), passed = S.variants.filter((v) => v.pass);
+    const g = passed.reduce((a, v) => a + ((RUN.reports || {})[v.strategy] || {}).gouge || 0, 0);
+    document.getElementById("vnote").textContent = failed.length
+      ? `passed · verifier caught ${failed.map((v) => { const r = (RUN.reports || {})[v.strategy] || {}; return (r.rapid_into_stock ? `${r.rapid_into_stock} rapid crashes in ` : "failures in ") + (v.baseline ? "the manual program" : v.strategy); }).join(", ")}`
+      : `programs verified · ${g} gouges, 0 crashes`; }
+  document.getElementById("nver").textContent = `${S.variants.filter((v) => v.pass).length} / ${S.variants.length}`;
+  const ease = (x) => 1 - Math.pow(1 - Math.max(0, Math.min(1, x)), 3);
+  const times = [0.0, 0.15, 0.3, 0.75, 1.0, 1.25, 1.6, 1.9];
+  const qs = new URLSearchParams(location.search);
+  window.__duration = parseFloat(qs.get("dur") || "8");
+  window.__render = (v) => {
+    const out = Math.min(1, Math.max(0, (window.__duration - v) / 0.5)); // fade out at end
+    times.forEach((t, i) => { const p = ease((v - t) / 0.5); const el = document.getElementById("b" + i);
+      el.style.opacity = p * (qs.has("nofade") ? 1 : out); el.style.transform = `translateY(${(1 - p) * 10}px)`; });
+  };
+  window.__ready = document.fonts.ready;
+  if (!qs.has("manual")) { const t0 = performance.now(); const loop = () => { __render((performance.now() - t0) / 1000); requestAnimationFrame(loop); }; loop(); }
+</script>
+</body></html>

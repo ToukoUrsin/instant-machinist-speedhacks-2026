@@ -1,0 +1,20 @@
+{
+ "part": "NIST FTC-10",
+ "slug": "ftc-10",
+ "name": "Housing",
+ "material": "6061-T6 aluminum",
+ "quantity": 10,
+ "machine": "3-axis VMC",
+ "cycle_s_per_part": 600.0,
+ "cycle_basis": "assumed (no verified simulation for this part yet)",
+ "baseline_cycle_s_per_part": null,
+ "setups": 3,
+ "part_numbers_to_program": 1,
+ "stock_in": {
+  "thickness": 1.625,
+  "width": 3.25,
+  "length": 6.5
+ },
+ "stock_in3_per_blank": 34.3281,
+ "finish": "none (as machined)"
+}

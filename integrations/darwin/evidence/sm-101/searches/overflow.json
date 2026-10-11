@@ -1,0 +1,120 @@
+{
+ "query": "CNC machining quote for an aluminum part from a STEP file",
+ "context": [
+  "Part SM-101, 6061-T6 aluminum, general tolerance 0.1 mm, qty 25."
+ ],
+ "result": {
+  "searchId": "srch_5af442ff-0a3e-4edf-aeec-2f27e9a6e78a",
+  "responseId": "sresp_15d7103b-61d1-4ea9-9203-c1965adee41e",
+  "previousResponseId": null,
+  "contractVersion": "search-v3.0",
+  "status": "completed",
+  "response": {
+   "agents": [
+    {
+     "agentId": "cmv08cln8001t06nyw4bux80d",
+     "agentSlug": "cmv08cln8001t06nyw4bux80d",
+     "capabilityId": "cmv0b3ru9001t06migubk6v9r",
+     "capabilityRevision": 1791586790296,
+     "rank": 1,
+     "selected": false,
+     "name": "Request a quote from matching suppliers",
+     "description": "Send a quote request to whobuildsit, which reviews it and passes it to suppliers who can make the part. Before calling, ASK THE USER for their work email and explicit consent to share the request and email with suppliers \u2014 never invent an email. Give a part_id or supplier_slug from earlier results when you have one. Suppliers reply to the user directly; nothing is sent automatically.",
+     "imageUrl": null,
+     "avatarUrl": null,
+     "requiredSetup": null,
+     "executionRequirements": {
+      "contractVersion": "1.0.0",
+      "providerAuthentication": {
+       "state": "NOT_REQUIRED",
+       "mechanisms": [],
+       "placements": [],
+       "scopes": [],
+       "evidence": "DERIVED_FROM_VERIFIED_RECEIPT"
+      },
+      "operationCredentials": {
+       "state": "NOT_REQUIRED",
+       "sensitiveInputNames": []
+      },
+      "runtime": {
+       "kind": "REMOTE_MCP",
+       "package": null,
+       "requiredEnvironmentNames": []
+      },
+      "payment": {
+       "state": "NOT_REQUIRED",
+       "termsDigest": null
+      },
+      "browser": {
+       "state": "NOT_REQUIRED",
+       "sessionKind": null
+      },
+      "providerContract": {
+       "route": "RESOLVED",
+       "inputSchema": "CONCRETE",
+       "outputSchema": "UNKNOWN"
+      },
+      "providerBlockers": []
+     },
+     "executionGuidance": {
+      "credentialSummaryCode": "NO_CREDENTIAL_REQUIRED",
+      "credentialSummary": "No provider credential is required.",
+      "setupSummaryCode": "REMOTE_RUNTIME_REQUIRED",
+      "setupSummary": "Uses a protocol-specific remote execution runtime.",
+      "recordBlockers": [],
+      "primaryBlockerCode": null,
+      "rendererVersion": "execution-guidance-v1"
+     },
+     "readiness": "unavailable",
+     "canStartThread": false,
+     "canAttemptThread": false,
+     "reasons": [
+      "This tool can send a quote request to suppliers who can make a part, directly addressing the user's need for a CNC machining quote."
+     ],
+     "uncertainties": [
+      "Execution requires a fresh readiness check."
+     ],
+     "providerCheck": "not_attempted",
+     "connectionMethods": []
+    },
+    {
+     "agentId": "cmudrlvse05nr0agmk20opko7",
+     "agentSlug": "cmudrlvse05nr0agmk20opko7",
+     "capabilityId": "cmuds6y5200uk0agmjjui169e",
+     "capabilityRevision": 1791578662587,
+     "rank": 2,
+     "selected": false,
+     "name": "estimate_part",
+     "description": "Instantly estimate the should-cost of a manufactured part using natural language. Returns P50 (median), P80 and P90 cost-at-risk per unit based on Monte Carlo simulation of material price variance, labour rate variance and cycle time uncertainty. Use this for quick feasibility checks before building a full cost model.",
+     "imageUrl": null,
+     "avatarUrl": null,
+     "requiredSetup": null,
+     "executionRequirements": null,
+     "executionGuidance": null,
+     "readiness": "unavailable",
+     "canStartThread": false,
+     "canAttemptThread": false,
+     "reasons": [
+      "This tool can instantly estimate the should-cost of a manufactured part using natural language, which aligns with the request for a quote."
+     ],
+     "uncertainties": [
+      "Execution requires a fresh readiness check."
+     ],
+     "providerCheck": "not_attempted",
+     "connectionMethods": []
+    }
+   ],
+   "assessment": {
+    "outcome": "partial",
+    "explanation": "I found two tools that can help you get a quote for your CNC machining part. The \"Request a quote from matching suppliers\" tool can send your request to suppliers who will reply directly to you. Alternatively, the \"estimate_part\" tool can provide an instant cost estimate for the manufactured part."
+   },
+   "relatedSearches": [],
+   "plan": null,
+   "question": null,
+   "noMatchReason": null,
+   "overview": "I found two tools that can help you get a quote for your CNC machining part. The \"Request a quote from matching suppliers\" tool can send your request to suppliers who will reply directly to you. Alternatively, the \"estimate_part\" tool can provide an instant cost estimate for the manufactured part."
+  },
+  "_elapsed_s": 11.53
+ },
+ "refined": null
+}

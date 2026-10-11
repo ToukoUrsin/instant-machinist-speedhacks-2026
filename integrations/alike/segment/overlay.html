@@ -1,0 +1,62 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Alike overlay</title>
+<style>
+  :root { --ink:#14171c; --mute:#6b7280; --line:#e5e7eb; --acc:#ff5a1f; --cl:#1f2937; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html,body { width:1920px; height:1080px; overflow:hidden; background:transparent; color:var(--ink);
+    font-family:"Inter","Helvetica Neue",Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+  body.key { background:#00ff00; }
+  .card { position:absolute; left:64px; bottom:64px; width:880px; height:250px; background:#fff; border-radius:22px;
+    border:1px solid var(--line); overflow:hidden; padding:28px 34px; }
+  .card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:8px; background:var(--acc); }
+  .kicker { font-size:19px; letter-spacing:.14em; text-transform:uppercase; color:var(--acc); font-weight:700; }
+  .ph { position:absolute; left:34px; right:34px; top:66px; }
+  .big { font-size:60px; font-weight:800; letter-spacing:-.02em; line-height:1.05; }
+  .big .n { color:var(--acc); font-variant-numeric:tabular-nums; }
+  .sub { font-size:23px; color:var(--mute); margin-top:12px; line-height:1.35; }
+  .sub b { color:var(--ink); }
+  .mid { font-size:31px; font-weight:800; line-height:1.22; }
+  .mono { font-family:"JetBrains Mono","DejaVu Sans Mono",Menlo,monospace; font-size:21px; color:#374151; }
+  mark { background:#ffe4d6; color:var(--ink); padding:1px 6px; border-radius:6px; }
+  svg { position:absolute; right:0; top:4px; }
+  #p1 .big, #p1 .sub { max-width:540px; }
+</style></head>
+<body>
+<div class="card" id="card"><div class="kicker">Instant Machinist × Alike</div>
+  <div class="ph" id="p1"><div class="big"><span class="n" id="n"></span> agents at once</div>
+    <div class="sub" id="p1s"></div><svg id="spark" width="250" height="112"></svg></div>
+  <div class="ph" id="p2"><div class="mono" id="p2a"></div><div class="mid" style="margin-top:12px" id="p2b"></div>
+    <div class="sub" style="margin-top:10px" id="p2c"></div></div>
+  <div class="ph" id="p3"><div class="big" id="p3a" style="font-size:52px"></div><div class="sub" id="p3b"></div><div class="sub" style="margin-top:4px" id="p3c"></div></div>
+</div>
+<script src="data.js"></script>
+<script>
+const D = window.DATA, $ = id => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x)), ease = x => 1 - Math.pow(1 - clamp(x), 3);
+const DUR = 10; window.__duration = DUR;
+if (new URLSearchParams(location.search).get('key')) document.body.classList.add('key');
+const mins = s => { const [h, m] = s.split(':').map(Number); return h * 60 + m; };
+const S = D.series, t0 = mins(S[0].t), t1 = mins(S[S.length - 1].t), nM = t1 - t0 + 1, W = 250, H = 112;
+const bw = W / nM, yMax = Math.max(...S.map(s => s.n));
+$('spark').innerHTML = S.map(s => { const h = Math.max(2, s.n / yMax * (H - 26)); return `<rect x="${(mins(s.t) - t0) * bw + .5}" y="${H - 22 - h}" width="${Math.max(1, bw - 1.5)}" height="${h}" rx="1.5" fill="${s.t === D.peak.at ? '#ff5a1f' : '#fdba74'}"/>`; }).join('') +
+  `<text x="0" y="${H - 2}" font-size="15" fill="#6b7280" font-family="Inter,Arial">${S[0].t}</text><text x="${W}" y="${H - 2}" text-anchor="end" font-size="15" fill="#6b7280" font-family="Inter,Arial">${S[S.length - 1].t} PDT</text>`;
+$('p1s').innerHTML = `<b>${D.peak.by.codex || 0} Codex · ${D.peak.by.claude || 0} Claude Code</b> · seen by Alike at ${D.peak.at} PDT`;
+$('p2a').textContent = `${D.m1.at} PDT · ${D.m1.tool} ${D.m1.path}`;
+$('p2b').innerHTML = `Alike told the Sparta agent: <mark>“Keep sponsor-specific code under sponsors/”</mark>`;
+$('p2c').textContent = 'Five sponsor agents built in parallel, each in its own folder.';
+$('p3a').innerHTML = `<span class="n">${D.sessions_today}</span> agent sessions today`;
+$('p3b').innerHTML = `<b>${D.decisions} decisions shared</b> · ${D.agent_hours} agent-hours · Alike analytics`;
+$('p3c').innerHTML = `<b>Claude Code + Codex</b>, briefed from one record since 13:34 PDT`;
+const PH = [[0, 3.6], [3.6, 7], [7, 10]];
+window.__seek = t => {
+  const inE = ease(t / .45), outE = ease((t - (DUR - .45)) / .45);
+  $('card').style.transform = `translateY(${(1 - inE) * 340 + outE * 340}px)`;
+  PH.forEach(([a, b], i) => {
+    const o = clamp((t - a) / .3) * (i === PH.length - 1 ? 1 : 1 - clamp((t - (b - .25)) / .25));
+    const el = $('p' + (i + 1)); el.style.opacity = o; el.style.transform = `translateY(${(1 - clamp((t - a) / .3)) * 12}px)`;
+  });
+  $('n').textContent = Math.round(D.peak.n * ease((t - .3) / 1.2));
+};
+window.__seek(Number(new URLSearchParams(location.search).get('t') || 0));
+window.__ready = true;
+</script></body></html>

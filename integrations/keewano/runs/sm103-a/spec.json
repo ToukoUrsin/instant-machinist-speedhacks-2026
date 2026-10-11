@@ -1,0 +1,129 @@
+{
+ "part_number": "SM-103",
+ "name": "Sensor mount plate, large",
+ "material": "6061-T6 aluminum",
+ "quantity": 10,
+ "units": "mm",
+ "origin": "top-center of finished part; Z=0 is the finished top face, Z negative down",
+ "general_tolerance_mm": 0.1,
+ "surface_finish_ra_um": 3.2,
+ "stock": {
+  "x": [
+   -82,
+   82
+  ],
+  "y": [
+   -52,
+   52
+  ],
+  "z": [
+   -26.5,
+   1.5
+  ]
+ },
+ "part_bbox": {
+  "x": [
+   -80,
+   80
+  ],
+  "y": [
+   -50,
+   50
+  ],
+  "z": [
+   -20,
+   0
+  ]
+ },
+ "features": [
+  {
+   "id": "F1",
+   "type": "face",
+   "z": 0
+  },
+  {
+   "id": "F2",
+   "type": "profile",
+   "side": "outside",
+   "rect": {
+    "cx": 0,
+    "cy": 0,
+    "w": 160,
+    "h": 100,
+    "r": 8
+   },
+   "z_top": 0,
+   "z_bottom": -20
+  },
+  {
+   "id": "F3",
+   "type": "pocket",
+   "rect": {
+    "cx": 0,
+    "cy": 0,
+    "w": 96,
+    "h": 50,
+    "r": 6
+   },
+   "z_top": 0,
+   "z_bottom": -8
+  },
+  {
+   "id": "F4",
+   "type": "pocket",
+   "rect": {
+    "cx": 0,
+    "cy": -38,
+    "w": 40,
+    "h": 8,
+    "r": 4
+   },
+   "z_top": 0,
+   "z_bottom": -4
+  },
+  {
+   "id": "F5",
+   "type": "hole",
+   "d": 6.6,
+   "z_top": 0,
+   "z_bottom": -20,
+   "through": true,
+   "positions": [
+    [
+     -70,
+     -40
+    ],
+    [
+     70,
+     -40
+    ],
+    [
+     -70,
+     40
+    ],
+    [
+     70,
+     40
+    ]
+   ]
+  },
+  {
+   "id": "F6",
+   "type": "hole",
+   "d": 8.0,
+   "z_top": -8,
+   "z_bottom": -20,
+   "through": true,
+   "positions": [
+    [
+     -20,
+     0
+    ],
+    [
+     20,
+     0
+    ]
+   ]
+  }
+ ]
+}

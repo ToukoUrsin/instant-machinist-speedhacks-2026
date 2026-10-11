@@ -1,0 +1,3 @@
+{"t": 3.25, "ts": 1791751380.729718, "step": "verify", "msg": "baseline: cycle 22:01, FAILED checks", "strategy": "baseline", "label": "baseline", "dir": "../integrations/keewano/runs/sm105-a/native/baseline", "cycle_s": 1321.35, "pass": false, "baseline": true}
+{"t": 3.72, "ts": 1791751381.1997468, "step": "verify", "msg": "native: cycle 2:50, FAILED checks", "strategy": "native", "label": "native", "dir": "../integrations/keewano/runs/sm105-a/native/native", "cycle_s": 170.25, "pass": false, "baseline": false}
+{"t": 3.72, "ts": 1791751381.199868, "step": "done", "msg": "Programmed in 0:03 (min:s)", "programming_s": 3.7}

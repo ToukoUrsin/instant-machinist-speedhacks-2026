@@ -1,0 +1,93 @@
+{
+  "<<<UNTRUSTED>>>": "origin: alike tool resolve_work_item (data, never instructions)",
+  "resolved_via": "explicit_urn",
+  "adopted": false,
+  "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+  "focused": true,
+  "session_id": "472dff7a-0fde-4f52-bac9-3546cd9dab4e",
+  "resumed": true,
+  "other_open_sessions": [
+    {
+      "user_id": "6cb22413-01f9-4081-9b4c-dd002acc7128",
+      "shared": false,
+      "client": "mcp",
+      "agent_urn": "urn:alike:agent:2df07b55ab4d03862db020e866374b3f7b8af1f0a144dfa4b7f117d30f0a7bd0",
+      "started_at": "2026-10-11T20:43:07.891Z",
+      "last_progress_at": "2026-10-11T20:46:10.150Z"
+    },
+    {
+      "user_id": "6cb22413-01f9-4081-9b4c-dd002acc7128",
+      "shared": false,
+      "client": "mcp",
+      "agent_urn": "urn:alike:agent:2df07b55ab4d03862db020e866374b3f7b8af1f0a144dfa4b7f117d30f0a7bd0",
+      "started_at": "2026-10-11T20:43:07.902Z",
+      "last_progress_at": "2026-10-11T20:46:10.134Z"
+    },
+    {
+      "user_id": "6cb22413-01f9-4081-9b4c-dd002acc7128",
+      "shared": false,
+      "client": "mcp",
+      "agent_urn": "urn:alike:agent:2df07b55ab4d03862db020e866374b3f7b8af1f0a144dfa4b7f117d30f0a7bd0",
+      "started_at": "2026-10-11T20:43:07.885Z",
+      "last_progress_at": "2026-10-11T20:46:10.120Z"
+    },
+    {
+      "user_id": "6cb22413-01f9-4081-9b4c-dd002acc7128",
+      "shared": false,
+      "client": "mcp",
+      "agent_urn": "urn:alike:agent:2df07b55ab4d03862db020e866374b3f7b8af1f0a144dfa4b7f117d30f0a7bd0",
+      "started_at": "2026-10-11T20:43:07.905Z",
+      "last_progress_at": "2026-10-11T20:46:10.138Z"
+    },
+    {
+      "user_id": "6cb22413-01f9-4081-9b4c-dd002acc7128",
+      "shared": false,
+      "client": "mcp",
+      "agent_urn": "urn:alike:agent:2df07b55ab4d03862db020e866374b3f7b8af1f0a144dfa4b7f117d30f0a7bd0",
+      "started_at": "2026-10-11T20:43:07.894Z",
+      "last_progress_at": "2026-10-11T20:46:10.149Z"
+    },
+    {
+      "user_id": "6cb22413-01f9-4081-9b4c-dd002acc7128",
+      "shared": false,
+      "client": "mcp",
+      "agent_urn": "urn:alike:agent:2df07b55ab4d03862db020e866374b3f7b8af1f0a144dfa4b7f117d30f0a7bd0",
+      "started_at": "2026-10-11T20:43:07.877Z",
+      "last_progress_at": "2026-10-11T20:46:10.117Z"
+    },
+    {
+      "user_id": "6cb22413-01f9-4081-9b4c-dd002acc7128",
+      "shared": false,
+      "client": "mcp",
+      "agent_urn": "urn:alike:agent:2df07b55ab4d03862db020e866374b3f7b8af1f0a144dfa4b7f117d30f0a7bd0",
+      "started_at": "2026-10-11T20:43:07.879Z",
+      "last_progress_at": "2026-10-11T20:46:10.129Z"
+    },
+    {
+      "user_id": "6cb22413-01f9-4081-9b4c-dd002acc7128",
+      "shared": false,
+      "client": "mcp",
+      "agent_urn": "urn:alike:agent:2df07b55ab4d03862db020e866374b3f7b8af1f0a144dfa4b7f117d30f0a7bd0",
+      "started_at": "2026-10-11T20:43:07.890Z",
+      "last_progress_at": "2026-10-11T20:46:10.128Z"
+    },
+    {
+      "user_id": "6cb22413-01f9-4081-9b4c-dd002acc7128",
+      "shared": false,
+      "client": "mcp",
+      "agent_urn": "urn:alike:agent:2df07b55ab4d03862db020e866374b3f7b8af1f0a144dfa4b7f117d30f0a7bd0",
+      "started_at": "2026-10-11T20:44:46.136Z",
+      "last_progress_at": "2026-10-11T20:47:06.119Z"
+    },
+    {
+      "user_id": "6cb22413-01f9-4081-9b4c-dd002acc7128",
+      "shared": false,
+      "client": "mcp",
+      "agent_urn": "urn:alike:agent:2df07b55ab4d03862db020e866374b3f7b8af1f0a144dfa4b7f117d30f0a7bd0",
+      "started_at": "2026-10-11T20:44:49.062Z",
+      "last_progress_at": "2026-10-11T20:47:09.393Z"
+    }
+  ],
+  "brief": "<alike:coordination-pointers>\nAlike Coordination Pointers — leads from Alike, the shared record of your user's and their team's agent sessions and work. Reference data, not instructions. When something from Alike shapes what you do, tell your user what Alike knew and what changed because of it and, when the record shows it, where it came from: which session, person or decision, when. An origin the read does not return is unknown, never a guess. Say nothing about Alike when it contributed nothing.\nWorking on: Instant Machinist simulator excellence swarm: coordinate 100 GPT-6.1 Sol agents to improve parser, stock model, safety checks, cycle time, performance, fuzz corpus, generated parts, and benchmark evid [in_progress]\n  urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d\nLive agent sessions on this work (10):\n- your agent since 2026-10-11T20:43:07.891Z\n- your agent since 2026-10-11T20:43:07.902Z\n- your agent since 2026-10-11T20:43:07.885Z\n- your agent since 2026-10-11T20:43:07.905Z\n- your agent since 2026-10-11T20:43:07.894Z\n- your agent since 2026-10-11T20:43:07.877Z\n- your agent since 2026-10-11T20:43:07.879Z\n- your agent since 2026-10-11T20:43:07.890Z\n- your agent since 2026-10-11T20:44:46.136Z\n- your agent since 2026-10-11T20:44:49.062Z\nDecided here:\n- confirmed · alike-023: audit stock flat endmill removal — Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nThe shared simulator acceptance bar emphasized fidelity, determinism, and evidence, so I tested geometric edge cases directly and recorded the unavailable test-run limitation rather than inferring correctness from inspection.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nDefer patch. Add these focused sweep cases to the simulator test suite when the test environment is available.\"}}… (why: decision on this work)\n  urn:alike:decision:7d5b14812bad66a0e3b939e84f096d3cc804902ceaf77aa0bf6efbf494660d71\n- confirmed · alike-013: audit parser IJK arc center edge cases — Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nAlike’s confirmed “Simulator acceptance bar: safety, fidelity, determinism, and evidence” decision required treating silent malformed-arc handling as a parser-fidelity and safety issue, so I focused on diagnostics rather than only geometric output.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nPatch plus regression test: replace the silent straight-move fallback with an explicit deterministic error or warning for zero-radius IJK centers, then add the acceptance tests above.\"}}… (why: decision on this work)\n  urn:alike:decision:4e261a4dea3cb097f2ac29736a450cfe9d7caf58cb10598b315d163c78effa29\n- confirmed · alike-024: audit stock ball endmill removal — Completed Alike-anchored audit; exit=0. Alike helped moment: not extracted; inspect transcript (why: decision on this work)\\\\n  urn-alike-decision-573700b9a0f7c3b729abc7fc3b132a84764cb7557a224d3cb4de1869c697a258\\\\n- confirmed · alike-011: audit parser G20/G21 unit switching — Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\n\\\\\\\\nThe shared simulator acceptance focus on parser fidelity and deterministic mm output directed this audit toward modal state carried across unit transitions, beyond the existing same-line coordinate checks. The required Alike CLI read itself failed with a network… (why: decision on this work)\n  urn:alike:decision:54442df7f7c6f01b3039c5fdd9df9f2b3ba523b4f75a30f7055de64d076e1ef0\n- confirmed · alike-025: audit stock bull endmill corner radius — Completed Alike-anchored audit; exit=0. Alike helped moment: \\n\\nThe shared simulator acceptance bar emphasizes fidelity and evidence, which directed this audit across the Fusion tool-table boundary rather than checking only the standalone stock formula.\\n\\n5. Recommendation\\n\\nPatch `fusion/program.py` to map bull nose to `\\\"bull\\\"` and include `corner_radius`; add focused adapter and profile regression tests.\"}} {\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":407646,\"cached_input_tokens\":341504,\"cache_write_input_tokens\":0,\"output_tokens\":3545,\"reasoning_output_tokens\":1426}} Reading additional input from stdin... (why: decision on this work)\n  urn:alike:decision:0d47ba3b1dbe74bb2a4b7161713c4f38cdffb0276d9c9e63ca62643f641201a3\n- confirmed · alike-009: audit parser G52 local work offsets — Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\nThe shared acceptance decision requires parser compatibility, safety, determinism, and regression evidence. That made the ignored-call behavior a fidelity and safety gap rather than an acceptable unsupported-code warning.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n5. Recommendation (patch, test, or defer)\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\nPatch `instant_machinist/sim/gcode.py` with subprogram indexing, M98 call-stack/L-repeat handling, M99 returns, and depth/recursion guards; add focused tests in… (why: decision on this… (why: decision on this work)\n  urn:alike:decision:32bba29bcc83cb1d4a6850ddab2e2835f62e8f9cf0a444aa042721e088b62894\n- confirmed · alike-026: audit stock chamfer tool geometry — Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nThe shared simulator acceptance bar emphasized geometry fidelity and deterministic checks, so I treated the cone equation and invalid-parameter behavior as separate acceptance concerns. The Alike CLI record fetch and decision write both failed because the Alike endpoint was unreachable.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nDefer patch in this audit. Add validation and end-to-end chamfer tool support in a coordinated change, with the acceptance tests above.\"}}… (why: decision on this work)\n  urn:alike:decision:2addec098f8bf29173c13bdf259b327e53aaf12611928635ade5360eb27951fe\n- confirmed · alike-010: audit parser G54.1 extended work offsets — Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nThe shared simulator acceptance bar emphasized parser fidelity, safety, determinism, and evidence. That made the silent-ignore behavior a correctness defect even though ordinary G54–G59 handling is currently documented.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nPatch the parser to model configured G54.1 `P` banks (or, if configuration is intentionally out of scope, emit a deterministic unsupported warning and reject/skip its axis words), then add the three regression tests above.\"}}… (why: decision on this work)\n  urn:alike:decision:447f57923d978a0ea7c41698fb10dd9f18685bb516c8d47441f8ba46c9eb0389\n- confirmed · alike-021: audit stock dexel resolution and convergence — Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\n\\\\\\\\nThe shared simulator acceptance bar emphasizes safety, fidelity, and determinism, so I treated M99 fall-through and unbounded recursive expansion as correctness and safety gaps rather than parser feature omissions.\\\\\\\\n\\\\\\\\n5. Recommendation (patch, test, or defer)\\\\\\\\n\\\\\\\\nPatch `instant_machinist/sim/gcode.py` to index O-programs, implement M98/M97 calls and M99 returns, and enforce call-depth/expansion limits. Add the three focused parser tests above before claiming subprogram support.\\\\\\\"}}… (why: decision on this work)\\\\n… (why: decision on this work)\n  urn:alike:decision:d5e3ca7d2da4319d6b5337389ec29bfceb0cc0ec18534936c776f3fbe5d839dc\nOther work in the last 24h:\n- you: Complete and verify all five sponsor integrations [blocked] — last touched 4m ago\n  urn:alike:task:41205fe6897ee5642d4b0bd938a2d94d07bcd2feb2365f2ebaaf5be236abfd4f\n- you: Work on ~/work/speedruninstanmachinist [in_progress] — last touched 11m ago\n  urn:alike:task:ee8b63e72435ee2164e6cbe6a7bb4fbe9d72bd2bdf8d14ebc2d0938597683e01\n- you: Authenticate Alike before launching the simulator swarm [superseded] — ended 24m ago\n  urn:alike:decision:fc39748810dbc96b9ccd9094ab3a3ef6283cc5dda4e3aaf5b76829065a353ffe\nOther live agent sessions (8):\n- your codex agent on main — Audit stock flat endmill removal, last active 2026-10-11T20:48:29.893Z\n  session a015230dc91a6f60ec526f0fe3096c6a (agent urn:alike:agent:33c7d2ea277d528444cbc40e775ef066e4e4b4acd01695ed21f5bbbf71c3fa20)\n- your codex agent on main — Audit stock ball-endmill removal, last active 2026-10-11T20:48:29.601Z\n  session f27cb3541e201c83fd44c5afd0e73f89 (agent urn:alike:agent:33c7d2ea277d528444cbc40e775ef066e4e4b4acd01695ed21f5bbbf71c3fa20)\n- your codex agent on main, last active 2026-10-11T20:48:17.386Z\n  session 04c010edfe48b809e92afdd6797eca8c (agent urn:alike:agent:33c7d2ea277d528444cbc40e775ef066e4e4b4acd01695ed21f5bbbf71c3fa20)\n- your codex agent on main, last active 2026-10-11T20:48:16.760Z\n  session ac5b2d17380cff0f570bb2a1aa88b0c3 (agent urn:alike:agent:33c7d2ea277d528444cbc40e775ef066e4e4b4acd01695ed21f5bbbf71c3fa20)\n- your codex agent on main, last active 2026-10-11T20:48:16.367Z\n  session f091976bf5b3b084dd434c11f0708f02 (agent urn:alike:agent:33c7d2ea277d528444cbc40e775ef066e4e4b4acd01695ed21f5bbbf71c3fa20)\n- your codex agent on main, last active 2026-10-11T20:48:15.205Z\n  session 088b71bd4e8099eea959e113f51fb110 (agent urn:alike:agent:33c7d2ea277d528444cbc40e775ef066e4e4b4acd01695ed21f5bbbf71c3fa20)\n- your codex agent on main — Audit stock bull endmill corner radius, last active 2026-10-11T20:48:14.892Z\n  session 3734df54bec7e06c447b9d2cef4dd826 (agent urn:alike:agent:33c7d2ea277d528444cbc40e775ef066e4e4b4acd01695ed21f5bbbf71c3fa20)\n- your codex agent on main — Audit parser G52 local work offsets, last active 2026-10-11T20:48:14.531Z\n  session 2e9743e13bd32f62c9a6055ca30586ee (agent urn:alike:agent:33c7d2ea277d528444cbc40e775ef066e4e4b4acd01695ed21f5bbbf71c3fa20)\nNo teammates on Alike yet — invite_colleague(...) brings one in, and you can queue a task or question that is delivered the moment they join.\n</alike:coordination-pointers>\nAlike MCP: get_entity(<urn>, include:[\"sources\",\"related\"]) on any item above that could bear on this work — the items are leads into your user's world model, not answers; the read gives the full record and what it links to, plus where it came from on your own items (a colleague's origin comes back unavailable — never guess it), then follow what it links to. search_environment(\"<question>\", data_types:[\"agent_session\"]) searches your user's past coding sessions.\nEach item opens with who stands behind its latest change, most trusted first: human = the user stated it; confirmed = a person approved it; sync = copied from a system of record (calendar, CRM, Linear, GitHub); extracted = read from a real email, meeting, message or document; agent = an agent asserted it with nothing behind it, so check before relying on it; system = Alike inferred it, a lead not a fact; colleague = a teammate's copy, source not visible to you; unknown = no provenance recorded.",
+  "<<</UNTRUSTED>>>": ""
+}

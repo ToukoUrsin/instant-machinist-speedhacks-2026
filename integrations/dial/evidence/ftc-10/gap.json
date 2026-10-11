@@ -1,0 +1,20 @@
+{
+ "part": "NIST FTC-10",
+ "material": "6061-T6 aluminum",
+ "material_as_drawn": "6061-T6 aluminum (assumed; drawing gives none)",
+ "blank_mm": [
+  162,
+  79.0,
+  39.5
+ ],
+ "blank_in": [
+  6.378,
+  3.11,
+  1.555
+ ],
+ "qty_needed": 1,
+ "blanks_on_hand": 0,
+ "blanks_short": 1,
+ "missing": true,
+ "ask": "1 blanks of 6061-T6 aluminum, at least 6.38 x 3.11 x 1.56 in (e.g. 1.625 in thick x 3.25 in wide flat bar, cut to 6.50 in lengths)"
+}

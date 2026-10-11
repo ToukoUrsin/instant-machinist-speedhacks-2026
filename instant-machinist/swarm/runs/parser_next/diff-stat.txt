@@ -1,0 +1,4 @@
+ instant_machinist/sim/gcode.py | 53 +++++++++++++++++++++++++++++++++++-------
+ instant_machinist/sim/run.py   |  5 ++--
+ tests/sim/test_gcode.py        | 20 ++++++++++++++++
+ 3 files changed, 67 insertions(+), 11 deletions(-)

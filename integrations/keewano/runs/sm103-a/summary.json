@@ -1,0 +1,40 @@
+{
+ "part": "SM-103",
+ "engine": "native",
+ "programming_s": 3.0,
+ "baseline": {
+  "strategy": "baseline",
+  "label": "baseline",
+  "dir": "../integrations/keewano/runs/sm103-a/native/baseline",
+  "cycle_s": 1937.0,
+  "pass": true,
+  "baseline": true
+ },
+ "best": {
+  "strategy": "native",
+  "label": "native",
+  "dir": "../integrations/keewano/runs/sm103-a/native/native",
+  "cycle_s": 232.02,
+  "pass": true,
+  "baseline": false
+ },
+ "variants": [
+  {
+   "strategy": "baseline",
+   "label": "baseline",
+   "dir": "../integrations/keewano/runs/sm103-a/native/baseline",
+   "cycle_s": 1937.0,
+   "pass": true,
+   "baseline": true
+  },
+  {
+   "strategy": "native",
+   "label": "native",
+   "dir": "../integrations/keewano/runs/sm103-a/native/native",
+   "cycle_s": 232.02,
+   "pass": true,
+   "baseline": false
+  }
+ ],
+ "machining_saved_pct": 88.0
+}

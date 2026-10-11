@@ -1,0 +1,1 @@
+Implement the highest-value parser requirement from the historical CAD/CAM criteria in an isolated worktree. This run chose configured G54-G59 and G54.1 Pn offsets, added diagnostics and focused tests, preserved API compatibility, and verified simulator tests plus FTC-10 Fusion programs.

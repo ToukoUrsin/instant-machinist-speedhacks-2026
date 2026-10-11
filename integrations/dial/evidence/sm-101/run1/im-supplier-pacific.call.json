@@ -1,0 +1,34 @@
+{
+ "id": "cmv4akgyk008c0fqq42xna0yk",
+ "direction": "outbound",
+ "status": {
+  "state": "Terminated",
+  "terminationType": "completed",
+  "cancelRequested": false,
+  "cancelPending": false,
+  "label": "Completed"
+ },
+ "duration": 242,
+ "createdAt": "2026-10-11T20:44:38.492Z",
+ "voiceRuntime": "managed",
+ "failureReason": null,
+ "transferTo": null,
+ "transferredAt": null,
+ "from_line": "im-shop-agent",
+ "from_number": "+1737345xxxx",
+ "to_line": "im-supplier-pacific",
+ "to_number": "+1510680xxxx",
+ "supplier": "Pacific Metals Supply",
+ "played_by": "Dial inbound AI agent (demo persona)",
+ "extra_fields": [
+  "callStartedAt",
+  "cancelRequestedAt",
+  "contentRedactedAt",
+  "phoneNumberId",
+  "queuedAt",
+  "recordingAvailable",
+  "startedRingingAt",
+  "terminatedAt",
+  "terminationType"
+ ]
+}

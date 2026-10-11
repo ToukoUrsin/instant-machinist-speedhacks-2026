@@ -1,0 +1,129 @@
+{
+ "part_number": "SM-104",
+ "name": "Sensor mount plate, thin",
+ "material": "6061-T6 aluminum",
+ "quantity": 60,
+ "units": "mm",
+ "origin": "top-center of finished part; Z=0 is the finished top face, Z negative down",
+ "general_tolerance_mm": 0.1,
+ "surface_finish_ra_um": 3.2,
+ "stock": {
+  "x": [
+   -62,
+   62
+  ],
+  "y": [
+   -42,
+   42
+  ],
+  "z": [
+   -18.5,
+   1.5
+  ]
+ },
+ "part_bbox": {
+  "x": [
+   -60,
+   60
+  ],
+  "y": [
+   -40,
+   40
+  ],
+  "z": [
+   -12,
+   0
+  ]
+ },
+ "features": [
+  {
+   "id": "F1",
+   "type": "face",
+   "z": 0
+  },
+  {
+   "id": "F2",
+   "type": "profile",
+   "side": "outside",
+   "rect": {
+    "cx": 0,
+    "cy": 0,
+    "w": 120,
+    "h": 80,
+    "r": 8
+   },
+   "z_top": 0,
+   "z_bottom": -12
+  },
+  {
+   "id": "F3",
+   "type": "pocket",
+   "rect": {
+    "cx": 0,
+    "cy": 0,
+    "w": 64,
+    "h": 36,
+    "r": 6
+   },
+   "z_top": 0,
+   "z_bottom": -5
+  },
+  {
+   "id": "F4",
+   "type": "pocket",
+   "rect": {
+    "cx": 0,
+    "cy": -30,
+    "w": 40,
+    "h": 8,
+    "r": 4
+   },
+   "z_top": 0,
+   "z_bottom": -3
+  },
+  {
+   "id": "F5",
+   "type": "hole",
+   "d": 6.6,
+   "z_top": 0,
+   "z_bottom": -12,
+   "through": true,
+   "positions": [
+    [
+     -50,
+     -30
+    ],
+    [
+     50,
+     -30
+    ],
+    [
+     -50,
+     30
+    ],
+    [
+     50,
+     30
+    ]
+   ]
+  },
+  {
+   "id": "F6",
+   "type": "hole",
+   "d": 8.0,
+   "z_top": -5,
+   "z_bottom": -12,
+   "through": true,
+   "positions": [
+    [
+     -20,
+     0
+    ],
+    [
+     20,
+     0
+    ]
+   ]
+  }
+ ]
+}

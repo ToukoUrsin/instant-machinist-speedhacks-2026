@@ -1,0 +1,9 @@
+{
+  "agent_id": "audit-22",
+  "item": "checks plunge",
+  "exit_code": 0,
+  "started_epoch": 1791750461.6944373,
+  "ended_epoch": 1791750608.9272563,
+  "wall_s": 147.23,
+  "transcript": "transcript.jsonl"
+}

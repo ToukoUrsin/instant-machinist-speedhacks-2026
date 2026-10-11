@@ -1,0 +1,82 @@
+{
+  "best": "conventional-so60-ap1D",
+  "best_s": 232.02,
+  "baseline_s": 1937.0,
+  "time_source": "sim.cycle",
+  "saved_s": 1705.0,
+  "saved_pct": 88.0,
+  "best_sim": {
+    "ok": true,
+    "checks": {
+      "gouge": true,
+      "leftover": true,
+      "rapid_into_stock": true,
+      "flat_plunge": true,
+      "below_fixture": true,
+      "flute_length": true
+    },
+    "total_s": 232.02
+  },
+  "baseline_sim": {
+    "ok": true,
+    "checks": {
+      "gouge": true,
+      "leftover": true,
+      "rapid_into_stock": true,
+      "flat_plunge": true,
+      "below_fixture": true,
+      "flute_length": true
+    },
+    "total_s": 1937.0
+  },
+  "variants": [
+    {
+      "name": "conventional-so60-ap1D",
+      "total_s": 232.02,
+      "source": "sim.cycle",
+      "sim_ok": true
+    },
+    {
+      "name": "adaptive-so45-ap2D",
+      "total_s": 238.02,
+      "source": "sim.cycle",
+      "sim_ok": null
+    },
+    {
+      "name": "adaptive-so35-ap2D",
+      "total_s": 241.11,
+      "source": "sim.cycle",
+      "sim_ok": null
+    },
+    {
+      "name": "adaptive-so25-ap2D",
+      "total_s": 260.62,
+      "source": "sim.cycle",
+      "sim_ok": null
+    },
+    {
+      "name": "adaptive-so45-ap1D",
+      "total_s": 272.87,
+      "source": "sim.cycle",
+      "sim_ok": null
+    },
+    {
+      "name": "adaptive-so35-ap1D",
+      "total_s": 274.34,
+      "source": "sim.cycle",
+      "sim_ok": null
+    },
+    {
+      "name": "adaptive-so25-ap1D",
+      "total_s": 306.26,
+      "source": "sim.cycle",
+      "sim_ok": null
+    },
+    {
+      "name": "conventional-so50-ap0.5D",
+      "total_s": 380.6,
+      "source": "sim.cycle",
+      "sim_ok": null
+    }
+  ]
+}

@@ -1,0 +1,834 @@
+{
+ "part": "SM-101",
+ "slug": "sm-101",
+ "generated_at": "2026-10-11T21:03:45Z",
+ "darwin_auth": "key",
+ "gap": {
+  "part": "SM-101",
+  "material": "6061-T6 aluminum",
+  "material_as_drawn": "6061-T6 aluminum",
+  "blank_mm": [
+   124,
+   84,
+   28.0
+  ],
+  "blank_in": [
+   4.882,
+   3.307,
+   1.102
+  ],
+  "qty_needed": 25,
+  "blanks_on_hand": 0,
+  "blanks_short": 25,
+  "missing": true,
+  "ask": "25 blanks of 6061-T6 aluminum, at least 4.88 x 3.31 x 1.10 in (e.g. 1.125 in thick x 3.50 in wide flat bar, cut to 5.00 in lengths)"
+ },
+ "tools": [
+  "T1 D50. FACE MILL 5FL FLUTE LEN 6.",
+  "T2 D10. FLAT END MILL 3FL FLUTE LEN 25.",
+  "T3 D6. FLAT END MILL 3FL FLUTE LEN 16.",
+  "T4 D10. SPOT DRILL FLUTE LEN 12.",
+  "T5 D6.6 DRILL FLUTE LEN 40.",
+  "T6 D8. DRILL FLUTE LEN 40."
+ ],
+ "needs": [
+  {
+   "id": "stock",
+   "label": "Raw stock",
+   "ask": "25 blanks of 6061-T6 aluminum, at least 4.88 x 3.31 x 1.10 in (e.g. 1.125 in thick x 3.50 in wide flat bar, cut to 5.00 in lengths)",
+   "darwin_query": "metal supplier aluminum plate and bar quote",
+   "darwin_status": "needs_input",
+   "darwin_question": "Which tool would you like to use to request the quote?",
+   "darwin_overview": "I found two tools that can help you get a quote for aluminum plate and bar. The \"Request a quote from matching suppliers\" tool can send your request to suppliers who can provide the material for your CNC milling job. Alternatively, the \"Request a quote\" tool can send a direct request to a manufacturer. Both require your work email and explicit consent to share the request.",
+   "searchId": "srch_e5c054c6-7f43-4401-a0f7-adfbb11a6b62",
+   "candidates": [
+    {
+     "capabilityId": "cmv0b3ru9001t06migubk6v9r",
+     "agentId": "cmv08cln8001t06nyw4bux80d",
+     "tool": "Request a quote from matching suppliers",
+     "description": "Send a quote request to whobuildsit, which reviews it and passes it to suppliers who can make the part. Before calling, ASK THE USER for their work email and explicit consent to share the request and email with suppliers \u2014 never invent an e",
+     "provider": "whobuildsit \u2014 space & defence hardware suppliers",
+     "provider_site": "https://whobuildsit.com/ai",
+     "provider_verified": true,
+     "darwin_rank": 1,
+     "reasons": [
+      "This tool sends a quote request to matching suppliers for parts, which includes raw materials like aluminum plate and bar for a CNC milling job."
+     ],
+     "uncertainties": [
+      "Execution requires a fresh readiness check."
+     ],
+     "readiness": "unavailable",
+     "canStartThread": false,
+     "threadUnavailableReason": "ROUTE_VERIFICATION_EXPIRED",
+     "routeReason": "VERIFICATION_EXPIRED",
+     "connectionMethods": [],
+     "protocols": [
+      "MCP"
+     ],
+     "auth": "NOT_REQUIRED",
+     "payment": "NOT_REQUIRED",
+     "runtime": "REMOTE_MCP",
+     "agent_page": "https://index.darwin.so/agent/cmv08cln8001t06nyw4bux80d?capability=cmv0b3ru9001t06migubk6v9r",
+     "mcp_endpoint": "https://whobuildsit.com/mcp",
+     "probe": {
+      "ok": true,
+      "server": "whobuildsit",
+      "tools": 7,
+      "read_only_tools": 6,
+      "write_tools": [
+       "request_quote"
+      ],
+      "calls": [
+       {
+        "tool": "search_suppliers",
+        "args": {
+         "query": "6061 aluminum bar",
+         "limit": 3
+        },
+        "total": 0,
+        "top": []
+       },
+       {
+        "tool": "search_suppliers",
+        "args": {
+         "query": "aluminium",
+         "limit": 3
+        },
+        "total": 29,
+        "top": [
+         "HIACC Engineering & Services Pvt. Ltd",
+         "VAT Group",
+         "Kohesi Bond"
+        ]
+       },
+       {
+        "tool": "search_parts",
+        "args": {
+         "query": "6061 aluminum bar",
+         "limit": 3
+        },
+        "total": 0,
+        "top": []
+       },
+       {
+        "tool": "search_parts",
+        "args": {
+         "query": "aluminium",
+         "limit": 3
+        },
+        "total": 6,
+        "top": [
+         "Vibration Test Adapter (VTA)",
+         "EOS Aluminium Al2139 AM",
+         "EOS Aluminium Al5X1"
+        ]
+       }
+      ],
+      "error": null
+     }
+    },
+    {
+     "capabilityId": "cmudpnkwt00e40bgm3mq9gvsq",
+     "agentId": "cmudpmxgz003u0agm9bqbklp6",
+     "tool": "Request a quote",
+     "description": "Send a request for prices, samples or terms to a manufacturer on the person's behalf. Requires the person's own name and email \u2014 ask them and pass exactly what they give you, never invent an address. The manufacturer receives the request; t",
+     "provider": "Gemalli B2B Trade",
+     "provider_site": null,
+     "provider_verified": true,
+     "darwin_rank": 2,
+     "reasons": [
+      "This tool sends a request for prices to a manufacturer on the user's behalf, which can be used to get a quote for aluminum plate and bar."
+     ],
+     "uncertainties": [
+      "Execution requires a fresh readiness check."
+     ],
+     "readiness": "unavailable",
+     "canStartThread": false,
+     "threadUnavailableReason": "ROUTE_VERIFICATION_EXPIRED",
+     "routeReason": "VERIFICATION_EXPIRED",
+     "connectionMethods": [],
+     "protocols": [
+      "MCP"
+     ],
+     "auth": "NOT_REQUIRED",
+     "payment": "NOT_REQUIRED",
+     "runtime": "REMOTE_MCP",
+     "agent_page": "https://index.darwin.so/agent/cmudpmxgz003u0agm9bqbklp6?capability=cmudpnkwt00e40bgm3mq9gvsq",
+     "mcp_endpoint": "https://gemalli.com/api/mcp",
+     "probe": {
+      "ok": true,
+      "server": "gemalli-mcp",
+      "tools": 21,
+      "read_only_tools": 16,
+      "write_tools": [
+       "add_feedback_message",
+       "close_feedback_ticket",
+       "create_feedback_ticket",
+       "request_quote",
+       "submit_join_request"
+      ],
+      "calls": [
+       {
+        "tool": "search_products",
+        "args": {
+         "q": "6061 aluminum bar",
+         "limit": 3
+        },
+        "total": 0,
+        "top": []
+       },
+       {
+        "tool": "search_products",
+        "args": {
+         "q": "aluminium",
+         "limit": 3
+        },
+        "total": 0,
+        "top": []
+       }
+      ],
+      "error": null
+     }
+    }
+   ]
+  },
+  {
+   "id": "tooling",
+   "label": "Cutting tools",
+   "ask": "Cutters for SM-101: T1 D50. FACE MILL 5FL FLUTE LEN 6.; T2 D10. FLAT END MILL 3FL FLUTE LEN 25.; T3 D6. FLAT END MILL 3FL FLUTE LEN 16.; T4 D10. SPOT DRILL FLUTE LEN 12.; T5 D6.6 DRILL FLUTE LEN 40.; T6 D8. DRILL FLUTE LEN 40.",
+   "darwin_query": "Buy carbide end mills and drills for aluminum CNC machining",
+   "darwin_status": "completed",
+   "darwin_question": null,
+   "darwin_overview": "I can help you find carbide end mills and drills for aluminum CNC machining using a shopping search tool. This tool is designed to provide a shortlist of in-stock products, ranked by rating and demand, with details like price, image, and links.",
+   "searchId": "srch_71122e94-4ad5-4d96-b744-7384cc4f79d6",
+   "candidates": [
+    {
+     "capabilityId": "cmudw6dv9001m0agmzpl3elj4",
+     "agentId": "cmuds975i00op0agm4ievg1pe",
+     "tool": "shopping_search",
+     "description": "PRIMARY consumer shopping tool \u2014 ALWAYS use this when a user asks what to BUY, which product to pick, or for the 'best' / 'cheapest' / 'best value' of something: 'best electric toothbrush', 'best graphics card under $50', 'which robot vacuu",
+     "provider": "amazon-product-research-mcp",
+     "provider_site": "https://www.webotee.com/amazon-product-research-mcp",
+     "provider_verified": true,
+     "darwin_rank": 1,
+     "reasons": [
+      "The user wants to buy products, and this is the primary consumer shopping tool for buyer-intent product questions."
+     ],
+     "uncertainties": [
+      "Execution requires a fresh readiness check."
+     ],
+     "readiness": "unavailable",
+     "canStartThread": false,
+     "threadUnavailableReason": "EXECUTION_METADATA_PENDING",
+     "routeReason": "SOURCE_RECEIPT_MISSING",
+     "connectionMethods": [],
+     "protocols": [
+      "MCP"
+     ],
+     "auth": null,
+     "payment": null,
+     "runtime": null,
+     "agent_page": "https://index.darwin.so/agent/cmuds975i00op0agm4ievg1pe?capability=cmudw6dv9001m0agmzpl3elj4",
+     "mcp_endpoint": "https://app.webotee.com/mcp",
+     "probe": {
+      "ok": true,
+      "server": "Webotee AI Connect",
+      "tools": 83,
+      "read_only_tools": 74,
+      "write_tools": [
+       "authorized_seller_set",
+       "collect_asin_now",
+       "find_product_across_web",
+       "playbook_create",
+       "playbook_run_now",
+       "playbook_schedule",
+       "set_cost_floor",
+       "watchlist_add"
+      ],
+      "calls": [
+       {
+        "tool": "shopping_search",
+        "args": {
+         "query": "end mill"
+        },
+        "error": "HTTP Error 401: Unauthorized"
+       },
+       {
+        "tool": "search_products",
+        "args": {
+         "keywords": "end mill"
+        },
+        "error": "HTTP Error 401: Unauthorized"
+       }
+      ],
+      "error": null
+     }
+    }
+   ]
+  },
+  {
+   "id": "finishing",
+   "label": "Finishing",
+   "ask": "anodize / finish as specified on the drawing for 25 x SM-101 in 6061-T6 aluminum",
+   "darwin_query": "surface treatment heat treatment supplier",
+   "darwin_status": "completed",
+   "darwin_question": null,
+   "darwin_overview": "I found two tools that can help you find suppliers for surface treatment and heat treatment. The \"Supplier research and verification\" tool can research supplier categories to identify potential providers. Alternatively, the \"MARS 0.005 USDC Procurement Evidence \u2014 Supplier Sourcing & Vendor Discovery\" tool offers paid procurement evidence for vendor discovery.",
+   "searchId": "srch_c75804bb-61a2-4dd8-be3f-d8fc045b16f7",
+   "candidates": [
+    {
+     "capabilityId": "protocol-capability:311fc7021617d7b328dbdd1626fc139f55ee4795",
+     "agentId": "protocol-agent:440e506e265474f3a47e6d575e1b73925c61a50b",
+     "tool": "Supplier research and verification",
+     "description": "Research a named supplier or supplier category, verify public identity and official channels, and return evidence-backed supplier intelligence.",
+     "provider": "LUMEN B2B Agent",
+     "provider_site": null,
+     "provider_verified": true,
+     "darwin_rank": 1,
+     "reasons": [
+      "This tool can research a supplier category, which could include surface treatment and heat treatment, to find potential suppliers."
+     ],
+     "uncertainties": [
+      "Execution requires a fresh readiness check."
+     ],
+     "readiness": "unavailable",
+     "canStartThread": false,
+     "threadUnavailableReason": "EXECUTION_METADATA_PENDING",
+     "routeReason": "SOURCE_RECEIPT_MISSING",
+     "connectionMethods": [],
+     "protocols": [
+      "A2A"
+     ],
+     "auth": null,
+     "payment": null,
+     "runtime": null,
+     "agent_page": "https://index.darwin.so/agent/protocol-agent:440e506e265474f3a47e6d575e1b73925c61a50b?capability=protocol-capability:311fc7021617d7b328dbdd1626fc139f55ee4795",
+     "probe": {
+      "ok": false,
+      "error": "no agent-card URL published"
+     }
+    },
+    {
+     "capabilityId": "cmudsb8fh00jz0bgmvkp93f2z",
+     "agentId": "cmudroat400iu0bgmxt57rper",
+     "tool": "MARS 0.005 USDC Procurement Evidence \u2014 Supplier Sourcing & Vendor Discovery",
+     "description": "One-call paid procurement evidence for supplier sourcing, vendor discovery, verified industrial suppliers and procurement counterparty research. No MARS account or subscription is required. First tools/call returns x402 v2 PaymentRequired f",
+     "provider": "MARS Economic",
+     "provider_site": "https://mars-economic-agent-gateway.mars-economic.workers.dev/",
+     "provider_verified": true,
+     "darwin_rank": 2,
+     "reasons": [
+      "This tool provides paid procurement evidence for supplier sourcing and vendor discovery, which directly addresses the need to find a supplier for surface and heat treatment."
+     ],
+     "uncertainties": [
+      "Execution requires a fresh readiness check.",
+      "Provider description mentions per-call payment or x402; verify current terms before acting. No payment is authorized."
+     ],
+     "readiness": "unavailable",
+     "canStartThread": false,
+     "threadUnavailableReason": "EXECUTION_METADATA_PENDING",
+     "routeReason": "SOURCE_RECEIPT_MISSING",
+     "connectionMethods": [],
+     "protocols": [
+      "MCP"
+     ],
+     "auth": null,
+     "payment": null,
+     "runtime": null,
+     "agent_page": "https://index.darwin.so/agent/cmudroat400iu0bgmxt57rper?capability=cmudsb8fh00jz0bgmvkp93f2z",
+     "mcp_endpoint": "https://mars-economic-agent-gateway.mars-economic.workers.dev/mcp",
+     "probe": {
+      "ok": true,
+      "server": "mars-economic-intermediary",
+      "tools": 30,
+      "read_only_tools": 8,
+      "write_tools": [
+       "build_economic_opportunity_portfolio",
+       "build_portfolio_conversion_queue",
+       "discover_buyer_demand",
+       "discover_commercial_counterparties",
+       "find_counterparty",
+       "intake_formal_eligibility_response",
+       "intake_supplier_formal_eligibility",
+       "mars_purchase_feedback"
+      ],
+      "calls": [],
+      "error": null
+     }
+    }
+   ]
+  },
+  {
+   "id": "overflow",
+   "label": "Overflow machining",
+   "ask": "Backup CNC capacity: quote 25 x SM-101 from the STEP if our machine is booked",
+   "darwin_query": "CNC machining quote for an aluminum part from a STEP file",
+   "darwin_status": "completed",
+   "darwin_question": null,
+   "darwin_overview": "I found two tools that can help you get a quote for your CNC machining part. The \"Request a quote from matching suppliers\" tool can send your request to suppliers who will reply directly to you. Alternatively, the \"estimate_part\" tool can provide an instant cost estimate for the manufactured part.",
+   "searchId": "srch_5af442ff-0a3e-4edf-aeec-2f27e9a6e78a",
+   "candidates": [
+    {
+     "capabilityId": "cmv0b3ru9001t06migubk6v9r",
+     "agentId": "cmv08cln8001t06nyw4bux80d",
+     "tool": "Request a quote from matching suppliers",
+     "description": "Send a quote request to whobuildsit, which reviews it and passes it to suppliers who can make the part. Before calling, ASK THE USER for their work email and explicit consent to share the request and email with suppliers \u2014 never invent an e",
+     "provider": "whobuildsit \u2014 space & defence hardware suppliers",
+     "provider_site": "https://whobuildsit.com/ai",
+     "provider_verified": true,
+     "darwin_rank": 1,
+     "reasons": [
+      "This tool can send a quote request to suppliers who can make a part, directly addressing the user's need for a CNC machining quote."
+     ],
+     "uncertainties": [
+      "Execution requires a fresh readiness check."
+     ],
+     "readiness": "unavailable",
+     "canStartThread": false,
+     "threadUnavailableReason": "ROUTE_VERIFICATION_EXPIRED",
+     "routeReason": "VERIFICATION_EXPIRED",
+     "connectionMethods": [],
+     "protocols": [
+      "MCP"
+     ],
+     "auth": "NOT_REQUIRED",
+     "payment": "NOT_REQUIRED",
+     "runtime": "REMOTE_MCP",
+     "agent_page": "https://index.darwin.so/agent/cmv08cln8001t06nyw4bux80d?capability=cmv0b3ru9001t06migubk6v9r",
+     "mcp_endpoint": "https://whobuildsit.com/mcp",
+     "probe": {
+      "ok": true,
+      "server": "whobuildsit",
+      "tools": 7,
+      "read_only_tools": 6,
+      "write_tools": [
+       "request_quote"
+      ],
+      "calls": [
+       {
+        "tool": "search_suppliers",
+        "args": {
+         "query": "CNC milling",
+         "limit": 3
+        },
+        "total": 7,
+        "top": [
+         "frigate.ai",
+         "MTAR Technologies",
+         "Sansera Engineering"
+        ]
+       },
+       {
+        "tool": "search_parts",
+        "args": {
+         "query": "CNC milling",
+         "limit": 3
+        },
+        "total": 0,
+        "top": []
+       },
+       {
+        "tool": "search_parts",
+        "args": {
+         "query": "machining",
+         "limit": 3
+        },
+        "total": 0,
+        "top": []
+       }
+      ],
+      "error": null
+     }
+    },
+    {
+     "capabilityId": "cmuds6y5200uk0agmjjui169e",
+     "agentId": "cmudrlvse05nr0agmk20opko7",
+     "tool": "estimate_part",
+     "description": "Instantly estimate the should-cost of a manufactured part using natural language. Returns P50 (median), P80 and P90 cost-at-risk per unit based on Monte Carlo simulation of material price variance, labour rate variance and cycle time uncert",
+     "provider": "Costable \u2014 Parametric Should-Cost Analysis",
+     "provider_site": null,
+     "provider_verified": true,
+     "darwin_rank": 2,
+     "reasons": [
+      "This tool can instantly estimate the should-cost of a manufactured part using natural language, which aligns with the request for a quote."
+     ],
+     "uncertainties": [
+      "Execution requires a fresh readiness check."
+     ],
+     "readiness": "unavailable",
+     "canStartThread": false,
+     "threadUnavailableReason": "EXECUTION_METADATA_PENDING",
+     "routeReason": "SOURCE_RECEIPT_MISSING",
+     "connectionMethods": [],
+     "protocols": [
+      "MCP"
+     ],
+     "auth": null,
+     "payment": null,
+     "runtime": null,
+     "agent_page": "https://index.darwin.so/agent/cmudrlvse05nr0agmk20opko7?capability=cmuds6y5200uk0agmjjui169e",
+     "mcp_endpoint": "https://costable.ai/api/mcp",
+     "probe": {
+      "ok": true,
+      "server": "costable",
+      "tools": 10,
+      "read_only_tools": 0,
+      "write_tools": [
+       "add_material_to_model",
+       "add_process_to_model",
+       "calculate_cost_model",
+       "compare_manufacturing_countries",
+       "create_cost_model",
+       "estimate_part",
+       "get_labour_rates",
+       "review_supplier_quote"
+      ],
+      "calls": [
+       {
+        "tool": "estimate_part",
+        "args": {
+         "description": "CNC milled 6061-T6 aluminum sensor mount plate, 120 x 80 x 20 mm envelope, 0.21 kg finished, 3-axis milling, +/-0.1 mm",
+         "countryCode": "US",
+         "batchQty": 25
+        },
+        "result_text": "{\n  \"p50PerUnit\": 5.632794953469246,\n  \"p80PerUnit\": 6.302658354946818,\n  \"p90PerUnit\": 6.685375765072798,\n  \"breakdown\": {\n    \"materialCost\": 0.3804075577742931,\n    \"rawMaterialCost\": 0.3804075577742931,\n    \"purchasedPartsCost\": 0,\n    \"labourCost\": 1.3443150729721467,\n    \"machineCost\": 2.2065777712926646,\n    \"toolingCost\": 0,\n    \"overhead\": 0.9828251005097761,\n    \"margin\": 0.7371188253823321\n  },\n  \"assumptions\": {\n    \"material\": \"Aluminium 1100 \u2014 Sheet\",\n    \"materialPriceUsdKg\": 2.541,\n    \"process\": \"CNC 3-Axis Milling \u2014 Light (Al, plastics)\",\n    \"massKg\": 0.21,\n    \"cycleTimeMins\": 1,\n    \"country\": \"US\",\n    \"batchQty\": 25,\n    \"labourRateUsdHr\": 39.6,\n    \"machineRateUsdHr\": 65\n  },\n  \"confidence\": \"HIGH\"\n}",
+        "is_error": false,
+        "structured": null
+       }
+      ],
+      "error": null
+     }
+    }
+   ]
+  },
+  {
+   "id": "freight",
+   "label": "Freight",
+   "ask": "Inbound freight for the bar stock (~43.4 lb) from a metals service center to the shop",
+   "darwin_query": "shipping rates",
+   "darwin_status": "needs_input",
+   "darwin_question": "To get the most accurate shipping rates, would you like to provide the length, width, and height of the box?",
+   "darwin_overview": "I found two tools that can provide live shipping rates for your 43.4 lb aluminum bar from ZIP 90058 to 94107. Both can get rates for domestic US parcel shipments.",
+   "searchId": "srch_92063d66-9512-40cd-a802-645aa8bd2b77",
+   "candidates": [
+    {
+     "capabilityId": "protocol-capability:0a4d6d688efff6df989654d39806a6bda84fd6bd",
+     "agentId": "protocol-agent:70615a8e6555cf1726a9d4d137de1f9be44f0721",
+     "tool": "Get live parcel shipping rates from a US origin",
+     "description": "Send a DataPart {\"product\",\"from_zip\",\"to_zip\", optional \"to_country\",\"quantity\",\"weight_lb\",\"length_in\",\"width_in\",\"height_in\"}. Omit to_country for a domestic parcel; CA, GB, DE and AU are the international lanes sold online. Returns up t",
+     "provider": "SMKlog Parcel Quotes",
+     "provider_site": "https://www.smklog.com/.well-known/agent-card.json",
+     "provider_verified": true,
+     "darwin_rank": 1,
+     "reasons": [
+      "This tool can get live parcel shipping rates from a US origin to a US destination, accepting weight and ZIP codes as input."
+     ],
+     "uncertainties": [
+      "Execution requires a fresh readiness check."
+     ],
+     "readiness": "unavailable",
+     "canStartThread": false,
+     "threadUnavailableReason": "EXECUTION_METADATA_PENDING",
+     "routeReason": "SOURCE_RECEIPT_MISSING",
+     "connectionMethods": [],
+     "protocols": [
+      "A2A"
+     ],
+     "auth": null,
+     "payment": null,
+     "runtime": null,
+     "agent_page": "https://index.darwin.so/agent/protocol-agent:70615a8e6555cf1726a9d4d137de1f9be44f0721?capability=protocol-capability:0a4d6d688efff6df989654d39806a6bda84fd6bd",
+     "probe": {
+      "ok": true,
+      "card_url": "https://www.smklog.com/.well-known/agent-card.json",
+      "name": "SMKlog Parcel Quotes",
+      "url": "https://quote-api.smklog.com/a2a",
+      "skills": [
+       "Get live parcel shipping rates from a US origin",
+       "Create a payment session for a parcel label",
+       "Read whether a payment session was paid and the label exists"
+      ],
+      "skill_ids": [
+       "get_parcel_quote",
+       "create_checkout_link",
+       "get_checkout_status"
+      ],
+      "auth": [],
+      "calls": [
+       {
+        "tool": "a2a:message/send",
+        "args": {
+         "product": "6061-T6 aluminum flat bar blank, 25 piece(s)",
+         "from_zip": "90058",
+         "to_zip": "94107",
+         "weight_lb": 43.9,
+         "length_in": 7,
+         "width_in": 5,
+         "height_in": 3
+        },
+        "result_text": "Live rates for \"6061-T6 aluminum flat bar blank, 25 piece(s)\", 90058 to 94107:\n- UPS Ground: $37.16, 2-3 business days\n- FedEx Ground Economy: $50.70 (counter price $87.63), 2-3 business days\n- USPS Ground Advantage: $75.16 (counter price $78.95), 4-5 business days\n- USPS Priority: $86.30 (counter price $88.50), 3-4 business days\n- FedEx Standard Overnight: $192.14 (counter price $545.39), 1 business day\nPrices are complete checkout totals with the SMKlog fee inside. Buy the label at https://smklog.com/assets/calculator.",
+        "rates": [
+         {
+          "carrier": "UPS",
+          "service": "Ground",
+          "service_label": "UPS Ground",
+          "amount": 37.16,
+          "retail_amount": 0,
+          "delivery_days": 2,
+          "delivery_window": "2-3 business days",
+          "delivery_estimated_date": "2026-10-14",
+          "currency": "USD"
+         },
+         {
+          "carrier": "FedEx",
+          "service": "Ground Economy",
+          "service_label": "FedEx Ground Economy",
+          "amount": 50.7,
+          "retail_amount": 87.63,
+          "delivery_days": 2,
+          "delivery_window": "2-3 business days",
+          "delivery_estimated_date": "2026-10-14",
+          "currency": "USD"
+         },
+         {
+          "carrier": "USPS",
+          "service": "Ground Advantage",
+          "service_label": "USPS Ground Advantage",
+          "amount": 75.16,
+          "retail_amount": 78.95,
+          "delivery_days": 4,
+          "delivery_window": "4-5 business days",
+          "delivery_estimated_date": "2026-10-15",
+          "currency": "USD"
+         },
+         {
+          "carrier": "USPS",
+          "service": "Priority",
+          "service_label": "USPS Priority",
+          "amount": 86.3,
+          "retail_amount": 88.5,
+          "delivery_days": 3,
+          "delivery_window": "3-4 business days",
+          "delivery_estimated_date": "2026-10-15",
+          "currency": "USD"
+         },
+         {
+          "carrier": "FedEx",
+          "service": "Standard Overnight",
+          "service_label": "FedEx Standard Overnight",
+          "amount": 192.14,
+          "retail_amount": 545.39,
+          "delivery_days": 1,
+          "delivery_window": "1 business day",
+          "delivery_estimated_date": "2026-10-13",
+          "currency": "USD"
+         }
+        ],
+        "summary": "5 live carrier rates; cheapest UPS Ground $37.16 (2-3 business days); FedEx Ground Economy $50.70 (2-3 business days); USPS Ground Advantage $75.16 (4-5 business days)"
+       }
+      ]
+     }
+    },
+    {
+     "capabilityId": "cmudqv7ku00mq0agm0c323t6s",
+     "agentId": "cmudquzd5006j0agms4z5tvlh",
+     "tool": "Get package shipping rates",
+     "description": "Get live USPS, UPS, and FedEx shipping rates for a package from a US ZIP code to a US or international destination. Returns carrier, service, price in USD, and estimated transit days, sorted cheapest first. IMPORTANT: these are discounted r",
+     "provider": "Shipping Rates & Postage Calculator",
+     "provider_site": "https://onlineshippingcalculator.com/mcp",
+     "provider_verified": true,
+     "darwin_rank": 2,
+     "reasons": [
+      "This tool provides live USPS, UPS, and FedEx shipping rates for packages within the US, requiring weight and ZIP codes."
+     ],
+     "uncertainties": [
+      "Execution requires a fresh readiness check."
+     ],
+     "readiness": "unavailable",
+     "canStartThread": false,
+     "threadUnavailableReason": "EXECUTION_METADATA_PENDING",
+     "routeReason": "SOURCE_RECEIPT_MISSING",
+     "connectionMethods": [],
+     "protocols": [
+      "MCP"
+     ],
+     "auth": null,
+     "payment": null,
+     "runtime": null,
+     "agent_page": "https://index.darwin.so/agent/cmudquzd5006j0agms4z5tvlh?capability=cmudqv7ku00mq0agm0c323t6s",
+     "mcp_endpoint": "https://onlineshippingcalculator.com/api/mcp",
+     "probe": {
+      "ok": true,
+      "server": "shipping-rates-calculator",
+      "tools": 2,
+      "read_only_tools": 2,
+      "write_tools": [],
+      "calls": [
+       {
+        "tool": "get_shipping_rates",
+        "args": {
+         "from_zip": "90058",
+         "to_zip": "94107",
+         "weight": 43.9,
+         "weight_unit": "lb",
+         "length_in": 7,
+         "width_in": 5,
+         "height_in": 3
+        },
+        "result_text": "Live package rates through this server are available to AI assistants only (Claude, ChatGPT, Copilot, Perplexity, Gemini). Postage prices still work for every client. Get rates at https://onlineshippingcalculator.com/?utm_source=mcp&utm_medium=ai-assistant&utm_campaign=client_fallback",
+        "is_error": true,
+        "structured": null
+       }
+      ],
+      "error": null
+     }
+    }
+   ]
+  }
+ ],
+ "opus_plan": {
+  "needs": [
+   {
+    "need": "stock",
+    "pick": null,
+    "verdict": "no_fit",
+    "ranked": [
+     {
+      "capabilityId": "cmv0b3ru9001t06migubk6v9r",
+      "fit": 2,
+      "why": "Zero hits for 6061 bar. Aluminium hits are space/defence firms and AM powders, not a commodity bar service center.",
+      "connect": "MCP https://whobuildsit.com/mcp, no auth; quote tool route verification expired",
+      "blocker": "ROUTE_VERIFICATION_EXPIRED; no relevant 6061 bar suppliers in catalog"
+     },
+     {
+      "capabilityId": "cmudpnkwt00e40bgm3mq9gvsq",
+      "fit": 1,
+      "why": "Live search returned 0 hits for both '6061 aluminum bar' and 'aluminium'. No evidence it can supply.",
+      "connect": "MCP https://gemalli.com/api/mcp, no auth",
+      "blocker": "ROUTE_VERIFICATION_EXPIRED; zero catalog coverage for aluminum"
+     }
+    ],
+    "next_step": "Phone or web-order 1.125x3.50 6061-T6 flat bar, cut to 5.00 in, from a local metals service center, Online Metals or McMaster."
+   },
+   {
+    "need": "tooling",
+    "pick": null,
+    "verdict": "no_fit",
+    "ranked": [
+     {
+      "capabilityId": "cmudw6dv9001m0agmzpl3elj4",
+      "fit": 1,
+      "why": "Consumer Amazon research tool. Both probes returned HTTP 401. Wrong channel for verified carbide end mills, face mill and drills.",
+      "connect": "MCP https://app.webotee.com/mcp; requires credentials we lack",
+      "blocker": "HTTP 401 Unauthorized; EXECUTION_METADATA_PENDING; consumer catalog"
+     }
+    ],
+    "next_step": "Check the crib first, then order missing cutters from MSC, McMaster, Harvey/Helical or a local tooling distributor."
+   },
+   {
+    "need": "finishing",
+    "pick": null,
+    "verdict": "no_fit",
+    "ranked": [
+     {
+      "capabilityId": "cmudsb8fh00jz0bgmvkp93f2z",
+      "fit": 2,
+      "why": "Endpoint is reachable, but no calls were probed. It is generic paid vendor discovery with no anodizer coverage shown.",
+      "connect": "MCP gateway on workers.dev; 0.005 USDC per call, needs a payment setup",
+      "blocker": "Unverified relevance; paid; EXECUTION_METADATA_PENDING"
+     },
+     {
+      "capabilityId": "protocol-capability:311fc7021617d7b328dbdd1626fc139f55ee4795",
+      "fit": 1,
+      "why": "Generic supplier research. The agent is unreachable because no agent card is published.",
+      "connect": "A2A, but no agent-card URL to connect",
+      "blocker": "Unreachable; EXECUTION_METADATA_PENDING"
+     }
+    ],
+    "next_step": "Confirm the drawing finish callout (e.g. MIL-A-8625 Type II, color), then get quotes from 2-3 local anodizers for a 25-piece lot."
+   },
+   {
+    "need": "overflow",
+    "pick": "cmv0b3ru9001t06migubk6v9r",
+    "verdict": "usable_with_human",
+    "ranked": [
+     {
+      "capabilityId": "cmv0b3ru9001t06migubk6v9r",
+      "fit": 4,
+      "why": "Found 7 CNC milling suppliers, but they are large aerospace and Indian shops. They are a weak match for a 25-piece 6061 job.",
+      "connect": "MCP https://whobuildsit.com/mcp, no auth; submit RFQ with STEP manually",
+      "blocker": "ROUTE_VERIFICATION_EXPIRED; supplier fit and lead time doubtful"
+     },
+     {
+      "capabilityId": "cmuds6y5200uk0agmjjui169e",
+      "fit": 3,
+      "why": "Live should-cost of p50 $5.63/unit is a useful benchmark only. Its $0.38 material cost looks far too low for a 1.7 lb blank.",
+      "connect": "MCP https://costable.ai/api/mcp; estimate_part works now",
+      "blocker": "Estimate only, not capacity; material assumption appears wrong"
+     }
+    ],
+    "next_step": "Only if our machine is booked: send the STEP RFQ to Xometry, Protolabs or local job shops; use Costable as a sanity check after correcting material."
+   },
+   {
+    "need": "freight",
+    "pick": "protocol-capability:0a4d6d688efff6df989654d39806a6bda84fd6bd",
+    "verdict": "usable_with_human",
+    "ranked": [
+     {
+      "capabilityId": "protocol-capability:0a4d6d688efff6df989654d39806a6bda84fd6bd",
+      "fit": 7,
+      "why": "Returned 5 live carrier rates; cheapest is UPS Ground $37.16, 2-3 days. It can also create and pay for labels.",
+      "connect": "A2A via smklog.com agent card; message/send, then a payment session for the label",
+      "blocker": "Origin ZIP depends on the unchosen stock supplier; box dims needed; human must pay"
+     },
+     {
+      "capabilityId": "cmudqv7ku00mq0agm0c323t6s",
+      "fit": 2,
+      "why": "Refuses live rates for non-assistant clients and redirects to its website. No usable quote obtained.",
+      "connect": "MCP https://onlineshippingcalculator.com/api/mcp; rates only via approved AI assistants",
+      "blocker": "Client gating; no live rates returned"
+     }
+    ],
+    "next_step": "After picking the bar supplier, compare their shipping or will-call against an SMKlog quote using the real origin ZIP and box dims."
+   }
+  ],
+  "headline": "Freight is the only workable agent; source stock, tooling and anodizing through conventional distributors.",
+  "gaps": [
+   "No candidate reaches a commodity metals service center for 6061-T6 flat bar.",
+   "No usable industrial tooling distributor agent; the Amazon tool returned 401 and is a consumer channel.",
+   "No reachable anodizer or finisher agent, and the drawing finish spec is not provided.",
+   "Overflow candidates are aerospace-scale suppliers; no small-lot job shop agent with STEP upload.",
+   "Costable material cost ($0.38) conflicts with a ~1.7 lb blank; the estimate is unreliable until corrected."
+  ]
+ },
+ "metrics": {
+  "agent_total_s": 151.0,
+  "darwin_search_s": 99.2,
+  "capabilities_found": 8,
+  "providers_found": 8,
+  "thread_ready_on_darwin": 0,
+  "agents_connected": 7,
+  "providers_connected": [
+   "Costable \u2014 Parametric Should-Cost Analysis",
+   "Gemalli B2B Trade",
+   "MARS Economic",
+   "SMKlog Parcel Quotes",
+   "Shipping Rates & Postage Calculator",
+   "amazon-product-research-mcp",
+   "whobuildsit \u2014 space & defence hardware suppliers"
+  ],
+  "providers_with_live_hits": [
+   "whobuildsit \u2014 space & defence hardware suppliers"
+  ],
+  "custom_integrations_written": 0,
+  "manual_baseline_min_ESTIMATE": {
+   "stock": 40,
+   "tooling": 25,
+   "finishing": 35,
+   "overflow": 45,
+   "freight": 15
+  },
+  "manual_baseline_total_min_ESTIMATE": 160,
+  "baseline_note": "ESTIMATE: buyer googles 3-5 vendors per need, reads sites, fills RFQ/web forms; excludes waiting for replies."
+ }
+}

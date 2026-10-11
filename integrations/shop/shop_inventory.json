@@ -1,0 +1,10 @@
+{
+ "shop": "Bayside Precision (demo shop)",
+ "stock_rack": [
+  {"material": "6061-T6 aluminum", "form": "plate", "size_mm": [300, 300, 12.7], "qty": 2},
+  {"material": "6061-T6 aluminum", "form": "flat bar", "size_mm": [1000, 76.2, 19.05], "qty": 1},
+  {"material": "7075-T6 aluminum", "form": "flat bar", "size_mm": [610, 101.6, 31.75], "qty": 1},
+  {"material": "1018 steel", "form": "flat bar", "size_mm": [1000, 50.8, 25.4], "qty": 3}
+ ],
+ "suppliers_on_file": []
+}

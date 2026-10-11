@@ -1,0 +1,159 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Instant Machinist x Dial</title>
+<style>
+  :root { --ink:#14171c; --mute:#6b7280; --line:#e5e7eb; --bg:#f7f7f5; --acc:#ff5a1f; --ok:#0f9d58; --shop:#1f2937; --sup:#ffffff; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html,body { width:1920px; height:1080px; overflow:hidden; background:var(--bg); color:var(--ink);
+    font-family: "Inter","Helvetica Neue",Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+  .top { position:absolute; left:80px; right:80px; top:56px; display:flex; align-items:baseline; justify-content:space-between; }
+  .kicker { font-size:26px; letter-spacing:.14em; text-transform:uppercase; color:var(--acc); font-weight:700; }
+  .brand { font-size:24px; color:var(--mute); }
+  h1 { position:absolute; left:80px; right:80px; top:104px; font-size:64px; line-height:1.08; font-weight:800; letter-spacing:-.02em; }
+  .gap { position:absolute; left:80px; top:300px; width:760px; padding:40px 44px; background:#fff; border:1px solid var(--line);
+    border-radius:24px; box-shadow:0 20px 50px rgba(0,0,0,.06); }
+  .gap .lab { font-size:22px; color:var(--mute); text-transform:uppercase; letter-spacing:.1em; }
+  .gap .big { font-size:54px; font-weight:800; margin:10px 0 6px; }
+  .gap .row { font-size:30px; margin-top:14px; }
+  .gap .row b { font-weight:700; }
+  .dialing { position:absolute; left:920px; top:330px; width:920px; font-size:34px; line-height:1.5; }
+  .dialing .ln { display:flex; gap:18px; align-items:center; margin:18px 0; padding:22px 28px; background:#fff; border-radius:18px; border:1px solid var(--line); }
+  .dot { width:16px; height:16px; border-radius:50%; background:var(--acc); flex:none; }
+  .panels { position:absolute; left:80px; right:80px; top:250px; bottom:96px; display:flex; gap:40px; }
+  .panel { flex:1; background:#fff; border:1px solid var(--line); border-radius:24px; overflow:hidden; display:flex; flex-direction:column;
+    box-shadow:0 20px 50px rgba(0,0,0,.06); }
+  .ph { padding:24px 30px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; }
+  .ph .who { font-size:32px; font-weight:800; }
+  .ph .sub { font-size:20px; color:var(--mute); margin-top:4px; }
+  .ph .tm { font-size:30px; font-variant-numeric:tabular-nums; color:var(--mute); display:flex; align-items:center; gap:12px; }
+  .live { width:14px; height:14px; border-radius:50%; background:#e11d48; }
+  .chat { flex:1; position:relative; overflow:hidden; padding:0 30px; -webkit-mask-image:linear-gradient(to bottom, transparent 0, #000 70px); mask-image:linear-gradient(to bottom, transparent 0, #000 70px); }
+  .stack { position:absolute; left:30px; right:30px; bottom:22px; display:flex; flex-direction:column; gap:14px; }
+  .b { max-width:86%; padding:16px 22px; border-radius:20px; font-size:25px; line-height:1.36; }
+  .b.shop { align-self:flex-end; background:var(--shop); color:#fff; border-bottom-right-radius:6px; }
+  .b.sup { align-self:flex-start; background:#f1f2f4; border-bottom-left-radius:6px; }
+  .b .sp { display:block; font-size:16px; letter-spacing:.08em; text-transform:uppercase; opacity:.6; margin-bottom:4px; }
+  .quote { border-top:1px solid var(--line); padding:22px 30px; background:#fcfcfb; font-size:26px; }
+  .quote .qh { display:flex; align-items:center; font-size:18px; letter-spacing:.1em; text-transform:uppercase; color:var(--mute); margin-bottom:8px; }
+  .quote .grid { display:grid; grid-template-columns: 1fr 1fr 1fr; gap:6px 24px; }
+  .quote .k { font-size:17px; color:var(--mute); text-transform:uppercase; letter-spacing:.06em; }
+  .quote .v { font-size:30px; font-weight:800; }
+  .quote .item { font-size:24px; margin-bottom:10px; }
+  .panel.best { border:3px solid var(--ok); }
+  .badge { position:absolute; right:30px; top:20px; background:var(--ok); color:#fff; font-size:22px; font-weight:800; padding:8px 16px; border-radius:999px; }
+  .foot { position:absolute; left:80px; right:80px; bottom:34px; font-size:21px; color:var(--mute); display:flex; justify-content:space-between; }
+  .end { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; padding:0 140px; background:var(--bg); }
+  .end .l1 { font-size:84px; font-weight:800; letter-spacing:-.02em; line-height:1.05; }
+  .end .l2 { font-size:38px; margin-top:34px; color:var(--ink); line-height:1.4; }
+  .end .l3 { font-size:24px; margin-top:44px; color:var(--mute); }
+  .listen { position:absolute; left:80px; right:80px; top:250px; bottom:96px; background:#fff; border:1px solid var(--line); border-radius:24px;
+    box-shadow:0 20px 50px rgba(0,0,0,.06); padding:44px 56px; display:flex; flex-direction:column; }
+  .listen .lh { display:flex; justify-content:space-between; align-items:center; font-size:30px; }
+  .listen .lh b { font-size:36px; }
+  .wave { display:flex; gap:6px; align-items:center; height:120px; margin:34px 0 26px; }
+  .wave i { display:block; width:10px; border-radius:5px; background:var(--acc); }
+  .cap { font-size:50px; line-height:1.3; font-weight:600; color:#c4c7cc; }
+  .cap .on { color:var(--ink); }
+  .bq { white-space:nowrap; margin-left:auto !important; background:#fff; border:3px solid var(--ok); border-radius:999px; color:var(--ok); padding:6px 16px; font-size:20px; font-weight:800; margin-left:14px; }
+  .clip-note { margin-top:auto; font-size:22px; color:var(--mute); }
+  .hide { display:none !important; }
+  .acc { color:var(--acc); }
+</style></head>
+<body>
+<div class="top"><div class="kicker" id="kicker">Instant Machinist × Dial</div><div class="brand" id="speed"></div></div>
+<h1 id="h1"></h1>
+<div id="s1">
+  <div class="gap"><div class="lab">Material gap · from the CAM job</div>
+    <div class="big" id="gpart"></div>
+    <div class="row" id="gmat"></div><div class="row" id="gblank"></div><div class="row" id="gqty"></div><div class="row" id="gask"></div></div>
+  <div class="dialing" id="dialing"></div>
+</div>
+<div class="listen hide" id="sL"><div class="lh"><div><b id="lwho"></b><div style="font-size:22px;color:#6b7280;margin-top:6px">Real call audio · Dial recording · 1× speed</div></div>
+  <div class="tm" style="font-size:34px;display:flex;gap:12px;align-items:center"><span class="live" id="llv"></span><span id="ltm"></span></div></div>
+  <div class="wave" id="wave"></div><div class="cap" id="cap"></div>
+  <div class="clip-note">Captions: word timings from speech-to-text of the recording. Supplier = demo persona played by a second Dial agent.</div></div>
+<div class="panels hide" id="s2"></div>
+<div class="end hide" id="s3"><div class="l1" id="e1"></div><div class="l2" id="e2"></div><div class="l3" id="e3"></div></div>
+<div class="foot" id="foot"><span>Real Dial calls between our own numbers. Suppliers are demo personas played by Dial inbound AI agents.</span><span id="footr"></span></div>
+<script src="data.js"></script>
+<script>
+const D = window.DATA, $ = id => document.getElementById(id);
+const fmt$ = v => v == null ? '—' : '$' + Number(v).toFixed(2);
+const mmss = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+// Timeline (seconds)
+const C = D.clip, T_INTRO = 5, T_LISTEN = C ? (C.end - C.start) : 0, T_CALL = 14, T_QUOTE = 11, T_END = 7;
+const T_FF = T_INTRO + T_LISTEN;  // fast-forward section start
+window.__clip = C ? { at: T_INTRO, start: C.start, end: C.end, file: C.file } : null;
+const callLen = Math.max(...D.calls.map(c => Math.max(c.duration || 0, ...c.turns.map(t => (t.endMs || 0) / 1000))));
+let SPEED;
+SPEED = callLen / T_CALL;
+window.__duration = T_INTRO + T_LISTEN + T_CALL + T_QUOTE + T_END;
+const NB = 64, seed = i => Math.abs(Math.sin(i * 12.9898) * 43758.5453) % 1;
+if (C) { $('lwho').textContent = `Shop AI buyer ↔ ${C.supplier}`; $('wave').innerHTML = Array.from({length: NB}, () => '<i></i>').join(''); }
+const g = D.gap, bi = [...g.blank_in].sort((a, b) => a - b);
+$('gpart').textContent = g.part; $('gmat').innerHTML = `Material <b>${g.material}</b>`;
+const up = v => (Math.ceil(v * 100 - 1e-6) / 100).toFixed(2);
+$('gblank').innerHTML = `Blank <b>≥ ${up(bi[2])} × ${up(bi[1])} × ${up(bi[0])} in</b>`;
+$('gqty').innerHTML = `Short <b>${g.blanks_short}</b> · on hand ${g.blanks_on_hand}`;
+$('gask').innerHTML = `<span style="color:#6b7280">${g.ask.replace(/^1 blanks\b/, '1 blank')}</span>`;
+$('dialing').innerHTML = `<div style="font-size:26px;color:#6b7280;text-transform:uppercase;letter-spacing:.1em">Shop line dials, in parallel</div>` +
+  D.calls.map(c => `<div class="ln"><span class="dot"></span><b>${c.supplier}</b>&nbsp;<span style="color:#6b7280">· Dial AI voice call</span></div>`).join('');
+$('s2').innerHTML = D.calls.map((c, i) => `<div class="panel" id="p${i}">
+  <div class="ph"><div><div class="who">${c.supplier}</div><div class="sub">Shop AI buyer → supplier counter · call ${c.call_id.slice(-6)}</div></div>
+  <div class="tm"><span class="live" id="lv${i}"></span><span id="tm${i}">0:00</span></div></div>
+  <div class="chat"><div class="stack" id="st${i}"></div></div>
+  <div class="quote hide" id="q${i}"></div></div>`).join('');
+function quoteHTML(q, best) {
+  if (!q) return '<div class="qh">No quote extracted</div>';
+  return `<div class="qh">Quote extracted by Claude Opus${best ? '<span class="bq">BEST QUOTE</span>' : ''}</div>
+  <div class="item"><b>${q.item || ''}</b>${q.covers_blank ? ' · <span style="color:#0f9d58;white-space:nowrap">covers blank ✓</span>' : ''}</div>
+  <div class="grid"><div><div class="k">Delivered to shop</div><div class="v">${fmt$(q.compare_total ?? q.landed_total ?? q.total)}</div></div>
+  <div><div class="k">Lead time</div><div class="v">${q.lead_days == null ? '—' : q.lead_days + ' d'}</div></div>
+  <div><div class="k">Quote ref</div><div class="v">${q.quote_ref || '—'}</div></div></div>`;
+}
+const bestName = D.best && D.best.supplier;
+window.__seek = t => {
+  const s1 = t < T_INTRO, sL = !s1 && t < T_FF, s3 = t >= T_FF + T_CALL + T_QUOTE;
+  $('s1').classList.toggle('hide', !s1); $('sL').classList.toggle('hide', !sL);
+  $('s2').classList.toggle('hide', s1 || sL || s3); $('s3').classList.toggle('hide', !s3);
+  if (sL) {
+    const ct = C.start + (t - T_INTRO);
+    $('h1').innerHTML = `Listen: the shop's agent on a real Dial call.`; $('speed').textContent = '';
+    $('ltm').textContent = mmss(ct); $('llv').style.visibility = Math.floor(t * 2) % 2 ? 'visible' : 'hidden';
+    const said = C.words.filter(w => w.s <= ct), lastE = said.length ? said[said.length - 1].e : 0;
+    const talking = said.length && ct - lastE < 0.35;
+    const fi = Math.floor((t - T_INTRO) * 30);  // real loudness envelope, newest sample on the right
+    [...$('wave').children].forEach((el, i) => { const v = C.env[fi - (NB - 1 - i)] ?? 0; el.style.height = (10 + v * 110) + 'px'; el.style.opacity = .35 + .65 * v; });
+    const shown = C.words.slice(Math.max(0, said.length - 26), Math.max(said.length, 1) + 6 > C.words.length ? C.words.length : Math.max(said.length, 1) + 6);
+    $('cap').innerHTML = `<span style="font-size:22px;letter-spacing:.1em;text-transform:uppercase;color:#6b7280;display:block;margin-bottom:12px">${C.supplier} (Dial agent) speaking</span>` +
+      shown.map(w => `<span class="${w.s <= ct ? 'on' : ''}">${w.w}</span>`).join(' ');
+    return;
+  }
+  $('h1').classList.toggle('hide', s3); $('foot').classList.toggle('hide', s3);
+  if (s1) { $('h1').innerHTML = `The job needs stock the shop doesn't have.<br><span class="acc">So the shop's agent picks up the phone.</span>`; $('speed').textContent = ''; return; }
+  if (s3) {
+    const qs = D.calls.filter(c => c.quote);
+    $('e1').innerHTML = `${qs.length} supplier calls. ${qs.length} quotes.<br><span class="acc">Nobody on hold.</span>`;
+    $('e2').innerHTML = D.best ? `Best: <b>${D.best.supplier}</b> · ${fmt$(D.best.landed_total ?? D.best.total)} delivered · ${D.best.item} · ${D.best.lead_days} business days · ref ${D.best.quote_ref}` : '';
+    $('e3').textContent = `Both calls placed in parallel from the shop's Dial number; all quotes in ${mmss(D.elapsed_s || callLen)} wall clock. Suppliers are demo personas played by Dial inbound agents on our own numbers.`;
+    return;
+  }
+  const tc = Math.min(t - T_FF, T_CALL), callT = tc * SPEED, inQuote = t >= T_FF + T_CALL, tq = t - T_FF - T_CALL;
+  $('h1').innerHTML = inQuote ? `Every call becomes a structured quote.` : `Both suppliers, called at the same time.`;
+  $('speed').textContent = inQuote ? '' : `fast-forward ${Math.round(SPEED)}× · full transcripts`;
+  $('footr').textContent = 'Dial voice API · transcriptTurns · Claude Opus';
+  D.calls.forEach((c, i) => {
+    const said = c.turns.filter(x => (x.startMs || 0) / 1000 <= callT);
+    const clip = s => s.length > 230 ? s.slice(0, 225).replace(/\s+\S*$/, '') + ' …' : s;
+    $('st' + i).innerHTML = said.slice(-4).map(x => `<div class="b ${x.speaker === 'shop_agent' ? 'shop' : 'sup'}"><span class="sp">${x.speaker === 'shop_agent' ? 'Shop AI buyer' : c.supplier}</span>${clip(x.text.replace(/\s+/g, ' '))}</div>`).join('');
+    const ended = callT >= (c.duration || callLen);
+    $('tm' + i).textContent = mmss(Math.min(callT, c.duration || callLen)) + (ended ? ' · ended' : '');
+    $('lv' + i).style.visibility = ended ? 'hidden' : (Math.floor(t * 2) % 2 ? 'visible' : 'hidden');
+    const showQ = inQuote && tq > i * 1.2, isBest = inQuote && tq > 4.5 && c.supplier === bestName;
+    $('q' + i).classList.toggle('hide', !showQ);
+    if (showQ) $('q' + i).innerHTML = quoteHTML(c.quote, isBest);
+    $('p' + i).classList.toggle('best', isBest);
+  });
+};
+window.__seek(Number(new URLSearchParams(location.search).get('t') || 0));
+window.__ready = true;
+</script></body></html>

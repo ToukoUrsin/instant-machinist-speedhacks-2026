@@ -1,0 +1,15 @@
+{
+  "agent_id": "alike-094",
+  "model": "gpt-6.1-sol",
+  "goal": "audit renderer input contract",
+  "task_urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+  "started_epoch": 1791752569.7179785,
+  "ended_epoch": 1791752648.8999238,
+  "wall_s": 79.18,
+  "exit_code": 0,
+  "alike_pre_exit": 0,
+  "alike_pre_mode": "resolve_work_item",
+  "alike_post_exit": 0,
+  "alike_helped_moment": "\\\\\\\\n\\\\\\\\nnone \u2014 Alike was unavailable during this audit.\\\\\\\\n\\\\\\\\n5. Recommendation (patch, test, or defer)\\\\\\\\n\\\\\\\\nPatch `cam/run.py` to use `raise SystemExit(main())`, and add focused CLI tests for exit codes and JSON validity. Consider a future `--json`/stdout mode for `im-sim`; currently `report.json` is the machine-readable interface.\\\\\\\"}} {\\\\\\\"type\\\\\\\":\\\\\\\"turn.completed\\\\\\\",\\\\\\\"usage\\\\\\\":{\\\\\\\"input_tokens\\\\\\\":281711,\\\\\\\"cached_input_tokens\\\\\\\":215040,\\\\\\\"cache_write_input_tokens\\\\\\\":0,\\\\\\\"output_tokens\\\\\\\":2984,\\\\\\\"reasoning_output_tokens\\\\\\\":730}} Reading additional input from stdin... (why: decision on this work)\\\\n  urn:alike:decision:bdc2de4ca0282bdd83054ce7be441478c7c0811211c4ecc6d579c80488e244d4\\\\n- confirmed \u00b7 alike-085: audit benchmark before-after comparison plan \u2014 Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\nThe shared simulator acceptance bar emphasized parser fidelity, safety, determinism, and evidence. That made the silent-ignore behavior a correctness defect even though ordinary G54\u2013G59 handling is currently documented.\\\\\\\\",
+  "transcript": "transcript.jsonl"
+}

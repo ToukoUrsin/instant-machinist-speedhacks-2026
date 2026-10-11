@@ -1,0 +1,80 @@
+{
+  "commit": "aa6b319",
+  "programs": [
+    {
+      "strategy": "adaptive-L1.5-D12-F0.4",
+      "report": true,
+      "ok": false,
+      "checks": {
+        "gouge": true,
+        "leftover": false,
+        "rapid_into_stock": true,
+        "flat_plunge": false,
+        "below_fixture": true,
+        "flute_length": true
+      },
+      "cycle_s": 2294.2,
+      "stderr": ""
+    },
+    {
+      "strategy": "adaptive-L2.5-D12-F0.4",
+      "report": true,
+      "ok": false,
+      "checks": {
+        "gouge": true,
+        "leftover": false,
+        "rapid_into_stock": true,
+        "flat_plunge": false,
+        "below_fixture": true,
+        "flute_length": true
+      },
+      "cycle_s": 2070.91,
+      "stderr": ""
+    },
+    {
+      "strategy": "adaptive-L2.5-D24-F0.5",
+      "report": true,
+      "ok": false,
+      "checks": {
+        "gouge": true,
+        "leftover": false,
+        "rapid_into_stock": true,
+        "flat_plunge": false,
+        "below_fixture": true,
+        "flute_length": true
+      },
+      "cycle_s": 1800.81,
+      "stderr": ""
+    },
+    {
+      "strategy": "adaptive-L3.0-D24-F0.6",
+      "report": true,
+      "ok": false,
+      "checks": {
+        "gouge": true,
+        "leftover": false,
+        "rapid_into_stock": true,
+        "flat_plunge": false,
+        "below_fixture": true,
+        "flute_length": true
+      },
+      "cycle_s": 1602.64,
+      "stderr": ""
+    },
+    {
+      "strategy": "baseline-manual",
+      "report": true,
+      "ok": false,
+      "checks": {
+        "gouge": true,
+        "leftover": false,
+        "rapid_into_stock": false,
+        "flat_plunge": false,
+        "below_fixture": true,
+        "flute_length": true
+      },
+      "cycle_s": 6586.2,
+      "stderr": ""
+    }
+  ]
+}

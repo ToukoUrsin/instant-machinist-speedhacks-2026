@@ -1,0 +1,30 @@
+{
+ "supplier": "Bay Alloy & Steel",
+ "item": "6061-T6 aluminum precision saw-cut blanks from plate, 1.125 x 3.50 x 5.00 in",
+ "qty": 25,
+ "unit_price": 11.98,
+ "cut_charge": 0,
+ "total": 299.4,
+ "lead_days": 2,
+ "delivery": "Free delivery to Oakland, CA (order over $250); ETA 2 business days from order release. Mill certs included at no charge.",
+ "delivery_charge": 0,
+ "landed_total": 299.4,
+ "quote_ref": "BAS-40312",
+ "substitutions": [
+  "Cut from 6061-T6 plate instead of flat bar. Bay Alloy doesn't stock 1-1/8 x 3-1/2 flat bar, and the size is still the 1.125 x 3.50 x 5.00 in that was requested"
+ ],
+ "confidence": 0.85,
+ "covers_blank": true,
+ "thickness_in": 1.125,
+ "width_in": 3.5,
+ "piece_length_in": 5,
+ "pricing_basis": "per lb: $6.20/lb, about 1.93 lb per piece (about $11.98/piece as stated)",
+ "open_questions": [
+  "Arithmetic mismatch: 25 x 1.93 lb = 48.25 lb, not the stated 48.35 lb. $6.20 x 1.93 = $11.97/pc, not $11.98. 25 x $11.98 = $299.50. 48.25 lb x $6.20 = $299.15. 48.35 lb x $6.20 = $299.77. None of these equal the stated total of $299.40, which we kept. All figures were given as 'about', so ask for a firm price on the emailed formal quote.",
+  "Quote number was first said as BAS40312, then repeated as 'BAS4031'. Buyer read back BAS40312 and the supplier confirmed it. Check this on the written quote.",
+  "Saw-cut tolerance was stated as 'plus zero, zero six', which is unclear. Confirm whether it is +/-0.06 in (about 1/16) or +0.06/-0.",
+  "Ask for the formal quote by email, including how long the quote is valid."
+ ],
+ "supplier_as_said": "Bay Alloy & Steel (Marco)",
+ "call_id": "cmv4asn2800880fox4toh0j7l"
+}

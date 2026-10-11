@@ -1,0 +1,188 @@
+{
+  "date": "2026-10-11",
+  "branch": "ftc10-safety",
+  "commit": "working-tree",
+  "part": "parts/ftc-10",
+  "target": "auto (STL)",
+  "programs": [
+    {
+      "program": "adaptive-L1.5-D12-F0.4",
+      "ok": false,
+      "runtime_s": 31.95,
+      "cycle_min": 38.24,
+      "checks": {
+        "gouge": {
+          "ok": true,
+          "count": 0,
+          "area_mm2": 0.0,
+          "max_excess_mm": null
+        },
+        "leftover": {
+          "ok": false,
+          "count": 60,
+          "area_mm2": 485.06,
+          "max_excess_mm": 15.524
+        },
+        "rapid_into_stock": {
+          "ok": true,
+          "count": 0,
+          "area_mm2": null,
+          "max_excess_mm": null
+        },
+        "flat_plunge": {
+          "ok": false,
+          "count": 3,
+          "area_mm2": null,
+          "max_excess_mm": null
+        },
+        "below_fixture": {
+          "ok": true,
+          "count": 0,
+          "area_mm2": null,
+          "max_excess_mm": null
+        },
+        "flute_length": {
+          "ok": true,
+          "count": 0,
+          "area_mm2": null,
+          "max_excess_mm": null
+        }
+      }
+    },
+    {
+      "program": "adaptive-L2.5-D12-F0.4",
+      "ok": false,
+      "runtime_s": 30.67,
+      "cycle_min": 34.52,
+      "checks": {
+        "gouge": {
+          "ok": true,
+          "count": 0,
+          "area_mm2": 0.0,
+          "max_excess_mm": null
+        },
+        "leftover": {
+          "ok": false,
+          "count": 60,
+          "area_mm2": 485.06,
+          "max_excess_mm": 15.524
+        },
+        "rapid_into_stock": {
+          "ok": true,
+          "count": 0,
+          "area_mm2": null,
+          "max_excess_mm": null
+        },
+        "flat_plunge": {
+          "ok": false,
+          "count": 3,
+          "area_mm2": null,
+          "max_excess_mm": null
+        },
+        "below_fixture": {
+          "ok": true,
+          "count": 0,
+          "area_mm2": null,
+          "max_excess_mm": null
+        },
+        "flute_length": {
+          "ok": true,
+          "count": 0,
+          "area_mm2": null,
+          "max_excess_mm": null
+        }
+      }
+    },
+    {
+      "program": "adaptive-L2.5-D24-F0.5",
+      "ok": false,
+      "runtime_s": 26.27,
+      "cycle_min": 30.01,
+      "checks": {
+        "gouge": {
+          "ok": true,
+          "count": 0,
+          "area_mm2": 0.0,
+          "max_excess_mm": null
+        },
+        "leftover": {
+          "ok": false,
+          "count": 45,
+          "area_mm2": 467.81,
+          "max_excess_mm": 15.523
+        },
+        "rapid_into_stock": {
+          "ok": true,
+          "count": 0,
+          "area_mm2": null,
+          "max_excess_mm": null
+        },
+        "flat_plunge": {
+          "ok": false,
+          "count": 3,
+          "area_mm2": null,
+          "max_excess_mm": null
+        },
+        "below_fixture": {
+          "ok": true,
+          "count": 0,
+          "area_mm2": null,
+          "max_excess_mm": null
+        },
+        "flute_length": {
+          "ok": true,
+          "count": 0,
+          "area_mm2": null,
+          "max_excess_mm": null
+        }
+      }
+    },
+    {
+      "program": "baseline-manual",
+      "ok": false,
+      "runtime_s": 38.8,
+      "cycle_min": 109.77,
+      "checks": {
+        "gouge": {
+          "ok": true,
+          "count": 0,
+          "area_mm2": 0.0,
+          "max_excess_mm": null
+        },
+        "leftover": {
+          "ok": false,
+          "count": 45,
+          "area_mm2": 430.75,
+          "max_excess_mm": 15.571
+        },
+        "rapid_into_stock": {
+          "ok": false,
+          "count": 6,
+          "area_mm2": null,
+          "max_excess_mm": null
+        },
+        "flat_plunge": {
+          "ok": false,
+          "count": 4,
+          "area_mm2": null,
+          "max_excess_mm": null
+        },
+        "below_fixture": {
+          "ok": true,
+          "count": 0,
+          "area_mm2": null,
+          "max_excess_mm": null
+        },
+        "flute_length": {
+          "ok": true,
+          "count": 0,
+          "area_mm2": null,
+          "max_excess_mm": null
+        }
+      }
+    }
+  ],
+  "baseline_gate": "swarm/ftc10-merge-gate-20261011.json",
+  "change": "Mask leftover check to finite Target.floor cells; add synthetic no-material regression test.",
+  "interpretation": "The large outside-stock leftover false positive is removed. Genuine material residuals remain (45-60 regions, 430.75-485.06 mm2), and Fusion programs still fail flat-plunge; baseline-manual also fails rapid-into-stock. No Fusion parity claim."
+}

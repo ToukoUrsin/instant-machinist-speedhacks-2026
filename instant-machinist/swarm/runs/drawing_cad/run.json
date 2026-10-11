@@ -1,0 +1,11 @@
+{
+  "agent_id": "drawing_cad",
+  "model": "gpt-6.1-sol",
+  "branch": "swarm/drawing-cad-20261011",
+  "scope": "validated drawing Spec to features.json and CAD/CAM handoff",
+  "files": ["instant_machinist/drawing.py", "tests/test_smoke.py", "docs/DRAWING-TO-CAD.md"],
+  "tests": "27 passed",
+  "manual_cam": "native CAM emitted 1001.nc from generated feature model",
+  "network": false,
+  "pipeline_owned_file": "unchanged"
+}

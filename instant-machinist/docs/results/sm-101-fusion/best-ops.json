@@ -1,0 +1,70 @@
+{
+ "strategy": {
+  "name": "adaptive-L3.0-D20",
+  "label": "Adaptive clearing, 3.0 mm load, 20 mm steps",
+  "rough": "adaptive",
+  "optimalLoad": 3.0,
+  "stepdown": 20,
+  "slotStepdown": 2,
+  "tools": {
+   "1": {
+    "desc": "50mm Face Mill",
+    "rpm": 6000,
+    "feed": 3000
+   },
+   "2": {
+    "desc": "10mm Flat Endmill",
+    "rpm": 8000,
+    "feed": 2400
+   },
+   "3": {
+    "desc": "6mm Flat Endmill",
+    "rpm": 8000,
+    "feed": 1500
+   },
+   "4": {
+    "desc": "5mm Flat Endmill",
+    "rpm": 8000,
+    "feed": 1200
+   }
+  }
+ },
+ "ops": [
+  {
+   "name": "Face top",
+   "valid": true,
+   "warning": "",
+   "error": "In-process stock calculation is not available in Design Automation for Fusion\n"
+  },
+  {
+   "name": "Adaptive clearing",
+   "valid": true,
+   "warning": "Failed to generate rest material.\n",
+   "error": ""
+  },
+  {
+   "name": "Slot",
+   "valid": true,
+   "warning": "",
+   "error": ""
+  },
+  {
+   "name": "Finish pocket walls",
+   "valid": true,
+   "warning": "",
+   "error": ""
+  },
+  {
+   "name": "Finish outside profile",
+   "valid": true,
+   "warning": "",
+   "error": ""
+  },
+  {
+   "name": "Bore holes",
+   "valid": true,
+   "warning": "",
+   "error": ""
+  }
+ ]
+}

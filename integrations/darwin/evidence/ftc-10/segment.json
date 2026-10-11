@@ -1,0 +1,190 @@
+{
+ "part": "NIST FTC-10",
+ "slug": "ftc-10",
+ "generated_at": "2026-10-11T21:03:23Z",
+ "headline": "Only freight has a live, credible quote; stock, tooling and finishing need conventional suppliers outside Darwin results.",
+ "ask": "1 blanks of 6061-T6 aluminum, at least 6.38 x 3.11 x 1.56 in (e.g. 1.625 in thick x 3.25 in wide flat bar, cut to 6.50 in lengths)",
+ "metrics": {
+  "agent_seconds": 129.4,
+  "manual_minutes_ESTIMATE": 160,
+  "speedup_x_ESTIMATE": 74,
+  "needs": 5,
+  "capabilities_found": 7,
+  "providers_found": 7,
+  "live_connections": 7,
+  "custom_integrations": 0,
+  "thread_ready_on_darwin": 0,
+  "baseline_note": "ESTIMATE: buyer googles 3-5 vendors per need, reads sites, fills RFQ/web forms; excludes waiting for replies."
+ },
+ "rows": [
+  {
+   "need": "Raw stock",
+   "ask": "1 blanks of 6061-T6 aluminum, at least 6.38 x 3.11 x 1.56 in (e.g. 1.625 in thick x 3.25 in wide flat bar, cut to 6.50 in lengths)",
+   "darwin_found": 2,
+   "darwin_status": "completed",
+   "top_provider": "whobuildsit \u2014 space & defence hardware suppliers",
+   "protocol": "MCP",
+   "live_result": "live search \"6061 aluminum bar\": 0 hits",
+   "verdict": "no_fit",
+   "next_step": "Order 1.625 x 3.25 in 6061-T6 flat bar, cut to 6.50 in, directly from a metals service center or online metals retailer."
+  },
+  {
+   "need": "Cutting tools",
+   "ask": "Cutters for NIST FTC-10: flat end mills, spot drill and twist drills for aluminum",
+   "darwin_found": 1,
+   "darwin_status": "completed",
+   "top_provider": "amazon-product-research-mcp",
+   "protocol": "MCP",
+   "live_result": "connected, HTTP Error 401: Unauthorized",
+   "verdict": "no_fit",
+   "next_step": "Re-export the CAM tool list (job shows tools: []), then order carbide aluminum end mills and drills from an industrial tooling distributor."
+  },
+  {
+   "need": "Finishing",
+   "ask": "optional clear anodize (Type II) after machining for 1 x NIST FTC-10 in 6061-T6 aluminum",
+   "darwin_found": 1,
+   "darwin_status": "completed",
+   "top_provider": "MARS Economic",
+   "protocol": "MCP",
+   "live_result": "connected (30 tools), no read-only search tool to probe",
+   "verdict": "no_fit",
+   "next_step": "Optional step: get a lot-charge quote for Type II clear anodize from a local anodizer, or skip it."
+  },
+  {
+   "need": "Overflow machining",
+   "ask": "Backup CNC capacity: quote 1 x NIST FTC-10 from the STEP if our machine is booked",
+   "darwin_found": 2,
+   "darwin_status": "completed",
+   "top_provider": "Costable \u2014 Parametric Should-Cost Analysis",
+   "protocol": "MCP",
+   "live_result": "should-cost P50 $9.47/unit (assumes Aluminium 1100 \u2014 Sheet)",
+   "verdict": "usable_with_human",
+   "next_step": "Human sends the STEP RFQ via whobuildsit/frigate.ai, and in parallel gets quotes from a domestic instant-quote CNC service."
+  },
+  {
+   "need": "Freight",
+   "ask": "Inbound freight for the bar stock (~3.0 lb) from a metals service center to the shop",
+   "darwin_found": 2,
+   "darwin_status": "completed",
+   "top_provider": "SMKlog Parcel Quotes",
+   "protocol": "A2A",
+   "live_result": "5 live carrier rates, from $8.89 (USPS Ground Advantage)",
+   "verdict": "usable_with_human",
+   "next_step": "Check whether the metals supplier ships itself. If not, rerun SMKlog with the real origin ZIP and approve the label."
+  }
+ ],
+ "gaps": [
+  "No commodity metals service center among candidates; 6061-T6 flat bar must be sourced manually.",
+  "Job tool list is empty; CAM tool export needed before sourcing any cutters.",
+  "No industrial tooling distributor found; the only candidate is a consumer Amazon catalog returning 401.",
+  "No anodizer with verified coverage; the MARS discovery tool was never actually probed.",
+  "Every candidate shows readiness 'unavailable', so a human must initiate all transactions."
+ ],
+ "timeline": [
+  {
+   "t": 0.03,
+   "step": "darwin.start",
+   "msg": "NIST FTC-10: sourcing 5 needs via Darwin (Search key)"
+  },
+  {
+   "t": 0.03,
+   "step": "darwin.gap",
+   "msg": "1 blanks of 6061-T6 aluminum, at least 6.38 x 3.11 x 1.56 in (e.g. 1.625 in thick x 3.25 in wide flat bar, cut to 6.50 in lengths)"
+  },
+  {
+   "t": 39.88,
+   "step": "darwin.search",
+   "msg": "Cutting tools: \"Buy carbide end mills and drills for aluminum CNC machining\" -> completed, 1 agents in 4.07s"
+  },
+  {
+   "t": 47.63,
+   "step": "darwin.search",
+   "msg": "Overflow machining: \"CNC machining quote for an aluminum part from a STEP file\" -> completed, 2 agents in 7.75s"
+  },
+  {
+   "t": 55.49,
+   "step": "darwin.search",
+   "msg": "Raw stock: \"metal supplier aluminum plate and bar quote\" -> completed, 2 agents in 9.28s"
+  },
+  {
+   "t": 55.73,
+   "step": "darwin.search",
+   "msg": "Finishing: \"surface treatment heat treatment supplier\" -> completed, 1 agents in 11.66s"
+  },
+  {
+   "t": 79.26,
+   "step": "darwin.search",
+   "msg": "Freight: \"shipping rates\" -> completed, 2 agents in 7.3s"
+  },
+  {
+   "t": 83.38,
+   "step": "darwin.found",
+   "msg": "7 capabilities from 7 providers in 83.4s; 0 thread-ready on Darwin"
+  },
+  {
+   "t": 83.98,
+   "step": "darwin.connect",
+   "msg": "MCP whobuildsit connected: 7 tools (6 read-only)"
+  },
+  {
+   "t": 86.82,
+   "step": "darwin.connect",
+   "msg": "MCP gemalli-mcp connected: 21 tools (16 read-only)"
+  },
+  {
+   "t": 89.85,
+   "step": "darwin.connect",
+   "msg": "MCP Webotee AI Connect connected: 83 tools (74 read-only)"
+  },
+  {
+   "t": 94.28,
+   "step": "darwin.connect",
+   "msg": "MCP mars-economic-intermediary connected: 30 tools (8 read-only)"
+  },
+  {
+   "t": 94.28,
+   "step": "darwin.connect",
+   "msg": "MCP whobuildsit connected: 7 tools (6 read-only)"
+  },
+  {
+   "t": 97.5,
+   "step": "darwin.connect",
+   "msg": "MCP costable connected: 10 tools (0 read-only)"
+  },
+  {
+   "t": 98.51,
+   "step": "darwin.live_call",
+   "msg": "costable.estimate_part -> should-cost/unit P50 $9.47, P80 $10.47, P90 $10.91"
+  },
+  {
+   "t": 101.98,
+   "step": "darwin.live_call",
+   "msg": "A2A SMKlog Parcel Quotes.message/send -> 5 live carrier rates; cheapest USPS Ground Advantage $8.89 (4-5 business days); UPS Ground Saver $9.95 (4d); UPS Ground $11.30 (2-3 business days)"
+  },
+  {
+   "t": 101.98,
+   "step": "darwin.connect",
+   "msg": "A2A SMKlog Parcel Quotes: agent card OK (SMKlog Parcel Quotes; skills: Get live parcel shipping rates from a US origin, Create a payment session for a )"
+  },
+  {
+   "t": 103.74,
+   "step": "darwin.connect",
+   "msg": "MCP shipping-rates-calculator connected: 2 tools (2 read-only)"
+  },
+  {
+   "t": 103.8,
+   "step": "darwin.live_call",
+   "msg": "shipping-rates-calculator.get_shipping_rates -> Live package rates through this server are available to AI assistants only (Claude, ChatGPT, Copilot, Perplexity, Gemini). Postage prices still work for every c"
+  },
+  {
+   "t": 129.35,
+   "step": "darwin.rank",
+   "msg": "Opus ranked 8 options in 25.6s: Only freight has a live, credible quote; stock, tooling and finishing need conventional suppliers outside Darwin results."
+  },
+  {
+   "t": 129.35,
+   "step": "darwin.plan",
+   "msg": "Sourcing plan ready in 129.4s vs ~160 min manual (estimate); 7 live agent connections (MCP + A2A), 0 custom integrations"
+  }
+ ]
+}

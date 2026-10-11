@@ -1,0 +1,98 @@
+{
+ "call_id": "cmv4asn2800880fox4toh0j7l",
+ "supplier": "Bay Alloy & Steel",
+ "note": "Both sides are Dial AI agents; supplier is a demo persona.",
+ "turns": [
+  {
+   "speaker": "shop_agent",
+   "text": "Hi, this",
+   "startMs": 770,
+   "endMs": 1557
+  },
+  {
+   "speaker": "supplier",
+   "text": "Bay Alloy",
+   "startMs": 890,
+   "endMs": 1450
+  },
+  {
+   "speaker": "supplier",
+   "text": "and Steel.",
+   "startMs": 1450,
+   "endMs": 1850
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Hi, this is the purchasing desk calling from a small CNC machine shop in Oakland. I\u2019m looking to get a quick quote on some 6061-T6 aluminum flat bar.  \n\nPreferred size is 1-1/8 inch thick by 3-1/2 inch wide, saw-cut into 5 inch lengths, quantity 25 pieces.  \n\nSaw-cut tolerance of plus or minus 1/16 inch is fine. Delivery would be to Oakland, California, unless delivery is pricey\u2014in that case we can do will-call pickup.  \n\nCan you let me know if you have that size in stock, or the nearest standard size that\u2019s at least 1.11 inches thick, at least 3.31 inches wide, and at least 4.89 inches long per piece?",
+   "startMs": 4329,
+   "endMs": 43591
+  },
+  {
+   "speaker": "supplier",
+   "text": "Hey there. Thanks for calling in. We don't stock one one eight x three one two flat bar, and we also don't have anything right at one point one one plus thick by three point three one plus wide in standard bar. Close to standard six thousand and sixty one t bars I can offer would be one one eight x three one two flat bar twelve feet length, or one one two x three one two flat bar. But given you only need twenty five pieces at about five inches long, I'd actually recommend we do precision saw cut blanks from plate instead. That way, you get exactly what you want on size. Let me just confirm a couple of things for the quote. Alloy slash temper six thousand and sixty one t six is correct. Right?",
+   "startMs": 44470,
+   "endMs": 83050
+  },
+  {
+   "speaker": "supplier",
+   "text": "Final target size per piece. Is your finished size exactly one point one two five x three point three one two inches x four point eight nine plus?",
+   "startMs": 83460,
+   "endMs": 92440
+  },
+  {
+   "speaker": "supplier",
+   "text": "Or do you want us to cut closer?",
+   "startMs": 92920,
+   "endMs": 94120
+  },
+  {
+   "speaker": "supplier",
+   "text": "say one point one two five inches x three point five inches x five point zero inches and you machine it down. Any certs needed?",
+   "startMs": 94600,
+   "endMs": 101180
+  },
+  {
+   "speaker": "supplier",
+   "text": "We can include mill certs at no charge. Ship to is Oakland, California. Correct?",
+   "startMs": 101430,
+   "endMs": 106070
+  },
+  {
+   "speaker": "supplier",
+   "text": "Once I know the exact finished blank size you want us to cut, I'll run the wait and give you a firm price with lead time and delivery fees. We'll call so you can compare.",
+   "startMs": 106480,
+   "endMs": 114250
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Yes, 6061-T6 is correct.  \n\nFor the blanks, let's go with:  \n- 1.125 inches thick  \n- 3.50 inches wide  \n- 5.00 inches long  \n\nWe\u2019ll machine them down from there.  \n\nMill certs at no charge are great, and yes, ship-to is Oakland, California.  \n\nCould you quote 25 pieces at that size from plate: price for the blanks, any saw-cut or setup charge, total for 25, lead time, and delivery cost and ETA to Oakland? And a quote number, please.",
+   "startMs": 115455,
+   "endMs": 144279
+  },
+  {
+   "speaker": "supplier",
+   "text": "Bay Alloy and Steel. Marco speaking. Got it?",
+   "startMs": 145310,
+   "endMs": 147950
+  },
+  {
+   "speaker": "supplier",
+   "text": "Thanks for the details. I'll quote this as precision blanks from six thousand and sixty one t six plate part six thousand and sixty one t six aluminum precision blanks. Size, one point one two five inches thick x three point five zero inches wide x five point zero zero inches long, cuede, twenty five pieces. Tolerance, plus zero, zero six on saw cut. MIL certs. Included at no charge. Shipped to Oakland, California. Pricing on plate blanks is six dollars twenty cents per pound. Each piece is about one point nine three pounds. So twenty five pieces is about forty eight point three five pounds total. Unit price, about eleven dollars ninety eight cents per piece. Extended material total twenty five PCS, about two hundred and ninety nine dollars forty Saw cut slash setup charge, none on plate blanks. Order total, about two hundred and ninety nine dollars forty cents before tax. Lead time, two business days to cut. Delivery, free to Oakland since you're over two hundred and fifty dollars. ETA would be two business days from order release. Your quote number is b a s four zero three one two. That's b a s four zero three one. Would you like this emailed over as a formal quote?",
+   "startMs": 148110,
+   "endMs": 215880
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Thanks, Marco, that all sounds good.  \n\nJust to confirm what I have:  \n- 6061-T6 precision plate blanks  \n- 1.125\" x 3.50\" x 5.00\"  \n- Qty 25  \n- About $11.98 per piece  \n- Order total about $299.40 before tax  \n- No saw-cut/setup charge  \n- Free delivery to Oakland  \n- About 2 business days lead time  \n\nAnd the quote number is BAS40312 \u2014 that\u2019s B-A-S-4-0-3-1-2.  \n\nWe\u2019re just comparing a couple of quotes today, so we won\u2019t place the order on this call. We\u2019ll confirm by email if we move forward.  \n\nThanks for the quick help, Marco. Have a good one.",
+   "startMs": 216710,
+   "endMs": 255356
+  },
+  {
+   "speaker": "supplier",
+   "text": "You've got it. That summary is spot on. We're right up against the end of my call window here. So I'll let you go. But everything you read back is correct on b a s four zero three one two. If you decide to move forward, just email that quote number over, and we'll get the blanks on the saw and out to Oakland in about two business days. Thanks for calling Bay Alloy and Steel. Have a great rest of your day.",
+   "startMs": 257840,
+   "endMs": 279150
+  }
+ ],
+ "transcript": null
+}

@@ -1,0 +1,9 @@
+{
+  "agent_id": "audit-10",
+  "item": "parser malformed input",
+  "exit_code": 0,
+  "started_epoch": 1791750193.6777835,
+  "ended_epoch": 1791750270.778806,
+  "wall_s": 77.1,
+  "transcript": "transcript.jsonl"
+}

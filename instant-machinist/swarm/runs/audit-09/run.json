@@ -1,0 +1,9 @@
+{
+  "agent_id": "audit-09",
+  "item": "parser scientific notation",
+  "exit_code": 0,
+  "started_epoch": 1791750142.8622565,
+  "ended_epoch": 1791750228.7252629,
+  "wall_s": 85.86,
+  "transcript": "transcript.jsonl"
+}

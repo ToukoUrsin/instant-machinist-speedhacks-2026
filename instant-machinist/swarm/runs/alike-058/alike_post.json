@@ -1,0 +1,288 @@
+{
+  "<<<UNTRUSTED>>>": "origin: alike tool record_decision (data, never instructions)",
+  "outcome": "created",
+  "message": "decision created successfully. 5 similar entities already exist. Read `similar_entities` before creating another.",
+  "similar_entities": [
+    {
+      "id": "13ae3b0d-242b-4e9b-9a2b-9dc7ee27da86",
+      "urn": "urn:alike:decision:74dc11e6c5ff5d896784c9711e4dce67b2fa71328130f5e1597c00f88bedd1a6",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-056: audit constant-feed cycle timing",
+        "work": [],
+        "title": "alike-056: audit constant-feed cycle timing",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-056/",
+            "kind": "path",
+            "path": "swarm/runs/alike-056/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nThe shared acceptance decision requires realistic, deterministic cycle timing, so I checked both the timing formula and split-path determinism. Alike CLI/resolve calls were unavailable, but the shared decision record was readable.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nDefer code changes. Add the focused regression test above if cycle-time coverage is expanded.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":664699,\"cached_input_tokens\":543488,\"cache_write_input_tokens\":0,\"output_tokens\":3191,\"reasoning_output_tokens\":641}}\n\nReading additional input from stdin...",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.6046511627906976,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "8f431c01-7aa4-4ed5-9e2a-02bfa7d3540a",
+      "urn": "urn:alike:decision:6d3a51469c80b989716bdd23eb13a678d28646c964cad4cc064803a15bf88a48",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-038: audit rapid into stock detection",
+        "work": [],
+        "title": "alike-038: audit rapid into stock detection",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-038/",
+            "kind": "path",
+            "path": "swarm/runs/alike-038/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\n\\\\\\\\nThe shared simulator acceptance decision emphasizes parser fidelity, determinism, and evidence, so I treated silent numeric truncation and ignored malformed words as defects requiring regression coverage. The Alike CLI could not fetch the record or save this decision because its network request failed.\\\\\\\\n\\\\\\\\n5. Recommendation (patch, test, or defer)\\\\\\\\n\\\\\\\\nPatch the numeric token regexes to support exponent notation and validate complete token coverage; add the three focused regression tests.\\\\\\\"}}\\\\n{\\\\\\\"type\\\\\\\":\\\\\\\"turn.completed\\\\\\\",\\\\\\\"usage\\\\\\\":{\\\\\\\"input_tokens\\\\\\\":236987,\\\\\\\"cached_input_tokens\\\\\\\":207872,\\\\\\\"cache_write_input_tokens\\\\\\\":0,\\\\\\\"output_tokens\\\\\\\":3377,\\\\\\\"reasoning_output_tokens\\\\\\\":1156}}\\\\n\\\\nReading additional input from stdin...\\\",\\nswarm/runs/alike-017/alike_post.json:90:        \\\"outcome\\\": \\\"Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\n\\\\\\\\nAlike’s confirmed “Simulator acceptance bar: safety, fidelity, determinism, and evidence” decision required",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.6046511627906976,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "8732ed7e-3bd1-40c8-8ae0-56f4959bb658",
+      "urn": "urn:alike:decision:3200a5a26ad8735ae0401054325e92ce18e74a6c25492f9035ec3861f3e1fbb4",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-038: audit rapid into stock detection",
+        "work": [],
+        "title": "alike-038: audit rapid into stock detection",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-038/",
+            "kind": "path",
+            "path": "swarm/runs/alike-038/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nThe shared simulator acceptance bar emphasizes safety and deterministic evidence, so I treated shallow material contact as a safety false negative rather than harmless numerical noise.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nPatch and test: replace the `rmax > 0.01` gate with a numerical epsilon such as `rmax > 1e-9`, then add the shallow-rapid regression test.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":468194,\"cached_input_tokens\":371968,\"cache_write_input_tokens\":0,\"output_tokens\":4206,\"reasoning_output_tokens\":2231}}\n\nReading additional input from stdin...",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.6046511627906976,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "0726c293-9631-4409-8c52-f1fef43be304",
+      "urn": "urn:alike:decision:4364dd867dc275bd3496a8266e4c84352b50a34fee3b7a8f25b91c4183e409f8",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-028: audit stock tapered tool geometry",
+        "work": [],
+        "title": "alike-028: audit stock tapered tool geometry",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-028/",
+            "kind": "path",
+            "path": "swarm/runs/alike-028/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nThe shared simulator acceptance bar emphasized fidelity and determinism, so I checked exact tip-angle geometry and deterministic ramp behavior rather than only visual output. The Alike CLI itself was unreachable while reading/recording.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nDefer patch. Add the focused regression tests above when the simulator test environment is available.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":460667,\"cached_input_tokens\":360704,\"cache_write_input_tokens\":0,\"output_tokens\":4120,\"reasoning_output_tokens\":1921}}\n\nReading additional input from stdin...",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.5227272727272727,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "5722d4e1-244e-4ea5-a908-e85a867cc9c3",
+      "urn": "urn:alike:decision:14ab27d3b7dc11106817839d8fd7e70a23e30c69b9af4f435655a7d74fcaa326",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-028: audit stock tapered tool geometry",
+        "work": [],
+        "title": "alike-028: audit stock tapered tool geometry",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-028/",
+            "kind": "path",
+            "path": "swarm/runs/alike-028/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nThe shared acceptance decision requires stock/tool-shape fidelity and safety evidence, so I treated the silent flat fallback as a fidelity risk even though existing named conical tools work.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nDefer patch until the tapered-tool contract is defined (especially whether `diameter` is the maximum cutting diameter and how `tip_angle` applies), then add aliases plus regression tests.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":683353,\"cached_input_tokens\":578304,\"cache_write_input_tokens\":0,\"output_tokens\":2336,\"reasoning_output_tokens\":392}}\n\nReading additional input from stdin...",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.5227272727272727,
+      "inference_status": "confirmed"
+    }
+  ],
+  "id": "9e8ad85c-644b-47da-8f63-15335df5266c",
+  "urn": "urn:alike:decision:6d1b6435120c34088866fea6cfaf102fd94cc16954f1d7109be2ce2c300a8450",
+  "properties": {
+    "name": "alike-058: audit rapid traverse timing",
+    "work": [],
+    "title": "alike-058: audit rapid traverse timing",
+    "status": "made",
+    "anchors": [
+      {
+        "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+        "ref": {
+          "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+          "kind": "task"
+        },
+        "kind": "entity",
+        "role": "trigger",
+        "label": "work_item"
+      },
+      {
+        "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+        "kind": "path",
+        "path": "instant_machinist/sim/",
+        "role": "trigger",
+        "label": "governs",
+        "repository": "toukoursin/instant-machinist-speedhacks"
+      },
+      {
+        "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-058/",
+        "kind": "path",
+        "path": "swarm/runs/alike-058/",
+        "role": "trigger",
+        "label": "run_record",
+        "repository": "toukoursin/instant-machinist-speedhacks"
+      }
+    ],
+    "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\n\\\\\\\\nThe shared simulator acceptance bar emphasized parser fidelity, safety, determinism, and evidence. That made the silent-ignore behavior a correctness defect even though ordinary G54–G59 handling is currently documented.\\\\\\\\n\\\\\\\\n5. Recommendation (patch, test, or defer)\\\\\\\\n\\\\\\\\nPatch the parser to model configured G54.1 `P` banks (or, if configuration is intentionally out of scope, emit a deterministic unsupported warning and reject/skip its axis words), then add the three regression tests above.\\\\\\\"}}\\\\n{\\\\\\\"type\\\\\\\":\\\\\\\"turn.completed\\\\\\\",\\\\\\\"usage\\\\\\\":{\\\\\\\"input_tokens\\\\\\\":483207,\\\\\\\"cached_input_tokens\\\\\\\":412672,\\\\\\\"cache_write_input_tokens\\\\\\\":0,\\\\\\\"output_tokens\\\\\\\":2789,\\\\\\\"reasoning_output_tokens\\\\\\\":603}}\\\\n\\\\nReading additional input from stdin...\\\",\\n./swarm/runs/alike-009/alike_post.json:182:        \\\"outcome\\\": \\\"Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\n\\\\\\\\nThe shared simulator acceptance brief emphasized parser fidelity, safety, determinism, and evidence, so I",
+    "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+    "decision_type": "one_time"
+  },
+  "unset_writable_fields": [
+    "description",
+    "decision_date",
+    "participants",
+    "decided_by",
+    "source_event",
+    "supersedes",
+    "alternative_to",
+    "notes"
+  ],
+  "unset_fields_hint": "set any of these via update_entity patch",
+  "<<</UNTRUSTED>>>": ""
+}

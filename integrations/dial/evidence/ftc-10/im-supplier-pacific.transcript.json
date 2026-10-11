@@ -1,0 +1,68 @@
+{
+ "call_id": "cmv4ab0mo006r0fqq5vj0kg1n",
+ "supplier": "Pacific Metals Supply",
+ "note": "Both sides are Dial AI agents; supplier is a demo persona.",
+ "turns": [
+  {
+   "speaker": "supplier",
+   "text": "Pacific Metals,",
+   "startMs": 760,
+   "endMs": 1560
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Hi,",
+   "startMs": 973,
+   "endMs": 1358
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Hi, this is the purchasing desk with a small CNC machine shop in Oakland. I\u2019m looking to get a quick quote on some 6061\u2011T6 aluminum flat bar.  \n\nPreferred size is 1\u20115/8 inch thick by 3\u20111/4 inch wide, saw\u2011cut to 6\u20111/2 inch length, quantity 1 piece.  \nSaw\u2011cut tolerance of \u00b11/16 inch is fine, and a mill cert is nice to have but not required.  \n\nIf you don\u2019t have that exact size, I can take the nearest standard size that\u2019s at least 1.56 inches thick and at least 3.11 inches wide, or a cut\u2011to\u2011size blank that covers that.  \n\nCould you give me:  \n- price per foot or per piece,  \n- any saw\u2011cut charge,  \n- total for the order,  \n- lead time,  \n- delivery cost and estimated delivery date to Oakland, California \u2014 and, if delivery is pricey, a will\u2011call option \u2014  \nand a quote number for this?",
+   "startMs": 4315,
+   "endMs": 50618
+  },
+  {
+   "speaker": "supplier",
+   "text": "Pacific Metals. This is Dana. Got it. Thanks for all the detail. We don't stock one five eight x three one four and we also don't have anything that narrow in that thickness. Closest standard size that covers your one point five six x three point one one is six thousand and sixty one t six aluminum flat bar, two inches thick, x four inches wide. Price, forty eight dollars seventy cents per foot. For one piece, six one two long, bar used, six point five inches is about zero point five four feet. So we have to round up to the next half foot equal sign one point zero feet charged. Material, one point zero feet, forty eight dollars, seventy cents, equal sign, forty eight dollars, seventy cents. Saw cut, one cut at three dollars equal sign three dollars. Order total before tax, fifty one dollars seventy cents. Note, there's one eight inches saw kerf included in that length. Tolerance, one sixteenth inches is fine. Delivery to Oakland on our truck. Delivery charge, thirty five dollars. So with delivery, subtotal before tax, eighty six dollars seventy cents. We do have a forty dollars minimum. So either way, you're over the minimum. Lead time and dates in stock. So we'll call pickup in San Leandro, same day if you place it before two PM. Truck delivery to Oakland. Ships next business day, so you'd see it the following business day depending on routing. Payment is cut or net thirty if you've got an account. Will call is no extra charge. Just the fifty one dollars seventy cents plus tax. Delivery option makes it eighty six dollars seventy cents plus tax. Your quote number will be PMS four thousand two hundred and seventy nine. That's PMS four two seven nine.",
+   "startMs": 51260,
+   "endMs": 160110
+  },
+  {
+   "speaker": "supplier",
+   "text": "I can hold that for seven days. Do you want that set up for will call?",
+   "startMs": 160660,
+   "endMs": 164260
+  },
+  {
+   "speaker": "supplier",
+   "text": "Or should I note it as a delivered quote to your Oakland shop address?",
+   "startMs": 164470,
+   "endMs": 167430
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Thanks, Dana, that\u2019s perfect, and thanks for running through all the math so clearly.  \n\nFor the quote, please note it as delivery to our Oakland shop at the $86.70 before tax total. And just to confirm, I have your quote number as PMS 4279, valid for seven days.  \n\nI\u2019m just collecting a couple of quotes today, so I won\u2019t place the order on this call. We\u2019ll confirm by email and place it if we go ahead.  \n\nReally appreciate your help\u2014have a good one.",
+   "startMs": 168354,
+   "endMs": 193400
+  },
+  {
+   "speaker": "supplier",
+   "text": "You got it. I'll note it as delivery to your Oakland shop at eighty six dollars and seventy cents before tax. Quote number PMS four thousand two hundred and seventy nine good for seven days. Thanks for calling Pacific Metals. And good luck with the other quotes.",
+   "startMs": 194830,
+   "endMs": 209330
+  },
+  {
+   "speaker": "supplier",
+   "text": "Take care.",
+   "startMs": 209810,
+   "endMs": 210290
+  },
+  {
+   "speaker": "supplier",
+   "text": "Have a good one.",
+   "startMs": 210610,
+   "endMs": 211250
+  }
+ ],
+ "transcript": null
+}

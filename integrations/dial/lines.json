@@ -1,0 +1,19 @@
+{
+ "shop": {
+  "nickname": "im-shop-agent",
+  "id": "cmv4a8rti005y0fqq1z2h8k10",
+  "number": "+17373452250"
+ },
+ "im-supplier-pacific": {
+  "nickname": "im-supplier-pacific",
+  "id": "cmv4a9dgv00640fqqkj2wavww",
+  "number": "+15106801807",
+  "persona": "Pacific Metals Supply"
+ },
+ "im-supplier-bayalloy": {
+  "nickname": "im-supplier-bayalloy",
+  "id": "cmv4a9epy00690fqqnhy6hkow",
+  "number": "+15109139844",
+  "persona": "Bay Alloy & Steel"
+ }
+}

@@ -1,0 +1,1 @@
+Implement one coherent simulator safety slice from the CAD/CAM review criteria in a dedicated worktree. Priority: holder/shank/tool-envelope collision. Keep checks.* output backward-compatible, add focused tests, rebase on current main, run simulator tests and every FTC-10 Fusion program, and save evidence.

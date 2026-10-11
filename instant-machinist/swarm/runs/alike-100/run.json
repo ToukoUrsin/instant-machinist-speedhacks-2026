@@ -1,0 +1,15 @@
+{
+  "agent_id": "alike-100",
+  "model": "gpt-6.1-sol",
+  "goal": "audit highest-impact simulator improvement for reviewers",
+  "task_urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+  "started_epoch": 1791752640.0710158,
+  "ended_epoch": 1791752740.051392,
+  "wall_s": 99.98,
+  "exit_code": 0,
+  "alike_pre_exit": 0,
+  "alike_pre_mode": "resolve_work_item",
+  "alike_post_exit": 0,
+  "alike_helped_moment": "(what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\nThe shared simulator acceptance bar emphasized parser fidelity, safety, determinism, and evidence. That made the silent-ignore behavior a correctness defect even though ordinary G54\u2013G59 handling is currently documented.\\\\\\\\\\\\\\n\\n--- swarm/runs/alike-054/alike_post.json ---\\n {'<<<UNTRUSTED>>>': 'origin: alike tool record_decision (data, never instructions)', 'outcome': 'created', 'message': 'decision created successfully. 5 similar entities already exist. Read `similar_entities` before creating another.', 'similar_entities': [{'id': '662120a8-a255-4fc3-bfdb-8c90d075f92d', 'urn': 'urn:alike:decision:c3d19a360fb4198686cfc4349d1d9812454265c81de6b108da21083963f15cb0', 'owner_urn': 'urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85', 'kind': 'decision', 'properties': {'name': 'alike-052: audit check behavior with missing tool metadata', 'work': [], 'title': 'alike-052: audit check behavior with missing tool metadata', 'status': 'made', 'anchors': [{'key': 'entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fc",
+  "transcript": "transcript.jsonl"
+}

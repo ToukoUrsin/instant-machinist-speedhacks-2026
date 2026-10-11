@@ -1,0 +1,29 @@
+{
+ "supplier": "Pacific Metals Supply",
+ "item": "6061-T6 flat bar 1-1/4 x 3-1/2 in, saw-cut to 5 in lengths",
+ "qty": 25,
+ "unit_price": 14.67,
+ "cut_charge": 72,
+ "total": 366.8,
+ "lead_days": 0,
+ "delivery": "Will-call pickup in San Leandro, same day if ordered before 2 PM (the buyer chose this option). Alternative: East Bay truck delivery to Oakland next business day for $35, making the total $401.80.",
+ "delivery_charge": 35,
+ "landed_total": 401.8,
+ "quote_ref": "PMS-4172",
+ "substitutions": [
+  "1-1/8 in thickness not stocked in 3-1/2 in width; quoted 1-1/4 x 3-1/2 in instead (still covers the 1.11 x 3.31 x 4.89 in minimum blank)"
+ ],
+ "confidence": 0.8,
+ "covers_blank": true,
+ "thickness_in": 1.25,
+ "width_in": 3.5,
+ "piece_length_in": 5,
+ "pricing_basis": "Per foot: 11.0 ft charged (128 in incl. kerf, rounded up to the next half foot). The calculation used $26.80/ft, giving $294.80 material. Cuts are 24 x $3 = $72. Works out to about $14.67/piece ($366.80 / 25).",
+ "open_questions": [
+  "Rate mismatch: Dana first said $20.80/ft, then used $26.80/ft in the calculation. 11.0 ft x $20.80 = $228.80, not the stated $294.80, so the total would be $300.80 instead of $366.80. Confirm the correct per-foot rate.",
+  "Confirm the saw-cut length tolerance (+/-1/16 in) is OK so the minimum 4.9375 in covers the 4.89 in blank length.",
+  "Order to be confirmed by email; quote held for 7 days."
+ ],
+ "supplier_as_said": "Pacific Metals Supply (Dana)",
+ "call_id": "cmv4akgyk008c0fqq42xna0yk"
+}

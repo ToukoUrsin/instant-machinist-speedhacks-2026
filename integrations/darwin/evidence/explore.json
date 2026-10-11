@@ -1,0 +1,372 @@
+{
+ "generated_at": "2026-10-11T20:58:42Z",
+ "auth": "key",
+ "elapsed_s": 216.0,
+ "queries": 18,
+ "agent_results": 12,
+ "thread_ready": 0,
+ "http_errors": 10,
+ "results": {
+  "metal stock": [
+   {
+    "query": "Buy aluminum bar stock cut to size online",
+    "status": "needs_input",
+    "elapsed_s": 4.08,
+    "question": "Are you looking for raw aluminum bar stock, or a finished product made from it?",
+    "noMatchReason": null,
+    "agents": []
+   },
+   {
+    "query": "metal service center quote for aluminum plate",
+    "status": "http_500",
+    "elapsed_s": null,
+    "question": null,
+    "noMatchReason": null,
+    "agents": []
+   }
+  ],
+  "industrial supply": [
+   {
+    "query": "Industrial MRO supply catalog search for fasteners and shop supplies",
+    "status": "completed",
+    "elapsed_s": 2.93,
+    "question": null,
+    "noMatchReason": null,
+    "agents": [
+     {
+      "rank": 1,
+      "tool": "search_products",
+      "provider": "MaterialHandling.com",
+      "site": "https://materialhandling.com/mcp",
+      "protocols": [
+       "MCP"
+      ],
+      "readiness": "unavailable",
+      "canStartThread": false,
+      "threadUnavailableReason": "EXECUTION_METADATA_PENDING",
+      "payment": null,
+      "reasons": [
+       "The tool searches a catalog of over 30,000 industrial products, which aligns with the request for an \"Industrial MRO supply catalog search.\""
+      ]
+     }
+    ]
+   }
+  ],
+  "cutting tools": [
+   {
+    "query": "Buy carbide end mills and drills for aluminum CNC machining",
+    "status": "completed",
+    "elapsed_s": 3.69,
+    "question": null,
+    "noMatchReason": null,
+    "agents": [
+     {
+      "rank": 1,
+      "tool": "shopping_search",
+      "provider": "amazon-product-research-mcp",
+      "site": "https://www.webotee.com/amazon-product-research-mcp",
+      "protocols": [
+       "MCP"
+      ],
+      "readiness": "unavailable",
+      "canStartThread": false,
+      "threadUnavailableReason": "EXECUTION_METADATA_PENDING",
+      "payment": null,
+      "reasons": [
+       "The user wants to buy products, and this is the primary consumer shopping tool for buyer-intent product questions."
+      ]
+     }
+    ]
+   },
+   {
+    "query": "speeds and feeds calculator for end mills",
+    "status": "http_500",
+    "elapsed_s": null,
+    "question": null,
+    "noMatchReason": null,
+    "agents": []
+   }
+  ],
+  "finishing": [
+   {
+    "query": "Anodizing service quote for aluminum parts",
+    "status": "http_500",
+    "elapsed_s": null,
+    "question": null,
+    "noMatchReason": null,
+    "agents": []
+   },
+   {
+    "query": "heat treating service for steel parts",
+    "status": "http_500",
+    "elapsed_s": null,
+    "question": null,
+    "noMatchReason": null,
+    "agents": []
+   }
+  ],
+  "contract machining": [
+   {
+    "query": "CNC machining quote for an aluminum part from a STEP file",
+    "status": "completed",
+    "elapsed_s": 3.83,
+    "question": null,
+    "noMatchReason": null,
+    "agents": [
+     {
+      "rank": 1,
+      "tool": "Request a quote from matching suppliers",
+      "provider": "whobuildsit \u2014 space & defence hardware suppliers",
+      "site": "https://whobuildsit.com/ai",
+      "protocols": [
+       "MCP"
+      ],
+      "readiness": "unavailable",
+      "canStartThread": false,
+      "threadUnavailableReason": "ROUTE_VERIFICATION_EXPIRED",
+      "payment": "NOT_REQUIRED",
+      "reasons": [
+       "The tool can send a quote request for a part to matching suppliers, which aligns with getting a CNC machining quote for an aluminum part."
+      ]
+     }
+    ]
+   },
+   {
+    "query": "Instant quote for sheet metal or machined parts",
+    "status": "http_500",
+    "elapsed_s": null,
+    "question": null,
+    "noMatchReason": null,
+    "agents": []
+   }
+  ],
+  "freight": [
+   {
+    "query": "Get live parcel shipping rates",
+    "status": "completed",
+    "elapsed_s": 4.46,
+    "question": null,
+    "noMatchReason": null,
+    "agents": [
+     {
+      "rank": 1,
+      "tool": "Get live parcel shipping rates from a US origin",
+      "provider": "SMKlog Parcel Quotes",
+      "site": "https://www.smklog.com/.well-known/agent-card.json",
+      "protocols": [
+       "A2A"
+      ],
+      "readiness": "unavailable",
+      "canStartThread": false,
+      "threadUnavailableReason": "EXECUTION_METADATA_PENDING",
+      "payment": null,
+      "reasons": [
+       "This tool directly provides live parcel shipping rates from a US origin to domestic or specified international destinations."
+      ]
+     },
+     {
+      "rank": 2,
+      "tool": "Get package shipping rates",
+      "provider": "Shipping Rates & Postage Calculator",
+      "site": "https://onlineshippingcalculator.com/mcp",
+      "protocols": [
+       "MCP"
+      ],
+      "readiness": "unavailable",
+      "canStartThread": false,
+      "threadUnavailableReason": "EXECUTION_METADATA_PENDING",
+      "payment": null,
+      "reasons": [
+       "This tool provides live USPS, UPS, and FedEx shipping rates for packages from a US ZIP code to US or international destinations."
+      ]
+     },
+     {
+      "rank": 3,
+      "tool": "Estimate shipping price",
+      "provider": "SAMOS e-commerce",
+      "site": null,
+      "protocols": [
+       "MCP"
+      ],
+      "readiness": "unavailable",
+      "canStartThread": false,
+      "threadUnavailableReason": "EXECUTION_METADATA_PENDING",
+      "payment": null,
+      "reasons": [
+       "This tool estimates SAMOS shipping prices for parcels from the UK to a country or for returns to the UK."
+      ]
+     }
+    ]
+   },
+   {
+    "query": "LTL freight quote for a pallet of metal",
+    "status": "needs_input",
+    "elapsed_s": 2.81,
+    "question": "Could you please provide the origin and destination ZIP codes, along with the dimensions (length, width, height) and weight of the pallet?",
+    "noMatchReason": null,
+    "agents": [
+     {
+      "rank": 1,
+      "tool": "get_freight_estimate",
+      "provider": "MaterialHandling.com",
+      "site": "https://materialhandling.com/mcp",
+      "protocols": [
+       "MCP"
+      ],
+      "readiness": "unavailable",
+      "canStartThread": false,
+      "threadUnavailableReason": "EXECUTION_METADATA_PENDING",
+      "payment": null,
+      "reasons": [
+       "The tool provides live LTL freight rates for products to a US ZIP code, which directly matches the request for an LTL freight quote."
+      ]
+     }
+    ]
+   }
+  ],
+  "cost / pricing": [
+   {
+    "query": "Estimate manufacturing cost of a machined part",
+    "status": "completed",
+    "elapsed_s": 2.53,
+    "question": null,
+    "noMatchReason": null,
+    "agents": [
+     {
+      "rank": 1,
+      "tool": "estimate_part",
+      "provider": "Costable \u2014 Parametric Should-Cost Analysis",
+      "site": null,
+      "protocols": [
+       "MCP"
+      ],
+      "readiness": "unavailable",
+      "canStartThread": false,
+      "threadUnavailableReason": "EXECUTION_METADATA_PENDING",
+      "payment": null,
+      "reasons": [
+       "The tool \"estimate_part\" is designed to instantly estimate the should-cost of a manufactured part using natural language."
+      ]
+     }
+    ]
+   },
+   {
+    "query": "Current aluminum price per kg",
+    "status": "http_500",
+    "elapsed_s": null,
+    "question": null,
+    "noMatchReason": null,
+    "agents": []
+   }
+  ],
+  "CAD/CAM": [
+   {
+    "query": "Analyze a STEP CAD file and extract features",
+    "status": "http_500",
+    "elapsed_s": null,
+    "question": null,
+    "noMatchReason": null,
+    "agents": []
+   },
+   {
+    "query": "Generate CNC toolpaths or G-code from a CAD model",
+    "status": "http_500",
+    "elapsed_s": null,
+    "question": null,
+    "noMatchReason": null,
+    "agents": []
+   },
+   {
+    "query": "Simulate or verify CNC G-code",
+    "status": "http_500",
+    "elapsed_s": null,
+    "question": null,
+    "noMatchReason": null,
+    "agents": []
+   }
+  ],
+  "shop software": [
+   {
+    "query": "Machine shop ERP job scheduling",
+    "status": "http_500",
+    "elapsed_s": null,
+    "question": null,
+    "noMatchReason": null,
+    "agents": []
+   },
+   {
+    "query": "Create an invoice for a customer order",
+    "status": "completed",
+    "elapsed_s": 4.58,
+    "question": null,
+    "noMatchReason": null,
+    "agents": [
+     {
+      "rank": 1,
+      "tool": "generate_invoice",
+      "provider": "invoicehub",
+      "site": "https://invoicehub.dev/",
+      "protocols": [
+       "MCP"
+      ],
+      "readiness": "unavailable",
+      "canStartThread": false,
+      "threadUnavailableReason": "EXECUTION_METADATA_PENDING",
+      "payment": null,
+      "reasons": [
+       "The tool can generate an EN 16931-conformant UBL 2.1 invoice from structured fields, which directly fulfills the request to create an invoice."
+      ]
+     },
+     {
+      "rank": 2,
+      "tool": "Prepare an invoice from a template",
+      "provider": "Alder Invoices",
+      "site": "https://alderinvoices.com/",
+      "protocols": [
+       "MCP"
+      ],
+      "readiness": "unavailable",
+      "canStartThread": false,
+      "threadUnavailableReason": "EXECUTION_METADATA_PENDING",
+      "payment": null,
+      "reasons": [
+       "This tool can prepare an invoice from a template, allowing for the creation of an invoice for a customer order."
+      ]
+     },
+     {
+      "rank": 3,
+      "tool": "tascan_create_invoice",
+      "provider": "TaScan",
+      "site": "https://tascan.io/",
+      "protocols": [
+       "MCP"
+      ],
+      "readiness": "unavailable",
+      "canStartThread": false,
+      "threadUnavailableReason": "EXECUTION_METADATA_PENDING",
+      "payment": null,
+      "reasons": [
+       "This tool can create a client invoice and get its shareable link, which is suitable for a customer order."
+      ]
+     },
+     {
+      "rank": 4,
+      "tool": "generate_invoice",
+      "provider": "Timix.AI",
+      "site": null,
+      "protocols": [
+       "MCP"
+      ],
+      "readiness": "unavailable",
+      "canStartThread": false,
+      "threadUnavailableReason": "ROUTE_VERIFICATION_EXPIRED",
+      "payment": "NOT_REQUIRED",
+      "reasons": [
+       "This tool can generate a DRAFT invoice from a customer's approved billable hours, which can be used for a customer order."
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

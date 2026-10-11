@@ -1,0 +1,25 @@
+# Local environments, caches, and generated runtime state
+.venv/
+node_modules/
+.node/
+**/runtime/
+**/tmp/
+**/__pycache__/
+.pytest_cache/
+*.pyc
+*.db
+*.sqlite
+.env
+*.env
+
+# Private/raw capture source files; final edited renders remain tracked
+*.mov
+*.wav
+*.m4a
+
+# Tool/editor noise
+.DS_Store
+**/node_modules
+
+# Core CAM runtime outputs
+instant-machinist/out/

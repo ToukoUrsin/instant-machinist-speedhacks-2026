@@ -1,0 +1,86 @@
+{
+ "call_id": "cmv4akidj008e0fqqsmt8pqhb",
+ "supplier": "Bay Alloy & Steel",
+ "note": "Both sides are Dial AI agents; supplier is a demo persona.",
+ "turns": [
+  {
+   "speaker": "shop_agent",
+   "text": "Hi, this",
+   "startMs": 859,
+   "endMs": 1565
+  },
+  {
+   "speaker": "supplier",
+   "text": "Bay",
+   "startMs": 1123,
+   "endMs": 1363
+  },
+  {
+   "speaker": "supplier",
+   "text": "Alloy in",
+   "startMs": 1363,
+   "endMs": 1923
+  },
+  {
+   "speaker": "supplier",
+   "text": "Bay alloy and steel. Marco speaking.",
+   "startMs": 5303,
+   "endMs": 7503
+  },
+  {
+   "speaker": "supplier",
+   "text": "How can I help you today?",
+   "startMs": 7743,
+   "endMs": 8623
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Hi Marco, this is the purchasing desk for a small CNC shop in Oakland. I\u2019m looking for a quote on some 6061-T6 aluminum flat bar.  \n\nPreferred size is 1-1/8 inch thick by 3-1/2 inch wide, saw-cut to 5 inch lengths, quantity 25 pieces.  \n\nCan you let me know if you have that size, or the nearest standard size that\u2019s at least 1.11 thick and 3.31 wide, and what the pricing and lead time would look like?",
+   "startMs": 9708,
+   "endMs": 35380
+  },
+  {
+   "speaker": "supplier",
+   "text": "Got it. Thanks for the detail. Couple quick questions so I quote this right. Just to confirm, alloy is six zero six one t six. Correct?",
+   "startMs": 36923,
+   "endMs": 45243
+  },
+  {
+   "speaker": "supplier",
+   "text": "Tolerance on the five point zero zero inches length. Is about plus zero, zero six minus zero point zero zero Okay? Or do you need tighter?",
+   "startMs": 45893,
+   "endMs": 54573
+  },
+  {
+   "speaker": "supplier",
+   "text": "Do you need mill certs with the material?",
+   "startMs": 54893,
+   "endMs": 56333
+  },
+  {
+   "speaker": "supplier",
+   "text": "We can include a mill cert at no charge. Ship to will be Oakland, California. Right?",
+   "startMs": 56783,
+   "endMs": 61773
+  },
+  {
+   "speaker": "supplier",
+   "text": "On size, we don't stock one one eight x three one two flat bar, and we don't have a one point one one plus x three point three one plus standard bar. Closest flat bars, we do stock that exceed your minimums are one one two x three one two six zero six one t six or one three four three one two six zero six one t six. Given you only need twenty five pieces at five, I'd recommend we do precision saw cut blanks from six thousand and sixty one plate to your exact one point one two five inches x three point one two five inches, x five point zero zero inches, or whatever finish you confirm. There's no cut charge on blanks, and they come in at about plus zero point zero six on thickness and length. Do you want one precision cut blank to your exact one point one two five inches x three point one two five inches x five or two one of the standard bars, one one two x three one two or one three four x three one two, cut into five inches pieces.",
+   "startMs": 62013,
+   "endMs": 117473
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Yeah, thanks Marco, let me go through those:\n\n- Alloy: yes, 6061-T6 is correct.  \n- Length tolerance on the 5.00: \u00b11/16 inch is fine, we don\u2019t need it tighter.  \n- Mill cert: nice to have but not required; if you can include it at no charge, we\u2019ll take it.  \n- Ship-to: yes, Oakland, California.\n\nOn the size, your plate-blank option sounds best. Let\u2019s go with precision saw-cut blanks to:\n\n- 1.125 inch thick x 3.125 inch wide x 5.000 inch long,  \n- quantity 25,  \n- with your standard \u00b10.06 on thickness and length.\n\nCould you quote me:\n\n- price per piece,  \n- total for 25 pieces,  \n- any shipping/delivery charge to Oakland and expected delivery date,  \n- and a quote number?",
+   "startMs": 118812,
+   "endMs": 163034
+  },
+  {
+   "speaker": "supplier",
+   "text": "Perfect. Thanks for all the details. We'll do six zero six one t six precision saw cut blanks. Size, one point one two five inches, x three point one two five inches x five point zero zero zero. QD twenty five PCS, tolerance about plus zero, zero six minus zero point zero zero inches on thickness and length. Milsert, included at no charge. Shipped to, Oakland, California. Let me walk through the numbers. Each piece volume, one point one two five three, one hundred and twenty five times five equals seventeen, five hundred and seventy eight cubic inches. Weight per piece, seventeen point five seven eight, zero point zero nine eight pounds slash and cubed, one point seven two pounds. Weight for twenty five PCS, one point seven two, twenty five, forty three point zero pounds total. Price. Material rate, six dollars twenty cents per pound, forty three point zero pounds, six dollars twenty cents, two hundred and sixty six dollars sixty cents total material. No cut charge on blanks. So unit price, about ten dollars sixty seven cents per piece, extended total twenty five PCS, two hundred and sixty six dollars seventy five cents. I'll round to that for the quote. Cuts, no cut charges on these blanks. Delivery lead time, Lead time. Two business days to cut. Free delivery in the Bay Area over two hundred and fifty so delivery to Oakland is free on this order. If you released it today, you'd be looking at ready to ship in two business days, the next run on our truck into Oakland right Read back of the quote. Item six zero six one t six aluminum precision cut blanks, one point one two five inches Alright. I ran the numbers a bit more cleanly for you. Item, six thousand and sixty one t six precision saw cut blanks. Size, one point one two five inches, x three point one two five inches x five point zero zero zero. QD, twenty five pcs. Tolerance, about plus zero, zero six minus zero point zero zero inches on thickness and length. MILLSERT included at no charge. Shipped to Oakland, California. Pricing blanks from plate at six dollars, twenty per pound, zero point zero nine eight pounds slash and cubed. Each piece, one point one two five, three point one two five, five point zero zero is zero",
+   "startMs": 164143,
+   "endMs": 299663
+  }
+ ],
+ "transcript": null
+}

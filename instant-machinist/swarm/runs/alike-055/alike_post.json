@@ -1,0 +1,288 @@
+{
+  "<<<UNTRUSTED>>>": "origin: alike tool record_decision (data, never instructions)",
+  "outcome": "created",
+  "message": "decision created successfully. 5 similar entities already exist. Read `similar_entities` before creating another.",
+  "similar_entities": [
+    {
+      "id": "265f737c-6276-48c5-9b59-6ce677dfc7f7",
+      "urn": "urn:alike:decision:33291bd90232000de6bbf2735fb2f3325d6019eda35aa7a24863bcb206f99f81",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-051: audit check severity and ok aggregation",
+        "work": [],
+        "title": "alike-051: audit check severity and ok aggregation",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-051/",
+            "kind": "path",
+            "path": "swarm/runs/alike-051/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nThe shared acceptance decision requires safety, fidelity, determinism, and evidence. That shifted the audit toward consistent safety-gate semantics across simulator, pipeline, and optimizer consumers. I recorded the severity-aware aggregation decision, but Alike rejected the write because its MCP call required approval under the current `never` approval policy.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nPatch. Centralize severity-aware blocking aggregation and use it in `pipeline.py` and optimizer consumers; add the three focused regression tests.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":699218,\"cached_input_tokens\":562176,\"cache_write_input_tokens\":0,\"output_tokens\":2729,\"reasoning_output_tokens\":686}}\n\nReading additional input from stdin...",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.6037735849056604,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "570da7fa-934b-43f0-959d-882cb9d2b9a5",
+      "urn": "urn:alike:decision:d3fe8ea6c8a3ccaa726793f0633a6bf22e107e9c3431bdfd690c20d1cc75b571",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-051: audit check severity and ok aggregation",
+        "work": [],
+        "title": "alike-051: audit check severity and ok aggregation",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-051/",
+            "kind": "path",
+            "path": "swarm/runs/alike-051/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nThe shared simulator acceptance bar emphasizes safety and clear evidence, which led me to compare declared check severity with every `ok` aggregation path. The Alike CLI was unreachable, so no additional record details were available.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nPatch the aggregation contract so partial-operation validation derives fatal checks from `severity` (or removes `flute_length` from `SAFETY`), then add the three focused tests above.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":330368,\"cached_input_tokens\":271104,\"cache_write_input_tokens\":0,\"output_tokens\":2592,\"reasoning_output_tokens\":732}}\n\nReading additional input from stdin...",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.6037735849056604,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "055bfa37-c153-4b25-9be7-22710d825848",
+      "urn": "urn:alike:decision:941a178277837988eda7670a5d4b8c46fe18b8aa80e605fe3210dc50d0d4e57c",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-050: audit check event nc_line provenance",
+        "work": [],
+        "title": "alike-050: audit check event nc_line provenance",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-050/",
+            "kind": "path",
+            "path": "swarm/runs/alike-050/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\nThe shared simulator acceptance decision emphasizes parser fidelity, determinism, and evidence, so I treated silent numeric truncation and ignored malformed words as defects requiring regression coverage. The Alike CLI could not fetch the record or save this decision because its network request failed.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n5. Recommendation (patch, test, or defer)\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\nPatch the numeric token regexes to support exponent notation and validate complete token coverage; add the three focused regression… (why: decision on this work)\\\\n  urn:alike:decision:6d3a51469c80b989716bdd23eb13a678d28646c964cad4cc064803a15bf88a48\\\\n- confirmed · alike-041: audit diagonal interior jaw crossings — Completed Alike-anchored audit; exit=0. Alike helped moment: \\\\\\\\n\\\\\\\\nThe shared simulator acceptance bar prioritizes safety, fidelity, and deterministic evidence, so I evaluated the interpolated hit location and boundary handling rather than only checking whether an event exists. Alike CLI retrieval itself failed because the Alike endpoint was un",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.5660377358490566,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "aa629380-b0f0-4816-95e2-e9dfb89b3eb7",
+      "urn": "urn:alike:decision:eeb8e7fd0dee7d9eb0de1ffcad2f85ddbaeeaedfabe719cefeb9a9fc997effd1",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-039: audit plunge detection and severity",
+        "work": [],
+        "title": "alike-039: audit plunge detection and severity",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-039/",
+            "kind": "path",
+            "path": "swarm/runs/alike-039/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\n\\\\\\\\nThe shared simulator acceptance bar emphasizes safety, fidelity, determinism, and evidence. That focused this audit on the detector/sweep geometry mismatch and on whether plunge severity affects pass/fail. The Alike CLI brief read was unavailable because the Alike endpoint fetch failed.\\\\\\\\n\\\\\\\\n5. Recommendation (patch, test, or defer)\\\\\\\\n\\\\\\\\nPatch `checks.py` to inspect the full cutter radius (or reuse the stock sweep footprint), add an explicit fatal severity for `flat_plunge`, and add the annular-engagement regression test before treating plunge… (why: decision on this work)\\\\n  urn:alike:decision:eba79b91d7f6ccbd40e26f85d7003206cb8628ece99bccdb1ce49be3314fc144\\\\n- confirmed · alike-027: audit stock spot drill geometry — Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\\\\\\\n\\\\\\\\nAlike: the shared simulator acceptance context emphasizes deterministic and safety-relevant behavior, so I checked numerical cone heights and sweep boundaries directly. The task record itself was unavailable ",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.5471698113207547,
+      "inference_status": "confirmed"
+    },
+    {
+      "id": "dab2ae63-066a-4d81-bcde-c0178546f943",
+      "urn": "urn:alike:decision:eba79b91d7f6ccbd40e26f85d7003206cb8628ece99bccdb1ce49be3314fc144",
+      "owner_urn": "urn:alike:person:302893a3138fd5dbf3080cf95c94840a100ea9c650f6efffa19b8333dc7c0c85",
+      "kind": "decision",
+      "properties": {
+        "name": "alike-039: audit plunge detection and severity",
+        "work": [],
+        "title": "alike-039: audit plunge detection and severity",
+        "status": "made",
+        "anchors": [
+          {
+            "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+            "ref": {
+              "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+              "kind": "task"
+            },
+            "kind": "entity",
+            "role": "trigger",
+            "label": "work_item"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+            "kind": "path",
+            "path": "instant_machinist/sim/",
+            "role": "trigger",
+            "label": "governs",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          },
+          {
+            "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-039/",
+            "kind": "path",
+            "path": "swarm/runs/alike-039/",
+            "role": "trigger",
+            "label": "run_record",
+            "repository": "toukoursin/instant-machinist-speedhacks"
+          }
+        ],
+        "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nThe shared simulator acceptance bar emphasizes safety, fidelity, determinism, and evidence. That focused this audit on the detector/sweep geometry mismatch and on whether plunge severity affects pass/fail. The Alike CLI brief read was unavailable because the Alike endpoint fetch failed.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nPatch `checks.py` to inspect the full cutter radius (or reuse the stock sweep footprint), add an explicit fatal severity for `flat_plunge`, and add the annular-engagement regression test before treating plunge detection as complete.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":268135,\"cached_input_tokens\":195840,\"cache_write_input_tokens\":0,\"output_tokens\":2340,\"reasoning_output_tokens\":828}}\n\nReading additional input from stdin...",
+        "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+        "decision_type": "one_time"
+      },
+      "matchField": "name",
+      "similarityScore": 0.5471698113207547,
+      "inference_status": "confirmed"
+    }
+  ],
+  "id": "e6e46fb9-9c6b-4620-8325-3af3c11924c5",
+  "urn": "urn:alike:decision:9ee9813f02919ce204d41d0a8a7b1c614bb8b8be4cb1a32f7ded7dd731a3cbd4",
+  "properties": {
+    "name": "alike-055: audit check determinism and event ordering",
+    "work": [],
+    "title": "alike-055: audit check determinism and event ordering",
+    "status": "made",
+    "anchors": [
+      {
+        "key": "entity:urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+        "ref": {
+          "urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+          "kind": "task"
+        },
+        "kind": "entity",
+        "role": "trigger",
+        "label": "work_item"
+      },
+      {
+        "key": "path:toukoursin/instant-machinist-speedhacks#instant_machinist/sim/",
+        "kind": "path",
+        "path": "instant_machinist/sim/",
+        "role": "trigger",
+        "label": "governs",
+        "repository": "toukoursin/instant-machinist-speedhacks"
+      },
+      {
+        "key": "path:toukoursin/instant-machinist-speedhacks#swarm/runs/alike-055/",
+        "kind": "path",
+        "path": "swarm/runs/alike-055/",
+        "role": "trigger",
+        "label": "run_record",
+        "repository": "toukoursin/instant-machinist-speedhacks"
+      }
+    ],
+    "outcome": "Completed Alike-anchored audit; exit=0. Alike helped moment: (what shared brief/decision changed your analysis; say `none` only if it truly did not)\\n\\nAlike’s shared task brief required auditable determinism evidence. The acceptance-bar decision specifically requires deterministic reports, so I distinguished deterministic simulation/check ordering from nondeterministic timestamp metadata and inspected both layers.\\n\\n5. Recommendation (patch, test, or defer)\\n\\nDefer a production patch. Add deterministic-order tests now; patch `Events` only if reproducible event artifacts are required, using a monotonic sequence number and a single injectable clock.\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":659061,\"cached_input_tokens\":541696,\"cache_write_input_tokens\":0,\"output_tokens\":3118,\"reasoning_output_tokens\":836}}\n\nReading additional input from stdin...",
+    "rationale": "The worker read the shared simulator quality bar and used its narrow goal to avoid duplicate work. Transcript and focused evidence are saved in the run directory.",
+    "decision_type": "one_time"
+  },
+  "unset_writable_fields": [
+    "description",
+    "decision_date",
+    "participants",
+    "decided_by",
+    "source_event",
+    "supersedes",
+    "alternative_to",
+    "notes"
+  ],
+  "unset_fields_hint": "set any of these via update_entity patch",
+  "<<</UNTRUSTED>>>": ""
+}

@@ -1,0 +1,4 @@
+tests/test_smoke.py::test_drawing_spec_exports_native_cad_feature_model: PASS
+tests/test_smoke.py::test_drawing_spec_inch_dimensions_are_normalized_to_mm: PASS
+full drawing smoke suite: 27 passed
+manual native CAM handoff: generated out/native/1001.nc (CAM_OK)

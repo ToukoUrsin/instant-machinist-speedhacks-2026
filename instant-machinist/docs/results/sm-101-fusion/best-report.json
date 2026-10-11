@@ -1,0 +1,122 @@
+{
+  "part": "SM-101",
+  "programs": [
+    "out/run2/fusion/adaptive-L3.0-D20/1001.nc"
+  ],
+  "tools_file": "out/run2/fusion/adaptive-L3.0-D20/tools.json",
+  "ok": true,
+  "cycle_time": {
+    "cutting_s": 365.57,
+    "rapid_s": 2.89,
+    "dwell_s": 0.0,
+    "tool_change_s": 20.0,
+    "tool_changes": 5,
+    "total_s": 388.46,
+    "total_min": 6.47,
+    "model": {
+      "rapid_mm_min_per_axis": 25000.0,
+      "tool_change_s": 4.0,
+      "feed": "programmed F, path length",
+      "rapid": "max-axis time"
+    },
+    "per_tool": {
+      "T1": {
+        "cutting_s": 14.11,
+        "rapid_s": 0.21,
+        "dwell_s": 0.0,
+        "tool_change_s": 4.0,
+        "total_s": 18.32,
+        "feed_distance_mm": 732.2
+      },
+      "T2": {
+        "cutting_s": 166.94,
+        "rapid_s": 1.57,
+        "dwell_s": 0.0,
+        "tool_change_s": 8.0,
+        "total_s": 176.51,
+        "feed_distance_mm": 6578.9
+      },
+      "T3": {
+        "cutting_s": 32.38,
+        "rapid_s": 0.23,
+        "dwell_s": 0.0,
+        "tool_change_s": 4.0,
+        "total_s": 36.61,
+        "feed_distance_mm": 586.4
+      },
+      "T4": {
+        "cutting_s": 152.15,
+        "rapid_s": 0.88,
+        "dwell_s": 0.0,
+        "tool_change_s": 4.0,
+        "total_s": 157.02,
+        "feed_distance_mm": 3340.7
+      }
+    }
+  },
+  "checks": {
+    "gouge": {
+      "ok": true,
+      "tolerance_mm": 0.02,
+      "area_mm2": 0.0,
+      "max_depth_mm": 0.0,
+      "count": 0,
+      "events": []
+    },
+    "leftover": {
+      "ok": true,
+      "tolerance_mm": 0.1,
+      "area_mm2": 0.0,
+      "max_excess_mm": 0.0,
+      "count": 0,
+      "events": []
+    },
+    "rapid_into_stock": {
+      "ok": true,
+      "count": 0,
+      "events": []
+    },
+    "flat_plunge": {
+      "ok": true,
+      "count": 0,
+      "events": [],
+      "max_depth_mm": 0.5
+    },
+    "below_fixture": {
+      "ok": true,
+      "count": 0,
+      "events": [],
+      "mode": "jaws",
+      "vise_top_z": -20.5,
+      "jaw_axis": "y",
+      "vise_grip_mm": 6.0
+    },
+    "flute_length": {
+      "ok": true,
+      "count": 0,
+      "events": [],
+      "severity": "warning"
+    },
+    "xy_tolerance_band_mm": 0.25
+  },
+  "summary": {
+    "segments": 15326,
+    "frames": 360,
+    "cell_mm": 0.25,
+    "frame_cell_mm": 0.5,
+    "grid": [
+      336,
+      496
+    ],
+    "target_source": "features.json",
+    "removed_volume_cm3": 56.38,
+    "final_min_z": -20.0
+  },
+  "toolpath_convention": "points[0] = start position; move j (1..N) goes points[j-1] -> points[j]; rapid/tool_id/nc_line[j] describe move j (index 0 = start state)",
+  "warnings": [],
+  "runtime_s": {
+    "parse": 0.26,
+    "simulate": 1.64,
+    "total": 2.69
+  }
+}

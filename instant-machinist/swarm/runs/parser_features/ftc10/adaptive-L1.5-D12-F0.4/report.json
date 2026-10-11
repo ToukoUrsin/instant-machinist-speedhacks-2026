@@ -1,0 +1,472 @@
+{
+  "part": "NIST FTC-10",
+  "programs": [
+    "out/run3/fusion/adaptive-L1.5-D12-F0.4/1001.nc"
+  ],
+  "tools_file": "out/run3/fusion/adaptive-L1.5-D12-F0.4/tools.json",
+  "ok": false,
+  "cycle_time": {
+    "cutting_s": 2259.87,
+    "rapid_s": 18.33,
+    "dwell_s": 0.0,
+    "tool_change_s": 16.0,
+    "tool_changes": 4,
+    "total_s": 2294.2,
+    "total_min": 38.24,
+    "model": {
+      "rapid_mm_min_per_axis": 25000.0,
+      "tool_change_s": 4.0,
+      "feed": "programmed F, path length",
+      "rapid": "max-axis time"
+    },
+    "per_tool": {
+      "T1": {
+        "cutting_s": 16.49,
+        "rapid_s": 0.21,
+        "dwell_s": 0.0,
+        "tool_change_s": 4.0,
+        "total_s": 20.7,
+        "feed_distance_mm": 858.6
+      },
+      "T2": {
+        "cutting_s": 806.84,
+        "rapid_s": 12.5,
+        "dwell_s": 0.0,
+        "tool_change_s": 4.0,
+        "total_s": 823.34,
+        "feed_distance_mm": 35625.3
+      },
+      "T3": {
+        "cutting_s": 350.54,
+        "rapid_s": 4.9,
+        "dwell_s": 0.0,
+        "tool_change_s": 4.0,
+        "total_s": 359.44,
+        "feed_distance_mm": 11192.5
+      },
+      "T5": {
+        "cutting_s": 1086.0,
+        "rapid_s": 0.72,
+        "dwell_s": 0.0,
+        "tool_change_s": 4.0,
+        "total_s": 1090.72,
+        "feed_distance_mm": 36305.3
+      }
+    }
+  },
+  "checks": {
+    "gouge": {
+      "ok": true,
+      "tolerance_mm": 0.02,
+      "area_mm2": 0.0,
+      "max_depth_mm": 0.0,
+      "count": 0,
+      "events": []
+    },
+    "leftover": {
+      "ok": false,
+      "tolerance_mm": 0.1,
+      "area_mm2": 2378.19,
+      "max_excess_mm": 30.929,
+      "count": 21,
+      "events": [
+        {
+          "area_mm2": 2068.38,
+          "max_excess_mm": 30.929,
+          "x": 13.88,
+          "y": 37.62,
+          "bbox": [
+            -80.88,
+            -39.38,
+            80.88,
+            39.38
+          ],
+          "feature": null,
+          "target_z": -31.0,
+          "stock_z": -0.071
+        },
+        {
+          "area_mm2": 62.12,
+          "max_excess_mm": 0.5,
+          "x": 28.38,
+          "y": 18.38,
+          "bbox": [
+            27.38,
+            16.62,
+            60.38,
+            33.38
+          ],
+          "feature": null,
+          "target_z": -8.0,
+          "stock_z": -7.5
+        },
+        {
+          "area_mm2": 35.75,
+          "max_excess_mm": 1.318,
+          "x": 40.12,
+          "y": 31.88,
+          "bbox": [
+            37.88,
+            17.88,
+            40.12,
+            32.12
+          ],
+          "feature": null,
+          "target_z": -5.5,
+          "stock_z": -4.182
+        },
+        {
+          "area_mm2": 35.75,
+          "max_excess_mm": 1.318,
+          "x": 51.12,
+          "y": 31.88,
+          "bbox": [
+            48.88,
+            17.88,
+            51.12,
+            32.12
+          ],
+          "feature": null,
+          "target_z": -5.5,
+          "stock_z": -4.182
+        },
+        {
+          "area_mm2": 32.44,
+          "max_excess_mm": 0.499,
+          "x": 55.12,
+          "y": -15.62,
+          "bbox": [
+            34.62,
+            -32.12,
+            60.38,
+            -15.12
+          ],
+          "feature": null,
+          "target_z": -7.999,
+          "stock_z": -7.5
+        },
+        {
+          "area_mm2": 22.25,
+          "max_excess_mm": 5.529,
+          "x": -67.38,
+          "y": -28.88,
+          "bbox": [
+            -72.62,
+            -31.12,
+            -67.38,
+            -25.88
+          ],
+          "feature": null,
+          "target_z": -31.0,
+          "stock_z": -25.471
+        },
+        {
+          "area_mm2": 22.25,
+          "max_excess_mm": 5.529,
+          "x": 72.62,
+          "y": -28.88,
+          "bbox": [
+            67.38,
+            -31.12,
+            72.62,
+            -25.88
+          ],
+          "feature": null,
+          "target_z": -31.0,
+          "stock_z": -25.471
+        },
+        {
+          "area_mm2": 22.25,
+          "max_excess_mm": 4.933,
+          "x": -70.38,
+          "y": 31.12,
+          "bbox": [
+            -72.62,
+            25.88,
+            -67.38,
+            31.12
+          ],
+          "feature": null,
+          "target_z": -31.0,
+          "stock_z": -26.067
+        },
+        {
+          "area_mm2": 22.25,
+          "max_excess_mm": 4.933,
+          "x": 69.62,
+          "y": 31.12,
+          "bbox": [
+            67.38,
+            25.88,
+            72.62,
+            31.12
+          ],
+          "feature": null,
+          "target_z": -31.0,
+          "stock_z": -26.067
+        },
+        {
+          "area_mm2": 6.5,
+          "max_excess_mm": 15.524,
+          "x": 41.88,
+          "y": -23.12,
+          "bbox": [
+            39.12,
+            -24.88,
+            41.88,
+            -22.12
+          ],
+          "feature": null,
+          "target_z": -15.724,
+          "stock_z": -0.199
+        },
+        {
+          "area_mm2": 6.5,
+          "max_excess_mm": 15.524,
+          "x": 48.88,
+          "y": -23.12,
+          "bbox": [
+            46.12,
+            -24.88,
+            48.88,
+            -22.12
+          ],
+          "feature": null,
+          "target_z": -15.724,
+          "stock_z": -0.199
+        },
+        {
+          "area_mm2": 6.5,
+          "max_excess_mm": 15.524,
+          "x": 55.88,
+          "y": -23.12,
+          "bbox": [
+            53.12,
+            -24.88,
+            55.88,
+            -22.12
+          ],
+          "feature": null,
+          "target_z": -15.724,
+          "stock_z": -0.199
+        },
+        {
+          "area_mm2": 6.5,
+          "max_excess_mm": 14.585,
+          "x": 34.88,
+          "y": 25.38,
+          "bbox": [
+            32.12,
+            23.62,
+            34.88,
+            26.38
+          ],
+          "feature": null,
+          "target_z": -18.724,
+          "stock_z": -4.138
+        },
+        {
+          "area_mm2": 6.5,
+          "max_excess_mm": 14.585,
+          "x": 45.88,
+          "y": 25.38,
+          "bbox": [
+            43.12,
+            23.62,
+            45.88,
+            26.38
+          ],
+          "feature": null,
+          "target_z": -18.724,
+          "stock_z": -4.138
+        },
+        {
+          "area_mm2": 6.5,
+          "max_excess_mm": 14.585,
+          "x": 56.88,
+          "y": 25.38,
+          "bbox": [
+            54.12,
+            23.62,
+            56.88,
+            26.38
+          ],
+          "feature": null,
+          "target_z": -18.724,
+          "stock_z": -4.138
+        },
+        {
+          "area_mm2": 2.62,
+          "max_excess_mm": 12.449,
+          "x": 35.12,
+          "y": 19.88,
+          "bbox": [
+            34.38,
+            19.12,
+            35.88,
+            20.88
+          ],
+          "feature": null,
+          "target_z": -16.662,
+          "stock_z": -4.213
+        },
+        {
+          "area_mm2": 2.62,
+          "max_excess_mm": 12.449,
+          "x": 46.12,
+          "y": 19.88,
+          "bbox": [
+            45.38,
+            19.12,
+            46.88,
+            20.88
+          ],
+          "feature": null,
+          "target_z": -16.662,
+          "stock_z": -4.213
+        },
+        {
+          "area_mm2": 2.62,
+          "max_excess_mm": 12.449,
+          "x": 57.12,
+          "y": 19.88,
+          "bbox": [
+            56.38,
+            19.12,
+            57.88,
+            20.88
+          ],
+          "feature": null,
+          "target_z": -16.662,
+          "stock_z": -4.213
+        },
+        {
+          "area_mm2": 2.62,
+          "max_excess_mm": 12.449,
+          "x": 31.88,
+          "y": 29.88,
+          "bbox": [
+            31.12,
+            29.12,
+            32.62,
+            30.88
+          ],
+          "feature": null,
+          "target_z": -16.662,
+          "stock_z": -4.213
+        },
+        {
+          "area_mm2": 2.62,
+          "max_excess_mm": 12.449,
+          "x": 42.88,
+          "y": 29.88,
+          "bbox": [
+            42.12,
+            29.12,
+            43.62,
+            30.88
+          ],
+          "feature": null,
+          "target_z": -16.662,
+          "stock_z": -4.213
+        },
+        {
+          "area_mm2": 2.62,
+          "max_excess_mm": 12.449,
+          "x": 53.88,
+          "y": 29.88,
+          "bbox": [
+            53.12,
+            29.12,
+            54.62,
+            30.88
+          ],
+          "feature": null,
+          "target_z": -16.662,
+          "stock_z": -4.213
+        }
+      ]
+    },
+    "rapid_into_stock": {
+      "ok": true,
+      "count": 0,
+      "events": []
+    },
+    "flat_plunge": {
+      "ok": false,
+      "count": 3,
+      "events": [
+        {
+          "program": 0,
+          "file": "out/run3/fusion/adaptive-L1.5-D12-F0.4/1001.nc",
+          "nc_line": 46297,
+          "block": "N31445 Z-4.9 F750.",
+          "tool": 3,
+          "x": 30.471,
+          "y": 12.829,
+          "z": -4.9,
+          "depth_into_material": 0.588
+        },
+        {
+          "program": 0,
+          "file": "out/run3/fusion/adaptive-L1.5-D12-F0.4/1001.nc",
+          "nc_line": 49699,
+          "block": "N48455 Z-23.4 F750.",
+          "tool": 3,
+          "x": 69.339,
+          "y": 28.059,
+          "z": -23.4,
+          "depth_into_material": 0.6
+        },
+        {
+          "program": 0,
+          "file": "out/run3/fusion/adaptive-L1.5-D12-F0.4/1001.nc",
+          "nc_line": 52834,
+          "block": "N64130 Z-23.4 F750.",
+          "tool": 3,
+          "x": -69.485,
+          "y": -27.897,
+          "z": -23.4,
+          "depth_into_material": 0.6
+        }
+      ],
+      "max_depth_mm": 0.5
+    },
+    "below_fixture": {
+      "ok": true,
+      "count": 0,
+      "events": [],
+      "mode": "jaws",
+      "vise_top_z": -32.0,
+      "jaw_axis": "y",
+      "vise_grip_mm": 6.0
+    },
+    "flute_length": {
+      "ok": true,
+      "count": 0,
+      "events": [],
+      "severity": "warning"
+    },
+    "xy_tolerance_band_mm": 0.25
+  },
+  "summary": {
+    "segments": 125927,
+    "frames": 32,
+    "cell_mm": 0.25,
+    "frame_cell_mm": 0.5,
+    "grid": [
+      316,
+      648
+    ],
+    "target_source": "parts/ftc-10/part.stl",
+    "removed_volume_cm3": 140.32,
+    "final_min_z": -30.8
+  },
+  "toolpath_convention": "points[0] = start position; move j (1..N) goes points[j-1] -> points[j]; rapid/tool_id/nc_line[j] describe move j (index 0 = start state)",
+  "warnings": [],
+  "runtime_s": {
+    "parse": 2.61,
+    "simulate": 27.99,
+    "total": 30.8
+  }
+}

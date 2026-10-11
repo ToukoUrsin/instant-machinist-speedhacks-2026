@@ -1,0 +1,42 @@
+{
+  "part_number": "NIST FTC-10",
+  "name": "Housing (NIST PMI test case FTC-10, public domain)",
+  "material": "6061-T6 aluminum (assumed; drawing gives none)",
+  "quantity": 1,
+  "units": "mm",
+  "origin": "top-center of the part; Z=0 is the highest point of the part, Z negative down. Source STEP is Y-up; rotated +90 deg about X.",
+  "general_tolerance_mm": 0.1,
+  "target": "stl",
+  "setup": "OP1 top side (fins, bosses, ears, outside profile); bottom pocket and cross holes are later setups",
+  "stock": {
+    "x": [
+      -81,
+      81
+    ],
+    "y": [
+      -39.5,
+      39.5
+    ],
+    "z": [
+      -38,
+      1.5
+    ]
+  },
+  "part_bbox": {
+    "x": [
+      -79,
+      79
+    ],
+    "y": [
+      -37.5,
+      37.5
+    ],
+    "z": [
+      -31,
+      0
+    ]
+  },
+  "features": [],
+  "step_url": "https://gist.githubusercontent.com/ToukoUrsin/9a217a0ca185a0152105957dc9902714/raw/b0dc790bf99b170d041f1504e7c5d6892d07d889/source-yup.stp",
+  "step_rot_x_deg": 90
+}

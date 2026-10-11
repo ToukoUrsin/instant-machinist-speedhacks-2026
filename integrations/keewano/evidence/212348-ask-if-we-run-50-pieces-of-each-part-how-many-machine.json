@@ -1,0 +1,34 @@
+{
+ "project": "Instant Machinist Shop Floor",
+ "project_id": "3c71f27a-eb5c-4a7d-ac74-6cab42e77661",
+ "at_utc": "2026-10-11T21:23:48Z",
+ "kind": "ask",
+ "question": "If we run 50 pieces of each part, how many machine hours do the agent's programs save versus the manual-style programs, and which part gains the most?",
+ "answer": "Running 50 of each part with a recorded result saves about **92.0 machine hours**: 106.0 h with the manual-style programs versus 14.0 h with the agent's programs. **SM-103 gains the most**, at 23.7 h.\n\n| Part | Manual-style cycle | Agent best cycle | Saved per part | Saved \u00d750 |\n|---|---|---|---|---|\n| SM-101 (native) | 22:28 | 3:07 | 19:21 | 16.1 h |\n| SM-102 | 25:04 | 3:19 | 21:45 | 18.1 h |\n| **SM-103** | 32:17 | 3:52 | 28:25 | **23.7 h** |\n| SM-104 | 16:28 | 2:53 | 13:35 | 11.3 h |\n| SM-106 | 30:55 | 3:38 | 27:17 | 22.7 h |\n| **Total** | | | | **\u224892.0 h** (331,150 s) |\n\n- **SM-101:** I used the 3 native-engine runs. The 2 Fusion runs went from 19:43 to 6:28, which would cut that part's saving to 11.0 h and the total to about 87 h.\n- **Two parts are left out** because their jobs never recorded a manual-style time or a best time:\n  - **NIST FTC-10:** The best verified program ran 30:01, against 1:49:46 for the manual-style program. On paper that's 66.5 h saved over 50 pieces, which would make it the biggest gain. But the manual-style program failed 3 simulator checks, so that comparison isn't valid.\n  - **SM-105:** Neither the manual-style program nor the fastest agent program (2:50) passed the simulator checks. None of the other options has a recorded pass or fail, so there's no figure to use.\n- **What these times include:** they're simulated machine times per piece. They don't include setup or programming time.",
+ "keewano_calls": [
+  {
+   "tool": "sql",
+   "why": "Per-part baseline vs best cycle time across CAM jobs",
+   "query": "SELECT \"Part\" AS part, \"DataSource\" AS ds, count(DISTINCT user_id) AS jobs, count(\"BaselineCycleSeconds\") AS nb, min(\"BaselineCycleSeconds\") AS base_min, max(\"BaselineCycleSeconds\") AS base_max, avg(\"BaselineCycleSeconds\") AS base_avg, min(\"BestCycleSeconds\") AS best_min, max(\"BestCycleSeconds\") AS best_max, avg(\"BestCycleSeconds\") AS best_avg FROM events WHERE \"Engine\" IS NOT NULL GROUP BY part, ds ORDER BY part",
+   "error": false,
+   "result": "SQL result for project 3c71f27a-eb5c-4a7d-ac74-6cab42e77661: 7 row(s), 10 column(s).\npart,ds,jobs,nb,base_min,base_max,base_avg,best_min,best_max,best_avg\nNIST FTC-10,real_run,1,0,,,,,,\nSM-101,real_run,5,5,1183,1348,1282,187,388,267.4\nSM-102,variant_part,1,1,1504,1504,1504,199,199,199\nSM-103,variant_part,1,1,1937,1937,1937,232,232,232\nSM-104,variant_part,1,1,988,988,988,173,173,173\nSM-105,variant_part,1,0,,,,,,\nSM-106,variant_part,2,2,1855,1855,1855,218,218,218",
+   "ms": 309
+  },
+  {
+   "tool": "sql",
+   "why": "Per-job detail to pick representative SM-101 run and check parts without results",
+   "query": "SELECT user_id, \"Part\" AS part, \"Engine\" AS engine, min(event_datetime) AS t, max(\"BaselineCycleSeconds\") AS base, max(\"BestCycleSeconds\") AS best, count(\"StrategyVerified\") AS nver, max(\"StrategyVerified\") AS anyver, count(\"CycleSeconds\") AS ncyc, count(\"AgentDecision\") AS ndec FROM events WHERE \"Part\" IN ('SM-101','SM-105','NIST FTC-10','SM-106') AND \"Engine\" IS NOT NULL GROUP BY user_id, part, engine ORDER BY part, t",
+   "error": false,
+   "result": "SQL result for project 3c71f27a-eb5c-4a7d-ac74-6cab42e77661: 9 row(s), 10 column(s).\nuser_id,part,engine,t,base,best,nver,anyver,ncyc,ndec\ncb9fefd3-e12c-5bd2-9532-88a687e79890,NIST FTC-10,fusion,1791752407,,,4,2,4,0\n1458afce-b9c6-5ee1-a466-e9812652b983,SM-101,fusion,1791749243,1183,388,5,2,5,0\nd627e6f3-1040-5cf6-aa01-fa99ad57a1c6,SM-101,fusion,1791749416,1183,388,5,2,5,0\n06475174-c7da-576b-a127-91d8632613f4,SM-101,native,1791749450,1348,187,2,2,9,0\na8994fd6-6e09-5d35-a8b7-257e691ee07f,SM-101,native,1791749761,1348,187,2,2,9,0\n2ef6438e-b7e0-528d-9e07-ea387b23b629,SM-101,native,1791751364,1348,187,2,2,9,0\n2214b721-e696-56a4-9005-f1f09698a39a,SM-105,native,1791751377,,,2,1,9,0\n3b4125db-5ac9-5b86-86f2-2b7027d1b724,SM-106,native,1791752248,1855,218,2,2,3,2\ndf9ba052-ff35-56cb-980d-25840c580ec4,SM-106,native,1791752267,1855,218,2,2,9,0",
+   "ms": 328
+  },
+  {
+   "tool": "sql",
+   "why": "Why SM-105 and FTC-10 have no baseline/best numbers",
+   "query": "SELECT \"Part\" AS part, \"Strategy\" AS strategy, \"StrategyFamily\" AS fam, min(\"CycleSeconds\") AS cyc, count(\"StrategyVerified\") AS nver, count(*) FILTER (WHERE \"StrategyVerified\" = true) AS ver_true, count(\"VerifyCheckFailed\") AS nfail FROM events WHERE \"Part\" IN ('SM-105','NIST FTC-10') AND \"Strategy\" IS NOT NULL GROUP BY part, strategy, fam ORDER BY part, cyc",
+   "error": false,
+   "result": "SQL result for project 3c71f27a-eb5c-4a7d-ac74-6cab42e77661: 21 row(s), 7 column(s).\npart,strategy,fam,cyc,nver,ver_true,nfail\nNIST FTC-10,baseline-manual,,,0,0,0\nNIST FTC-10,adaptive-L1.5-D12-F0.4,manual,,0,0,0\nNIST FTC-10,adaptive-L2.5-D24-F0.5,adaptive,1801,1,1,0\nNIST FTC-10,adaptive-L2.5-D12-F0.4,adaptive,2071,1,1,0\nNIST FTC-10,adaptive-L1.5-D12-F0.4,adaptive,2294,1,1,0\nNIST FTC-10,baseline-manual,manual,6586,1,0,3\nSM-105,manual-baseline,,,0,0,0\nSM-105,adaptive-so35-ap2D,manual,,0,0,0\nSM-105,conventional-so60-ap1D,adaptive,,0,0,0\nSM-105,adaptive-so45-ap1D,conventional,,0,0,0\nSM-105,conventional-so50-ap0.5D,adaptive,,0,0,0\nSM-105,adaptive-so45-ap2D,conventional,,0,0,0\nSM-105,adaptive-so45-ap2D,adaptive,170,1,0,2\nSM-105,adaptive-so35-ap2D,adaptive,171,0,0,0\nSM-105,adaptive-so25-ap2D,adaptive,184,0,0,0\nSM-105,conventional-so60-ap1D,conventional,186,0,0,0\nSM-105,adaptive-so45-ap1D,adaptive,219,0,0,0\nSM-105,adaptive-so35-ap1D,adaptive,222,0,0,0\nSM-105,adaptive-so25-ap1D,adaptive,247,0,0,0\nSM-105,conventional-so50-ap0.5D,conventional,292,0,0,0\nSM-105,manual-baseline,manual,1321,1,0,2",
+   "ms": 328
+  }
+ ]
+}

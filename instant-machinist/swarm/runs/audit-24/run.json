@@ -1,0 +1,9 @@
+{
+  "agent_id": "audit-24",
+  "item": "checks flute length",
+  "exit_code": 0,
+  "started_epoch": 1791750486.8231156,
+  "ended_epoch": 1791750598.8725903,
+  "wall_s": 112.05,
+  "transcript": "transcript.jsonl"
+}

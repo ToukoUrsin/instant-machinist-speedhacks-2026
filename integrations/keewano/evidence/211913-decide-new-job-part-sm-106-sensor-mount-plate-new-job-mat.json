@@ -1,0 +1,109 @@
+{
+ "project": "Instant Machinist Shop Floor",
+ "project_id": "3c71f27a-eb5c-4a7d-ac74-6cab42e77661",
+ "at_utc": "2026-10-11T21:19:13Z",
+ "kind": "decide",
+ "question": "New job: part SM-106 (Sensor mount plate, new job), material 6061-T6 aluminum, qty 30, 6 features, deepest pocket 12 mm, 6 holes, plate 126 cm2. Using ONLY Keewano history: (1) which toolpath strategies should the CAM search try first for this part (rank by simulated cycle time on the most similar past parts, especially by pocket depth; drop strategies that failed verification or never win), (2) which supplier to buy a missing aluminum blank from (delivered price vs lead days from past quotes), (3) which step of the order is the bottleneck (StepSeconds), (4) before vs after: agent programming time vs the manual estimate, best vs manual-baseline machine time. Then call final_decision.",
+ "answer": {
+  "strategy_order": [
+   "adaptive-so45-ap2D",
+   "adaptive-so35-ap2D",
+   "conventional-so60-ap1D"
+  ],
+  "skip_strategies": [
+   "manual-baseline",
+   "baseline-manual",
+   "conventional-so50-ap0.5D",
+   "adaptive-so25-ap1D",
+   "adaptive-so35-ap1D",
+   "adaptive-so45-ap1D",
+   "adaptive-so25-ap2D"
+  ],
+  "supplier": "Bay Alloy & Steel",
+  "supplier_reason": "Cheapest delivered price on every past quote: SM-101 $266.75 vs Pacific Metals $334.70, FTC-10 $47.60 vs $86.70. Lead time is 2 days vs 0 for Pacific on SM-101, so use Pacific only if the blank is needed the same day.",
+  "bottleneck_step": "dial.supplier_call",
+  "bottleneck_seconds": 885,
+  "expected_cycle_s": 218,
+  "before_after": "Programming: 14400 s (4 h manual estimate) vs 3 s agent JobProgrammedSeconds on SM-106. Machine: manual-baseline 1855 s (30:55) vs best adaptive-so45-ap2D 218 s (3:38), 88% saved per part, about 13.6 h saved over 30 parts.",
+  "summary": "SM-106 has been run twice before at 12 mm pocket depth. Both times adaptive-so45-ap2D won and passed verification at 218 s, against 1855 s for the manual-style program, so the CAM search should try it first, then adaptive-so35-ap2D (220 s) and conventional-so60-ap1D (234 s). Buy the blank from Bay Alloy & Steel (cheapest on every past quote, 2-day lead). The slowest step is the supplier phone calls (885 s total), not CAM.",
+  "part": {
+   "part": "SM-106",
+   "name": "Sensor mount plate, new job",
+   "FeatureCount": 6,
+   "PocketDepthMaxMm": 12,
+   "HoleCount": 6,
+   "PlateAreaCm2": 126.0,
+   "Material": "6061-T6 aluminum",
+   "PartQuantity": 30
+  },
+  "run": {
+   "best": "adaptive-so45-ap2D",
+   "best_cycle_s": 218.13,
+   "baseline_cycle_s": 1854.82,
+   "variants_tried": 3,
+   "verified": true,
+   "programming_s": 2.8,
+   "wall_s": 3.0,
+   "out": "runs/sm-106-agent-211910",
+   "matches_first_choice": true
+  }
+ },
+ "keewano_calls": [
+  {
+   "tool": "sql",
+   "why": "strategy cycle times and verify failures per past part by pocket depth",
+   "query": "SELECT \"Part\", \"PocketDepthMaxMm\" AS depth, \"Strategy\", min(\"CycleSeconds\") AS best_cyc, count(\"CycleSeconds\") AS n, count(\"VerifyCheckFailed\") AS fails, count(DISTINCT user_id) AS jobs FROM events WHERE \"Engine\" IS NOT NULL AND \"Strategy\" IS NOT NULL GROUP BY \"Part\", depth, \"Strategy\" ORDER BY depth, \"Part\", best_cyc",
+   "error": false,
+   "result": "SQL result for project 3c71f27a-eb5c-4a7d-ac74-6cab42e77661: 63 row(s), 7 column(s).\nPart,depth,Strategy,best_cyc,n,fails,jobs\nSM-104,5,conventional-so60-ap1D,173,1,0,1\nSM-104,5,adaptive-so45-ap2D,175,1,0,1\nSM-104,5,adaptive-so35-ap2D,176,1,0,1\nSM-104,5,adaptive-so25-ap2D,189,1,0,1\nSM-104,5,adaptive-so35-ap1D,202,1,0,1\nSM-104,5,adaptive-so45-ap1D,202,1,0,1\nSM-104,5,adaptive-so25-ap1D,225,1,0,1\nSM-104,5,conventional-so50-ap0.5D,230,1,0,1\nSM-104,5,manual-baseline,988,1,0,1\nSM-101,8,conventional-so60-ap1D,187,3,0,3\nSM-101,8,adaptive-so45-ap2D,189,3,0,3\nSM-101,8,adaptive-so35-ap2D,190,3,0,3\nSM-101,8,adaptive-so25-ap2D,204,3,0,3\nSM-101,8,adaptive-so35-ap1D,216,3,0,3\nSM-101,8,adaptive-so45-ap1D,217,3,0,3\nSM-101,8,adaptive-so25-ap1D,240,3,0,3\nSM-101,8,conventional-so50-ap0.5D,299,3,0,3\nSM-101,8,adaptive-L3.0-D20,388,2,0,2\nSM-101,8,adaptive-L2.5-D10,427,2,0,2\nSM-101,8,adaptive-L2.0-D20,438,2,0,2\nSM-101,8,adaptive-L1.5-D10,519,2,0,2\nSM-101,8,baseline-manual,1183,2,0,2\nSM-101,8,manual-baseline,1348,3,0,3\nSM-103,8,conventional-so60-ap1D,232,1,0,1\nSM-103,8,adaptive-so45-ap2D,238,1,0,1\nSM-103,8,adaptive-so35-ap2D,241,1,0,1\nSM-103,8,adaptive-so25-ap2D,261,1,0,1\nSM-103,8,adaptive-so45-ap1D,273,1,0,1\nSM-103,8,adaptive-so35-ap1D,274,1,0,1\nSM-103,8,adaptive-so25-ap1D,306,1,0,1\nSM-103,8,conventional-so50-ap0.5D,381,1,0,1\nSM-103,8,manual-baseline,1937,1,0,1\nSM-105,8,adaptive-so45-ap2D,170,1,2,1\nSM-105,8,adaptive-so35-ap2D,171,1,0,1\nSM-105,8,adaptive-so25-ap2D,184,1,0,1\nSM-105,8,conventional-so60-ap1D,186,1,0,1\nSM-105,8,adaptive-so45-ap1D,219,1,0,1\nSM-105,8,adaptive-so35-ap1D,222,1,0,1\nSM-105,8,adaptive-so25-ap1D,247,1,0,1\nSM-105,8,conventional-so50-ap0.5D,292,1,0,1\nSM-105,8,manual-baseline,1321,1,2,1\nSM-106,12,adaptive-so45-ap2D,218,2,0,2\nSM-106,12,adaptive-so35-ap2D,220,1,0,1\nSM-106,12,conventional-so60-ap1D,234,2,0,2\nSM-106,12,adaptive-so25-ap2D,237,1,0,1\nSM-106,12,adaptive-so45-ap1D,274,1,0,1\nSM-106,12,adaptive-so35-ap1D,278,1,0,1\nSM-106,12,adaptive-so25-ap1D,311,1,0,1\nSM-106,12,conventional-so50-ap0.5D,369,1,0,1\nSM-106,12,manual-baseline,1855,2,0,2\nSM-102,14,adaptive-so45-ap2D,199,1,0,1\nSM-102,14,adaptive-so35-ap2D,200,1,0,1\nSM-102,14,conventional-so60-ap1D,212,1,0,1\nSM-102,14,adaptive-so25-ap2D,213,1,0,1\nSM-102,14,adaptive-so45-ap1D,243,1,0,1\nSM-102,14,adaptive-so35-ap1D,245,1,0,1\nSM-102,14,adaptive-so25-ap1D,272,1,0,1\nSM-102,14,conventional-so50-ap0.5D,326,1,0,1\nSM-102,14,manual-baseline,1504,1,0,1\nNIST FTC-10,31,adaptive-L2.5-D24-F0.5,1801,1,0,1\nNIST FTC-10,31,adaptive-L2.5-D12-F0.4,2071,1,0,1\nNIST FTC-10,31,adaptive-L1.5-D12-F0.4,2294,1,0,1\nNIST FTC-10,31,baseline-manual,6586,1,3,1",
+   "ms": 350
+  },
+  {
+   "tool": "sql",
+   "why": "supplier quotes: delivered price vs lead days",
+   "query": "SELECT \"Part\", \"Supplier\", min(\"SupplierLeadDays\") AS lead_days, min(\"SupplierQuotedCents\") AS cents, count(\"SupplierQuotedCents\") AS quotes FROM events WHERE \"Sponsor\" = 'dial' AND \"Supplier\" IS NOT NULL GROUP BY \"Part\", \"Supplier\" ORDER BY \"Part\", cents",
+   "error": false,
+   "result": "SQL result for project 3c71f27a-eb5c-4a7d-ac74-6cab42e77661: 4 row(s), 5 column(s).\nPart,Supplier,lead_days,cents,quotes\nNIST FTC-10,Bay Alloy & Steel,2,4760,1\nNIST FTC-10,Pacific Metals Supply,2,8670,1\nSM-101,Bay Alloy & Steel,2,26675,2\nSM-101,Pacific Metals Supply,0,33470,2",
+   "ms": 303
+  },
+  {
+   "tool": "sql",
+   "why": "bottleneck step by StepSeconds",
+   "query": "SELECT \"StepName\", count(\"StepSeconds\") AS n, avg(\"StepSeconds\") AS avg_s, max(\"StepSeconds\") AS max_s, sum(\"StepSeconds\") AS total_s FROM events WHERE \"StepName\" IS NOT NULL GROUP BY \"StepName\" ORDER BY total_s DESC",
+   "error": false,
+   "result": "SQL result for project 3c71f27a-eb5c-4a7d-ac74-6cab42e77661: 18 row(s), 5 column(s).\nStepName,n,avg_s,max_s,total_s\ndial.supplier_call,24,36.875,279,885\nsparta.deposit_invoice_agent,12,24.166666666666668,84,290\ncam.toolpaths,16,15.4375,33,247\ndial.quote_extraction,12,15.416666666666666,125,185\ndarwin.agent_search,60,2.966666666666667,15,178\ncam.verify,32,5.0625,38,162\ncam.post,16,8.5625,10,137\ncam.drawing,6,11.833333333333334,25,71\ndarwin.rank_and_plan,14,4.285714285714286,34,60\ndial.material_gap,1,58,58,58\ndarwin.agent_connect,45,0.8666666666666667,4,39\ncam.model,4,6,10,24\ncam.fusion,5,3,9,15\ndial.dialing,9,1,2,9\ncam.result,10,0,0,0\ncam.done,11,0,0,0\ndarwin.material_gap,2,0,0,0\ndarwin.setup,1,0,0,0",
+   "ms": 305
+  },
+  {
+   "tool": "sql",
+   "why": "before/after programming and machine time per past part",
+   "query": "SELECT \"Part\", \"PocketDepthMaxMm\" AS depth, \"DataSource\", count(DISTINCT user_id) AS jobs, avg(\"ManualProgrammingEstimateSeconds\") AS manual_s, avg(\"JobProgrammedSeconds\") AS agent_s, avg(\"BaselineCycleSeconds\") AS base_cyc, avg(\"BestCycleSeconds\") AS best_cyc, avg(\"MachiningSavedPct\") AS saved_pct, count(\"AgentDecision\") AS decisions FROM events WHERE \"Engine\" IS NOT NULL GROUP BY \"Part\", depth, \"DataSource\" ORDER BY depth",
+   "error": false,
+   "result": "SQL result for project 3c71f27a-eb5c-4a7d-ac74-6cab42e77661: 14 row(s), 10 column(s).\nPart,depth,DataSource,jobs,manual_s,agent_s,base_cyc,best_cyc,saved_pct,decisions\nSM-101,,real_run,5,,,,,,0\nNIST FTC-10,,real_run,1,,,,,,0\nSM-102,,variant_part,1,,,,,,0\nSM-104,,variant_part,1,,,,,,0\nSM-106,,variant_part,2,,,,,,0\nSM-105,,variant_part,1,,,,,,0\nSM-103,,variant_part,1,,,,,,0\nSM-104,5,variant_part,1,14400,2,988,173,82,0\nSM-101,8,real_run,5,14400,63.8,1282,267.4,78.4,0\nSM-105,8,variant_part,1,14400,4,,,,0\nSM-103,8,variant_part,1,14400,3,1937,232,88,0\nSM-106,12,variant_part,2,14400,3,1855,218,88,2\nSM-102,14,variant_part,1,14400,3,1504,199,87,0\nNIST FTC-10,31,real_run,1,14400,,,,,0",
+   "ms": 304
+  },
+  {
+   "tool": "sql",
+   "why": "which strategies failed verification and why",
+   "query": "SELECT \"Part\", \"Strategy\", \"VerifyCheckFailed\", count(\"VerifyCheckFailed\") AS n, count(*) FILTER (WHERE \"StrategyVerified\" = false) AS unverified FROM events WHERE \"Engine\" IS NOT NULL AND \"VerifyCheckFailed\" IS NOT NULL GROUP BY \"Part\", \"Strategy\", \"VerifyCheckFailed\"",
+   "error": false,
+   "result": "SQL result for project 3c71f27a-eb5c-4a7d-ac74-6cab42e77661: 17 row(s), 5 column(s).\nPart,Strategy,VerifyCheckFailed,n,unverified\nNIST FTC-10,baseline-manual,leftover,1,0\nNIST FTC-10,baseline-manual,rapid_into_stock,1,0\nNIST FTC-10,baseline-manual,flat_plunge,1,1\nNIST FTC-10,adaptive-L1.5-D12-F0.4,flat_plunge,0,0\nNIST FTC-10,adaptive-L2.5-D12-F0.4,flat_plunge,0,0\nNIST FTC-10,adaptive-L2.5-D24-F0.5,flat_plunge,0,0\nSM-105,manual-baseline,gouge,1,0\nSM-105,manual-baseline,rapid_into_stock,1,1\nSM-105,adaptive-so35-ap2D,rapid_into_stock,0,0\nSM-105,adaptive-so25-ap2D,rapid_into_stock,0,0\nSM-105,conventional-so60-ap1D,rapid_into_stock,0,0\nSM-105,adaptive-so45-ap1D,rapid_into_stock,0,0\nSM-105,adaptive-so35-ap1D,rapid_into_stock,0,0\nSM-105,adaptive-so25-ap1D,rapid_into_stock,0,0\nSM-105,conventional-so50-ap0.5D,rapid_into_stock,0,0\nSM-105,adaptive-so45-ap2D,rapid_into_stock,1,1\nSM-105,adaptive-so45-ap2D,gouge,1,0",
+   "ms": 305
+  },
+  {
+   "tool": "sql",
+   "why": "which strategies ever win",
+   "query": "SELECT \"BestStrategy\", \"Part\", count(DISTINCT user_id) AS wins FROM events WHERE \"BestStrategy\" IS NOT NULL GROUP BY \"BestStrategy\", \"Part\" ORDER BY \"Part\"",
+   "error": false,
+   "result": "SQL result for project 3c71f27a-eb5c-4a7d-ac74-6cab42e77661: 6 row(s), 3 column(s).\nBestStrategy,Part,wins\nadaptive-L3.0-D20,SM-101,2\nconventional-so60-ap1D,SM-101,3\nadaptive-so45-ap2D,SM-102,1\nconventional-so60-ap1D,SM-103,1\nconventional-so60-ap1D,SM-104,1\nadaptive-so45-ap2D,SM-106,2",
+   "ms": 301
+  },
+  {
+   "tool": "sql",
+   "why": "SM-106 prior jobs: agent decisions and step times",
+   "query": "SELECT user_id, \"AgentDecision\", \"StepName\", sum(\"StepSeconds\") AS s, max(\"JobProgrammedSeconds\") AS prog, max(\"BestCycleSeconds\") AS best FROM events WHERE \"Part\" = 'SM-106' GROUP BY user_id, \"AgentDecision\", \"StepName\" ORDER BY user_id",
+   "error": false,
+   "result": "SQL result for project 3c71f27a-eb5c-4a7d-ac74-6cab42e77661: 10 row(s), 6 column(s).\nuser_id,AgentDecision,StepName,s,prog,best\n3b4125db-5ac9-5b86-86f2-2b7027d1b724,,,,,\n3b4125db-5ac9-5b86-86f2-2b7027d1b724,\"shortlist=adaptive-so45-ap2D,conventional-so60-ap1D,adaptive-L3.0-D20\",,,,\n3b4125db-5ac9-5b86-86f2-2b7027d1b724,first_strategy=adaptive-so45-ap2D,,,,\n3b4125db-5ac9-5b86-86f2-2b7027d1b724,first_strategy=adaptive-so45-ap2D,cam.verify,2,3,218\n3b4125db-5ac9-5b86-86f2-2b7027d1b724,first_strategy=adaptive-so45-ap2D,cam.result,0,,\n3b4125db-5ac9-5b86-86f2-2b7027d1b724,first_strategy=adaptive-so45-ap2D,cam.done,0,,\ndf9ba052-ff35-56cb-980d-25840c580ec4,,,,3,218\ndf9ba052-ff35-56cb-980d-25840c580ec4,,cam.verify,4,,\ndf9ba052-ff35-56cb-980d-25840c580ec4,,cam.result,0,,\ndf9ba052-ff35-56cb-980d-25840c580ec4,,cam.done,0,,",
+   "ms": 4363
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Sponsor code stays isolated in sponsors/; core instant-machinist/ is read-only for sponsor agents",
+    "urn": "urn:alike:decision:d2ccd37be9b4160247fa9695f8590378a7383fa125b3c91087b4dde102110ab2",
+    "ok": true
+  },
+  {
+    "title": "CAM runs through Autodesk Fusion Compute MCP (cloud, headless)",
+    "urn": "urn:alike:decision:aa4acf730776c67f13dc1e5f6968d18a23e640303735e75789fe27fb49dda2f2",
+    "ok": true
+  },
+  {
+    "title": "Demo part is the NIST FTC-10 housing, not SM-101",
+    "urn": "urn:alike:decision:3869492ba853ce4f065c8a78d099ce5fb1da6e26fe026861cadedbe572856227",
+    "ok": true
+  },
+  {
+    "title": "Video sponsor minute = Darwin + Keewano; Dial is repo/backup",
+    "urn": "urn:alike:decision:b71203f77d21972bac394754b512ee7b04efa8936a5a50ed984683e0e25a1d92",
+    "ok": true
+  },
+  {
+    "title": "Demo video structure: 3 min = problem deck, product, sponsors",
+    "urn": "urn:alike:decision:86da9393bcb25aed89f1014c8f0556cd4cdc26852f14a66929294ea28827f588",
+    "ok": true
+  },
+  {
+    "title": "Repo offers two paths and docs never say 'it doesn't work'",
+    "urn": "urn:alike:decision:08bd2c92c5c369b2ec3f21104cc85e7a5b6b8ca2a7ba388eba8961ef7f0b45d9",
+    "ok": true
+  },
+  {
+    "title": "All hackathon compute runs on AWS boxes, never the team's computer",
+    "urn": "urn:alike:decision:0a275c09eddb05d1905ca5f2e876b97d1d900192f243e3f54120532a514a6f4a",
+    "ok": true
+  }
+]

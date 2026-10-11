@@ -1,0 +1,12 @@
+{
+  "task_urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+  "client_session_id": "ftc10-safety-20261011",
+  "alike_session_id": "a5f16ec1-6af5-41a0-b59c-ab70f2e70636",
+  "decision_urn": "urn:alike:decision:42921186998dfe31c6085e102c5b6378e6c495b10e0aa6810ce261bd363df2b0",
+  "decision": "FTC-10 leftover check must ignore no-material STL cells",
+  "branch": "ftc10-safety",
+  "commit_at_start": "014be99",
+  "shared_brief_used": "The shared simulator acceptance bar requires parser fidelity, safety, determinism, and evidence; Fusion parity remains unproven until FTC-10 merge-gate evidence is green.",
+  "change": "Mask leftover detection with finite Target.floor cells; preserve rapid-into-stock and flat-plunge events as evidence.",
+  "recorded_at": "2026-10-11"
+}

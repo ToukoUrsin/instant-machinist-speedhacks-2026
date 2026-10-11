@@ -1,0 +1,129 @@
+{
+ "part_number": "SM-107",
+ "name": "Sensor mount plate, compact",
+ "material": "6061-T6 aluminum",
+ "quantity": 50,
+ "units": "mm",
+ "origin": "top-center of finished part; Z=0 is the finished top face, Z negative down",
+ "general_tolerance_mm": 0.1,
+ "surface_finish_ra_um": 3.2,
+ "stock": {
+  "x": [
+   -52,
+   52
+  ],
+  "y": [
+   -37,
+   37
+  ],
+  "z": [
+   -26.5,
+   1.5
+  ]
+ },
+ "part_bbox": {
+  "x": [
+   -50,
+   50
+  ],
+  "y": [
+   -35,
+   35
+  ],
+  "z": [
+   -20,
+   0
+  ]
+ },
+ "features": [
+  {
+   "id": "F1",
+   "type": "face",
+   "z": 0
+  },
+  {
+   "id": "F2",
+   "type": "profile",
+   "side": "outside",
+   "rect": {
+    "cx": 0,
+    "cy": 0,
+    "w": 100,
+    "h": 70,
+    "r": 8
+   },
+   "z_top": 0,
+   "z_bottom": -20
+  },
+  {
+   "id": "F3",
+   "type": "pocket",
+   "rect": {
+    "cx": 0,
+    "cy": 0,
+    "w": 56,
+    "h": 30,
+    "r": 6
+   },
+   "z_top": 0,
+   "z_bottom": -10
+  },
+  {
+   "id": "F4",
+   "type": "pocket",
+   "rect": {
+    "cx": 0,
+    "cy": -26,
+    "w": 30,
+    "h": 8,
+    "r": 4
+   },
+   "z_top": 0,
+   "z_bottom": -4
+  },
+  {
+   "id": "F5",
+   "type": "hole",
+   "d": 6.6,
+   "z_top": 0,
+   "z_bottom": -20,
+   "through": true,
+   "positions": [
+    [
+     -40,
+     -25
+    ],
+    [
+     40,
+     -25
+    ],
+    [
+     -40,
+     25
+    ],
+    [
+     40,
+     25
+    ]
+   ]
+  },
+  {
+   "id": "F6",
+   "type": "hole",
+   "d": 8.0,
+   "z_top": -10,
+   "z_bottom": -20,
+   "through": true,
+   "positions": [
+    [
+     -15,
+     0
+    ],
+    [
+     15,
+     0
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,40 @@
+{
+ "part": "SM-102",
+ "engine": "native",
+ "programming_s": 3.2,
+ "baseline": {
+  "strategy": "baseline",
+  "label": "baseline",
+  "dir": "../integrations/keewano/runs/sm102-a/native/baseline",
+  "cycle_s": 1503.75,
+  "pass": true,
+  "baseline": true
+ },
+ "best": {
+  "strategy": "native",
+  "label": "native",
+  "dir": "../integrations/keewano/runs/sm102-a/native/native",
+  "cycle_s": 198.92,
+  "pass": true,
+  "baseline": false
+ },
+ "variants": [
+  {
+   "strategy": "baseline",
+   "label": "baseline",
+   "dir": "../integrations/keewano/runs/sm102-a/native/baseline",
+   "cycle_s": 1503.75,
+   "pass": true,
+   "baseline": true
+  },
+  {
+   "strategy": "native",
+   "label": "native",
+   "dir": "../integrations/keewano/runs/sm102-a/native/native",
+   "cycle_s": 198.92,
+   "pass": true,
+   "baseline": false
+  }
+ ],
+ "machining_saved_pct": 86.8
+}

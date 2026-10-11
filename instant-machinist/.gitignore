@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+out/
+.pytest_cache/
+node_modules/
+*.egg-info/
+
+# Large generated gate arrays stay local; JSON/Markdown summaries are committed.
+swarm/runs/ftc10_safety/gate/*/frames.npz
+swarm/runs/ftc10_safety/gate/*/toolpath.npz

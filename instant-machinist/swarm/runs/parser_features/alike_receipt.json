@@ -1,0 +1,12 @@
+{
+  "task_urn": "urn:alike:task:17259fa6f12d09fb9264aa7294a492a0382776d66c392a2b92bc58b76fccf62d",
+  "client_session_id": "parser-features-20261011",
+  "session_id": "595b41fe-0636-4f2d-a7e9-a571065f5196",
+  "decision_urn": "urn:alike:decision:00a4dd89df9a094225d3d1370894b21a91c8ad94b6d1382ae75e75e6917ab711",
+  "decision": "Implement same-file O-number indexing, M98 P#### calls with L repeats, M99 return, deterministic recursion/depth/call-count bounds, preserving source line/report contracts.",
+  "alike_helped_moment": "The shared acceptance bar and prior M98/M99 audits identified silently ignored subprogram calls and unbounded recursion as parser fidelity and safety gaps; this fixed slice follows that guidance.",
+  "branch": "parser-features",
+  "commit": "aa82129",
+  "decision_updated": true,
+  "evidence_commit": "aa82129"
+}

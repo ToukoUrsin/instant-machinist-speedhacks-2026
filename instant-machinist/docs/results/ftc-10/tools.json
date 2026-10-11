@@ -1,0 +1,45 @@
+{
+ "units": "mm",
+ "tools": {
+  "1": {
+   "type": "face_mill",
+   "diameter": 50,
+   "flutes": 4,
+   "flute_length": 6.0,
+   "tip_angle": 0,
+   "description": "50mm Face Mill"
+  },
+  "2": {
+   "type": "flat",
+   "diameter": 10,
+   "flutes": 3,
+   "flute_length": 25,
+   "tip_angle": 0,
+   "description": "10mm Flat Endmill"
+  },
+  "3": {
+   "type": "flat",
+   "diameter": 6.0,
+   "flutes": 3,
+   "flute_length": 20,
+   "tip_angle": 0,
+   "description": "6mm Flat Endmill"
+  },
+  "4": {
+   "type": "flat",
+   "diameter": 5,
+   "flutes": 3,
+   "flute_length": 20,
+   "tip_angle": 0,
+   "description": "5mm Flat Endmill"
+  },
+  "5": {
+   "type": "ball",
+   "diameter": 6.0,
+   "flutes": 3,
+   "flute_length": 20,
+   "tip_angle": 0,
+   "description": "6mm Ball Endmill"
+  }
+ }
+}

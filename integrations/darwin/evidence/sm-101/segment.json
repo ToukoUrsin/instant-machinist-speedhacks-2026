@@ -1,0 +1,195 @@
+{
+ "part": "SM-101",
+ "slug": "sm-101",
+ "generated_at": "2026-10-11T21:03:45Z",
+ "headline": "Freight is the only workable agent; source stock, tooling and anodizing through conventional distributors.",
+ "ask": "25 blanks of 6061-T6 aluminum, at least 4.88 x 3.31 x 1.10 in (e.g. 1.125 in thick x 3.50 in wide flat bar, cut to 5.00 in lengths)",
+ "metrics": {
+  "agent_seconds": 151.0,
+  "manual_minutes_ESTIMATE": 160,
+  "speedup_x_ESTIMATE": 64,
+  "needs": 5,
+  "capabilities_found": 8,
+  "providers_found": 8,
+  "live_connections": 7,
+  "custom_integrations": 0,
+  "thread_ready_on_darwin": 0,
+  "baseline_note": "ESTIMATE: buyer googles 3-5 vendors per need, reads sites, fills RFQ/web forms; excludes waiting for replies."
+ },
+ "rows": [
+  {
+   "need": "Raw stock",
+   "ask": "25 blanks of 6061-T6 aluminum, at least 4.88 x 3.31 x 1.10 in (e.g. 1.125 in thick x 3.50 in wide flat bar, cut to 5.00 in lengths)",
+   "darwin_found": 2,
+   "darwin_status": "needs_input",
+   "top_provider": "whobuildsit \u2014 space & defence hardware suppliers",
+   "protocol": "MCP",
+   "live_result": "live search \"6061 aluminum bar\": 0 hits",
+   "verdict": "no_fit",
+   "next_step": "Phone or web-order 1.125x3.50 6061-T6 flat bar, cut to 5.00 in, from a local metals service center, Online Metals or McMaster."
+  },
+  {
+   "need": "Cutting tools",
+   "ask": "Cutters for SM-101: T1 D50. FACE MILL 5FL FLUTE LEN 6.; T2 D10. FLAT END MILL 3FL FLUTE LEN 25.; T3 D6. FLAT END MILL 3FL FLUTE LEN 16.; T4 D10. SPOT DRILL FLUTE LEN 12.; T5 D6.6 DRILL FLUTE LEN 40.; T6 D8. DRILL FLUTE LEN 40.",
+   "darwin_found": 1,
+   "darwin_status": "completed",
+   "top_provider": "amazon-product-research-mcp",
+   "protocol": "MCP",
+   "live_result": "connected, HTTP Error 401: Unauthorized",
+   "verdict": "no_fit",
+   "next_step": "Check the crib first, then order missing cutters from MSC, McMaster, Harvey/Helical or a local tooling distributor."
+  },
+  {
+   "need": "Finishing",
+   "ask": "anodize / finish as specified on the drawing for 25 x SM-101 in 6061-T6 aluminum",
+   "darwin_found": 2,
+   "darwin_status": "completed",
+   "top_provider": "LUMEN B2B Agent",
+   "protocol": "A2A",
+   "live_result": "not reachable",
+   "verdict": "no_fit",
+   "next_step": "Confirm the drawing finish callout (e.g. MIL-A-8625 Type II, color), then get quotes from 2-3 local anodizers for a 25-piece lot."
+  },
+  {
+   "need": "Overflow machining",
+   "ask": "Backup CNC capacity: quote 25 x SM-101 from the STEP if our machine is booked",
+   "darwin_found": 2,
+   "darwin_status": "completed",
+   "top_provider": "Costable \u2014 Parametric Should-Cost Analysis",
+   "protocol": "MCP",
+   "live_result": "should-cost P50 $5.63/unit (assumes Aluminium 1100 \u2014 Sheet)",
+   "verdict": "usable_with_human",
+   "next_step": "Only if our machine is booked: send the STEP RFQ to Xometry, Protolabs or local job shops; use Costable as a sanity check after correcting material."
+  },
+  {
+   "need": "Freight",
+   "ask": "Inbound freight for the bar stock (~43.4 lb) from a metals service center to the shop",
+   "darwin_found": 2,
+   "darwin_status": "needs_input",
+   "top_provider": "SMKlog Parcel Quotes",
+   "protocol": "A2A",
+   "live_result": "5 live carrier rates, from $37.16 (UPS Ground)",
+   "verdict": "usable_with_human",
+   "next_step": "After picking the bar supplier, compare their shipping or will-call against an SMKlog quote using the real origin ZIP and box dims."
+  }
+ ],
+ "gaps": [
+  "No candidate reaches a commodity metals service center for 6061-T6 flat bar.",
+  "No usable industrial tooling distributor agent; the Amazon tool returned 401 and is a consumer channel.",
+  "No reachable anodizer or finisher agent, and the drawing finish spec is not provided.",
+  "Overflow candidates are aerospace-scale suppliers; no small-lot job shop agent with STEP upload.",
+  "Costable material cost ($0.38) conflicts with a ~1.7 lb blank; the estimate is unreliable until corrected."
+ ],
+ "timeline": [
+  {
+   "t": 0.03,
+   "step": "darwin.start",
+   "msg": "SM-101: sourcing 5 needs via Darwin (Search key)"
+  },
+  {
+   "t": 0.03,
+   "step": "darwin.gap",
+   "msg": "25 blanks of 6061-T6 aluminum, at least 4.88 x 3.31 x 1.10 in (e.g. 1.125 in thick x 3.50 in wide flat bar, cut to 5.00 in lengths)"
+  },
+  {
+   "t": 47.63,
+   "step": "darwin.search",
+   "msg": "Finishing: \"surface treatment heat treatment supplier\" -> completed, 2 agents in 7.99s"
+  },
+  {
+   "t": 51.12,
+   "step": "darwin.search",
+   "msg": "Cutting tools: \"Buy carbide end mills and drills for aluminum CNC machining\" -> completed, 1 agents in 7.21s"
+  },
+  {
+   "t": 59.16,
+   "step": "darwin.search",
+   "msg": "Overflow machining: \"CNC machining quote for an aluminum part from a STEP file\" -> completed, 2 agents in 11.53s"
+  },
+  {
+   "t": 63.5,
+   "step": "darwin.search",
+   "msg": "Raw stock: \"metal supplier aluminum plate and bar quote\" -> needs_input, 2 agents in 6.44s"
+  },
+  {
+   "t": 97.37,
+   "step": "darwin.search",
+   "msg": "Freight: \"shipping rates\" -> needs_input, 2 agents in 5.52s"
+  },
+  {
+   "t": 99.18,
+   "step": "darwin.found",
+   "msg": "8 capabilities from 8 providers in 99.2s; 0 thread-ready on Darwin"
+  },
+  {
+   "t": 99.46,
+   "step": "darwin.connect",
+   "msg": "MCP whobuildsit connected: 7 tools (6 read-only)"
+  },
+  {
+   "t": 102.08,
+   "step": "darwin.connect",
+   "msg": "MCP gemalli-mcp connected: 21 tools (16 read-only)"
+  },
+  {
+   "t": 104.82,
+   "step": "darwin.connect",
+   "msg": "MCP Webotee AI Connect connected: 83 tools (74 read-only)"
+  },
+  {
+   "t": 105.27,
+   "step": "darwin.connect",
+   "msg": "A2A LUMEN B2B Agent: no reachable agent card (Darwin lists no URL)"
+  },
+  {
+   "t": 109.06,
+   "step": "darwin.connect",
+   "msg": "MCP mars-economic-intermediary connected: 30 tools (8 read-only)"
+  },
+  {
+   "t": 109.06,
+   "step": "darwin.connect",
+   "msg": "MCP whobuildsit connected: 7 tools (6 read-only)"
+  },
+  {
+   "t": 113.36,
+   "step": "darwin.connect",
+   "msg": "MCP costable connected: 10 tools (0 read-only)"
+  },
+  {
+   "t": 113.69,
+   "step": "darwin.live_call",
+   "msg": "costable.estimate_part -> should-cost/unit P50 $5.63, P80 $6.30, P90 $6.69"
+  },
+  {
+   "t": 114.53,
+   "step": "darwin.live_call",
+   "msg": "A2A SMKlog Parcel Quotes.message/send -> 5 live carrier rates; cheapest UPS Ground $37.16 (2-3 business days); FedEx Ground Economy $50.70 (2-3 business days); USPS Ground Advantage $75.16 (4-5 business days)"
+  },
+  {
+   "t": 114.54,
+   "step": "darwin.connect",
+   "msg": "A2A SMKlog Parcel Quotes: agent card OK (SMKlog Parcel Quotes; skills: Get live parcel shipping rates from a US origin, Create a payment session for a )"
+  },
+  {
+   "t": 117.29,
+   "step": "darwin.connect",
+   "msg": "MCP shipping-rates-calculator connected: 2 tools (2 read-only)"
+  },
+  {
+   "t": 117.36,
+   "step": "darwin.live_call",
+   "msg": "shipping-rates-calculator.get_shipping_rates -> Live package rates through this server are available to AI assistants only (Claude, ChatGPT, Copilot, Perplexity, Gemini). Postage prices still work for every c"
+  },
+  {
+   "t": 151.03,
+   "step": "darwin.rank",
+   "msg": "Opus ranked 9 options in 33.7s: Freight is the only workable agent; source stock, tooling and anodizing through conventional distributors."
+  },
+  {
+   "t": 151.03,
+   "step": "darwin.plan",
+   "msg": "Sourcing plan ready in 151.0s vs ~160 min manual (estimate); 7 live agent connections (MCP + A2A), 0 custom integrations"
+  }
+ ]
+}

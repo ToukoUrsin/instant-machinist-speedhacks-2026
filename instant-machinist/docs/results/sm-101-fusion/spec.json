@@ -1,0 +1,149 @@
+{
+ "part_number": "SM-101",
+ "name": "SENSOR MOUNT PLATE",
+ "material": "6061-T6 Aluminum",
+ "quantity": 25,
+ "units": "mm",
+ "origin": "top-center of finished part; Z=0 is the finished top face, Z negative down",
+ "general_tolerance_mm": 0.1,
+ "surface_finish_ra_um": 3.2,
+ "stock": {
+  "x": [
+   -62,
+   62
+  ],
+  "y": [
+   -42,
+   42
+  ],
+  "z": [
+   -26.5,
+   1.5
+  ]
+ },
+ "part_bbox": {
+  "x": [
+   -60,
+   60
+  ],
+  "y": [
+   -40,
+   40
+  ],
+  "z": [
+   -20,
+   0
+  ]
+ },
+ "features": [
+  {
+   "id": "F1",
+   "type": "face",
+   "z": 0.0
+  },
+  {
+   "id": "F2",
+   "type": "profile",
+   "side": "outside",
+   "rect": {
+    "cx": 0.0,
+    "cy": 0.0,
+    "w": 120.0,
+    "h": 80.0,
+    "r": 8.0
+   },
+   "z_top": 0.0,
+   "z_bottom": -20.0
+  },
+  {
+   "id": "F3",
+   "type": "pocket",
+   "rect": {
+    "cx": 0.0,
+    "cy": 0.0,
+    "w": 64.0,
+    "h": 36.0,
+    "r": 6.0
+   },
+   "z_top": 0.0,
+   "z_bottom": -8.0
+  },
+  {
+   "id": "F4",
+   "type": "pocket",
+   "rect": {
+    "cx": 0.0,
+    "cy": -30.0,
+    "w": 40.0,
+    "h": 8.0,
+    "r": 4.0
+   },
+   "z_top": 0.0,
+   "z_bottom": -4.0
+  },
+  {
+   "id": "F5",
+   "type": "hole",
+   "z_top": 0.0,
+   "z_bottom": -20.0,
+   "d": 6.6,
+   "through": true,
+   "positions": [
+    [
+     -50.0,
+     30.0
+    ],
+    [
+     50.0,
+     30.0
+    ],
+    [
+     -50.0,
+     -30.0
+    ],
+    [
+     50.0,
+     -30.0
+    ]
+   ]
+  },
+  {
+   "id": "F6",
+   "type": "hole",
+   "z_top": -8.0,
+   "z_bottom": -20.0,
+   "d": 8.0,
+   "through": true,
+   "positions": [
+    [
+     -20.0,
+     0.0
+    ],
+    [
+     20.0,
+     0.0
+    ]
+   ]
+  }
+ ],
+ "notes": [
+  "Material 6061-T6 aluminum, qty 25, Rev A.",
+  "General tolerance \u00b10.1 mm, angles \u00b10.5\u00b0 unless otherwise specified.",
+  "Surface finish Ra 3.2 \u00b5m on all machined surfaces.",
+  "Break all sharp edges 0.2-0.4 x 45\u00b0, deburr.",
+  "Top face is the A-surface: clean, no marking, stamping, or clamp marks on top.",
+  "Finished thickness 20; outside 120 x 80 with R8 corners.",
+  "Pocket 64 x 36, R6 inside corners, 8 deep, centered on the part; \u00d86 or smaller cutter required for R6 corners.",
+  "4X \u00d86.6 thru on a 100 x 60 pattern, centered (M6 clearance), z_top 0 to z_bottom -20.",
+  "2X \u00d88 thru from pocket floor at X \u00b120, Y 0: z_top -8 to z_bottom -20.",
+  "Slot 40 x 8 full R4, 4 deep, centerline 30 below part center (Y -30), centered in X; \u00d88 or smaller cutter.",
+  "Profile cuts through the full thickness in one setup. Use tabs, a sacrificial spoilboard, or oversize stock with a hold-down method, and do not mark the top face.",
+  "Estimated part weight 0.45 kg."
+ ],
+ "questions_for_customer": [
+  "Slot '40 X 8': is 40 the overall length (end to end) or the center-to-center distance of the R4 ends? We assumed 40 overall.",
+  "The pocket and slot have no X/Y location dimensions. We assumed both are centered on the part in X, and that the pocket is centered in Y. Please confirm.",
+  "The bottom face and its edges need Ra 3.2 and an edge break. Is a second setup or flip operation allowed to face the bottom and deburr the bottom edges, or should we use stock already at 20 mm thickness?",
+  "Is there any tighter positional tolerance needed on the \u00d86.6 and \u00d88 holes, or is \u00b10.1 acceptable for the sensor interface?"
+ ]
+}

@@ -1,0 +1,52 @@
+{
+  "best": "adaptive-so45-ap2D",
+  "best_s": 218.13,
+  "baseline_s": 1854.82,
+  "time_source": "sim.cycle",
+  "saved_s": 1636.7,
+  "saved_pct": 88.2,
+  "best_sim": {
+    "ok": true,
+    "checks": {
+      "gouge": true,
+      "leftover": true,
+      "rapid_into_stock": true,
+      "flat_plunge": true,
+      "below_fixture": true,
+      "flute_length": true
+    },
+    "total_s": 218.13
+  },
+  "baseline_sim": {
+    "ok": true,
+    "checks": {
+      "gouge": true,
+      "leftover": true,
+      "rapid_into_stock": true,
+      "flat_plunge": true,
+      "below_fixture": true,
+      "flute_length": true
+    },
+    "total_s": 1854.82
+  },
+  "variants": [
+    {
+      "name": "adaptive-so45-ap2D",
+      "total_s": 218.13,
+      "source": "sim.cycle",
+      "sim_ok": true
+    },
+    {
+      "name": "adaptive-so35-ap2D",
+      "total_s": 220.15,
+      "source": "sim.cycle",
+      "sim_ok": null
+    },
+    {
+      "name": "conventional-so60-ap1D",
+      "total_s": 234.42,
+      "source": "sim.cycle",
+      "sim_ok": null
+    }
+  ]
+}

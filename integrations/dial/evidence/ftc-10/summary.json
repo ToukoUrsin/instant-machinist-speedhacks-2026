@@ -1,0 +1,86 @@
+{
+ "part": "NIST FTC-10",
+ "need": "1 blanks of 6061-T6 aluminum, at least 6.38 x 3.11 x 1.56 in (e.g. 1.625 in thick x 3.25 in wide flat bar, cut to 6.50 in lengths)",
+ "quotes": [
+  {
+   "supplier": "Pacific Metals Supply",
+   "item": "6061-T6 aluminum flat bar 2 x 4 in, saw-cut to 6-1/2 in",
+   "qty": 1,
+   "thickness_in": 2,
+   "width_in": 4,
+   "piece_length_in": 6.5,
+   "covers_blank": true,
+   "pricing_basis": "per foot: $48.70/ft. 1.0 ft charged because the 6.5 in piece (~0.54 ft) is rounded up to the next half foot, so $48.70 per piece",
+   "unit_price": 48.7,
+   "cut_charge": 3,
+   "delivery_charge": 35,
+   "total": 86.7,
+   "landed_total": 86.7,
+   "delivery": "Delivery on the supplier's truck to the Oakland shop for $35 (the option noted on the quote). Ships next business day and arrives the business day after that, depending on routing. Free same-day will-call pickup in San Leandro is also available if ordered before 2 PM ($51.70 + tax).",
+   "lead_days": 2,
+   "quote_ref": "PMS-4279",
+   "substitutions": [
+    "2 in thick x 4 in wide offered instead of the requested 1-5/8 x 3-1/4 in. The supplier doesn't stock the requested size or anything that narrow at that thickness."
+   ],
+   "open_questions": [
+    "Arithmetic checks out: $48.70 material + $3 cut = $51.70 before delivery; + $35 delivery = $86.70. No mismatch.",
+    "Delivery timing is unclear: 'ships next business day, you'd see it the following business day depending on routing'. Recorded as about 2 business days. Confirm the actual delivery date.",
+    "Mill cert availability was not addressed.",
+    "Payment terms were garbled ('cut' \u2014 probably COD/card) or net 30 with an account. Confirm.",
+    "Quote is held for 7 days. The $40 minimum order is met.",
+    "The 1/8 in saw kerf is included in the charged length."
+   ],
+   "confidence": 0.9,
+   "supplier_as_said": "Pacific Metals Supply (Dana)",
+   "call_id": "cmv4ab0mo006r0fqq5vj0kg1n",
+   "compare_total": 86.7
+  },
+  {
+   "supplier": "Bay Alloy & Steel",
+   "item": "6061-T6 aluminum precision-cut plate blank 1.75 x 3.25 x 6.50 in",
+   "qty": 1,
+   "unit_price": 22.6,
+   "cut_charge": 0,
+   "total": 22.6,
+   "lead_days": 2,
+   "delivery": "Will-call in Hayward (no charge) selected; delivery to Oakland $25 since order is under $250",
+   "delivery_charge": 25,
+   "landed_total": 47.6,
+   "quote_ref": "BAS-41729",
+   "pricing_basis": "per lb, $6.20/lb (stated weight 3.64 lb), no cut charge on plate blanks; stated as $22.60 per piece",
+   "thickness_in": 1.75,
+   "width_in": 3.25,
+   "piece_length_in": 6.5,
+   "covers_blank": true,
+   "substitutions": [
+    "Thickness 1.75 in instead of the requested 1-5/8 in (1.625); supplier doesn't stock 1-5/8 flat bar",
+    "Precision-cut blank from plate instead of saw-cut flat bar",
+    "Length 6.50 in matches the request; width 3.25 in matches the request"
+   ],
+   "open_questions": [
+    "Arithmetic mismatch: 1.75 x 3.25 x 6.5 = 36.97 cu in, not the stated 37.11. That gives 36.97 x 0.098 = 3.62 lb, and 3.62 lb x $6.20 = about $22.46. Even with the supplier's own 3.64 lb, 3.64 x $6.20 = $22.57, not $22.60. The stated $22.60 is kept as quoted.",
+    "The supplier's earlier rough estimate (about $12, '$15 total') doesn't match the final $22.60. Confirm $22.60 is the firm price.",
+    "Length tolerance: the supplier said +0.06 in, but the buyer's recap said +0.006 in. The supplier never corrected this. Confirm the tolerance is +0.06 in (the buyer accepted \u00b11/16).",
+    "Mill cert: the supplier offered it free, but the buyer said it isn't required. Confirm whether one will be included.",
+    "The quote is noted as will-call in Hayward. Landed total to Oakland is computed with the $25 delivery charge.",
+    "Quote validity period not stated."
+   ],
+   "confidence": 0.8,
+   "supplier_as_said": "Bay Alloy & Steel (Marco)",
+   "call_id": "cmv4ab22s00570foxbz38hulq",
+   "compare_total": 47.6
+  }
+ ],
+ "best": {
+  "supplier": "Bay Alloy & Steel",
+  "item": "6061-T6 aluminum precision-cut plate blank 1.75 x 3.25 x 6.50 in",
+  "total": 22.6,
+  "landed_total": 47.6,
+  "lead_days": 2,
+  "quote_ref": "BAS-41729",
+  "delivery": "Will-call in Hayward (no charge) selected; delivery to Oakland $25 since order is under $250"
+ },
+ "calls_wall_clock_s": 292.0,
+ "call_seconds_total": 501,
+ "elapsed_s": 292.0
+}

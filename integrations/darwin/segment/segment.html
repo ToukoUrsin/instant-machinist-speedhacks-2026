@@ -1,0 +1,304 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Instant Machinist x Darwin</title>
+<style>
+  :root { --ink:#14171c; --mute:#6b7280; --line:#e5e7eb; --bg:#f7f7f5; --acc:#ff5a1f; --ok:#0f9d58; --no:#b91c1c; --shop:#1f2937; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html,body { width:1920px; height:1080px; overflow:hidden; background:var(--bg); color:var(--ink);
+    font-family: "Inter","Helvetica Neue",Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+  .top { position:absolute; left:80px; right:80px; top:56px; display:flex; align-items:baseline; justify-content:space-between; }
+  .kicker { font-size:26px; letter-spacing:.14em; text-transform:uppercase; color:var(--acc); font-weight:700; }
+  .brand { font-size:24px; color:var(--mute); }
+  .brand b { color:var(--ink); }
+  h1 { position:absolute; left:80px; right:80px; top:104px; font-size:64px; line-height:1.08; font-weight:800; letter-spacing:-.02em; }
+  .acc { color:var(--acc); }
+  .hide { display:none !important; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:24px; box-shadow:0 20px 50px rgba(0,0,0,.06); }
+  .lab { font-size:22px; color:var(--mute); text-transform:uppercase; letter-spacing:.1em; }
+  .scene { position:absolute; left:80px; right:80px; top:270px; bottom:96px; }
+  .foot { position:absolute; left:80px; right:80px; bottom:34px; font-size:21px; color:var(--mute); display:flex; justify-content:space-between; }
+  .pill { display:inline-block; font-size:18px; font-weight:800; letter-spacing:.06em; padding:5px 12px; border-radius:999px; text-transform:uppercase; white-space:nowrap; }
+  .p-mcp { background:#eef2ff; color:#3730a3; } .p-a2a { background:#fff1ea; color:#c2410c; }
+  .p-ok { background:#e7f6ee; color:var(--ok); border:2px solid var(--ok); } .p-no { background:#f3f4f6; color:#6b7280; border:2px solid #d1d5db; }
+  .est { background:var(--acc); color:#fff; }
+  /* s-needs */
+  .part { position:absolute; left:0; top:0; width:760px; bottom:0; padding:34px 40px; }
+  .part img { width:100%; height:420px; object-fit:contain; margin:14px 0 10px; }
+  .part .big { font-size:46px; font-weight:800; }
+  .part .row { font-size:26px; margin-top:8px; color:var(--mute); }
+  .part .row b { color:var(--ink); }
+  .needs { position:absolute; left:820px; right:0; top:0; }
+  .need { display:flex; gap:22px; align-items:center; margin-bottom:12px; padding:15px 26px; background:#fff; border:1px solid var(--line); border-radius:18px; }
+  .need .n { flex:none; width:44px; height:44px; border-radius:50%; background:var(--acc); color:#fff; font-weight:800; font-size:24px; display:flex; align-items:center; justify-content:center; }
+  .need .t { font-size:30px; font-weight:800; }
+  .need .d { font-size:22px; color:var(--mute); margin-top:3px; line-height:1.3; }
+  .todarwin { margin-top:14px; font-size:30px; font-weight:700; display:flex; align-items:center; gap:14px; }
+  .dw { font-weight:800; letter-spacing:-.01em; color:var(--ink); }
+  .dw::before { content:''; display:inline-block; width:22px; height:22px; border-radius:6px; background:var(--ink); margin-right:10px; vertical-align:-2px; transform:rotate(45deg) scale(.8); }
+  /* s-search */
+  .srch { position:absolute; left:0; top:0; width:1180px; bottom:0; padding:30px 36px; }
+  .sl { display:grid; grid-template-columns: 250px 1fr 210px; gap:20px; align-items:center; padding:20px 0; border-bottom:1px solid var(--line); font-size:26px; }
+  .sl:last-child { border-bottom:none; }
+  .sl .q { font-family:"JetBrains Mono","DejaVu Sans Mono",monospace; font-size:21px; color:#374151; background:#f6f7f9; padding:10px 14px; border-radius:10px; }
+  .sl .r { text-align:right; font-weight:800; }
+  .sl .r small { display:block; font-size:19px; color:var(--mute); font-weight:500; }
+  .clock { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+  .clock .v { font-size:30px; font-variant-numeric:tabular-nums; color:var(--mute); }
+  .counters { position:absolute; left:1220px; right:0; top:0; bottom:0; display:flex; flex-direction:column; gap:18px; }
+  .ctr { flex:1; padding:22px 30px; display:flex; flex-direction:column; justify-content:center; }
+  .ctr .v { font-size:72px; font-weight:800; line-height:1; font-variant-numeric:tabular-nums; }
+  .ctr .k { font-size:22px; color:var(--mute); margin-top:6px; }
+  .ctr.hl .v { color:var(--acc); }
+  /* s-live */
+  .conns { position:absolute; left:0; top:0; width:660px; bottom:0; padding:26px 30px; display:flex; flex-direction:column; }
+  .cn { display:flex; align-items:center; gap:14px; padding:13px 0; border-bottom:1px solid var(--line); font-size:25px; }
+  .cn .nm { flex:1; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .cn .tl { color:var(--mute); font-size:21px; white-space:nowrap; }
+  .cn .ok { color:var(--ok); font-weight:800; }
+  .cst { margin-top:auto; padding-top:18px; }
+  .cst .v { font-size:44px; font-weight:800; }
+  .cst .s { font-size:19px; color:var(--mute); line-height:1.35; }
+  .rates { position:absolute; left:700px; right:0; top:0; bottom:0; padding:30px 40px; border:3px solid var(--ok); }
+  .rh { display:flex; justify-content:space-between; align-items:flex-start; }
+  .rh .who { font-size:36px; font-weight:800; display:flex; gap:14px; align-items:center; }
+  .rh .sub { font-size:22px; color:var(--mute); margin-top:6px; }
+  .livebadge { display:flex; gap:10px; align-items:center; font-size:22px; font-weight:800; color:#e11d48; }
+  .livedot { width:14px; height:14px; border-radius:50%; background:#e11d48; }
+  .rt { display:grid; grid-template-columns: 1fr 150px 190px 240px; align-items:center; padding:19px 18px; border-radius:14px; font-size:27px; }
+  .rt.hd { font-size:18px; color:var(--mute); text-transform:uppercase; letter-spacing:.08em; padding-bottom:6px; padding-top:20px; }
+  .rt .amt { font-weight:800; font-size:34px; font-variant-numeric:tabular-nums; }
+  .rt .ctrp { color:var(--mute); text-decoration:line-through; font-variant-numeric:tabular-nums; }
+  .rt .dl { color:var(--mute); font-size:24px; }
+  .rt.best { background:#e7f6ee; }
+  .rt.best .amt { color:var(--ok); }
+  .rnote { position:absolute; left:40px; right:40px; bottom:26px; font-size:19px; color:var(--mute); }
+  /* s-verdict */
+  .vt { position:absolute; inset:0; padding:16px 36px; display:flex; flex-direction:column; justify-content:center; }
+  .vr { display:grid; grid-template-columns: 260px 450px 1fr 270px; gap:24px; align-items:center; padding:22px 14px; border-bottom:1px solid var(--line); }
+  .vr:last-child { border-bottom:none; }
+  .vr.hd { font-size:18px; color:var(--mute); text-transform:uppercase; letter-spacing:.08em; padding-top:14px; padding-bottom:10px; }
+  .vr .nd { font-size:28px; font-weight:800; }
+  .vr .nd small { display:block; font-size:19px; color:var(--mute); font-weight:500; margin-top:4px; }
+  .vr .pv { font-size:25px; font-weight:700; line-height:1.25; }
+  .vr .pv small { display:block; font-size:19px; color:var(--mute); font-weight:500; margin-top:4px; }
+  .vr .lr { font-size:23px; line-height:1.3; }
+  .vr.hl { background:#f3fbf6; border-radius:14px; border-bottom-color:transparent; }
+  .vr.hl .lr { font-weight:700; }
+  /* s-time */
+  .tiles { display:flex; gap:32px; }
+  .tiles:not(.sm) { margin-top:40px; } .tiles:not(.sm) .tile { min-height:420px; }
+  .tile { flex:1; padding:34px 40px; position:relative; }
+  .tile .v u { text-decoration:none; font-size:.55em; letter-spacing:0; }
+  .tile .v { font-size:132px; font-weight:800; line-height:1; letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
+  .tile .k { font-size:26px; margin-top:16px; line-height:1.35; }
+  .tile .k span { color:var(--mute); }
+  .tile.us { border:3px solid var(--ok); } .tile.us .v { color:var(--ok); }
+  .tile .pill { position:absolute; right:30px; top:28px; }
+  .bnote { margin-top:28px; font-size:23px; color:var(--mute); }
+  .tiles.sm .tile { padding:24px 34px; } .tiles.sm .tile .v { font-size:92px; } .tiles.sm .tile .k { font-size:22px; margin-top:10px; }
+  .t2 { display:flex; gap:32px; margin-top:26px; }
+  .t2 > div { flex:1; padding:26px 34px; }
+  .bar { display:grid; grid-template-columns: 200px 1fr 90px; gap:14px; align-items:center; font-size:22px; margin-top:12px; }
+  .bar i { display:block; height:22px; border-radius:6px; background:#d1d5db; }
+  .bar b { text-align:right; font-variant-numeric:tabular-nums; }
+  .cost { font-size:24px; margin-top:16px; line-height:1.35; }
+  .cost .v { font-size:46px; font-weight:800; color:var(--ok); }
+  .cost s { color:var(--mute); }
+  .cost small { display:block; font-size:19px; color:var(--mute); }
+  /* s-improve */
+  .gl { display:grid; grid-template-columns: 54px 1fr 640px; gap:26px; align-items:center; padding:30px 34px; margin-bottom:20px; }
+  .gl .fl { width:46px; height:46px; border-radius:12px; background:#fdecec; color:var(--no); font-weight:800; font-size:28px; display:flex; align-items:center; justify-content:center; }
+  .gl .tt { font-size:31px; font-weight:800; }
+  .gl .dd { font-size:22px; color:var(--mute); margin-top:4px; }
+  .gl .fx { font-size:24px; line-height:1.3; padding-left:22px; border-left:4px solid var(--ok); }
+  .gl .fx b { color:var(--ok); }
+  /* end + handoff */
+  .end { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; padding:0 140px; background:var(--bg); }
+  .end .l1 { font-size:84px; font-weight:800; letter-spacing:-.02em; line-height:1.05; }
+  .end .l2 { font-size:38px; margin-top:34px; line-height:1.4; }
+  .end .l3 { font-size:24px; margin-top:44px; color:var(--mute); line-height:1.4; }
+  .ho-l { position:absolute; left:0; top:20px; width:640px; padding:34px 40px; }
+  .ho-l .big { font-size:46px; font-weight:800; margin:10px 0 8px; }
+  .ho-l .row { font-size:25px; margin-top:12px; line-height:1.35; }
+  .ho-l .arrow { margin-top:28px; font-size:30px; font-weight:800; color:var(--acc); }
+  .ho-frame { position:absolute; left:700px; top:20px; width:1056px; height:594px; border-radius:14px; background:#1f2937; outline:3px solid var(--acc); outline-offset:4px; }
+  .ho-cap { position:absolute; left:700px; top:634px; font-size:21px; color:var(--mute); }
+</style></head>
+<body>
+<div class="top"><div class="kicker">Instant Machinist × Darwin</div><div class="brand" id="brand"></div></div>
+<h1 id="h1"></h1>
+
+<div class="scene" id="s-needs">
+  <div class="part card"><div class="lab">CAM job done · program posted</div>
+    <img src="assets/ftc10-part.png" alt="">
+    <div class="big" id="pname"></div>
+    <div class="row" id="pask"></div></div>
+  <div class="needs" id="needs"></div>
+</div>
+
+<div class="scene" id="s-search">
+  <div class="srch card"><div class="clock"><div class="lab">Darwin Search API · one call per need</div><div class="v" id="sclock"></div></div><div id="slist"></div></div>
+  <div class="counters">
+    <div class="ctr card"><div class="v" id="c1"></div><div class="k">needs searched on Darwin</div></div>
+    <div class="ctr card"><div class="v" id="c2"></div><div class="k">agents found (deduped)</div></div>
+    <div class="ctr card hl"><div class="v" id="c3"></div><div class="k">per-provider integrations written</div></div>
+  </div>
+</div>
+
+<div class="scene" id="s-live">
+  <div class="conns card"><div class="lab" style="margin-bottom:6px">Live · 1 MCP client + 1 A2A client</div><div id="clist"></div>
+    <div class="cst" id="cst"></div></div>
+  <div class="rates card" id="rates"></div>
+</div>
+
+<div class="scene" id="s-verdict"><div class="vt card" id="vt"></div></div>
+
+<div class="scene" id="s-time"></div>
+<div class="scene" id="s-improve"></div>
+<div class="scene" id="s-handoff"></div>
+<div class="end hide" id="s-end"><div class="l1" id="e1"></div><div class="l2" id="e2"></div><div class="l3" id="e3"></div></div>
+
+<div class="foot" id="foot"><span>Read-only discovery and live price/rate lookups. No orders placed, no quotes requested, Darwin Act not used.</span><span>Darwin Search v3 · MCP · A2A · Claude Opus</span></div>
+
+<script src="data.js"></script>
+<script>
+const D = window.DATA, M = D.metrics, $ = id => document.getElementById(id);
+const V = new URLSearchParams(location.search).get('v') || '30';
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const fmt$ = v => '$' + Number(v).toFixed(2);
+const mmss = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const short = p => p.split(' — ')[0];
+const desc = p => p.split(' — ')[1] || '';
+const NEED_KEY = { 'Raw stock': 'stock', 'Cutting tools': 'tooling', 'Finishing': 'finishing', 'Overflow machining': 'overflow', 'Freight': 'freight' };
+
+// ---------- scene plans per variant (seconds) ----------
+const PLANS = {
+  '30':  [['needs', 4.5], ['search', 5], ['live', 7], ['verdict', 6], ['time', 4], ['gap', 3.5]],
+  '30h': [['needs', 4.5], ['search', 5], ['live', 6.5], ['verdict', 5.5], ['time', 3.5], ['handoff', 5]],
+  '60':  [['needs', 6], ['search', 9], ['live', 11], ['verdict', 9], ['time', 9], ['improve', 11], ['end', 5]],
+};
+const PLAN = PLANS[V]; let acc = 0;
+const SC = PLAN.map(([name, d]) => { const s = { name, d, a: acc }; acc += d; return s; });
+window.__duration = acc;
+const CRIT = { search: 'New capability', live: 'New capability', verdict: 'New capability', time: 'Time & cost vs baseline', improve: 'Areas for improvement' };
+window.__handoff = SC.find(s => s.name === 'handoff') || null;
+
+// ---------- static build ----------
+const askShort = a => a.replace(/\s*\(.*?\)\s*/g, ' ').replace(/^1 blanks/, '1 blank').trim();
+$('pname').textContent = D.part + ' · 6061-T6';
+$('pask').innerHTML = `Shop is short: <b>${esc(askShort(D.ask))}</b>`;
+$('needs').innerHTML = `<div class="lab" style="margin-bottom:14px">The job needs ${M.needs} things the shop doesn't have</div>` +
+  D.rows.map((r, i) => `<div class="need" data-at="${0.5 + i * 0.35}"><div class="n">${i + 1}</div><div><div class="t">${esc(r.need)}</div><div class="d">${esc(askShort(r.ask))}</div></div></div>`).join('') +
+  `<div class="todarwin" data-at="2.6">Each need goes to <span class="dw">Darwin</span> agent search →</div>`;
+
+$('slist').innerHTML = D.searches.map((s, i) => `<div class="sl" id="sl${i}"><div><b>${esc(s.need)}</b></div><div class="q">"${esc(s.query)}"</div>
+  <div class="r">${s.agents} agent${s.agents > 1 ? 's' : ''}<small>${s.status} · ${s.secs.toFixed(1)} s</small></div></div>`).join('');
+
+const rr = D.rates;
+$('clist').innerHTML = D.connects.map((c, i) => `<div class="cn" id="cn${i}"><span class="pill ${c.proto === 'A2A' ? 'p-a2a' : 'p-mcp'}">${c.proto}</span>
+  <span class="nm">${esc(c.name)}</span><span class="tl">${c.tools != null ? c.tools + ' tools' : c.skills}</span><span class="ok">✓</span></div>`).join('');
+const C = D.costable;
+$('cst').innerHTML = V === '60' && C ? `<div class="lab">Costable (MCP) · live should-cost</div>
+  <div class="v">${fmt$(C.p50)}<span style="font-size:24px;font-weight:600;color:#6b7280"> /unit P50 · P80 ${fmt$(C.p80)}</span></div>
+  <div class="s">Benchmark, not a quote: Costable assumed ${esc(C.material)}, ${C.cycle_min} min cycle.</div>` : '';
+const best = rr.rates[0];
+$('rates').innerHTML = `<div class="rh"><div><div class="who">${esc(rr.provider)} <span class="pill p-a2a">A2A</span></div>
+  <div class="sub">Live carrier rates for the bar stock · ${rr.from_zip} → ${rr.to_zip} · ${rr.weight_lb} lb box</div></div>
+  <div class="livebadge"><span class="livedot" id="ldot"></span>LIVE CALL</div></div>
+  <div class="rt hd"><div>Carrier service</div><div>Price</div><div>Counter price</div><div>Delivery</div></div>` +
+  rr.rates.map((r, i) => `<div class="rt" id="rt${i}"><div>${esc(r.service_label)}</div><div class="amt">${fmt$(r.amount)}</div>
+  <div class="ctrp">${r.retail_amount ? fmt$(r.retail_amount) : ''}</div><div class="dl">${esc(r.delivery_window || r.delivery_days + ' business days')}</div></div>`).join('') +
+  `<div class="rnote">Real A2A message/send response from ${esc(rr.url.replace(/^https:\/\//, ''))}, an agent found via Darwin Search. No label bought.</div>`;
+
+const vlabel = v => v === 'no_fit' ? '<span class="pill p-no">No fit</span>' : v === 'ready' ? '<span class="pill p-ok">Ready</span>' : '<span class="pill p-ok">Usable with human</span>';
+$('vt').innerHTML = `<div class="vr hd"><div>Need</div><div>Top agent Darwin found</div><div>Live result (our call)</div><div>Verdict (Claude Opus)</div></div>` +
+  D.rows.map((r, i) => `<div class="vr ${r.verdict !== 'no_fit' ? 'xhl' : ''}" id="vr${i}"><div class="nd">${esc(r.need)}<small>${r.darwin_found} agent${r.darwin_found > 1 ? 's' : ''} found</small></div>
+  <div class="pv">${esc(short(r.top_provider))} <span class="pill ${r.protocol === 'A2A' ? 'p-a2a' : 'p-mcp'}" style="font-size:15px;padding:3px 9px">${r.protocol}</span><small>${esc(desc(r.top_provider))}</small></div>
+  <div class="lr">${esc(r.live_result)}</div><div>${vlabel(r.verdict)}</div></div>`).join('');
+
+const aS = Math.round(M.agent_seconds), aMin = Math.round(M.agent_seconds / 60);
+const tilesHTML = cls => `<div class="tiles ${cls}">
+  <div class="tile card us" data-at="0.2"><div class="v">${aS}<u> s</u></div><div class="k"><b>Instant Machinist + Darwin</b><br><span>≈${aMin} min, measured: ${M.needs} searches, ${M.live_connections} live connections, ranking</span></div></div>
+  <div class="tile card" data-at="0.7"><span class="pill est">Estimate</span><div class="v">~${M.manual_minutes_ESTIMATE}<u> min</u></div><div class="k"><b>Manual buyer</b><br><span>googling vendors, reading sites, filling quote forms</span></div></div>
+  <div class="tile card" data-at="1.2" style="flex:.7"><div class="v">${M.custom_integrations}</div><div class="k"><b>integrations written</b><br><span>for ${M.providers_found} providers</span></div></div></div>`;
+const bmax = Math.max(...Object.values(D.baseline_by_need));
+$('s-time').innerHTML = V === '60' ? tilesHTML('sm') + `<div class="t2">
+  <div class="card" data-at="2.2"><div class="lab">Manual baseline by need · <span class="acc">estimate</span></div>` +
+    D.rows.map(r => { const m = D.baseline_by_need[NEED_KEY[r.need]]; return `<div class="bar"><span>${esc(r.need)}</span><i style="width:${(m / bmax * 100).toFixed(0)}%"></i><b>~${m} min</b></div>`; }).join('') +
+  `<div style="font-size:19px;color:#6b7280;margin-top:14px">${esc(M.baseline_note)}</div></div>
+  <div class="card" data-at="3.4"><div class="lab">Cost answers, live today</div>
+    <div class="cost"><span class="v">${fmt$(best.amount)}</span> live freight quote via SMKlog (A2A)<small>${esc(best.service_label)} · counter price <s>${fmt$(best.retail_amount)}</s></small></div>
+    <div class="cost"><span class="v" style="color:#14171c">${fmt$(C.p50)}</span> /unit should-cost P50 via Costable<small>Benchmark only: assumes ${esc(C.material)}</small></div>
+    <div class="cost" style="margin-top:20px"><b>~${M.speedup_x_ESTIMATE}× faster</b> to a sourcing map <span class="pill est" style="font-size:15px">Estimate</span></div></div></div>`
+  : tilesHTML('') + `<div class="bnote" data-at="1.6">${esc(M.baseline_note)}</div>`;
+
+$('s-improve').innerHTML = D.gap_lines.map((g, i) => `<div class="gl card" data-at="${0.4 + i * 1.6}"><div class="fl">!</div>
+  <div><div class="tt">${esc(g[0])}</div><div class="dd">${esc(g[1])}</div></div><div class="fx"><b>Fix:</b> ${esc(g[2])}</div></div>`).join('');
+
+const stock = D.rows.find(r => r.need === 'Raw stock');
+$('s-handoff').innerHTML = `<div class="ho-l card"><div class="lab">Gap from Darwin · ${esc(stock.need)}</div>
+  <div class="big">6061-T6 flat bar</div><div class="row">${esc(askShort(stock.ask).replace(/^1 blank of 6061-T6 aluminum, /, ''))}</div>
+  <div class="row" style="color:#6b7280">${esc(stock.live_result.replace(/^live search/, 'Live search'))}</div>
+  <div class="arrow" data-at="0.5">→ Shop's agent calls suppliers on Dial</div></div>
+  <div class="ho-frame"></div><div class="ho-cap" id="hocap"></div>`;
+
+// ---------- seek ----------
+function fadeIn(root, lt) {
+  root.querySelectorAll('[data-at]').forEach(el => { const k = clamp((lt - Number(el.dataset.at)) / 0.35); el.style.opacity = k; el.style.transform = `translateY(${(1 - k) * 16}px)`; });
+}
+const show = (el, k) => { el.style.opacity = k; el.style.transform = `translateY(${(1 - k) * 14}px)`; };
+window.__seek = t => {
+  const s = SC.find(x => t < x.a + x.d) || SC[SC.length - 1], lt = t - s.a;
+  ['needs', 'search', 'live', 'verdict', 'time', 'improve', 'handoff'].forEach(n => $('s-' + n).classList.toggle('hide', n !== s.name));
+  const endish = s.name === 'end' || s.name === 'gap';
+  $('s-end').classList.toggle('hide', !endish); $('h1').classList.toggle('hide', endish); $('foot').classList.toggle('hide', endish);
+  $('brand').innerHTML = V === '60' && CRIT[s.name] ? `Darwin criterion · <b>${CRIT[s.name]}</b>` : 'Agent discovery by <b>Darwin</b>';
+  const H = {
+    needs: `The program's done.<br><span class="acc">The shop is missing ${M.needs} things.</span>`,
+    search: `One Darwin search per need.<br><span class="acc">No per-provider integration.</span>`,
+    live: V === '60' ? `Live answers from agents we never integrated.` : `Then live calls to the agents it found.`,
+    verdict: `Claude ranks every option against this job.`,
+    time: `A sourcing map in about ${aMin} minutes.`,
+    improve: `Where Darwin can grow.`,
+    handoff: `No agent sells 6061 bar yet.<br><span class="acc">So the shop's agent picks up the phone.</span>`,
+  };
+  $('h1').innerHTML = H[s.name] || '';
+  const root = endish ? $('s-end') : $('s-' + s.name);
+  if (s.name === 'search') {
+    const span = s.d * 0.62, total = D.search_total_s, real = clamp(lt / span) * total;
+    $('sclock').textContent = `run clock ${mmss(real)}`;
+    let done = 0;
+    D.searches.forEach((x, i) => { const on = real >= x.t, el = $('sl' + i); el.style.opacity = on ? 1 : .32;
+      el.querySelector('.r').style.visibility = on ? 'visible' : 'hidden'; if (on) done++; });
+    const found = real >= total - 0.1;
+    $('c1').textContent = `${done} / ${M.needs}`; $('c2').innerHTML = found ? M.capabilities_found : '<span style="font-size:40px;color:#6b7280">searching</span>'; $('c3').textContent = M.custom_integrations;
+  }
+  if (s.name === 'live') {
+    const c0 = D.connects[0].t, c1 = D.connects[D.connects.length - 1].t, span = s.d * 0.32;
+    D.connects.forEach((c, i) => show($('cn' + i), clamp((lt - (c.t - c0) / (c1 - c0) * span) / 0.3)));
+    $('cst').style.opacity = clamp((lt - s.d * 0.55) / 0.4);
+    const r0 = s.d * 0.1; $('rates').style.opacity = clamp((lt - r0) / 0.4);
+    rr.rates.forEach((r, i) => show($('rt' + i), clamp((lt - r0 - 0.25 - i * 0.18) / 0.3)));
+    $('rt0').classList.toggle('best', lt > r0 + 1.6);
+    $('ldot').style.visibility = Math.floor(t * 2) % 2 ? 'visible' : 'hidden';
+  }
+  if (s.name === 'verdict') D.rows.forEach((r, i) => {
+    show($('vr' + i), clamp((lt - 0.2 - i * 0.3) / 0.3));
+    $('vr' + i).classList.toggle('hl', r.verdict !== 'no_fit' && lt > 2.4);
+  });
+  if (s.name === 'gap') {
+    $('e1').innerHTML = `No agent sells 6061 bar yet.`;
+    $('e2').innerHTML = `Live search “6061 aluminum bar”: <b>0 hits</b>. Freight and should-cost answer live today; <span class="acc">stock still goes to a human buyer.</span>`;
+    $('e3').textContent = `Times: measured agent run (${M.agent_seconds} s) vs ESTIMATED manual baseline (~${M.manual_minutes_ESTIMATE} min). Read-only discovery and live lookups; no orders placed, Darwin Act not used.`;
+  }
+  if (s.name === 'end') {
+    $('e1').innerHTML = `One search per need.<br><span class="acc">${M.live_connections} live agents. ${M.custom_integrations} integrations.</span>`;
+    $('e2').innerHTML = `Freight and should-cost answer live today. Stock, tooling and finishing still go to a human buyer, until Darwin indexes them.`;
+    $('e3').textContent = `Times: measured agent run (${M.agent_seconds} s) vs ESTIMATED manual baseline (~${M.manual_minutes_ESTIMATE} min). Read-only discovery and live lookups; no orders placed, no quotes requested, Darwin Act not used.`;
+  }
+  if (s.name === 'handoff') $('hocap').textContent = 'Dial segment · real call audio · 1× speed';
+  fadeIn(root, lt);
+};
+window.__seek(Number(new URLSearchParams(location.search).get('t') || 0));
+window.__ready = true;
+</script></body></html>

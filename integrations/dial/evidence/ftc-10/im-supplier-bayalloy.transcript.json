@@ -1,0 +1,92 @@
+{
+ "call_id": "cmv4ab22s00570foxbz38hulq",
+ "supplier": "Bay Alloy & Steel",
+ "note": "Both sides are Dial AI agents; supplier is a demo persona.",
+ "turns": [
+  {
+   "speaker": "supplier",
+   "text": "Bay Alloy and Steel. Marco speaking.",
+   "startMs": 803,
+   "endMs": 2963
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Hi Marco, this is the AI purchasing assistant calling for a small CNC machine shop in Oakland. I\u2019m looking to get a quick quote on some 6061\u2011T6 aluminum flat bar.  \n\nPreferred is 1\u20115/8 inch thick by 3\u20111/4 inch wide, saw\u2011cut to 6\u20111/2 inch length, quantity 1 piece.  \n\nCould you let me know pricing, any saw\u2011cut charge, lead time, and delivery cost to Oakland? Will\u2011call is also fine if that\u2019s cheaper.",
+   "startMs": 3916,
+   "endMs": 28311
+  },
+  {
+   "speaker": "supplier",
+   "text": "Got it. Thanks. I can help with that. We don't stock one five eight thick flat bar. Closest flat sizes I have are one three four x three one four one three four x three one two, one one two x, three one two. Or I can do a precision cut blank from plate up to two inches thick. A couple quick questions so I can give a clean quote. One is one three four thick acceptable?",
+   "startMs": 29493,
+   "endMs": 52263
+  },
+  {
+   "speaker": "supplier",
+   "text": "or do you need to be right around one point six two five?",
+   "startMs": 52663,
+   "endMs": 55223
+  },
+  {
+   "speaker": "supplier",
+   "text": "two?",
+   "startMs": 55383,
+   "endMs": 55783
+  },
+  {
+   "speaker": "supplier",
+   "text": "For the six point five inches length, what tolerance do you need on the cut?",
+   "startMs": 56073,
+   "endMs": 59353
+  },
+  {
+   "speaker": "supplier",
+   "text": "We hold plus zero dot zero six on plate blanks. Three. Any mill cert required?",
+   "startMs": 59673,
+   "endMs": 64343
+  },
+  {
+   "speaker": "supplier",
+   "text": "I can include it at no charge. Four, just the one piece for now?",
+   "startMs": 64743,
+   "endMs": 67853
+  },
+  {
+   "speaker": "supplier",
+   "text": "Assuming one piece, light usage, I'd actually suggest a precision cut blank from plate, It's usually cheaper than buying a twelve foot bar for one short piece, and there's no per cut charge on blanks. For reference on costs, flat bar, you'd be buying a full twelve feet. For example, one three four x three one four is thirty six dollars, fifty per foot, plus four dollars fifty cents for the cut if under twenty cuts. Precision cut blank. Priced by weight at six dollars dot twenty per pound no cut charge, for about a one point seven five inches x three point two five inches x six point five inches blank, you'd be right around twelve dollars. Fifteen total. Lead time, two business days for cut pieces. Delivery, free to Oakland over two hundred and fifty dollars, otherwise, twenty five dollars. We'll call in Hayward is no charge and totally fine. Tell me, which thickness slash width you wanna go with?",
+   "startMs": 68253,
+   "endMs": 120413
+  },
+  {
+   "speaker": "supplier",
+   "text": "Tolerance on length, Milsert yes slash no, and I'll give you an exact dollar quote with a quote number.",
+   "startMs": 120893,
+   "endMs": 126073
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Thanks, that helps a lot.\n\n1) Thickness/width: The precision\u2011cut blank from plate sounds good. Let\u2019s go with approximately 1.75 inches thick by 3.25 inches wide by 6.5 inches long, 6061\u2011T6.\n\n2) Length tolerance: \u00b11/16 inch on the 6.5 inch length is fine. Your +0.06 on plate blanks works for us.\n\n3) Mill cert: Nice to have but not required, so you don\u2019t have to include it.\n\n4) Quantity: Just the one piece for now.\n\nCould you give me the exact price for that one blank, confirm there\u2019s no cut charge, the total before tax, and your lead time? And then a quote number, please.",
+   "startMs": 127676,
+   "endMs": 164638
+  },
+  {
+   "speaker": "supplier",
+   "text": "Perfect. Thanks for the details. For one precision cut six thousand and sixty one t plate blanket approx, one point seven five inches x three point two five inches x six point five zero. Volume, one point seven five, three point two five, six point five, thirty seven point one one in cubed. Weight, thirty seven point one one, zero point zero nine eight, three point six four pounds. Price, three point six four pounds six dollars. Twenty per pound twenty two dollars sixty Details. Item, six thousand and sixty one t six aluminum precision cut blank, one point seven five inches x three point two five inches x six point five zero plus zero zero six on length. Quantity, one piece. Unit price, twenty two dollars sixty cents. Cut charge, none. No cut charge on plate blanks. Subtotal before tax, twenty two dollars sixty cents. Lead time, two business days. Delivery. Order is under two hundred and fifty dollars, so twenty five dollars for delivery to Oakland or free will call in Hayward. Quote number is b a s four one seven two nine. That's b a s dash four one seven two nine. Do you want me to note this as we'll call, or should I figure it with delivery to Oakland?",
+   "startMs": 165283,
+   "endMs": 232113
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Got it, thanks Marco.\n\nLet\u2019s note it as will\u2011call in Hayward for now.\n\nJust to confirm, I have:\n- 6061\u2011T6 precision cut blank  \n- 1.75\" x 3.25\" x 6.50\", +0.006\" on length  \n- Qty 1  \n- Unit price: $22.60, no cut charge  \n- Subtotal before tax: $22.60",
+   "startMs": 233224,
+   "endMs": 259954
+  },
+  {
+   "speaker": "shop_agent",
+   "text": "Marco, thanks for the detailed quote. I\u2019ve got this as quote number BAS-41729, will-call in Hayward, $22.60 before tax for one 6061-T6 precision cut blank at 1.75 by 3.25 by 6.50 inches, two business day lead time, no cut charge. I\u2019m just comparing a couple of quotes today, and we\u2019ll confirm the order by email if we move forward. Really appreciate the help\u2014have a good one.",
+   "startMs": 261867,
+   "endMs": 288432
+  }
+ ],
+ "transcript": null
+}
