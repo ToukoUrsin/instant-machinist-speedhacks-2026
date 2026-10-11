@@ -4,7 +4,7 @@ On 11 October 2026, the Instant Machinist simulator was reviewed by a 100-worker
 GPT-6.1 Sol audit swarm. The launcher gave every worker one narrow goal, limited
 concurrency to eight, and kept implementation branches isolated from the lead
 checkout. Each worker resolved the shared Alike task, recorded a brief and a
-result, and saved its prompt, transcript summary, commit, tests, and timing under
+result, and saved its prompt, result summary, commit, tests, and timing under
 `swarm/runs/alike-001/` through `swarm/runs/alike-100/`.
 
 The work was coordinated through Alike task
@@ -15,8 +15,6 @@ the shared simulator task has 165 task-context injections and 238 follows. The
 reflection view records 12 helped moments, 0 noise judgments, and 68 unclear
 judgments, so the run receipts remain the authoritative engineering evidence. The shared records contain the
 100-goal matrix, the simulator acceptance decision, and a helped-moments document.
-The dashboard's Agents view is account/workspace scoped; use the Helios One
-workspace for `shop@example.com` and refresh after switching accounts.
 
 ## What the swarm built and measured
 

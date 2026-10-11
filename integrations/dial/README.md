@@ -43,5 +43,5 @@ Any spec accepted by `shop.material_gap` works (part-agnostic). `--suppliers a,b
 places calls one at a time. Calls are capped at 300 s each. A call POST is never retried blindly.
 
 ## Account
-Dial account `shop@example.com` (created 2026-10-11, coupon `DIAL_FOR_SPEEDHACKS` = $100 credit, expires end of day).
+Dial account `shop@example.com`.
 Credentials come from environment variables. Lines: see `lines.json`.

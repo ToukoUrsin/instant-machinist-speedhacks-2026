@@ -1,6 +1,6 @@
 # Demo
 
-**Demo video:** _link added at submission_ <!-- DEMO_VIDEO_URL -->
+**Videos:** [problem (60 s)](../../media/problem-60s.mp4) · [product demo](../../media/product-demo.mp4) · [verified FTC-10 simulation](results/ftc-10/run3/simulation.mp4) · [shop-floor integrations](../../media/integrations-minute.mp4)
 
 ## Headline: NIST FTC-10 housing (canonical run `out/run3`)
 
@@ -19,7 +19,7 @@
    time**.
 7. The editable Fusion file is saved to Fusion Team. Total programming time: **7:08**.
 8. The simulation video of the winning program, ending on "Verified: 0 gouges · 0 crashes · 26:42
-   cycle" (`out/run3/simulation.mp4`, 20 s, 1920 × 1080).
+   cycle" ([`results/ftc-10/run3/simulation.mp4`](results/ftc-10/run3/simulation.mp4), 20 s, 1920 × 1080).
 
 ## Second example: SM-101 (2.5D, canonical runs `out/run2` and `out/readme-native`)
 

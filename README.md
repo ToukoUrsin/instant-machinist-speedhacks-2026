@@ -26,6 +26,7 @@ own simulator, and keeps the fastest program that passes every safety check.
 | [`instant-machinist/`](instant-machinist/) | The product: drawing reader, Fusion Compute client, native 2.5D CAM engine, G-code simulator/verifier, strategy optimizer, video renderer, tests and docs. **Start here: [instant-machinist/README.md](instant-machinist/README.md)** |
 | [`integrations/`](integrations/) | The rest of the job around the program: material sourcing (Darwin), supplier calls (Dial), deposit invoicing tested in a sandbox (Sparta), shop analytics (Keewano), multi-agent build memory (Alike) |
 | [`media/`](media/) | Rendered demo videos |
+| [`docs/`](docs/) | The problem and market, with sources; problem slides (PDF) |
 
 ## Try it in one minute (offline, no accounts)
 
@@ -40,6 +41,6 @@ The Fusion path (`make demo-ftc10`) needs an Anthropic API key and an Autodesk a
 [instant-machinist/docs/FUSION-COMPUTE.md](instant-machinist/docs/FUSION-COMPUTE.md).
 
 ## Docs
-- [Architecture](instant-machinist/docs/ARCHITECTURE.md) · [Verifier](instant-machinist/docs/VERIFIER.md) · [Time saved, method and assumptions](instant-machinist/docs/TIME-SAVED.md) · [Fusion Compute](instant-machinist/docs/FUSION-COMPUTE.md) · [Data contracts](instant-machinist/docs/CONTRACTS.md) · [Results](instant-machinist/docs/results/)
+- [The problem, with sources](docs/PROBLEM.md) · [Architecture](instant-machinist/docs/ARCHITECTURE.md) · [Verifier](instant-machinist/docs/VERIFIER.md) · [Time saved, method and assumptions](instant-machinist/docs/TIME-SAVED.md) · [Fusion Compute](instant-machinist/docs/FUSION-COMPUTE.md) · [Data contracts](instant-machinist/docs/CONTRACTS.md) · [Results](instant-machinist/docs/results/)
 
 Built on 11 October 2026 at a16z SpeedHacks. MIT licensed.
