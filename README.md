@@ -10,14 +10,15 @@ own simulator, and keeps the fastest program that passes every safety check.
 | NIST FTC-10 housing, OP1 (214 faces, 5-page GD&T drawing) | |
 |---|---|
 | Drawing + STEP → OP1 (top side) programmed, verified, posted to Haas G-code, saved as an editable Fusion file | **7 min 08 s** (a whole new part takes 1–4 h by hand, [sources](docs/PROBLEM.md); this run covers OP1 only) |
+| Complete 2.5D part (SM-101), drawing → verified program | **2 min 34 s** in cloud Fusion · **2.7 s** on the native engine (+ 22 s drawing read) |
 | Best cycle time vs our cautious manual-style baseline (same operations, book feeds) | **26:42 vs 1:49:46 (−76 %)** |
-| Safety checks on the winning program (OP1 rule) | **PASS**: 0 gouges · 0 rapids into stock · 0 fixture hits; 3 short plunges flagged for review. The whole-part report shows FAIL only because later setups' stock remains |
+| Safety checks on the winning program (OP1 rule) | **PASS**: 0 gouges · 0 rapids into stock · 0 fixture hits; 3 short plunges flagged for review. The raw whole-part [report](instant-machinist/docs/results/ftc-10/best-report.md) reads FAIL by design: OP1 leaves stock for later setups |
 | Cautious manual-style program (same operations, book feeds) | rejected by the verifier: 6 rapid moves into stock |
 | Drawing problems flagged for the customer | 8 questions, e.g. missing material, `M3x0.5-6g` external thread class on holes |
 
 ![Verified FTC-10 simulation](instant-machinist/docs/img/ftc-10-sim-final.jpg)
 
-**[▶ Demo video (3 min)](media/demo.mp4)** · Parts: [problem (60 s)](media/problem-60s.mp4) · [product demo](media/product-demo.mp4) · [simulation of the verified program](instant-machinist/docs/results/ftc-10/run3/simulation.mp4) · [shop-floor integrations](media/integrations-minute.mp4)
+**[▶ Demo video (3 min)](media/demo.mp4)** · Parts: [problem (60 s)](media/problem-60s.mp4) · [product demo](media/product-demo.mp4) · [simulation of the verified program](instant-machinist/docs/results/ftc-10/run3/simulation.mp4) · [shop-floor integrations](media/integrations-minute.mp4) · [stills and walkthrough](instant-machinist/docs/demo.md)
 
 ## What's in this repository
 
@@ -42,6 +43,6 @@ The Fusion path (`make demo-ftc10`) needs an Anthropic API key and an Autodesk a
 [instant-machinist/docs/FUSION-COMPUTE.md](instant-machinist/docs/FUSION-COMPUTE.md).
 
 ## Docs
-- [The problem, with sources](docs/PROBLEM.md) · [Architecture](instant-machinist/docs/ARCHITECTURE.md) · [Verifier](instant-machinist/docs/VERIFIER.md) · [Time saved, method and assumptions](instant-machinist/docs/TIME-SAVED.md) · [Fusion Compute](instant-machinist/docs/FUSION-COMPUTE.md) · [Data contracts](instant-machinist/docs/CONTRACTS.md) · [Results](instant-machinist/docs/results/)
+- [The problem, with sources](docs/PROBLEM.md) · [Market and path](instant-machinist/README.md#market-and-path) · [Architecture](instant-machinist/docs/ARCHITECTURE.md) · [Verifier](instant-machinist/docs/VERIFIER.md) · [Time saved, method and assumptions](instant-machinist/docs/TIME-SAVED.md) · [Fusion Compute](instant-machinist/docs/FUSION-COMPUTE.md) · [Data contracts](instant-machinist/docs/CONTRACTS.md) · [Results](instant-machinist/docs/results/)
 
 Built on 11 October 2026 at a16z SpeedHacks. MIT licensed.

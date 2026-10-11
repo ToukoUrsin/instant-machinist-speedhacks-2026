@@ -42,7 +42,7 @@ people who also quote and run the machines.
 | Drawing review and questions for the customer | part of the 1–4 h | 28.5 s, 8 questions |
 | Programming, posting and verification | 1–4 h per new part (≈1 h simple, 4–8 h complex) | **7 min 08 s** for OP1 (top side): 5 strategies, all simulated |
 | Machine time per part (OP1) | our cautious manual-style baseline: 1:49:46 | **26:42** (−76 %) |
-| Human time | the whole job | ≈ 20 min review and corrections *(assumption: 10 + 10 min)* |
+| Programmer time per new part | 1–4 h | ≈ 27 min: 7 min automated + 20 min review and corrections *(assumption)* |
 
 Method and every assumption: [instant-machinist/docs/TIME-SAVED.md](../instant-machinist/docs/TIME-SAVED.md).
 Problem slides: [problem-deck.pdf](problem-deck.pdf).

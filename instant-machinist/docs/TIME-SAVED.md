@@ -21,7 +21,7 @@ assumption. Two demo parts:
 
 | Step | Manual (CAM programmer) | Instant Machinist: FTC-10 OP1 | Instant Machinist: SM-101 | Source |
 |---|---|---|---|---|
-| Read drawing, plan setup and operations, pick tools, program toolpaths, post, simulate | **1–4 h** | **7 min 08 s** (STEP + drawing → saved Fusion file + 5 verified programs) | **2 min 34 s** (Fusion path, drawing → saved Fusion file + 5 verified programs) · **2.7 s** (native engine, spec → verified program) + 22 s drawing read | Manual: shop estimate. Ours: measured, [`results/ftc-10/summary.json`](results/ftc-10/summary.json), [`results/sm-101-fusion/summary.json`](results/sm-101-fusion/summary.json), [`results/sm-101-native/summary.json`](results/sm-101-native/summary.json) |
+| Read drawing, plan setup and operations, pick tools, program toolpaths, post, simulate | **1–4 h** | **7 min 08 s** (STEP + drawing → saved Fusion file + 5 verified programs) | **2 min 34 s** (Fusion path, drawing → saved Fusion file + 5 verified programs) · **2.7 s** (native engine, spec → verified program) + 22 s drawing read | Manual: published shop examples (CloudNC 2023, MMS 2024). Ours: measured, [`results/ftc-10/summary.json`](results/ftc-10/summary.json), [`results/sm-101-fusion/summary.json`](results/sm-101-fusion/summary.json), [`results/sm-101-native/summary.json`](results/sm-101-native/summary.json) |
 | Human review of the program, simulation video and Claude's questions for the customer | included above | **10 min** | **10 min** | Assumption |
 | Corrections after review | included above | **10 min** allowance | **10 min** allowance | Assumption |
 | **Total** | **60–240 min** | **≈ 27 min** | **≈ 23 min** (Fusion path) | |
@@ -89,7 +89,7 @@ pass. Stock that later setups machine is reported, not failed (see [VERIFIER.md]
 | Adaptive 2.5 mm load, 24 mm steps, 0.5 mm finish stepover | 30:00 (1,800.8 s) | Pass |
 | **Adaptive 3.0 mm load, 24 mm steps, 0.6 mm finish stepover (chosen)** | **26:42 (1,602.6 s)** | **Pass** |
 
-**Saved: 4,983.6 s = 83 min per part (75.7 %).** The drawing gives no quantity, so Claude asks the
+**Saved: 4,983.6 s = 83 min per part (75.7 %).** Against the slowest adaptive variant that also passes (38:14), the chosen program still saves 11.5 min per part (30 %). The drawing gives no quantity, so Claude asks the
 customer. At quantity 1 that is 83 min of spindle time on OP1 alone.
 
 ### SM-101, Fusion path ([`results/sm-101-fusion`](results/sm-101-fusion), run `out/run2`)
