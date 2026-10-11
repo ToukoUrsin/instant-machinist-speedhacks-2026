@@ -22,6 +22,7 @@ def spec():
 
 
 def test_spec_bridge_exports_cad_cam_and_simulation(tmp_path):
+    pytest.importorskip("cadquery")  # optional extra: pip install ".[parts]"
     tools = Path(__file__).parents[1] / "parts" / "sm-101" / "tools.json"
     spec_data = spec()
     spec_path = tmp_path / "spec.json"

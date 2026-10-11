@@ -110,6 +110,7 @@ def test_op1_pass_rule_reports_leftover_but_fails_safety():
 
 
 def test_drawing_spec_exports_native_cad_feature_model(tmp_path):
+    pytest.importorskip("cadquery")  # optional extra: pip install ".[parts]"
     """A validated drawing spec becomes the same feature contract used by CAD/CAM."""
     from instant_machinist.drawing import spec_to_features, validate_spec, write_feature_model
     from instant_machinist.parts.build_part import build_model
